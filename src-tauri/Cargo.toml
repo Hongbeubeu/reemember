@@ -1,0 +1,21 @@
+[package]
+name = "reemember-tauri"
+version = "0.1.0"
+edition = "2024"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+reemember = { path = ".." }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+[package.metadata.tauri]
+product-name = "Reemember"
+

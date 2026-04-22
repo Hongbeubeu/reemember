@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cargo tauri *)",
+      "Bash(cargo check *)",
+      "Bash(cargo build *)",
+      "Bash(taskkill /F /IM reemember-tauri.exe)",
+      "Bash(powershell.exe *)",
+      "Bash(python3 -c \"import sys,json; data=json.load\\(sys.stdin\\); print\\(data[0]['text']\\)\")",
+      "Bash(cargo test *)"
+    ]
+  }
+}

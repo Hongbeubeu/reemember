@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reemember</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #f0f2f7;
+      --surface:   #ffffff;
+      --primary:   #4f7ef8;
+      --primary-d: #3a66d6;
+      --danger:    #ef4444;
+      --success:   #22c55e;
+      --text:      #1a1a2e;
+      --muted:     #9ba3c0;
+      --border:    #e5e7eb;
+      --nav-bg:    #1a1a2e;
+      --nav-h:     52px;
+      --mob-nav-h: 60px;
+      --radius:    12px;
+      --shadow:    0 2px 12px rgba(0,0,0,.07);
+      --pad: clamp(12px, 3.5vw, 32px);
+      --max-study:  720px;
+      --max-import: 720px;
+      --max-lib:    1400px;
+      --sidebar-w: 240px;
+    }
+
+    html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); font-size: 15px; }
+
+    .app { display: flex; flex-direction: column; height: 100%; }
+
+    /* Top nav */
+    .top-nav { background: var(--nav-bg); display: flex; align-items: center; gap: 2px; padding: 0 var(--pad); height: var(--nav-h); flex-shrink: 0; }
+    .top-nav .logo { color: #fff; font-weight: 700; font-size: 15px; letter-spacing: .4px; margin-right: 12px; white-space: nowrap; }
+    .top-nav .nav-btn { background: none; border: none; color: var(--muted); padding: 0 16px; height: var(--nav-h); font-size: 14px; font-weight: 500; cursor: pointer; border-bottom: 3px solid transparent; transition: color .15s, border-color .15s; white-space: nowrap; }
+    .top-nav .nav-btn:hover  { color: #fff; }
+    .top-nav .nav-btn.active { color: #fff; border-bottom-color: var(--primary); }
+
+    .app-main { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+
+    /* Pages */
+    .page { display: none; flex: 1; overflow-y: auto; padding: var(--pad); padding-bottom: calc(var(--pad) + 8px); }
+    .page.active { display: block; }
+    .page-inner { margin: 0 auto; width: 100%; }
+
+    /* Bottom nav */
+    .bot-nav { display: none; background: var(--nav-bg); height: var(--mob-nav-h); flex-shrink: 0; }
+    .bot-nav-inner { display: flex; height: 100%; }
+    .bot-nav-btn { flex: 1; background: none; border: none; color: var(--muted); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; cursor: pointer; border-top: 2px solid transparent; transition: color .15s, border-color .15s; font-size: 11px; font-weight: 500; }
+    .bot-nav-btn .icon { font-size: 18px; line-height: 1; }
+    .bot-nav-btn:hover  { color: #c8d0e8; }
+    .bot-nav-btn.active { color: #fff; border-top-color: var(--primary); }
+
+    /* Card */
+    .card { background: var(--surface); border-radius: var(--radius); padding: clamp(14px, 3vw, 26px); box-shadow: var(--shadow); margin-bottom: 16px; }
+    .card-title { font-size: 11px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); font-weight: 600; margin-bottom: 14px; }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 18px; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: filter .15s, opacity .15s; white-space: nowrap; }
+    .btn:hover:not(:disabled) { filter: brightness(.9); }
+    .btn:disabled { opacity: .45; cursor: default; }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-danger  { background: var(--danger);  color: #fff; }
+    .btn-ghost   { background: #f3f4f6; color: #374151; }
+    .btn-success { background: var(--success); color: #fff; }
+    .btn-sm { padding: 6px 12px; font-size: 12px; border-radius: 6px; }
+    .btn-full { width: 100%; }
+
+    /* Form */
+    .field { display: flex; flex-direction: column; gap: 5px; }
+    .field label { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+    select, input[type="text"], textarea { border: 1.5px solid var(--border); border-radius: 8px; padding: 9px 12px; font-size: 14px; outline: none; transition: border-color .15s; background: var(--surface); width: 100%; }
+    select { width: auto; }
+    select:focus, input[type="text"]:focus, textarea:focus { border-color: var(--primary); }
+
+    /* Toggle */
+    .toggle-row { display: flex; align-items: center; gap: 8px; }
+    .toggle { position: relative; width: 38px; height: 22px; flex-shrink: 0; }
+    .toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .slider { position: absolute; inset: 0; background: #d1d5db; border-radius: 22px; transition: background .2s; cursor: pointer; }
+    .slider::before { content: ""; position: absolute; width: 16px; height: 16px; border-radius: 50%; background: #fff; top: 3px; left: 3px; transition: transform .2s; }
+    .toggle input:checked + .slider { background: var(--primary); }
+    .toggle input:checked + .slider::before { transform: translateX(16px); }
+    .toggle-label { font-size: 14px; color: var(--text); }
+
+    /* Tag pill */
+    .tag { display: inline-block; background: #eef2ff; color: #3730a3; border-radius: 999px; padding: 2px 8px; font-size: 11px; margin: 1px; }
+
+    /* ═══════════════════════════════════ STUDY ═══════════════════════════════ */
+    #studyPage .page-inner { max-width: var(--max-study); }
+
+    .study-controls { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; gap: 12px; align-items: end; }
+    .study-controls .field-mode  { grid-column: 1; }
+    .study-controls .field-scope { grid-column: 1; }
+    .study-controls .field-srs   { grid-column: 2; align-self: end; }
+    .study-controls .btn-next    { grid-column: 1; }
+    .study-controls .btn-reset   { grid-column: 2; }
+
+    .stats-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1.5px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 16px; }
+    .stat-cell { background: #f8faff; text-align: center; padding: 10px 8px; }
+    .stat-val { font-size: clamp(18px, 4vw, 26px); font-weight: 700; color: var(--text); }
+    .stat-lbl { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+    .question-card { display: none; }
+    .question-card.visible { display: block; }
+
+    .prompt { font-size: clamp(14px, 2.5vw, 17px); font-weight: 600; margin-bottom: 14px; }
+
+    .meta-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 14px; }
+    .meta-item .meta-lbl { font-size: 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .4px; }
+    .meta-item .meta-val { font-size: 15px; color: #374151; margin-top: 2px; }
+
+    .examples-list { list-style: none; margin-bottom: 16px; }
+    .examples-list li { background: #f8faff; border-left: 3px solid var(--primary); padding: 7px 12px; border-radius: 0 6px 6px 0; font-size: 13px; color: #374151; margin-bottom: 6px; }
+
+    .answer-row { display: flex; gap: 8px; margin-bottom: 12px; }
+    .answer-row input { flex: 1; min-width: 0; }
+
+    .result-box { padding: 11px 14px; border-radius: 10px; font-size: 14px; font-weight: 500; display: none; margin-bottom: 12px; }
+    .result-box.visible { display: block; }
+    .result-box.correct { background: #dcfce7; color: #166534; }
+    .result-box.wrong   { background: #fee2e2; color: #991b1b; }
+
+    /* Related words panel (shown after answer) */
+    .related-panel { display: none; border-top: 1px solid var(--border); padding-top: 14px; margin-top: 4px; }
+    .related-panel.visible { display: block; }
+    .related-section { margin-bottom: 10px; }
+    .related-section:last-child { margin-bottom: 0; }
+    .related-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-bottom: 5px; }
+    .related-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+    .pill-synonym  { background: #d1fae5; color: #065f46; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 500; }
+    .pill-antonym  { background: #fee2e2; color: #991b1b; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 500; }
+    .pill-family   { background: #ede9fe; color: #5b21b6; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 500; }
+
+    /* ═══════════════════════════════════ LIBRARY ═════════════════════════════ */
+    #libraryPage .page-inner { max-width: var(--max-lib); }
+
+    /* Layout: sidebar + content */
+    .lib-layout { display: flex; gap: 16px; align-items: flex-start; }
+    .lib-sidebar { width: var(--sidebar-w); flex-shrink: 0; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .lib-content { flex: 1; min-width: 0; }
+
+    /* Sidebar */
+    .sidebar-header { padding: 12px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .sidebar-header span { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
+    .sidebar-item { padding: 9px 14px; cursor: pointer; font-size: 13px; border-left: 3px solid transparent; transition: background .1s, border-color .1s; display: flex; align-items: center; justify-content: space-between; }
+    .sidebar-item:hover { background: #f8faff; }
+    .sidebar-item.active { border-left-color: var(--primary); background: #eef2ff; font-weight: 600; color: var(--primary); }
+    .sidebar-item .item-actions { display: none; gap: 4px; }
+    .sidebar-item:hover .item-actions { display: flex; }
+    .sidebar-topic { padding-left: 26px; font-size: 12px; color: #4b5563; }
+    .sidebar-section { border-bottom: 1px solid var(--border); }
+    .sidebar-section:last-child { border-bottom: none; }
+    .sidebar-col-header { padding: 9px 14px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; border-left: 3px solid transparent; transition: background .1s; }
+    .sidebar-col-header:hover { background: #f8faff; }
+    .sidebar-col-header.active { border-left-color: var(--primary); background: #eef2ff; color: var(--primary); }
+    .sidebar-col-header .toggle-icon { margin-left: auto; font-size: 10px; color: var(--muted); }
+    .sidebar-col-topics { display: none; }
+    .sidebar-col-topics.open { display: block; }
+    .btn-icon { background: none; border: none; cursor: pointer; padding: 2px 5px; border-radius: 4px; font-size: 13px; color: var(--muted); transition: color .1s, background .1s; }
+    .btn-icon:hover { background: #f3f4f6; color: var(--danger); }
+
+    /* Toolbar */
+    .lib-toolbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+    .lib-toolbar input { flex: 1; min-width: 160px; max-width: 320px; }
+    .lib-count { margin-left: auto; font-size: 13px; color: var(--muted); white-space: nowrap; }
+
+    /* Table */
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-top: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th { text-align: left; padding: 10px 14px; font-size: 11px; text-transform: uppercase; color: var(--muted); font-weight: 600; letter-spacing: .5px; background: #fafbff; position: sticky; top: 0; border-bottom: 2px solid var(--border); }
+    tbody tr { border-bottom: 1px solid #f3f4f6; transition: background .1s; }
+    tbody tr:hover { background: #fafbff; }
+    tbody td { padding: 10px 14px; vertical-align: top; }
+    .col-word     { font-weight: 600; color: var(--text); }
+    .col-phonetic { color: var(--muted); font-style: italic; font-size: 12px; }
+    .col-meanings { color: #374151; line-height: 1.55; }
+    .col-reviews  { text-align: center; color: var(--muted); }
+    .rel-pills    { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 3px; }
+
+    /* Cards (mobile) */
+    .word-cards { display: none; }
+    .word-card { background: var(--surface); border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.06); display: flex; gap: 10px; align-items: flex-start; }
+    .word-card-body { flex: 1; min-width: 0; }
+    .word-card-word    { font-weight: 700; font-size: 15px; }
+    .word-card-phonetic { font-size: 12px; color: var(--muted); font-style: italic; margin-top: 1px; }
+    .word-card-meanings { font-size: 13px; color: #374151; margin-top: 5px; line-height: 1.5; }
+    .word-card-tags    { margin-top: 5px; }
+    .word-card-meta    { font-size: 11px; color: var(--muted); margin-top: 4px; }
+    .word-card-rels    { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 3px; }
+
+    .empty-state { text-align: center; padding: 60px 20px; color: var(--muted); font-size: 15px; }
+    .empty-icon { font-size: 44px; margin-bottom: 10px; }
+
+    /* Modal */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 100; align-items: center; justify-content: center; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: var(--surface); border-radius: var(--radius); padding: 24px; width: 90%; max-width: 400px; box-shadow: 0 8px 32px rgba(0,0,0,.18); }
+    .modal h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+    .modal .field { margin-bottom: 14px; }
+    .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 20px; }
+
+    /* ═══════════════════════════════════ IMPORT / EXPORT ═════════════════════ */
+    #importExportPage .page-inner { max-width: var(--max-import); }
+
+    .drop-zone { border: 2px dashed #d1d5db; border-radius: 10px; padding: clamp(16px, 4vw, 28px); text-align: center; cursor: pointer; color: var(--muted); font-size: 14px; transition: all .15s; margin-bottom: 12px; }
+    .drop-zone:hover, .drop-zone.drag-over { border-color: var(--primary); background: #f0f5ff; }
+    .drop-zone input[type="file"] { display: none; }
+    .drop-file-name { margin-top: 5px; font-size: 12px; color: var(--primary); }
+
+    .paste-label { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    textarea.paste-area { min-height: 120px; resize: vertical; font-family: monospace; font-size: 12px; margin-bottom: 12px; }
+
+    .import-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    .import-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .import-result { padding: 12px 16px; border-radius: 10px; font-size: 13px; display: none; margin-top: 12px; }
+    .import-result.visible { display: block; }
+    .import-result.ok  { background: #dcfce7; color: #166534; }
+    .import-result.err { background: #fee2e2; color: #991b1b; }
+    .import-result ul  { margin-top: 8px; padding-left: 18px; }
+
+    .export-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* ═══════════════════════════════════ RESPONSIVE ══════════════════════════ */
+    @media (max-width: 639px) {
+      .top-nav { display: none; }
+      .bot-nav { display: block; }
+      .app-main { order: -1; }
+      .page { padding-bottom: calc(var(--mob-nav-h) + 12px); }
+
+      .study-controls { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; }
+      .study-controls .field-mode  { grid-column: 1 / 3; }
+      .study-controls .field-scope { grid-column: 1 / 3; }
+      .study-controls .field-srs   { grid-column: 1; align-self: center; }
+      .study-controls .btn-next    { grid-column: 1 / 3; }
+      .study-controls .btn-reset   { grid-column: 2; align-self: center; }
+
+      .answer-row { flex-direction: column; }
+      .answer-row .btn { width: 100%; }
+
+      /* Library: hide sidebar, show mobile filter */
+      .lib-sidebar { display: none; }
+      .lib-layout  { flex-direction: column; }
+      .table-wrap  { display: none; }
+      .word-cards  { display: block; }
+
+      .lib-toolbar { flex-direction: column; align-items: stretch; }
+      .lib-toolbar input { max-width: 100%; }
+      .lib-count { margin-left: 0; text-align: right; }
+
+      .import-opts { grid-template-columns: 1fr; }
+      .import-actions { flex-direction: column; }
+      .import-actions .btn { width: 100%; }
+      .export-actions { flex-direction: column; }
+      .export-actions .btn { width: 100%; }
+    }
+
+    @media (min-width: 640px) and (max-width: 1023px) {
+      .study-controls { grid-template-columns: 1fr auto auto auto; grid-template-rows: 1fr; }
+      .study-controls .field-mode  { grid-column: 1; }
+      .study-controls .field-scope { display: none; }
+      .study-controls .field-srs   { grid-column: 2; align-self: end; }
+      .study-controls .btn-next    { grid-column: 3; align-self: end; }
+      .study-controls .btn-reset   { grid-column: 4; align-self: end; }
+      .col-hide-tablet { display: none; }
+      .lib-sidebar { width: 200px; }
+    }
+
+    @media (min-width: 1024px) {
+      .study-controls { grid-template-columns: 1fr 1fr auto auto auto; grid-template-rows: 1fr; }
+      .study-controls .field-mode  { grid-column: 1; }
+      .study-controls .field-scope { grid-column: 2; }
+      .study-controls .field-srs   { grid-column: 3; align-self: end; }
+      .study-controls .btn-next    { grid-column: 4; align-self: end; }
+      .study-controls .btn-reset   { grid-column: 5; align-self: end; }
+    }
+
+    @media (min-width: 1920px) {
+      :root { --max-study: 860px; --max-import: 860px; font-size: 16px; }
+      .top-nav { height: 58px; }
+      .top-nav .logo { font-size: 17px; }
+      .top-nav .nav-btn { font-size: 15px; height: 58px; padding: 0 22px; }
+      .stat-val { font-size: 32px; }
+      .card { padding: 28px 32px; margin-bottom: 20px; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <nav class="top-nav">
+    <span class="logo">Reemember</span>
+    <button class="nav-btn active" id="navStudy"        onclick="switchTab('study')">Study</button>
+    <button class="nav-btn"        id="navLibrary"      onclick="switchTab('library')">Library</button>
+    <button class="nav-btn"        id="navImportExport" onclick="switchTab('importExport')">Import / Export</button>
+  </nav>
+
+  <main class="app-main">
+
+    <!-- ══ STUDY ══════════════════════════════════════════════════════════════ -->
+    <div id="studyPage" class="page active">
+      <div class="page-inner">
+
+        <div class="card">
+          <div class="card-title">Session</div>
+          <div class="study-controls">
+            <div class="field field-mode">
+              <label for="mode">Mode</label>
+              <select id="mode">
+                <option value="hybrid">Hybrid (EN↔VI)</option>
+                <option value="en-vi">EN → VI</option>
+                <option value="vi-en">VI → EN</option>
+              </select>
+            </div>
+            <div class="field field-scope">
+              <label for="studyScope">Scope</label>
+              <select id="studyScope" onchange="onStudyScopeChange()">
+                <option value="">All words</option>
+              </select>
+            </div>
+            <div class="field field-srs">
+              <label>SRS</label>
+              <div class="toggle-row">
+                <label class="toggle">
+                  <input type="checkbox" id="srsToggle" checked />
+                  <span class="slider"></span>
+                </label>
+                <span class="toggle-label" id="srsLabel">On</span>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-next" id="nextBtn">Next question</button>
+            <button class="btn btn-ghost  btn-reset" id="resetBtn">Reset stats</button>
+          </div>
+        </div>
+
+        <div class="stats-bar">
+          <div class="stat-cell"><div class="stat-val" id="statAsked">0</div><div class="stat-lbl">Asked</div></div>
+          <div class="stat-cell"><div class="stat-val" id="statCorrect">0</div><div class="stat-lbl">Correct</div></div>
+          <div class="stat-cell"><div class="stat-val" id="statAccuracy">—</div><div class="stat-lbl">Accuracy</div></div>
+        </div>
+
+        <div class="card question-card" id="questionCard">
+          <div class="prompt" id="promptText"></div>
+          <div class="meta-grid" id="metaGrid"></div>
+          <ul class="examples-list" id="examplesList"></ul>
+          <div class="answer-row">
+            <input type="text" id="answerInput" placeholder="Your answer…" autocomplete="off" />
+            <button class="btn btn-primary" id="submitBtn">Submit</button>
+          </div>
+          <div class="result-box" id="resultBox"></div>
+          <div class="related-panel" id="relatedPanel">
+            <div id="synonymsSection" class="related-section" style="display:none">
+              <div class="related-lbl">Synonyms</div>
+              <div class="related-pills" id="synonymsPills"></div>
+            </div>
+            <div id="antonymsSection" class="related-section" style="display:none">
+              <div class="related-lbl">Antonyms</div>
+              <div class="related-pills" id="antonymsPills"></div>
+            </div>
+            <div id="familySection" class="related-section" style="display:none">
+              <div class="related-lbl">Word Family</div>
+              <div class="related-pills" id="familyPills"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ LIBRARY ════════════════════════════════════════════════════════════ -->
+    <div id="libraryPage" class="page">
+      <div class="page-inner">
+        <div class="lib-layout">
+
+          <!-- Sidebar: collections & topics -->
+          <div class="lib-sidebar" id="libSidebar">
+            <div class="sidebar-header">
+              <span>Collections</span>
+              <button class="btn-icon" title="New collection" onclick="openNewCollectionModal()">+</button>
+            </div>
+            <div class="sidebar-section">
+              <div class="sidebar-item active" id="sidebarAll" onclick="setScopeFilter(null, null)">
+                All words
+              </div>
+            </div>
+            <div id="sidebarCollections"></div>
+          </div>
+
+          <!-- Main library content -->
+          <div class="lib-content">
+            <div class="card" style="padding-bottom:0">
+              <div class="lib-toolbar">
+                <input type="text" id="searchInput" placeholder="Search words, meanings, tags…" oninput="filterLibrary()" />
+                <button class="btn btn-ghost btn-sm" onclick="loadLibrary()">↻ Refresh</button>
+                <span class="lib-count" id="libCount"></span>
+              </div>
+
+              <div class="table-wrap">
+                <table id="libTable">
+                  <thead>
+                    <tr>
+                      <th style="min-width:130px">Word</th>
+                      <th style="min-width:110px" class="col-hide-tablet">Phonetic</th>
+                      <th>Meanings &amp; Relations</th>
+                      <th style="min-width:130px" class="col-hide-tablet">Tags</th>
+                      <th style="width:72px" class="col-reviews">Reviews</th>
+                      <th style="width:72px"></th>
+                    </tr>
+                  </thead>
+                  <tbody id="libTableBody"></tbody>
+                </table>
+              </div>
+
+              <div class="word-cards" id="libCards"></div>
+
+              <div id="libEmpty" class="empty-state" style="display:none">
+                <div class="empty-icon">📚</div>
+                No words yet — import some vocabulary to get started.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ IMPORT / EXPORT ════════════════════════════════════════════════════ -->
+    <div id="importExportPage" class="page">
+      <div class="page-inner">
+
+        <div class="card">
+          <div class="card-title">Import vocabulary</div>
+
+          <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+            <input type="file" id="fileInput" accept=".json" onchange="onFileSelected(event)" />
+            <div>Click to choose a <strong>.json</strong> file, or drag &amp; drop here</div>
+            <div class="drop-file-name" id="fileName"></div>
+          </div>
+
+          <div class="paste-label">or paste JSON content directly:</div>
+          <textarea class="paste-area" id="importText" placeholder='[{"word":"example","definitions":[{"pos":"noun","meaning":"ví dụ"}],"examples":[],"synonyms":["instance"],"antonyms":[],"family_words":["exemplary"],"metadata":{"tags":[]}}]'></textarea>
+
+          <div class="import-opts">
+            <div class="field">
+              <label for="importCollection">Collection (optional)</label>
+              <input type="text" id="importCollection" placeholder="e.g. 1000 Common Words" />
+            </div>
+            <div class="field">
+              <label for="importTopic">Topic (optional)</label>
+              <input type="text" id="importTopic" placeholder="e.g. Food &amp; Drink" />
+            </div>
+          </div>
+
+          <div class="import-actions">
+            <button class="btn btn-primary" id="importBtn" onclick="doImport()">Import</button>
+            <button class="btn btn-ghost"   onclick="clearImport()">Clear</button>
+          </div>
+
+          <div class="import-result" id="importResult"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Export vocabulary</div>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:16px">
+            Save the entire vocabulary database as a JSON file (includes synonyms, antonyms, word family).
+          </p>
+          <div class="export-actions">
+            <button class="btn btn-success" onclick="doExport()">Save JSON…</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <nav class="bot-nav">
+    <div class="bot-nav-inner">
+      <button class="bot-nav-btn active" id="botNavStudy"        onclick="switchTab('study')"><span class="icon">📖</span><span>Study</span></button>
+      <button class="bot-nav-btn"        id="botNavLibrary"      onclick="switchTab('library')"><span class="icon">📚</span><span>Library</span></button>
+      <button class="bot-nav-btn"        id="botNavImportExport" onclick="switchTab('importExport')"><span class="icon">⬆</span><span>Import</span></button>
+    </div>
+  </nav>
+
+</div>
+
+<!-- Collection modal -->
+<div class="modal-overlay" id="collectionModal">
+  <div class="modal">
+    <h3 id="collectionModalTitle">New Collection</h3>
+    <div class="field"><label for="colNameInput">Name</label><input type="text" id="colNameInput" placeholder="Collection name" /></div>
+    <div class="field"><label for="colDescInput">Description (optional)</label><input type="text" id="colDescInput" placeholder="Brief description" /></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost btn-sm" onclick="closeModal('collectionModal')">Cancel</button>
+      <button class="btn btn-primary btn-sm" onclick="saveCollection()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Topic modal -->
+<div class="modal-overlay" id="topicModal">
+  <div class="modal">
+    <h3 id="topicModalTitle">New Topic</h3>
+    <div class="field"><label for="topicNameInput">Name</label><input type="text" id="topicNameInput" placeholder="Topic name" /></div>
+    <div class="field"><label for="topicDescInput">Description (optional)</label><input type="text" id="topicDescInput" placeholder="Brief description" /></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost btn-sm" onclick="closeModal('topicModal')">Cancel</button>
+      <button class="btn btn-primary btn-sm" onclick="saveTopic()">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ── Tauri bridge ─────────────────────────────────────────────────────────── */
+  function invoke(cmd, args) {
+    return window.__TAURI_INTERNALS__.invoke(cmd, args);
+  }
+
+  /* ── Tab routing ──────────────────────────────────────────────────────────── */
+  const TAB_IDS = ['study', 'library', 'importExport'];
+
+  function switchTab(name) {
+    TAB_IDS.forEach(t => {
+      document.getElementById(t + 'Page').classList.remove('active');
+      const s = t.charAt(0).toUpperCase() + t.slice(1);
+      const top = document.getElementById('nav' + s);
+      const bot = document.getElementById('botNav' + s);
+      if (top) top.classList.remove('active');
+      if (bot) bot.classList.remove('active');
+    });
+    document.getElementById(name + 'Page').classList.add('active');
+    const s = name.charAt(0).toUpperCase() + name.slice(1);
+    const top = document.getElementById('nav' + s);
+    const bot = document.getElementById('botNav' + s);
+    if (top) top.classList.add('active');
+    if (bot) bot.classList.add('active');
+    if (name === 'library') loadLibrary();
+  }
+
+  /* ══════════════════════════════════════════════════════════════════════════
+     COLLECTIONS STATE
+  ══════════════════════════════════════════════════════════════════════════ */
+  let allCollections = [];
+  let allTopics = {};          // { collectionId: [Topic, ...] }
+  let scopeFilter = { collectionId: null, topicId: null };
+  let editingCollectionId = null;
+  let editingTopicId = null;
+  let editingTopicCollectionId = null;
+
+  async function loadCollections() {
+    try {
+      allCollections = await invoke('list_collections');
+      for (const col of allCollections) {
+        allTopics[col.id] = await invoke('list_topics', { collectionId: col.id });
+      }
+      renderSidebar();
+      populateStudyScope();
+    } catch (err) {
+      console.error('load collections:', err);
+    }
+  }
+
+  function renderSidebar() {
+    const container = document.getElementById('sidebarCollections');
+    container.innerHTML = '';
+
+    for (const col of allCollections) {
+      const topics = allTopics[col.id] || [];
+      const isColActive = scopeFilter.collectionId === col.id && scopeFilter.topicId === null;
+      const colDiv = document.createElement('div');
+      colDiv.className = 'sidebar-section';
+
+      const colHeader = document.createElement('div');
+      colHeader.className = 'sidebar-col-header' + (isColActive ? ' active' : '');
+      colHeader.innerHTML = `
+        <span>${esc(col.name)}</span>
+        <span class="toggle-icon" id="togIcon${col.id}">▶</span>
+      `;
+      colHeader.addEventListener('click', () => {
+        setScopeFilter(col.id, null);
+        toggleTopics(col.id);
+      });
+
+      const actionsDiv = document.createElement('div');
+      actionsDiv.className = 'item-actions';
+      actionsDiv.innerHTML = `
+        <button class="btn-icon" title="Add topic" onclick="openNewTopicModal(${col.id}); event.stopPropagation()">+</button>
+        <button class="btn-icon" title="Edit" onclick="openEditCollectionModal(${col.id}); event.stopPropagation()">✎</button>
+        <button class="btn-icon" title="Delete" onclick="doDeleteCollection(${col.id}); event.stopPropagation()">✕</button>
+      `;
+      colHeader.appendChild(actionsDiv);
+
+      const topicsDiv = document.createElement('div');
+      topicsDiv.className = 'sidebar-col-topics';
+      topicsDiv.id = 'topics_' + col.id;
+
+      for (const topic of topics) {
+        const isTopicActive = scopeFilter.topicId === topic.id;
+        const topicEl = document.createElement('div');
+        topicEl.className = 'sidebar-item sidebar-topic' + (isTopicActive ? ' active' : '');
+        topicEl.innerHTML = `
+          <span>${esc(topic.name)}</span>
+          <div class="item-actions">
+            <button class="btn-icon" title="Edit" onclick="openEditTopicModal(${topic.id}, ${col.id}); event.stopPropagation()">✎</button>
+            <button class="btn-icon" title="Delete" onclick="doDeleteTopic(${topic.id}); event.stopPropagation()">✕</button>
+          </div>
+        `;
+        topicEl.addEventListener('click', () => setScopeFilter(col.id, topic.id));
+        topicsDiv.appendChild(topicEl);
+      }
+
+      colDiv.appendChild(colHeader);
+      colDiv.appendChild(topicsDiv);
+      container.appendChild(colDiv);
+
+      // Keep open if a topic in this collection is selected
+      if (scopeFilter.collectionId === col.id) {
+        topicsDiv.classList.add('open');
+        document.getElementById('togIcon' + col.id).textContent = '▼';
+      }
+    }
+  }
+
+  function toggleTopics(colId) {
+    const el = document.getElementById('topics_' + colId);
+    const icon = document.getElementById('togIcon' + colId);
+    if (!el) return;
+    const open = el.classList.toggle('open');
+    icon.textContent = open ? '▼' : '▶';
+  }
+
+  function setScopeFilter(collectionId, topicId) {
+    scopeFilter = { collectionId, topicId };
+    // Update all-words item
+    document.getElementById('sidebarAll').classList.toggle('active', collectionId === null);
+    renderSidebar();
+    filterLibrary();
+  }
+
+  function populateStudyScope() {
+    const sel = document.getElementById('studyScope');
+    const prev = sel.value;
+    sel.innerHTML = '<option value="">All words</option>';
+    for (const col of allCollections) {
+      const topics = allTopics[col.id] || [];
+      if (topics.length === 0) continue;
+      const optgroup = document.createElement('optgroup');
+      optgroup.label = col.name;
+      for (const topic of topics) {
+        const opt = document.createElement('option');
+        opt.value = 'topic:' + topic.id;
+        opt.textContent = topic.name;
+        optgroup.appendChild(opt);
+      }
+      sel.appendChild(optgroup);
+    }
+    if (prev) sel.value = prev;
+  }
+
+  function onStudyScopeChange() {
+    // Reset current question when scope changes
+    currentQuestion = null;
+    document.getElementById('questionCard').classList.remove('visible');
+    hideResult();
+  }
+
+  function getStudyTopicId() {
+    const v = document.getElementById('studyScope').value;
+    if (!v) return null;
+    const match = v.match(/^topic:(\d+)$/);
+    return match ? parseInt(match[1]) : null;
+  }
+
+  /* ── Collection CRUD modals ───────────────────────────────────────────────── */
+  function openModal(id) { document.getElementById(id).classList.add('open'); }
+  function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+  function openNewCollectionModal() {
+    editingCollectionId = null;
+    document.getElementById('collectionModalTitle').textContent = 'New Collection';
+    document.getElementById('colNameInput').value = '';
+    document.getElementById('colDescInput').value = '';
+    openModal('collectionModal');
+  }
+
+  function openEditCollectionModal(id) {
+    const col = allCollections.find(c => c.id === id);
+    if (!col) return;
+    editingCollectionId = id;
+    document.getElementById('collectionModalTitle').textContent = 'Edit Collection';
+    document.getElementById('colNameInput').value = col.name;
+    document.getElementById('colDescInput').value = col.description || '';
+    openModal('collectionModal');
+  }
+
+  async function saveCollection() {
+    const name = document.getElementById('colNameInput').value.trim();
+    const desc = document.getElementById('colDescInput').value.trim() || null;
+    if (!name) { alert('Name is required.'); return; }
+    try {
+      if (editingCollectionId) {
+        await invoke('update_collection', { payload: { id: editingCollectionId, name, description: desc } });
+      } else {
+        await invoke('create_collection', { payload: { name, description: desc } });
+      }
+      closeModal('collectionModal');
+      await loadCollections();
+    } catch (err) { alert('Error: ' + err); }
+  }
+
+  async function doDeleteCollection(id) {
+    const col = allCollections.find(c => c.id === id);
+    if (!confirm(`Delete collection "${col?.name}"? This will also delete all its topics and remove words from those topics.`)) return;
+    try {
+      await invoke('delete_collection', { id });
+      if (scopeFilter.collectionId === id) setScopeFilter(null, null);
+      await loadCollections();
+      filterLibrary();
+    } catch (err) { alert('Error: ' + err); }
+  }
+
+  function openNewTopicModal(collectionId) {
+    editingTopicId = null;
+    editingTopicCollectionId = collectionId;
+    document.getElementById('topicModalTitle').textContent = 'New Topic';
+    document.getElementById('topicNameInput').value = '';
+    document.getElementById('topicDescInput').value = '';
+    openModal('topicModal');
+  }
+
+  function openEditTopicModal(topicId, collectionId) {
+    const topics = allTopics[collectionId] || [];
+    const topic = topics.find(t => t.id === topicId);
+    if (!topic) return;
+    editingTopicId = topicId;
+    editingTopicCollectionId = collectionId;
+    document.getElementById('topicModalTitle').textContent = 'Edit Topic';
+    document.getElementById('topicNameInput').value = topic.name;
+    document.getElementById('topicDescInput').value = topic.description || '';
+    openModal('topicModal');
+  }
+
+  async function saveTopic() {
+    const name = document.getElementById('topicNameInput').value.trim();
+    const desc = document.getElementById('topicDescInput').value.trim() || null;
+    if (!name) { alert('Name is required.'); return; }
+    try {
+      if (editingTopicId) {
+        await invoke('update_topic', { payload: { id: editingTopicId, name, description: desc } });
+      } else {
+        await invoke('create_topic', { payload: { collectionId: editingTopicCollectionId, name, description: desc } });
+      }
+      closeModal('topicModal');
+      await loadCollections();
+    } catch (err) { alert('Error: ' + err); }
+  }
+
+  async function doDeleteTopic(id) {
+    let topicName = '';
+    for (const topics of Object.values(allTopics)) {
+      const t = topics.find(x => x.id === id);
+      if (t) { topicName = t.name; break; }
+    }
+    if (!confirm(`Delete topic "${topicName}"? Words in this topic will not be deleted.`)) return;
+    try {
+      await invoke('delete_topic', { id });
+      if (scopeFilter.topicId === id) setScopeFilter(scopeFilter.collectionId, null);
+      await loadCollections();
+      filterLibrary();
+    } catch (err) { alert('Error: ' + err); }
+  }
+
+  /* ══════════════════════════════════════════════════════════════════════════
+     STUDY
+  ══════════════════════════════════════════════════════════════════════════ */
+  let currentQuestion = null;
+  let session = { asked: 0, correct: 0 };
+
+  document.getElementById('srsToggle').addEventListener('change', function () {
+    document.getElementById('srsLabel').textContent = this.checked ? 'On' : 'Off';
+  });
+  document.getElementById('nextBtn').addEventListener('click', loadQuestion);
+  document.getElementById('submitBtn').addEventListener('click', submitAnswer);
+  document.getElementById('answerInput').addEventListener('keydown', e => { if (e.key === 'Enter') submitAnswer(); });
+  document.getElementById('resetBtn').addEventListener('click', () => { session = { asked: 0, correct: 0 }; renderStats(); });
+
+  async function loadQuestion() {
+    const mode       = document.getElementById('mode').value;
+    const srsEnabled = document.getElementById('srsToggle').checked;
+    const topicId    = getStudyTopicId();
+    hideResult();
+    document.getElementById('relatedPanel').classList.remove('visible');
+    document.getElementById('answerInput').value = '';
+    try {
+      const q = await invoke('next_question', { payload: { mode, srsEnabled, topicId } });
+      if (!q) { alert('No words found. Import vocabulary first.'); return; }
+      currentQuestion = q;
+      renderQuestion(q);
+    } catch (err) { alert('Error: ' + err); }
+  }
+
+  function renderQuestion(q) {
+    document.getElementById('promptText').textContent = q.prompt;
+
+    const grid = document.getElementById('metaGrid');
+    grid.innerHTML = '';
+    if (q.word)     grid.innerHTML += metaItem('Word',     esc(q.word));
+    if (q.phonetic) grid.innerHTML += metaItem('Phonetic', esc(q.phonetic));
+
+    const list = document.getElementById('examplesList');
+    list.innerHTML = '';
+    (q.examples || []).forEach(ex => {
+      const li = document.createElement('li');
+      li.textContent = ex;
+      list.appendChild(li);
+    });
+
+    document.getElementById('questionCard').classList.add('visible');
+    document.getElementById('answerInput').focus();
+  }
+
+  function metaItem(label, val) {
+    return `<div class="meta-item"><div class="meta-lbl">${label}</div><div class="meta-val">${val}</div></div>`;
+  }
+
+  async function submitAnswer() {
+    if (!currentQuestion) return;
+    const answer = document.getElementById('answerInput').value.trim();
+    if (!answer) return;
+    const srsEnabled = document.getElementById('srsToggle').checked;
+    try {
+      const result = await invoke('submit_answer', { payload: { answer, srsEnabled, question: currentQuestion } });
+      session.asked++;
+      if (result.correct) session.correct++;
+      renderStats();
+      showResult(result);
+      showRelated(currentQuestion);
+    } catch (err) { alert('Error: ' + err); }
+  }
+
+  function showResult(result) {
+    const box = document.getElementById('resultBox');
+    if (result.correct) {
+      box.className = 'result-box visible correct';
+      box.textContent = '✓ Correct!';
+    } else {
+      const accepted = result.acceptedAnswers.join(' / ');
+      box.className = 'result-box visible wrong';
+      box.textContent = `✗ Wrong. Accepted: ${accepted}`;
+    }
+  }
+
+  function showRelated(q) {
+    const panel = document.getElementById('relatedPanel');
+    let hasAny = false;
+
+    function showSection(secId, pillsId, words, cls) {
+      const sec = document.getElementById(secId);
+      const pills = document.getElementById(pillsId);
+      if (words && words.length > 0) {
+        pills.innerHTML = words.map(w => `<span class="${cls}">${esc(w)}</span>`).join('');
+        sec.style.display = '';
+        hasAny = true;
+      } else {
+        sec.style.display = 'none';
+      }
+    }
+
+    showSection('synonymsSection', 'synonymsPills', q.synonyms,    'pill-synonym');
+    showSection('antonymsSection', 'antonymsPills', q.antonyms,    'pill-antonym');
+    showSection('familySection',   'familyPills',   q.familyWords, 'pill-family');
+
+    panel.classList.toggle('visible', hasAny);
+  }
+
+  function hideResult() {
+    const box = document.getElementById('resultBox');
+    box.className = 'result-box';
+    box.textContent = '';
+    document.getElementById('relatedPanel').classList.remove('visible');
+  }
+
+  function renderStats() {
+    const { asked, correct } = session;
+    document.getElementById('statAsked').textContent   = asked;
+    document.getElementById('statCorrect').textContent = correct;
+    document.getElementById('statAccuracy').textContent =
+      asked === 0 ? '—' : Math.round((correct / asked) * 100) + '%';
+  }
+
+  /* ══════════════════════════════════════════════════════════════════════════
+     LIBRARY
+  ══════════════════════════════════════════════════════════════════════════ */
+  let allWords = [];
+
+  async function loadLibrary() {
+    document.getElementById('libTableBody').innerHTML =
+      `<tr><td colspan="6" style="padding:20px;color:var(--muted)">Loading…</td></tr>`;
+    document.getElementById('libCards').innerHTML = '<div style="padding:16px;color:var(--muted)">Loading…</div>';
+    document.getElementById('libEmpty').style.display = 'none';
+    try {
+      allWords = await invoke('list_words', { payload: null });
+      filterLibrary();
+    } catch (err) {
+      document.getElementById('libTableBody').innerHTML =
+        `<tr><td colspan="6" style="padding:20px;color:var(--danger)">Error: ${esc(String(err))}</td></tr>`;
+    }
+  }
+
+  function filterLibrary() {
+    const q = document.getElementById('searchInput').value.toLowerCase();
+    let filtered = allWords;
+
+    // Scope filter (sidebar)
+    if (scopeFilter.topicId !== null) {
+      // We'd need the server to filter; for now, show all and note we'd need assignment data
+      // Actually we re-fetch with scope if needed:
+    }
+
+    if (q) {
+      filtered = filtered.filter(w =>
+        w.word.toLowerCase().includes(q) ||
+        w.wordKey.toLowerCase().includes(q) ||
+        w.meanings.some(m => m.toLowerCase().includes(q)) ||
+        w.tags.some(t => t.toLowerCase().includes(q)) ||
+        (w.synonyms || []).some(s => s.toLowerCase().includes(q)) ||
+        (w.antonyms || []).some(s => s.toLowerCase().includes(q)) ||
+        (w.familyWords || []).some(s => s.toLowerCase().includes(q))
+      );
+    }
+
+    renderLibrary(filtered);
+  }
+
+  async function loadLibraryScoped() {
+    const payload = { collectionId: scopeFilter.collectionId, topicId: scopeFilter.topicId };
+    try {
+      allWords = await invoke('list_words', { payload });
+      filterLibrary();
+    } catch (err) {
+      console.error('scoped load:', err);
+    }
+  }
+
+  function renderLibrary(words) {
+    document.getElementById('libCount').textContent = `${words.length} word${words.length !== 1 ? 's' : ''}`;
+    const empty = words.length === 0;
+    document.getElementById('libEmpty').style.display = empty ? 'block' : 'none';
+
+    // Table
+    if (empty) {
+      document.getElementById('libTableBody').innerHTML = '';
+    } else {
+      document.getElementById('libTableBody').innerHTML = words.map(w => {
+        const phonetic = w.phonetic ? esc(w.phonetic) : `<span style="color:#d1d5db">—</span>`;
+        const meanings = w.meanings.map(m => esc(m)).join('<br>');
+        const tags = w.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('');
+        const rels = buildRelPills(w);
+        const wk = esc(w.wordKey); const wd = esc(w.word);
+        return `<tr>
+          <td class="col-word">${esc(w.word)}</td>
+          <td class="col-phonetic col-hide-tablet">${phonetic}</td>
+          <td class="col-meanings">${meanings}${rels ? `<div class="rel-pills">${rels}</div>` : ''}</td>
+          <td class="col-hide-tablet">${tags}</td>
+          <td class="col-reviews">${w.reviewCount}</td>
+          <td><button class="btn btn-danger btn-sm" onclick="deleteWord('${wk}','${wd}')">Delete</button></td>
+        </tr>`;
+      }).join('');
+    }
+
+    // Cards (mobile)
+    document.getElementById('libCards').innerHTML = empty ? '' : words.map(w => {
+      const phonetic = w.phonetic ? `<div class="word-card-phonetic">${esc(w.phonetic)}</div>` : '';
+      const meanings = w.meanings.map(m => esc(m)).join(' · ');
+      const tags = w.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('');
+      const rels = buildRelPills(w);
+      const wk = esc(w.wordKey); const wd = esc(w.word);
+      return `<div class="word-card">
+        <div class="word-card-body">
+          <div class="word-card-word">${esc(w.word)}</div>
+          ${phonetic}
+          <div class="word-card-meanings">${meanings}</div>
+          ${tags ? `<div class="word-card-tags">${tags}</div>` : ''}
+          ${rels ? `<div class="word-card-rels">${rels}</div>` : ''}
+          <div class="word-card-meta">Reviews: ${w.reviewCount} · Examples: ${w.examplesCount}</div>
+        </div>
+        <button class="btn btn-danger btn-sm" onclick="deleteWord('${wk}','${wd}')">Delete</button>
+      </div>`;
+    }).join('');
+  }
+
+  function buildRelPills(w) {
+    let html = '';
+    (w.synonyms || []).forEach(s => { html += `<span class="pill-synonym">${esc(s)}</span>`; });
+    (w.antonyms || []).forEach(s => { html += `<span class="pill-antonym">${esc(s)}</span>`; });
+    (w.familyWords || []).forEach(s => { html += `<span class="pill-family">${esc(s)}</span>`; });
+    return html;
+  }
+
+  async function deleteWord(wordKey, wordDisplay) {
+    if (!confirm(`Delete "${wordDisplay}"? This cannot be undone.`)) return;
+    try {
+      await invoke('delete_word', { wordKey });
+      allWords = allWords.filter(w => w.wordKey !== wordKey);
+      filterLibrary();
+    } catch (err) { alert('Error: ' + err); }
+  }
+
+  /* ══════════════════════════════════════════════════════════════════════════
+     IMPORT / EXPORT
+  ══════════════════════════════════════════════════════════════════════════ */
+  const dropZone = document.getElementById('dropZone');
+  dropZone.addEventListener('dragover',  e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+  dropZone.addEventListener('dragleave', ()  => dropZone.classList.remove('drag-over'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file) readFile(file);
+  });
+
+  function onFileSelected(e) {
+    const file = e.target.files[0];
+    if (file) readFile(file);
+  }
+
+  function readFile(file) {
+    document.getElementById('fileName').textContent = file.name;
+    const reader = new FileReader();
+    reader.onload = ev => { document.getElementById('importText').value = ev.target.result; };
+    reader.readAsText(file, 'utf-8');
+  }
+
+  async function doImport() {
+    const content        = document.getElementById('importText').value.trim();
+    if (!content) { alert('Nothing to import.'); return; }
+
+    const collectionName = document.getElementById('importCollection').value.trim() || null;
+    const topicName      = document.getElementById('importTopic').value.trim() || null;
+
+    const btn = document.getElementById('importBtn');
+    btn.disabled = true; btn.textContent = 'Importing…';
+
+    try {
+      const report = await invoke('import_vocabulary', { payload: { content, collectionName, topicName } });
+      showImportResult(report);
+      // Refresh collections in case new ones were created
+      await loadCollections();
+    } catch (err) {
+      const box = document.getElementById('importResult');
+      box.className = 'import-result visible err';
+      box.textContent = 'Error: ' + err;
+    } finally {
+      btn.disabled = false; btn.textContent = 'Import';
+    }
+  }
+
+  function showImportResult(r) {
+    const box = document.getElementById('importResult');
+    const hasErrors = r.errors && r.errors.length > 0;
+    box.className = 'import-result visible ' + (hasErrors ? 'err' : 'ok');
+    let html = `Inserted: <strong>${r.insertedCount}</strong> &nbsp;·&nbsp; Updated: <strong>${r.updatedCount}</strong> &nbsp;·&nbsp; Skipped: <strong>${r.skippedCount}</strong>`;
+    if (hasErrors) {
+      html += `<br><br><strong>Errors (${r.errorCount}):</strong><ul>`;
+      r.errors.forEach(e => { html += `<li>${esc(e)}</li>`; });
+      html += '</ul>';
+    }
+    box.innerHTML = html;
+  }
+
+  function clearImport() {
+    document.getElementById('importText').value = '';
+    document.getElementById('fileName').textContent = '';
+    document.getElementById('fileInput').value = '';
+    document.getElementById('importCollection').value = '';
+    document.getElementById('importTopic').value = '';
+    const box = document.getElementById('importResult');
+    box.className = 'import-result'; box.innerHTML = '';
+  }
+
+  async function doExport() {
+    const btns = document.querySelectorAll('.export-actions .btn');
+    btns.forEach(b => { b.disabled = true; });
+    try {
+      const savedPath = await invoke('save_export');
+      if (savedPath) showExportResult('Saved to: ' + savedPath, false);
+    } catch (err) {
+      showExportResult('Export error: ' + err, true);
+    } finally {
+      btns.forEach(b => { b.disabled = false; });
+    }
+  }
+
+  function showExportResult(msg, isError) {
+    let box = document.getElementById('exportResult');
+    if (!box) {
+      box = document.createElement('div');
+      box.id = 'exportResult';
+      box.style.cssText = 'margin-top:12px;padding:11px 14px;border-radius:10px;font-size:13px;';
+      document.querySelector('.export-actions').after(box);
+    }
+    box.style.background = isError ? '#fee2e2' : '#dcfce7';
+    box.style.color       = isError ? '#991b1b' : '#166534';
+    box.textContent = msg;
+  }
+
+  /* ── Utility ──────────────────────────────────────────────────────────────── */
+  function esc(str) {
+    return String(str)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  /* ── Init ─────────────────────────────────────────────────────────────────── */
+  loadCollections();
+</script>
+</body>
+</html>

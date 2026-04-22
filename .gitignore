@@ -1,0 +1,64 @@
+# Rust build artifacts
+/target/
+/Cargo.lock
+*.rlib
+*.rmeta
+*.so
+*.dylib
+*.dll
+*.exe
+*.pdb
+*.d
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+
+# Tauri
+/src-tauri/target/
+src-tauri/tauri.conf.json.bak
+
+# Node modules (if using Node.js for Tauri frontend)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+
+# Generated files
+gen/schemas/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
