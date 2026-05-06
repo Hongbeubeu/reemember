@@ -280,6 +280,141 @@
       .study-controls .btn-reset   { grid-column: 5; align-self: end; }
     }
 
+    /* ══════════════════════════════════════════════════════ GRAMMAR ══════════ */
+    #grammarPage .page-inner { max-width: var(--max-lib); }
+
+    .grammar-layout { display: flex; gap: 16px; align-items: flex-start; }
+    .grammar-sidebar { width: var(--sidebar-w); flex-shrink: 0; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .grammar-content { flex: 1; min-width: 0; }
+
+    .grammar-sidebar-header { padding: 12px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .grammar-sidebar-header span { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
+    .grammar-doc-item { padding: 10px 14px; cursor: pointer; border-left: 3px solid transparent; transition: background .1s, border-color .1s; display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; }
+    .grammar-doc-item:hover { background: #f8faff; }
+    .grammar-doc-item.active { border-left-color: var(--primary); background: #eef2ff; }
+    .grammar-doc-item .item-actions { display: none; gap: 4px; flex-shrink: 0; }
+    .grammar-doc-item:hover .item-actions { display: flex; }
+    .grammar-doc-body { flex: 1; min-width: 0; }
+    .grammar-doc-title { font-size: 13px; font-weight: 600; color: var(--text); }
+    .grammar-doc-meta { font-size: 11px; color: var(--muted); margin-top: 3px; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .level-badge { padding: 1px 6px; border-radius: 999px; font-size: 10px; font-weight: 700; background: #eef2ff; color: var(--primary); }
+
+    /* Doc content view */
+    .grammar-doc-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+    .grammar-doc-header h2 { font-size: 20px; font-weight: 700; }
+    .grammar-doc-badges { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 4px; }
+    .category-badge { padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #f3f4f6; color: #374151; }
+    /* Markdown rendered body */
+    .md-body { font-size: 14px; line-height: 1.75; color: var(--text); margin-bottom: 16px; }
+    .md-body h1 { font-size: 20px; font-weight: 700; margin: 0 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+    .md-body h2 { font-size: 15px; font-weight: 700; margin: 20px 0 10px; color: var(--primary); text-transform: uppercase; letter-spacing: .4px; }
+    .md-body h3 { font-size: 14px; font-weight: 700; margin: 16px 0 8px; }
+    .md-body p  { margin: 0 0 10px; }
+    .md-body hr { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+    .md-body ul, .md-body ol { padding-left: 20px; margin: 0 0 10px; }
+    .md-body li { margin-bottom: 4px; }
+    .md-body code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-family: "Cascadia Code", "Fira Code", monospace; font-size: 12.5px; color: #d63369; }
+    .md-body pre { background: #1e1e2e; color: #cdd6f4; padding: 12px 14px; border-radius: 8px; overflow-x: auto; margin: 0 0 12px; }
+    .md-body pre code { background: none; color: inherit; padding: 0; font-size: 12px; }
+    .md-body blockquote { border-left: 3px solid var(--primary); background: #f0f5ff; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 0 0 12px; color: #374151; font-size: 13px; }
+    .md-body table { width: 100%; border-collapse: collapse; margin: 0 0 14px; font-size: 13px; }
+    .md-body th { background: #f3f4f6; font-weight: 700; text-align: left; padding: 7px 10px; border: 1px solid var(--border); white-space: nowrap; }
+    .md-body td { padding: 6px 10px; border: 1px solid var(--border); vertical-align: top; }
+    .md-body tr:nth-child(even) td { background: #fafafa; }
+    .md-body strong { font-weight: 700; }
+    .md-body em { font-style: italic; color: #555; }
+    .grammar-examples-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-bottom: 8px; }
+    .grammar-examples-list { list-style: none; margin-bottom: 20px; }
+    .grammar-examples-list li { background: #f8faff; border-left: 3px solid var(--primary); padding: 7px 12px; border-radius: 0 6px 6px 0; font-size: 13px; font-style: italic; color: #374151; margin-bottom: 6px; }
+
+    /* Exercise runner */
+    .exercise-runner { display: none; }
+    .exercise-runner.active { display: block; }
+    .exercise-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+    .exercise-progress { font-size: 13px; color: var(--muted); margin-left: auto; }
+    .exercise-type-badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--primary); background: #eef2ff; padding: 3px 8px; border-radius: 999px; }
+    .progress-bar-wrap { width: 100%; height: 4px; background: var(--border); border-radius: 2px; margin-bottom: 20px; }
+    .progress-bar-fill { height: 100%; background: var(--primary); border-radius: 2px; transition: width .3s; }
+
+    .exercise-prompt { font-size: 15px; line-height: 1.7; margin-bottom: 16px; font-weight: 500; }
+    .exercise-passage { background: #f8faff; border-left: 3px solid var(--primary); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.75; margin-bottom: 14px; color: #374151; }
+    .ex-input { width: 100%; margin-bottom: 14px; }
+
+    /* Multiple choice / select */
+    .mc-options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .mc-option { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; cursor: pointer; transition: border-color .15s, background .15s; }
+    .mc-option:hover:not(.disabled) { border-color: var(--primary); background: #f0f5ff; }
+    .mc-option.selected { border-color: var(--primary); background: #eef2ff; }
+    .mc-option.correct { border-color: var(--success) !important; background: #dcfce7 !important; }
+    .mc-option.wrong   { border-color: var(--danger)  !important; background: #fee2e2 !important; }
+    .mc-option.disabled { cursor: default; }
+    .mc-option input { margin-top: 2px; flex-shrink: 0; cursor: pointer; }
+    .mc-option-text { font-size: 14px; line-height: 1.5; }
+
+    /* Reorder */
+    .reorder-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: var(--muted); margin-bottom: 5px; }
+    .reorder-answer { display: flex; flex-wrap: wrap; gap: 6px; min-height: 44px; padding: 8px; border: 1.5px solid var(--primary); border-radius: 8px; background: #f8faff; margin-bottom: 6px; }
+    .reorder-bank   { display: flex; flex-wrap: wrap; gap: 6px; min-height: 36px; padding: 8px; border: 1.5px dashed var(--border); border-radius: 8px; margin-bottom: 14px; }
+    .word-chip { padding: 5px 12px; background: #eef2ff; color: var(--primary); border-radius: 999px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; transition: background .1s, opacity .1s; }
+    .word-chip:hover { background: #dde5ff; }
+    .word-chip.used { opacity: .35; cursor: default; pointer-events: none; }
+    .word-chip.in-answer { background: var(--primary); color: #fff; }
+    .reorder-clear { font-size: 12px; color: var(--muted); background: none; border: none; cursor: pointer; padding: 0; text-decoration: underline; }
+
+    /* Matching */
+    .matching-grid { display: grid; grid-template-columns: 1fr 24px 1fr; gap: 8px 10px; align-items: center; margin-bottom: 14px; }
+    .matching-left { font-size: 13px; padding: 8px 10px; background: #f8faff; border-radius: 6px; line-height: 1.4; }
+    .matching-arrow { color: var(--muted); text-align: center; }
+    .matching-select { font-size: 13px; width: 100%; border: 1.5px solid var(--border); border-radius: 6px; padding: 6px 8px; background: var(--surface); }
+    .matching-select.correct { border-color: var(--success); background: #dcfce7; }
+    .matching-select.wrong   { border-color: var(--danger);  background: #fee2e2; }
+
+    /* True/False/Not Given */
+    .tfn-buttons { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+    .tfn-btn { flex: 1; min-width: 90px; padding: 12px 8px; border: 1.5px solid var(--border); border-radius: 8px; background: var(--surface); font-size: 13px; font-weight: 700; cursor: pointer; transition: all .15s; text-align: center; }
+    .tfn-btn:hover:not(.disabled) { border-color: var(--primary); background: #eef2ff; color: var(--primary); }
+    .tfn-btn.selected { border-color: var(--primary); background: var(--primary); color: #fff; }
+    .tfn-btn.correct  { border-color: var(--success) !important; background: var(--success) !important; color: #fff !important; }
+    .tfn-btn.wrong    { border-color: var(--danger)  !important; background: #fee2e2 !important; color: var(--danger) !important; }
+    .tfn-btn.disabled { cursor: default; }
+
+    /* Explanation */
+    .exercise-explanation { background: #fffbeb; border-left: 3px solid #f59e0b; padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 13px; color: #78350f; margin-top: 12px; display: none; line-height: 1.6; }
+    .exercise-explanation.visible { display: block; }
+    .ex-result-label { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .ex-result-correct { color: var(--success); }
+    .ex-result-wrong   { color: var(--danger); }
+
+    /* Exercise nav buttons */
+    .exercise-nav { display: flex; gap: 10px; margin-top: 16px; align-items: center; }
+    .ex-score-inline { font-size: 13px; color: var(--muted); margin-left: auto; }
+
+    /* Score card */
+    .score-view { display: none; text-align: center; padding: 48px 20px; }
+    .score-view.active { display: block; }
+    .score-circle { width: 110px; height: 110px; border-radius: 50%; background: #eef2ff; border: 4px solid var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto 20px; }
+    .score-num { font-size: 32px; font-weight: 800; color: var(--primary); line-height: 1; }
+    .score-denom { font-size: 14px; color: var(--muted); }
+    .score-pct { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .score-msg { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+
+    /* Grammar import section */
+    .grammar-import-wrap { padding: 12px 14px; border-top: 1px solid var(--border); }
+    .grammar-import-drop { border: 2px dashed #d1d5db; border-radius: 8px; padding: 12px; text-align: center; cursor: pointer; color: var(--muted); font-size: 12px; transition: all .15s; }
+    .grammar-import-drop:hover { border-color: var(--primary); background: #f0f5ff; }
+    .grammar-import-drop input { display: none; }
+
+    @media (max-width: 639px) {
+      .grammar-sidebar { display: none; }
+      .grammar-layout  { flex-direction: column; }
+      .tfn-buttons { flex-direction: column; }
+      .tfn-btn { min-width: unset; }
+    }
+
+    @media (min-width: 640px) and (max-width: 1023px) {
+      .grammar-sidebar { width: 200px; }
+    }
+
     @media (min-width: 1920px) {
       :root { --max-study: 860px; --max-import: 860px; font-size: 16px; }
       .top-nav { height: 58px; }
@@ -298,6 +433,7 @@
     <button class="nav-btn active" id="navStudy"        onclick="switchTab('study')">Study</button>
     <button class="nav-btn"        id="navLibrary"      onclick="switchTab('library')">Library</button>
     <button class="nav-btn"        id="navImportExport" onclick="switchTab('importExport')">Import / Export</button>
+    <button class="nav-btn"        id="navGrammar"      onclick="switchTab('grammar')">Grammar</button>
   </nav>
 
   <main class="app-main">
@@ -476,6 +612,104 @@
       </div>
     </div>
 
+    <!-- ══ GRAMMAR ══════════════════════════════════════════════════════════════ -->
+    <div id="grammarPage" class="page">
+      <div class="page-inner">
+        <div class="grammar-layout">
+
+          <!-- Sidebar -->
+          <div class="grammar-sidebar">
+            <div class="grammar-sidebar-header">
+              <span>Grammar Docs</span>
+            </div>
+            <div id="grammarDocList"></div>
+            <div class="grammar-import-wrap">
+              <div class="grammar-import-drop" onclick="document.getElementById('grammarFileInput').click()">
+                <input type="file" id="grammarFileInput" accept=".md,.json" onchange="onGrammarFileSelected(event)" />
+                Import .md / .json
+              </div>
+            </div>
+          </div>
+
+          <!-- Main content -->
+          <div class="grammar-content">
+
+            <!-- Empty state -->
+            <div id="grammarEmpty" class="card">
+              <div class="empty-state">
+                <div class="empty-icon">📝</div>
+                Select a grammar document from the sidebar, or import a <strong>.md</strong> file.
+              </div>
+            </div>
+
+            <!-- Doc view -->
+            <div id="grammarDocView" class="card" style="display:none">
+              <div class="grammar-doc-header">
+                <div>
+                  <h2 id="gdocTitle"></h2>
+                  <div class="grammar-doc-badges">
+                    <span id="gdocLevel" class="level-badge" style="display:none"></span>
+                    <span id="gdocCategory" class="category-badge" style="display:none"></span>
+                  </div>
+                </div>
+                <button class="btn btn-primary btn-sm" id="startExercisesBtn" onclick="startExercises()" style="display:none">
+                  Start Exercises
+                </button>
+              </div>
+              <div id="gdocContent" class="md-body"></div>
+              <div id="gdocExamplesWrap" style="display:none">
+                <div class="grammar-examples-title">Examples</div>
+                <ul class="grammar-examples-list" id="gdocExamples"></ul>
+              </div>
+            </div>
+
+            <!-- Exercise runner -->
+            <div id="grammarExRunner" class="card" style="display:none">
+              <!-- Progress -->
+              <div class="exercise-header">
+                <button class="btn btn-ghost btn-sm" onclick="backToDocView()">← Back</button>
+                <span id="exTypeBadge" class="exercise-type-badge"></span>
+                <span id="exProgress" class="exercise-progress"></span>
+              </div>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar-fill" id="exProgressBar" style="width:0%"></div>
+              </div>
+
+              <!-- Exercise body (dynamic) -->
+              <div id="exBody"></div>
+
+              <!-- Explanation (shown after check) -->
+              <div class="exercise-explanation" id="exExplanation"></div>
+
+              <!-- Nav -->
+              <div class="exercise-nav">
+                <button class="btn btn-primary" id="exCheckBtn" onclick="checkExercise()">Check</button>
+                <button class="btn btn-ghost"   id="exNextBtn"  onclick="nextExercise()" style="display:none">Next →</button>
+                <span class="ex-score-inline" id="exScoreInline"></span>
+              </div>
+            </div>
+
+            <!-- Score view -->
+            <div id="grammarScore" class="card" style="display:none">
+              <div class="score-view active">
+                <div class="score-circle">
+                  <div class="score-num" id="scoreNum"></div>
+                  <div class="score-denom" id="scoreDenom"></div>
+                </div>
+                <div class="score-pct" id="scorePct"></div>
+                <div class="score-msg" id="scoreMsg"></div>
+                <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+                  <button class="btn btn-primary" onclick="startExercises()">Retry</button>
+                  <button class="btn btn-ghost"   onclick="backToDocView()">Back to doc</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <nav class="bot-nav">
@@ -483,6 +717,7 @@
       <button class="bot-nav-btn active" id="botNavStudy"        onclick="switchTab('study')"><span class="icon">📖</span><span>Study</span></button>
       <button class="bot-nav-btn"        id="botNavLibrary"      onclick="switchTab('library')"><span class="icon">📚</span><span>Library</span></button>
       <button class="bot-nav-btn"        id="botNavImportExport" onclick="switchTab('importExport')"><span class="icon">⬆</span><span>Import</span></button>
+      <button class="bot-nav-btn"        id="botNavGrammar"      onclick="switchTab('grammar')"><span class="icon">📝</span><span>Grammar</span></button>
     </div>
   </nav>
 
@@ -521,7 +756,7 @@
   }
 
   /* ── Tab routing ──────────────────────────────────────────────────────────── */
-  const TAB_IDS = ['study', 'library', 'importExport'];
+  const TAB_IDS = ['study', 'library', 'importExport', 'grammar'];
 
   function switchTab(name) {
     TAB_IDS.forEach(t => {
@@ -1115,8 +1350,567 @@
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
+  /* ── Markdown renderer ────────────────────────────────────────────────────── */
+  function renderMd(src) {
+    // Inline formatting: escape HTML, then apply bold / italic / inline-code
+    function fmt(s) {
+      return s
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*([^*\n]+?)\*/g, '<em>$1</em>')
+        .replace(/`([^`]+)`/g, '<code>$1</code>');
+    }
+
+    const lines = src.split('\n');
+    const out   = [];
+    let i = 0;
+
+    while (i < lines.length) {
+      const raw  = lines[i];
+      const line = raw.trim();
+
+      if (!line) { i++; continue; }
+
+      // Fenced code block  ```lang
+      if (line.startsWith('```')) {
+        const lang = line.slice(3).trim();
+        i++;
+        const code = [];
+        while (i < lines.length && !lines[i].trim().startsWith('```')) {
+          code.push(lines[i].replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'));
+          i++;
+        }
+        out.push(`<pre><code${lang ? ` class="language-${lang}"` : ''}>${code.join('\n')}</code></pre>`);
+        i++; // skip closing ```
+        continue;
+      }
+
+      // Horizontal rule
+      if (/^-{3,}$/.test(line)) { out.push('<hr>'); i++; continue; }
+
+      // Headings
+      const hm = line.match(/^(#{1,3})\s+(.+)/);
+      if (hm) {
+        const lvl = hm[1].length;
+        out.push(`<h${lvl}>${fmt(hm[2])}</h${lvl}>`);
+        i++; continue;
+      }
+
+      // Blockquote (consecutive lines)
+      if (line.startsWith('> ')) {
+        const bq = [];
+        while (i < lines.length && lines[i].trim().startsWith('> ')) {
+          bq.push(fmt(lines[i].trim().slice(2)));
+          i++;
+        }
+        out.push(`<blockquote>${bq.join('<br>')}</blockquote>`);
+        continue;
+      }
+
+      // Table (line starts with |, next line is separator |---|)
+      if (line.startsWith('|')) {
+        const rows = [];
+        while (i < lines.length && lines[i].trim().startsWith('|')) {
+          rows.push(lines[i].trim());
+          i++;
+        }
+        if (rows.length >= 2 && /^\|[-|\s:]+\|$/.test(rows[1])) {
+          const toCells = (row, tag) =>
+            row.split('|').slice(1, -1)
+               .map(c => `<${tag}>${fmt(c.trim())}</${tag}>`).join('');
+          const thead = `<thead><tr>${toCells(rows[0], 'th')}</tr></thead>`;
+          const tbody = rows.slice(2).map(r => `<tr>${toCells(r, 'td')}</tr>`).join('');
+          out.push(`<table>${thead}<tbody>${tbody}</tbody></table>`);
+        } else {
+          rows.forEach(r => out.push(`<p>${fmt(r)}</p>`));
+        }
+        continue;
+      }
+
+      // Unordered list
+      if (/^[-*]\s/.test(line)) {
+        const items = [];
+        while (i < lines.length && /^[-*]\s/.test(lines[i].trim())) {
+          items.push(`<li>${fmt(lines[i].trim().slice(2))}</li>`);
+          i++;
+        }
+        out.push(`<ul>${items.join('')}</ul>`);
+        continue;
+      }
+
+      // Ordered list
+      if (/^\d+\.\s/.test(line)) {
+        const items = [];
+        while (i < lines.length && /^\d+\.\s/.test(lines[i].trim())) {
+          items.push(`<li>${fmt(lines[i].trim().replace(/^\d+\.\s+/, ''))}</li>`);
+          i++;
+        }
+        out.push(`<ol>${items.join('')}</ol>`);
+        continue;
+      }
+
+      // Paragraph
+      out.push(`<p>${fmt(line)}</p>`);
+      i++;
+    }
+
+    return out.join('\n');
+  }
+
+  /* ══════════════════════════════════════════════════════════════════════════
+     GRAMMAR
+  ══════════════════════════════════════════════════════════════════════════ */
+  let grammarDocs = [];
+  let currentDocDetail = null;
+  let exIndex = 0;
+  let exSession = { correct: 0, total: 0 };
+  let exAnswered = false;
+  // reorder state
+  let reorderAnswer = [];
+  let reorderWords  = [];
+  // matching state
+  let matchingPairs = [];
+  let matchingShuffled = [];
+  // tfn state
+  let tfnSelected = null;
+
+  async function loadGrammarDocs() {
+    try {
+      grammarDocs = await invoke('list_grammar_docs');
+      renderGrammarList();
+    } catch (err) { console.error('loadGrammarDocs:', err); }
+  }
+
+  function renderGrammarList() {
+    const el = document.getElementById('grammarDocList');
+    if (grammarDocs.length === 0) {
+      el.innerHTML = '<div style="padding:14px;font-size:13px;color:var(--muted)">No docs yet. Import a JSON file.</div>';
+      return;
+    }
+    el.innerHTML = grammarDocs.map(d => `
+      <div class="grammar-doc-item" id="gditem_${d.id}" onclick="openGrammarDoc(${d.id})">
+        <div class="grammar-doc-body">
+          <div class="grammar-doc-title">${esc(d.title)}</div>
+          <div class="grammar-doc-meta">
+            ${d.level    ? `<span class="level-badge">${esc(d.level)}</span>` : ''}
+            ${d.category ? `<span>${esc(d.category)}</span>` : ''}
+            <span>${d.exerciseCount} ex.</span>
+          </div>
+        </div>
+        <div class="item-actions">
+          <button class="btn-icon" title="Delete" onclick="deleteGrammarDoc(${d.id}); event.stopPropagation()">✕</button>
+        </div>
+      </div>`).join('');
+  }
+
+  async function openGrammarDoc(id) {
+    document.querySelectorAll('.grammar-doc-item').forEach(e => e.classList.remove('active'));
+    const el = document.getElementById('gditem_' + id);
+    if (el) el.classList.add('active');
+    try {
+      currentDocDetail = await invoke('get_grammar_doc', { id });
+      if (!currentDocDetail) return;
+      showGrammarDocView();
+    } catch (err) { alert('Error: ' + err); }
+  }
+
+  function showGrammarDocView() {
+    const d = currentDocDetail;
+    document.getElementById('grammarEmpty').style.display   = 'none';
+    document.getElementById('grammarDocView').style.display = 'block';
+    document.getElementById('grammarExRunner').style.display = 'none';
+    document.getElementById('grammarScore').style.display   = 'none';
+
+    document.getElementById('gdocTitle').textContent = d.title;
+
+    const lvl = document.getElementById('gdocLevel');
+    if (d.level) { lvl.textContent = d.level; lvl.style.display = ''; }
+    else lvl.style.display = 'none';
+
+    const cat = document.getElementById('gdocCategory');
+    if (d.category) { cat.textContent = d.category; cat.style.display = ''; }
+    else cat.style.display = 'none';
+
+    document.getElementById('gdocContent').innerHTML = renderMd(d.content || '');
+
+    const exWrap = document.getElementById('gdocExamplesWrap');
+    const exList = document.getElementById('gdocExamples');
+    if (d.examples && d.examples.length > 0) {
+      exList.innerHTML = d.examples.map(ex => `<li>${esc(ex)}</li>`).join('');
+      exWrap.style.display = '';
+    } else {
+      exWrap.style.display = 'none';
+    }
+
+    const startBtn = document.getElementById('startExercisesBtn');
+    startBtn.style.display = d.exercises.length > 0 ? 'inline-flex' : 'none';
+  }
+
+  function backToDocView() {
+    if (!currentDocDetail) return;
+    showGrammarDocView();
+  }
+
+  function startExercises() {
+    if (!currentDocDetail || currentDocDetail.exercises.length === 0) return;
+    exIndex = 0;
+    exSession = { correct: 0, total: currentDocDetail.exercises.length };
+
+    document.getElementById('grammarDocView').style.display  = 'none';
+    document.getElementById('grammarExRunner').style.display = 'block';
+    document.getElementById('grammarScore').style.display    = 'none';
+
+    renderCurrentExercise();
+  }
+
+  function renderCurrentExercise() {
+    const exercises = currentDocDetail.exercises;
+    if (exIndex >= exercises.length) { showScore(); return; }
+
+    const ex = exercises[exIndex];
+    exAnswered = false;
+
+    // Progress
+    const pct = Math.round((exIndex / exercises.length) * 100);
+    document.getElementById('exProgress').textContent = `${exIndex + 1} / ${exercises.length}`;
+    document.getElementById('exProgressBar').style.width = pct + '%';
+    document.getElementById('exTypeBadge').textContent = ex.exerciseType.replace(/_/g, ' ');
+    document.getElementById('exScoreInline').textContent = '';
+
+    // Clear explanation
+    const expEl = document.getElementById('exExplanation');
+    expEl.className = 'exercise-explanation';
+    expEl.innerHTML = '';
+
+    // Buttons
+    document.getElementById('exCheckBtn').style.display = 'inline-flex';
+    document.getElementById('exNextBtn').style.display  = 'none';
+
+    // Render body
+    document.getElementById('exBody').innerHTML = buildExerciseHTML(ex);
+    attachExerciseListeners(ex);
+  }
+
+  function buildExerciseHTML(ex) {
+    const d = ex.data;
+    switch (ex.exerciseType) {
+
+      case 'fill_blank':
+      case 'error_correction':
+      case 'transformation':
+      case 'word_form':
+      case 'short_answer':
+        return `<div class="exercise-prompt">${esc(d.prompt || d.statement || '')}</div>
+                <input type="text" id="exInput" class="ex-input" placeholder="Your answer…" autocomplete="off" />`;
+
+      case 'multiple_choice':
+        return `<div class="exercise-prompt">${esc(d.prompt)}</div>
+                <div class="mc-options" id="mcOptions">
+                  ${(d.options || []).map((opt, i) =>
+                    `<label class="mc-option" id="mcopt_${i}">
+                       <input type="radio" name="mcopt" value="${i}" />
+                       <span class="mc-option-text">${esc(opt)}</span>
+                     </label>`).join('')}
+                </div>`;
+
+      case 'multiple_select':
+        return `<div class="exercise-prompt">${esc(d.prompt)}</div>
+                <div class="mc-options" id="msOptions">
+                  ${(d.options || []).map((opt, i) =>
+                    `<label class="mc-option" id="msopt_${i}">
+                       <input type="checkbox" value="${i}" />
+                       <span class="mc-option-text">${esc(opt)}</span>
+                     </label>`).join('')}
+                </div>`;
+
+      case 'reorder': {
+        reorderWords  = [...(d.words || [])].sort(() => Math.random() - 0.5);
+        reorderAnswer = [];
+        return `<div class="exercise-prompt">${esc(d.prompt)}</div>
+                <div class="reorder-label">Your sentence:</div>
+                <div class="reorder-answer" id="reorderAnswer"></div>
+                <div class="reorder-label">Word bank: <button class="reorder-clear" onclick="clearReorder()">Clear</button></div>
+                <div class="reorder-bank" id="reorderBank">
+                  ${reorderWords.map((w, i) =>
+                    `<button class="word-chip" id="rchip_${i}" onclick="addReorderWord(${i})">${esc(w)}</button>`).join('')}
+                </div>`;
+      }
+
+      case 'matching': {
+        matchingPairs    = d.pairs || [];
+        matchingShuffled = [...matchingPairs.map(p => p.right)].sort(() => Math.random() - 0.5);
+        return `<div class="exercise-prompt">${esc(d.prompt)}</div>
+                <div class="matching-grid">
+                  ${matchingPairs.map((pair, i) => `
+                    <div class="matching-left">${esc(pair.left)}</div>
+                    <div class="matching-arrow">→</div>
+                    <select class="matching-select" id="match_${i}">
+                      <option value="">— select —</option>
+                      ${matchingShuffled.map((r, j) => `<option value="${j}">${esc(r)}</option>`).join('')}
+                    </select>`).join('')}
+                </div>`;
+      }
+
+      case 'true_false_ng':
+        tfnSelected = null;
+        return `${d.passage ? `<div class="exercise-passage">${esc(d.passage)}</div>` : ''}
+                <div class="exercise-prompt">${esc(d.statement || d.prompt || '')}</div>
+                <div class="tfn-buttons">
+                  <button class="tfn-btn" id="tfn_true"      onclick="selectTFN('true',this)">TRUE</button>
+                  <button class="tfn-btn" id="tfn_false"     onclick="selectTFN('false',this)">FALSE</button>
+                  <button class="tfn-btn" id="tfn_not_given" onclick="selectTFN('not_given',this)">NOT GIVEN</button>
+                </div>`;
+
+      default:
+        return `<div class="exercise-prompt">(Unknown exercise type: ${esc(ex.exerciseType)})</div>`;
+    }
+  }
+
+  function attachExerciseListeners(ex) {
+    // Enter to check
+    const inp = document.getElementById('exInput');
+    if (inp) inp.addEventListener('keydown', e => { if (e.key === 'Enter' && !exAnswered) checkExercise(); });
+
+    // MC option click-to-select (radio)
+    document.querySelectorAll('#mcOptions .mc-option').forEach(label => {
+      label.addEventListener('click', () => {
+        document.querySelectorAll('#mcOptions .mc-option').forEach(l => l.classList.remove('selected'));
+        label.classList.add('selected');
+      });
+    });
+
+    // MS option click-to-toggle
+    document.querySelectorAll('#msOptions .mc-option').forEach(label => {
+      label.addEventListener('click', () => label.classList.toggle('selected'));
+    });
+  }
+
+  // Reorder helpers
+  function addReorderWord(i) {
+    if (exAnswered) return;
+    const chip = document.getElementById('rchip_' + i);
+    if (chip.classList.contains('used')) return;
+    chip.classList.add('used');
+    reorderAnswer.push({ i, word: reorderWords[i] });
+    renderReorderAnswer();
+  }
+  function removeReorderWord(i) {
+    if (exAnswered) return;
+    const idx = reorderAnswer.findIndex(x => x.i === i);
+    if (idx === -1) return;
+    reorderAnswer.splice(idx, 1);
+    const chip = document.getElementById('rchip_' + i);
+    if (chip) chip.classList.remove('used');
+    renderReorderAnswer();
+  }
+  function clearReorder() {
+    reorderAnswer = [];
+    reorderWords.forEach((_, i) => {
+      const c = document.getElementById('rchip_' + i);
+      if (c) c.classList.remove('used');
+    });
+    renderReorderAnswer();
+  }
+  function renderReorderAnswer() {
+    document.getElementById('reorderAnswer').innerHTML =
+      reorderAnswer.map(x =>
+        `<button class="word-chip in-answer" onclick="removeReorderWord(${x.i})">${esc(x.word)}</button>`
+      ).join('');
+  }
+
+  // TFN helper
+  function selectTFN(val, btn) {
+    if (exAnswered) return;
+    tfnSelected = val;
+    document.querySelectorAll('.tfn-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+  }
+
+  // ── Grading ──────────────────────────────────────────────────────────────────
+  function normalizeText(s) { return String(s).trim().toLowerCase().replace(/\s+/g, ' '); }
+
+  function checkExercise() {
+    if (exAnswered) return;
+    const ex = currentDocDetail.exercises[exIndex];
+    const d = ex.data;
+    let correct = false;
+
+    switch (ex.exerciseType) {
+
+      case 'fill_blank':
+      case 'error_correction':
+      case 'transformation':
+      case 'word_form': {
+        const inp = document.getElementById('exInput');
+        if (!inp || !inp.value.trim()) { alert('Please enter an answer.'); return; }
+        correct = normalizeText(inp.value) === normalizeText(d.answer);
+        markInput(inp, correct);
+        break;
+      }
+
+      case 'short_answer': {
+        const inp = document.getElementById('exInput');
+        if (!inp || !inp.value.trim()) { alert('Please enter an answer.'); return; }
+        const user = normalizeText(inp.value);
+        correct = (d.answer || []).some(a => normalizeText(a) === user);
+        markInput(inp, correct);
+        break;
+      }
+
+      case 'multiple_choice': {
+        const sel = document.querySelector('#mcOptions input[type=radio]:checked');
+        if (!sel) { alert('Please select an option.'); return; }
+        const idx = parseInt(sel.value);
+        correct = (d.options || [])[idx] === d.answer;
+        document.querySelectorAll('#mcOptions .mc-option').forEach((lbl, i) => {
+          lbl.classList.add('disabled');
+          if ((d.options || [])[i] === d.answer) lbl.classList.add('correct');
+          else if (i === idx && !correct) lbl.classList.add('wrong');
+        });
+        break;
+      }
+
+      case 'multiple_select': {
+        const checked = [...document.querySelectorAll('#msOptions input[type=checkbox]:checked')]
+          .map(cb => (d.options || [])[parseInt(cb.value)]);
+        const expected = d.answer || [];
+        correct = checked.length === expected.length && checked.every(c => expected.includes(c));
+        document.querySelectorAll('#msOptions .mc-option').forEach((lbl, i) => {
+          lbl.classList.add('disabled');
+          const opt = (d.options || [])[i];
+          const isExpected = expected.includes(opt);
+          const isChecked  = checked.includes(opt);
+          if (isExpected) lbl.classList.add('correct');
+          else if (isChecked) lbl.classList.add('wrong');
+        });
+        break;
+      }
+
+      case 'reorder': {
+        if (reorderAnswer.length === 0) { alert('Please arrange some words.'); return; }
+        const userSentence = reorderAnswer.map(x => x.word).join(' ');
+        correct = normalizeText(userSentence) === normalizeText(d.answer);
+        break;
+      }
+
+      case 'matching': {
+        let allCorrect = true;
+        matchingPairs.forEach((pair, i) => {
+          const sel = document.getElementById('match_' + i);
+          if (!sel || sel.value === '') { allCorrect = false; return; }
+          const chosenRight = matchingShuffled[parseInt(sel.value)];
+          const isMatch = chosenRight === pair.right;
+          sel.classList.add(isMatch ? 'correct' : 'wrong');
+          if (!isMatch) allCorrect = false;
+        });
+        if (matchingPairs.some((_, i) => !document.getElementById('match_' + i)?.value)) {
+          alert('Please match all items.'); return;
+        }
+        correct = allCorrect;
+        document.querySelectorAll('.matching-select').forEach(s => s.disabled = true);
+        break;
+      }
+
+      case 'true_false_ng': {
+        if (!tfnSelected) { alert('Please select True, False, or Not Given.'); return; }
+        correct = tfnSelected === d.answer;
+        const correctId = 'tfn_' + d.answer;
+        const wrongId   = 'tfn_' + tfnSelected;
+        document.querySelectorAll('.tfn-btn').forEach(b => b.classList.add('disabled'));
+        document.getElementById(correctId)?.classList.add('correct');
+        if (!correct) document.getElementById(wrongId)?.classList.add('wrong');
+        break;
+      }
+    }
+
+    exAnswered = true;
+    if (correct) exSession.correct++;
+
+    // Show result label
+    const expEl = document.getElementById('exExplanation');
+    const label = correct
+      ? `<div class="ex-result-label ex-result-correct">✓ Correct!</div>`
+      : `<div class="ex-result-label ex-result-wrong">✗ Incorrect. Correct answer: <strong>${esc(formatAnswer(d))}</strong></div>`;
+    expEl.innerHTML = label + (d.explanation ? `<div style="margin-top:6px">${esc(d.explanation)}</div>` : '');
+    expEl.classList.add('visible');
+
+    document.getElementById('exCheckBtn').style.display = 'none';
+    const nextBtn = document.getElementById('exNextBtn');
+    nextBtn.style.display = 'inline-flex';
+    nextBtn.textContent = exIndex < currentDocDetail.exercises.length - 1 ? 'Next →' : 'Finish';
+    document.getElementById('exScoreInline').textContent =
+      `${exSession.correct} / ${exIndex + 1} correct`;
+  }
+
+  function formatAnswer(d) {
+    if (Array.isArray(d.answer)) return d.answer.join(' / ');
+    if (d.pairs) return d.pairs.map(p => `${p.left} → ${p.right}`).join('; ');
+    return String(d.answer || '');
+  }
+
+  function markInput(inp, correct) {
+    inp.style.borderColor = correct ? 'var(--success)' : 'var(--danger)';
+    inp.style.background  = correct ? '#dcfce7' : '#fee2e2';
+    inp.disabled = true;
+  }
+
+  function nextExercise() {
+    exIndex++;
+    renderCurrentExercise();
+  }
+
+  function showScore() {
+    document.getElementById('grammarExRunner').style.display = 'none';
+    document.getElementById('grammarScore').style.display    = 'block';
+
+    const { correct, total } = exSession;
+    const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+    document.getElementById('scoreNum').textContent   = correct;
+    document.getElementById('scoreDenom').textContent = '/ ' + total;
+    document.getElementById('scorePct').textContent   = pct + '%';
+    document.getElementById('scoreMsg').textContent   =
+      pct >= 90 ? 'Excellent! Keep it up!' :
+      pct >= 70 ? 'Good work! Review the ones you missed.' :
+      pct >= 50 ? 'Not bad — try again to improve.' :
+                  'Keep practicing — you\'ll get there!';
+  }
+
+  // Grammar import
+  function onGrammarFileSelected(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = async ev => {
+      try {
+        const result = await invoke('import_grammar', { content: ev.target.result });
+        alert(`Imported ${result.importedCount} grammar document(s).` +
+              (result.errors.length ? '\nErrors:\n' + result.errors.join('\n') : ''));
+        await loadGrammarDocs();
+      } catch (err) { alert('Import error: ' + err); }
+    };
+    reader.readAsText(file, 'utf-8');
+    e.target.value = '';
+  }
+
+  async function deleteGrammarDoc(id) {
+    const doc = grammarDocs.find(d => d.id === id);
+    if (!confirm(`Delete "${doc?.title}"?`)) return;
+    try {
+      await invoke('delete_grammar_doc', { id });
+      if (currentDocDetail && currentDocDetail.id === id) {
+        currentDocDetail = null;
+        document.getElementById('grammarDocView').style.display  = 'none';
+        document.getElementById('grammarExRunner').style.display = 'none';
+        document.getElementById('grammarScore').style.display    = 'none';
+        document.getElementById('grammarEmpty').style.display    = 'block';
+      }
+      await loadGrammarDocs();
+    } catch (err) { alert('Error: ' + err); }
+  }
+
   /* ── Init ─────────────────────────────────────────────────────────────────── */
   loadCollections();
+  loadGrammarDocs();
 </script>
 </body>
 </html>

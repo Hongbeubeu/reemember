@@ -1,0 +1,116 @@
+[
+  {
+    "title": "Future with Going To (Tương Lai với Going To)",
+    "category": "tenses",
+    "level": "A2",
+    "content": "# Future with Going To — Tương Lai với GOING TO\n\n## Cấu Trúc\n\n| Dạng câu | Công thức | Ví dụ |\n|----------|-----------|-------|\n| **Khẳng định** | `S + am/is/are + going to + V` | He **is going to study** abroad. |\n| **Phủ định** | `S + am/is/are + not + going to + V` | I **am not going to** accept that. |\n| **Nghi vấn** | `Am/Is/Are + S + going to + V?` | **Are** you **going to** apply? |\n\n> **Dạng rút gọn:** I'm going to · He's going to · They're going to\n\n---\n\n## Cách Sử Dụng\n\n| # | Tình huống | Ví dụ |\n|---|-----------|-------|\n| 1 | **Kế hoạch, dự định đã lên trước** | We **are going to** move to a bigger apartment. *(đã quyết định)* |\n| 2 | **Dự đoán có bằng chứng hiện tại** | Look at those clouds — it **is going to** rain! *(bằng chứng rõ ràng)* |\n| 3 | **Hành động sắp xảy ra tất yếu** | Careful! You **are going to** drop that! |\n\n---\n\n## Dấu Hiệu Nhận Biết\n\n| Nhóm | Từ / cụm từ |\n|------|------------|\n| Kế hoạch | `I've decided to` · `I've made up my mind` · `I intend to` |\n| Thời gian | `next week/month/year` · `tomorrow` · `soon` |\n| Bằng chứng | `Look!` · `Watch out!` · `Careful!` |\n\n---\n\n## So Sánh 3 Cách Diễn Đạt Tương Lai\n\n| Tình huống | Cấu trúc | Ví dụ |\n|-----------|----------|-------|\n| Quyết định **tức thì** | `will` | *Chuông reo* → \"I**'ll** get it!\" |\n| Kế hoạch **đã lên trước** | `going to` | \"I**'m going to** meet Tom at 7.\" |\n| Lịch đặt **cụ thể** (giờ + địa điểm) | **Pres. Continuous** | \"I**'m meeting** Tom at 7 at the café.\" |\n| Dự đoán **không có bằng chứng** | `will` | \"I think it **will** rain.\" |\n| Dự đoán **có bằng chứng** | `going to` | \"Look at the clouds — it**'s going to** rain!\" |\n\n---\n\n## Lỗi Thường Gặp\n\n| ❌ Sai | ✅ Đúng | Giải thích |\n|-------|---------|----------|\n| She is going to **arrives** tomorrow. | She is going to **arrive** tomorrow. | Sau `going to` → V nguyên thể |\n| Are you going **to to** study? | Are you **going to** study? | Không cần `to` thứ 2 |\n| I **going to** travel next year. | I **am going to** travel next year. | Phải có `am/is/are` |\n| Look, it **wills rain**. | Look, it **is going to** rain. | Có bằng chứng → `going to` |",
+    "examples": [
+      "I'm going to start going to the gym three times a week — I've already signed up.",
+      "Watch out! That vase is going to fall off the shelf!",
+      "Are you going to tell her the truth or keep pretending everything is fine?",
+      "The company is going to launch its new product range in the spring.",
+      "Look at his face — he's going to cry.",
+      "We're not going to make the same mistake twice."
+    ],
+    "exercises": [
+      {
+        "type": "fill_blank",
+        "prompt": "Look at the sky — those clouds are black. It ___ (rain) any minute now.",
+        "answer": "is going to rain",
+        "explanation": "Bằng chứng trực quan hiện tại (black clouds) → dự đoán bằng going to. 'Will' sẽ dùng cho dự đoán không có bằng chứng."
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "I've just made up my mind — I ___ (apply) for that job in Singapore.",
+        "answer": "am going to apply",
+        "explanation": "'I've just made up my mind' = đã quyết định xong → kế hoạch/dự định đã lên trước → going to."
+      },
+      {
+        "type": "multiple_choice",
+        "prompt": "— What are your plans for the holidays?\n— I ___ visit my grandparents in Hội An. I already bought the train tickets.",
+        "options": [
+          "will",
+          "am going to",
+          "am",
+          "would"
+        ],
+        "answer": "am going to",
+        "explanation": "Kế hoạch đã được quyết định từ trước (đã mua vé) → going to. 'Will' sẽ là quyết định tức thì."
+      },
+      {
+        "type": "multiple_choice",
+        "prompt": "Which sentence uses the CORRECT form?",
+        "options": [
+          "She is going to to attend the conference.",
+          "We going to leave early tomorrow morning.",
+          "Is he going to finish the project on time?",
+          "They are going to arrives soon."
+        ],
+        "answer": "Is he going to finish the project on time?",
+        "explanation": "'going to to attend' — thừa 'to'. 'We going to' — thiếu 'are'. 'arrives' — V nguyên thể sau 'going to'."
+      },
+      {
+        "type": "multiple_select",
+        "prompt": "In which situations should you use 'going to' rather than 'will'?",
+        "options": [
+          "You see someone about to trip and you warn them.",
+          "The phone rings and you decide to answer it.",
+          "You've planned a holiday to Japan months in advance.",
+          "You predict the economy will improve with no specific evidence.",
+          "You see a pregnant woman and predict she is about to give birth."
+        ],
+        "answer": ["You see someone about to trip and you warn them.", "You've planned a holiday to Japan months in advance.", "You see a pregnant woman and predict she is about to give birth."],
+        "explanation": "Bằng chứng hiện tại + dự đoán sắp xảy ra → going to. Kế hoạch đã lên trước → going to. Quyết định tức thì → will. Dự đoán không có bằng chứng → will."
+      },
+      {
+        "type": "reorder",
+        "prompt": "Arrange the words to form a correct sentence:",
+        "words": ["going", "She", "is", "to", "quit", "her", "job"],
+        "answer": "She is going to quit her job",
+        "explanation": "Cấu trúc: S + is/am/are + going to + V nguyên thể. 'she' → is."
+      },
+      {
+        "type": "error_correction",
+        "prompt": "Find and correct the error:\n'They are going to moves to a new city next year after they find a good school for the kids.'",
+        "answer": "move",
+        "explanation": "Sau 'going to' luôn dùng V nguyên thể (bare infinitive): going to MOVE, không phải 'moves'."
+      },
+      {
+        "type": "transformation",
+        "prompt": "Complete the second sentence using the word given.\n\nMy plan is to start a blog about Vietnamese street food.\nGOING\nI _______________ a blog about Vietnamese street food.",
+        "answer": "am going to start",
+        "explanation": "Diễn đạt kế hoạch/dự định đã lên trước → I am going to + V nguyên thể."
+      },
+      {
+        "type": "matching",
+        "prompt": "Match each context with the correct future form:",
+        "pairs": [
+          { "left": "A child is running toward the road — there's a car coming!", "right": "He's going to get hurt!" },
+          { "left": "Your friend asks what you want for lunch — you decide on the spot.", "right": "I'll have the noodle soup." },
+          { "left": "You've booked a restaurant for Friday and tell your friend.", "right": "I'm going to have dinner with Tom on Friday." },
+          { "left": "You have a meeting booked at 3 p.m. tomorrow.", "right": "I'm meeting the director at 3 p.m. tomorrow." }
+        ],
+        "explanation": "Bằng chứng + dự đoán tức thì → going to. Quyết định tức thì → will. Kế hoạch đã lên trước → going to. Lịch cụ thể → Present Continuous."
+      },
+      {
+        "type": "true_false_ng",
+        "passage": "We use 'going to' for plans and intentions that were decided before the moment of speaking, and for predictions based on present evidence. The structure is 'am/is/are + going to + base verb'. It differs from 'will' in that 'will' is used for spontaneous decisions and predictions without evidence. When we can see something is about to happen, 'going to' is the natural choice. Present Continuous is used instead when arrangements have a specific time and place.",
+        "statement": "If you see dark clouds and say 'It will rain', this is the most natural and correct choice.",
+        "answer": "false",
+        "explanation": "Khi có bằng chứng trực quan (dark clouds), dạng tự nhiên và đúng nhất là 'It is going to rain'. 'Will' được dùng khi không có bằng chứng cụ thể — chỉ là ý kiến hoặc dự đoán chung."
+      },
+      {
+        "type": "short_answer",
+        "prompt": "What type of evidence typically triggers the use of 'going to' for predictions?",
+        "answer": ["present evidence", "visible evidence", "current evidence", "evidence you can see", "something you can observe now"],
+        "explanation": "Going to dùng khi có bằng chứng HIỆN TẠI và NHÌN THẤY ĐƯỢC (dark clouds, someone running toward danger, etc.) — khác với will là dự đoán chủ quan không có bằng chứng."
+      },
+      {
+        "type": "word_form",
+        "prompt": "Use 'will', 'going to', or Present Continuous:\n1. I ___ (MEET) the CEO tomorrow at 10 a.m. at his office. *(lịch đã đặt)*\n2. Look at that ice — he ___ (SLIP)! *(bằng chứng rõ ràng)*\n3. — Someone's at the door! — I ___ (GET) it. *(quyết định tức thì)*",
+        "answer": "am meeting, is going to slip, will get",
+        "explanation": "1. Lịch đã đặt cụ thể → Present Continuous (am meeting). 2. Bằng chứng → going to. 3. Quyết định tức thì → will."
+      }
+    ]
+  }
+]

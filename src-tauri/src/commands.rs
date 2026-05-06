@@ -4,6 +4,7 @@ use reemember::repository::{QueryOptions, SortBy, WordRepository};
 use reemember::service::VocabularyService;
 use reemember::testing::{Question, TestMode, TestingOptions};
 use reemember::testing::QuestionDirection;
+use reemember::grammar::{GrammarRepository, parse_grammar_json, parse_grammar_md};
 use serde::{Deserialize, Serialize};
 
 // ── Study DTOs ────────────────────────────────────────────────────────────────
@@ -413,6 +414,129 @@ fn to_question(dto: &QuestionDto) -> Result<Question, String> {
         family_words: dto.family_words.clone(),
     })
 }
+
+// ── Grammar DTOs ──────────────────────────────────────────────────────────────
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GrammarDocDto {
+    pub id: i64,
+    pub title: String,
+    pub category: Option<String>,
+    pub level: Option<String>,
+    pub exercise_count: usize,
+    pub created_at: String,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GrammarExerciseDto {
+    pub id: i64,
+    pub exercise_type: String,
+    pub data: serde_json::Value,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GrammarDocDetailDto {
+    pub id: i64,
+    pub title: String,
+    pub category: Option<String>,
+    pub level: Option<String>,
+    pub content: String,
+    pub examples: Vec<String>,
+    pub exercises: Vec<GrammarExerciseDto>,
+    pub created_at: String,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GrammarImportResultDto {
+    pub imported_count: usize,
+    pub errors: Vec<String>,
+}
+
+// ── Grammar commands ──────────────────────────────────────────────────────────
+
+#[tauri::command]
+pub fn list_grammar_docs() -> Result<Vec<GrammarDocDto>, String> {
+    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let repo = GrammarRepository::new(conn);
+    repo.list_docs().map_err(|e| e.to_string()).map(|docs| {
+        docs.into_iter().map(|d| GrammarDocDto {
+            id: d.id,
+            title: d.title,
+            category: d.category,
+            level: d.level,
+            exercise_count: d.exercise_count,
+            created_at: d.created_at,
+        }).collect()
+    })
+}
+
+#[tauri::command]
+pub fn get_grammar_doc(id: i64) -> Result<Option<GrammarDocDetailDto>, String> {
+    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let repo = GrammarRepository::new(conn);
+    let detail = repo.get_doc_with_exercises(id).map_err(|e| e.to_string())?;
+    Ok(detail.map(|d| GrammarDocDetailDto {
+        id: d.doc.id,
+        title: d.doc.title,
+        category: d.doc.category,
+        level: d.doc.level,
+        content: d.doc.content,
+        examples: d.doc.examples,
+        exercises: d.exercises.into_iter().map(|e| GrammarExerciseDto {
+            id: e.id,
+            exercise_type: e.exercise_type,
+            data: e.data,
+        }).collect(),
+        created_at: d.doc.created_at,
+    }))
+}
+
+#[tauri::command]
+pub fn import_grammar(content: String) -> Result<GrammarImportResultDto, String> {
+    let trimmed = content.trim_start();
+    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let repo = GrammarRepository::new(conn);
+    let mut imported_count = 0;
+    let mut errors = vec![];
+
+    // Auto-detect format: frontmatter "---" or leading "# " → Markdown; otherwise JSON array
+    if trimmed.starts_with("---") || trimmed.starts_with("# ") {
+        match parse_grammar_md(&content) {
+            Ok(doc) => match repo.insert_doc(&doc) {
+                Ok(_) => imported_count += 1,
+                Err(e) => errors.push(format!("{}: {}", doc.title, e)),
+            },
+            Err(e) => errors.push(e.to_string()),
+        }
+    } else {
+        match parse_grammar_json(&content) {
+            Ok(docs) => {
+                for doc in &docs {
+                    match repo.insert_doc(doc) {
+                        Ok(_) => imported_count += 1,
+                        Err(e) => errors.push(format!("{}: {}", doc.title, e)),
+                    }
+                }
+            }
+            Err(e) => errors.push(e.to_string()),
+        }
+    }
+
+    Ok(GrammarImportResultDto { imported_count, errors })
+}
+
+#[tauri::command]
+pub fn delete_grammar_doc(id: i64) -> Result<(), String> {
+    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let repo = GrammarRepository::new(conn);
+    repo.delete_doc(id).map_err(|e| e.to_string())
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 
 fn from_collection(c: Collection) -> CollectionDto {
     CollectionDto { id: c.id, name: c.name, description: c.description, created_at: c.created_at }

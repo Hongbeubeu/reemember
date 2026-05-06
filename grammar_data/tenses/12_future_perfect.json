@@ -1,0 +1,116 @@
+[
+  {
+    "title": "Future Perfect (Tương Lai Hoàn Thành)",
+    "category": "tenses",
+    "level": "B2",
+    "content": "# Future Perfect — Tương Lai Hoàn Thành\n\n## Cấu Trúc\n\n| Dạng câu | Công thức | Ví dụ |\n|----------|-----------|-------|\n| **Khẳng định** | `S + will + have + V3` | She **will have finished** by then. |\n| **Phủ định** | `S + will + not + have + V3` | I **won't have read** it by Friday. |\n| **Nghi vấn** | `Will + S + have + V3?` | **Will** you **have arrived** by noon? |\n\n> **Dạng rút gọn:** won't have + V3\n\n---\n\n## Cách Sử Dụng\n\n| # | Tình huống | Ví dụ |\n|---|-----------|-------|\n| 1 | **Hoàn thành TRƯỚC một thời điểm/sự kiện trong tương lai** | By the time you wake up, I **will have made** breakfast. |\n| 2 | **Tích lũy đến một mốc tương lai** | By December, they **will have been** married for ten years. |\n| 3 | **Dự đoán về điều đã hoàn thành** | He **will have arrived** at the office by now. |\n\n---\n\n## Dấu Hiệu Nhận Biết\n\n| Nhóm | Từ / cụm từ |\n|------|------------|\n| Thời điểm giới hạn | `by` + thời điểm (by Friday / by 2030) · `by then` |\n| Kết hợp mệnh đề | `by the time` · `before` + sự kiện tương lai |\n| Khoảng thời gian | `by the end of` + khoảng thời gian · `in + X hours/days` |\n\n---\n\n## Trục Thời Gian\n\n```\n──────────────────────────────────────────────────▶\n   Now       [will have + V3]      Future point\n              hoàn thành trước ──▶  (by 5 p.m.)\n```\n\n---\n\n## Future Perfect vs. Future Perfect Continuous\n\n| | Future Perfect | Future Perfect Continuous |\n|-|---------------|---------------------------|\n| **Nhấn mạnh** | Kết quả, sự hoàn thành | Thời gian, quá trình liên tục |\n| **Ví dụ** | By 5 p.m., I **will have written** the report. *(xong rồi)* | By 5 p.m., I **will have been writing** for 6 hours. *(đã viết 6 tiếng)* |\n\n---\n\n## Quy Tắc Mệnh Đề Thời Gian\n\n> Sau `when` · `by the time` · `before` · `after` · `as soon as` → dùng **Present Simple**, KHÔNG dùng `will`\n\n| ❌ Sai | ✅ Đúng |\n|-------|--------|\n| By the time she **will arrive**... | By the time she **arrives**... |\n\n---\n\n## Lỗi Thường Gặp\n\n| ❌ Sai | ✅ Đúng | Giải thích |\n|-------|---------|----------|\n| By tomorrow, she will **finished** the project. | She **will have finished** the project. | Phải có `have` trước V3 |\n| By the time he **will come**, we will have eaten. | By the time he **comes**, we will have eaten. | Mệnh đề `by the time` → Present Simple |\n| They will have **went** already. | They **will have gone** already. | V3 của `go` là `gone` |",
+    "examples": [
+      "By the time the doctor sees him, he will have been waiting for three hours.",
+      "I will have read the whole series before the new season airs.",
+      "By 2030, electric vehicles will have replaced most petrol cars in this country.",
+      "Will you have finished your assignment before the deadline?",
+      "She won't have recovered fully by the time of the competition.",
+      "By the end of this month, he will have worked here for exactly two years."
+    ],
+    "exercises": [
+      {
+        "type": "fill_blank",
+        "prompt": "By the time you read this letter, I ___ (leave) the country.",
+        "answer": "will have left",
+        "explanation": "'By the time you read' (Present Simple) → hành động sẽ hoàn thành trước đó → Future Perfect: will have left."
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "In ten years, she ___ (work) as a doctor for over a decade.",
+        "answer": "will have been working / will have worked",
+        "explanation": "'In ten years' + khoảng thời gian tích lũy → Future Perfect. Simple: will have worked (kết quả). Continuous: will have been working (nhấn mạnh thời gian)."
+      },
+      {
+        "type": "multiple_choice",
+        "prompt": "By the end of this year, scientists ___ the new vaccine for clinical trials.",
+        "options": [
+          "will approve",
+          "will have approved",
+          "will be approving",
+          "are going to approve"
+        ],
+        "answer": "will have approved",
+        "explanation": "'By the end of this year' = trước một thời điểm tương lai cụ thể → Future Perfect: will have approved."
+      },
+      {
+        "type": "multiple_choice",
+        "prompt": "Don't call her after 10 p.m. — she ___ asleep by then.",
+        "options": [
+          "will fall",
+          "will be falling",
+          "will have fallen",
+          "is going to fall"
+        ],
+        "answer": "will have fallen",
+        "explanation": "'By then' → hành động sẽ hoàn thành trước thời điểm đó → Future Perfect: will have fallen (asleep)."
+      },
+      {
+        "type": "multiple_select",
+        "prompt": "Which sentences correctly use Future Perfect?",
+        "options": [
+          "By the time he arrives, we will have eaten dinner.",
+          "She will have finished her degree by next June.",
+          "By the time she will come, everything will have been ready.",
+          "I won't have completed the report before the meeting starts.",
+          "Will they have landed on the Moon again by 2030?"
+        ],
+        "answer": ["By the time he arrives, we will have eaten dinner.", "She will have finished her degree by next June.", "I won't have completed the report before the meeting starts.", "Will they have landed on the Moon again by 2030?"],
+        "explanation": "'By the time she will come' sai — sau 'by the time' dùng Present Simple: 'by the time she comes'."
+      },
+      {
+        "type": "reorder",
+        "prompt": "Arrange the words to form a correct sentence:",
+        "words": ["will", "the", "have", "By", "he", "report", "Friday", "submitted", "by"],
+        "answer": "By Friday he will have submitted the report",
+        "explanation": "Cấu trúc: By + thời điểm, S + will + have + V3. 'Submitted' là V3 của 'submit' (quy tắc: thêm -ted)."
+      },
+      {
+        "type": "error_correction",
+        "prompt": "Find and correct the error:\n'By the time the flight lands, the passengers will have been travel for over fourteen hours.'",
+        "answer": "travelling",
+        "explanation": "Cấu trúc Future Perfect Continuous: will have been + V-ing. 'travel' → 'travelling' (nhân đôi phụ âm). Hoặc nếu dùng Future Perfect Simple: 'will have travelled'."
+      },
+      {
+        "type": "transformation",
+        "prompt": "Complete the second sentence so that it has a similar meaning, using the word given.\n\nThe project started in January. It will finish in December. (12 months)\nHAVE\nBy December, the team _______________ on the project for a full year.",
+        "answer": "will have been working",
+        "explanation": "'A full year' nhấn mạnh thời gian diễn ra → Future Perfect Continuous: will have been working. (Chấp nhận cả: will have worked on)"
+      },
+      {
+        "type": "matching",
+        "prompt": "Match each sentence with what it expresses:",
+        "pairs": [
+          { "left": "By 5 p.m. I will have sent all the emails.", "right": "Hoàn thành trước thời điểm tương lai" },
+          { "left": "By 2050, the population will have reached 10 billion.", "right": "Dự đoán về mốc tương lai" },
+          { "left": "Will you have finished dinner by the time we get there?", "right": "Câu hỏi về sự hoàn thành trước điểm tương lai" },
+          { "left": "He will have forgotten about it by tomorrow.", "right": "Dự đoán trạng thái sẽ đúng vào điểm tương lai" }
+        ],
+        "explanation": "Future Perfect luôn hướng về một ĐIỂM TƯƠNG LAI và hỏi liệu việc gì đó sẽ HOÀN THÀNH trước điểm đó."
+      },
+      {
+        "type": "true_false_ng",
+        "passage": "Future Perfect is formed with 'will have' followed by the past participle. It is used to describe an action that will be completed before a specific future time or before another future event. Common time signals include 'by', 'by then', 'by the time', and 'before'. When these time expressions are followed by a clause, that clause uses Present Simple (not 'will'). Future Perfect can also express a prediction about something that has probably already happened.",
+        "statement": "In the sentence 'By the time she will arrive, we will have eaten', both uses of future tense are correct.",
+        "answer": "false",
+        "explanation": "Sau 'by the time' + mệnh đề phụ → phải dùng Present Simple: 'by the time she ARRIVES'. Không dùng 'will' trong mệnh đề thời gian phụ này."
+      },
+      {
+        "type": "short_answer",
+        "prompt": "What preposition most commonly signals that Future Perfect is needed? (e.g., ___ next Friday, ___ the time she arrives)",
+        "answer": ["by"],
+        "explanation": "'By' là giới từ điển hình nhất đi với Future Perfect — chỉ hành động sẽ hoàn thành trước thời điểm đó. Ví dụ: by Friday, by then, by the time."
+      },
+      {
+        "type": "word_form",
+        "prompt": "Use Future Perfect or Future Perfect Continuous:\n1. By 2030, this city ___ (BUILD) over 50 new hospitals.\n2. By the time she retires, she ___ (TEACH) for 40 years.",
+        "answer": "will have built, will have been teaching",
+        "explanation": "1. 'Built 50 hospitals' → kết quả cụ thể → Future Perfect Simple (will have built). 2. 'Teaching for 40 years' → nhấn mạnh thời gian → Future Perfect Continuous (will have been teaching)."
+      }
+    ]
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "title": "Past Perfect (Quá Khứ Hoàn Thành)",
+    "category": "tenses",
+    "level": "B1",
+    "content": "# Past Perfect — Quá Khứ Hoàn Thành\n\n## Cấu Trúc\n\n| Dạng câu | Công thức | Ví dụ |\n|----------|-----------|-------|\n| **Khẳng định** | `S + had + V3` | She **had left** before I arrived. |\n| **Phủ định** | `S + had + not + V3` | He **hadn't eaten** all day. |\n| **Nghi vấn** | `Had + S + V3?` | **Had** you **met** him before? |\n\n> **Dạng rút gọn:** had not → **hadn't** &nbsp;·&nbsp; I'd / She'd / They'd\n\n---\n\n## Cách Sử Dụng\n\n| # | Tình huống | Ví dụ |\n|---|-----------|-------|\n| 1 | **Hành động hoàn thành TRƯỚC một hành động QK khác** | When I arrived, she **had already left**. |\n| 2 | **Hoàn thành trước một mốc thời gian trong QK** | By midnight, they **had finished** the project. |\n| 3 | **Nguyên nhân của tình huống trong QK** | He was exhausted because he **hadn't slept** for 48 hours. |\n| 4 | **Trong lời tường thuật (Reported Speech)** | She said she **had seen** the film before. |\n| 5 | **Trong câu điều kiện loại 3** | If she **had studied** harder, she would have passed. |\n\n---\n\n## Dấu Hiệu Nhận Biết\n\n| Nhóm | Từ / cụm từ |\n|------|------------|\n| Thứ tự thời gian | `before` · `after` · `by (the time)` · `when` · `once` |\n| Nhấn mạnh hoàn thành | `already` · `just` · `never` · `by then` |\n| Cụm đặc biệt | `no sooner...than` · `hardly/scarcely...when` |\n\n---\n\n## Trục Thời Gian\n\n```\n─────────────────────────────────────────────▶\n   [Past Perfect]        [Simple Past]       Now\n   xảy ra TRƯỚC ──────▶ xảy ra SAU\n\n   She had eaten dinner  before  she went to the cinema.\n```\n\n---\n\n## Cấu Trúc Đảo Ngữ Đặc Biệt\n\n| Cấu trúc | Ví dụ |\n|---------|-------|\n| `No sooner had + S + V3 + than...` | No sooner **had** she sat down **than** the phone rang. |\n| `Hardly had + S + V3 + when...` | Hardly **had** he fallen asleep **when** the alarm went off. |\n\n---\n\n## Past Perfect vs. Simple Past\n\n| | Khi cần Past Perfect | Khi Simple Past là đủ |\n|-|--------------------|----------------------|\n| **Điều kiện** | Hai sự kiện QK, cần làm rõ cái nào trước | Trình tự rõ ràng qua 'then', 'after', 'next' |\n| **Ví dụ** | She **had left** when I arrived. | She left, **then** I arrived. |\n\n---\n\n## Lỗi Thường Gặp\n\n| ❌ Sai | ✅ Đúng | Giải thích |\n|-------|---------|----------|\n| She already left when I got home. | She **had already left** when I got home. | Hành động trước trong QK → Past Perfect |\n| He **had went** to the store. | He **had gone** to the store. | V3 của `go` là `gone` |\n| Had you ever **saw** that film? | Had you ever **seen** that film? | V3 của `see` là `seen` |",
+    "examples": [
+      "By the time the ambulance arrived, the patient had already recovered.",
+      "She hadn't visited her hometown for twenty years before she finally went back.",
+      "Had you ever tried sushi before you moved to Japan?",
+      "He felt nervous because he had never given a speech in front of so many people.",
+      "No sooner had the concert started than it began to rain.",
+      "Once the guests had left, we started cleaning up the apartment."
+    ],
+    "exercises": [
+      {
+        "type": "fill_blank",
+        "prompt": "By the time we ___ (reach) the cinema, the film ___ (already / start).",
+        "answer": "reached, had already started",
+        "explanation": "'By the time' + Simple Past → hành động trước đó đã hoàn thành → Past Perfect. 'Reach' → reached (quy tắc). 'start' → had already started."
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "She was disappointed because she ___ (not / receive) the promotion she ___ (work) so hard for.",
+        "answer": "hadn't received, had worked",
+        "explanation": "Nguyên nhân thất vọng (hadn't received) và lý do (had worked) đều xảy ra trước tình huống 'was disappointed'."
+      },
+      {
+        "type": "multiple_choice",
+        "prompt": "When the police arrived at the scene, the thief ___.",
+        "options": [
+          "has escaped",
+          "escaped",
+          "had escaped",
+          "was escaping"
+        ],
+        "answer": "had escaped",
+        "explanation": "Tên trộm đã thoát TRƯỚC khi cảnh sát đến → Past Perfect (had escaped). Simple Past 'escaped' sẽ hàm ý đồng thời hoặc sau."
+      },
+      {
+        "type": "multiple_choice",
+        "prompt": "She told me she ___ the report but ___ it to the manager yet.",
+        "options": [
+          "finished / didn't send",
+          "had finished / hadn't sent",
+          "has finished / hasn't sent",
+          "finished / hadn't sent"
+        ],
+        "answer": "had finished / hadn't sent",
+        "explanation": "Tường thuật gián tiếp (Reported Speech): các thì lùi một bậc. Present Perfect → Past Perfect: has finished → had finished, hasn't sent → hadn't sent."
+      },
+      {
+        "type": "multiple_select",
+        "prompt": "Which sentences correctly use Past Perfect?",
+        "options": [
+          "I had seen that film twice before I watched it with her.",
+          "After they had finished dinner, they went for a walk.",
+          "She had went to the hospital before she called me.",
+          "No sooner had he opened the door than the dog ran out.",
+          "By 2020, the company had grown to 500 employees."
+        ],
+        "answer": ["I had seen that film twice before I watched it with her.", "After they had finished dinner, they went for a walk.", "No sooner had he opened the door than the dog ran out.", "By 2020, the company had grown to 500 employees."],
+        "explanation": "'Had went' sai — V3 của 'go' là 'gone': had GONE."
+      },
+      {
+        "type": "reorder",
+        "prompt": "Arrange the words to form a correct sentence:",
+        "words": ["had", "the", "never", "She", "flown", "before", "plane"],
+        "answer": "She had never flown before the plane",
+        "explanation": "Cấu trúc: S + had + never + V3 + before + [thời điểm/sự kiện]. Nhấn mạnh kinh nghiệm chưa từng có trước đó."
+      },
+      {
+        "type": "error_correction",
+        "prompt": "Find and correct the error:\n'When I finally reached the top of the mountain, I realized I had forgot my camera.'",
+        "answer": "forgotten",
+        "explanation": "V3 của 'forget' là 'forgotten' (bất quy tắc), không phải 'forgot' (đó là V2). Past Perfect dùng V3."
+      },
+      {
+        "type": "transformation",
+        "prompt": "Combine the sentences using Past Perfect to show which happened first.\n\nFirst: She finished all the food.\nThen: Her parents came home.\nBY THE TIME\nBy the time her parents came home, she _______________.",
+        "answer": "had finished all the food",
+        "explanation": "'By the time' + Simple Past (came home) → sự việc trước đó → Past Perfect (had finished)."
+      },
+      {
+        "type": "matching",
+        "prompt": "Match each Past Perfect use with the correct example:",
+        "pairs": [
+          { "left": "Hành động xảy ra trước hành động QK khác", "right": "She had showered before she left." },
+          { "left": "Nguyên nhân của tình trạng trong QK", "right": "He was broke because he had spent all his money." },
+          { "left": "Tường thuật gián tiếp", "right": "He said he had already read the book." },
+          { "left": "Câu điều kiện loại 3", "right": "If I had known, I would have told you." }
+        ],
+        "explanation": "Past Perfect có vai trò quan trọng trong tường thuật và điều kiện loại 3 ngoài chức năng chính là diễn đạt thứ tự thời gian."
+      },
+      {
+        "type": "true_false_ng",
+        "passage": "Past Perfect is used to make it clear that one past action happened before another past action. It is formed with 'had' plus the past participle. Common time expressions include 'before', 'after', 'by the time', 'already', 'just', and 'never'. When the order of events is already clear from context or words like 'then' or 'next', Past Perfect is not always necessary. Past Perfect is also required in Type 3 conditionals and in reported speech.",
+        "statement": "Past Perfect must always be used when describing two past events, even if connecting words like 'after' or 'then' already make the order clear.",
+        "answer": "false",
+        "explanation": "Bài đọc nói rõ: khi trình tự đã rõ từ ngữ cảnh hoặc các từ như 'then/next', Past Perfect KHÔNG nhất thiết phải dùng."
+      },
+      {
+        "type": "short_answer",
+        "prompt": "What is the past participle (V3) of 'choose'?",
+        "answer": ["chosen"],
+        "explanation": "choose → chose → chosen. Tương tự: freeze → froze → frozen, speak → spoke → spoken."
+      },
+      {
+        "type": "word_form",
+        "prompt": "Use the correct form (Past Perfect or Simple Past):\nBy the time I ___ (GET) to the party, most guests ___ (LEAVE) and only a few people ___ (REMAIN).",
+        "answer": "got, had left, remained",
+        "explanation": "'By the time I got' → Simple Past (điểm tham chiếu). Trước đó: 'had left' → Past Perfect. 'Remained' → Simple Past (cùng thời điểm với 'got')."
+      }
+    ]
+  }
+]

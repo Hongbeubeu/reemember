@@ -7,4 +7,5 @@ pub mod export;
 pub mod service;
 pub mod testing;
 pub mod srs;
+pub mod grammar;
 

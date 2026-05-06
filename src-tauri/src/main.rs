@@ -7,6 +7,7 @@ use commands::{
     import_vocabulary, list_collections, list_topics, list_words,
     next_question, save_export, submit_answer,
     update_collection, update_topic,
+    list_grammar_docs, get_grammar_doc, import_grammar, delete_grammar_doc,
 };
 use tauri::{WebviewUrl, WebviewWindowBuilder};
 
@@ -29,6 +30,10 @@ fn main() {
             update_topic,
             delete_topic,
             assign_word_to_topic,
+            list_grammar_docs,
+            get_grammar_doc,
+            import_grammar,
+            delete_grammar_doc,
         ])
         .setup(|app| {
             WebviewWindowBuilder::new(app, "main", WebviewUrl::App("index.html".into()))

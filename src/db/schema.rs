@@ -199,6 +199,36 @@ pub fn init_schema(conn: &Connection) -> Result<(), DbError> {
         [],
     )?;
 
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS grammar_docs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT NOT NULL,
+            category TEXT,
+            level TEXT,
+            content TEXT NOT NULL DEFAULT '',
+            examples TEXT NOT NULL DEFAULT '[]',
+            created_at TEXT NOT NULL
+        )",
+        [],
+    )?;
+
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS grammar_exercises (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            doc_id INTEGER NOT NULL,
+            order_index INTEGER NOT NULL DEFAULT 0,
+            exercise_type TEXT NOT NULL,
+            data TEXT NOT NULL,
+            FOREIGN KEY(doc_id) REFERENCES grammar_docs(id) ON DELETE CASCADE
+        )",
+        [],
+    )?;
+
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_grammar_exercises_doc_id ON grammar_exercises(doc_id)",
+        [],
+    )?;
+
     Ok(())
 }
 

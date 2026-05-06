@@ -1,0 +1,116 @@
+[
+  {
+    "title": "Future Simple – Will (Tương Lai Đơn)",
+    "category": "tenses",
+    "level": "A2",
+    "content": "# Future Simple — Tương Lai Đơn với WILL\n\n## Cấu Trúc\n\n| Dạng câu | Công thức | Ví dụ |\n|----------|-----------|-------|\n| **Khẳng định** | `S + will + V` | She **will arrive** tomorrow. |\n| **Phủ định** | `S + will + not + V` | I **won't be** there. |\n| **Nghi vấn** | `Will + S + V?` | **Will** you **help** me? |\n\n> **Dạng rút gọn:** I'll · you'll · he'll · she'll · we'll · they'll &nbsp;·&nbsp; will not → **won't**\n> `will` KHÔNG bao giờ thêm -s dù chủ ngữ là he/she/it\n\n---\n\n## Cách Sử Dụng\n\n| # | Tình huống | Ví dụ |\n|---|-----------|-------|\n| 1 | **Quyết định tức thì** (quyết định ngay lúc nói) | *The phone rings* → I **will get** it! |\n| 2 | **Dự đoán** (không có bằng chứng cụ thể) | I think it **will rain** tomorrow. |\n| 3 | **Lời hứa** | I **will call** you as soon as I arrive. |\n| 4 | **Đề nghị, đề xuất** | I **will help** you with that. |\n| 5 | **Yêu cầu lịch sự** | **Will** you please be quiet? |\n| 6 | **Câu điều kiện loại 1** | If you study hard, you **will pass**. |\n| 7 | **Sự thật về tương lai** | The sun **will set** at 6:30 p.m. tonight. |\n| 8 | **Từ chối / bướng bỉnh** | He **won't** listen to anyone! |\n\n---\n\n## Dấu Hiệu Nhận Biết\n\n| Nhóm | Từ / cụm từ |\n|------|------------|\n| Thời gian tương lai | `tomorrow` · `next week/month/year` · `soon` · `in the future` |\n| Dự đoán | `I think/believe/hope/expect` · `probably` · `maybe` · `perhaps` |\n| Sự chắc chắn | `I'm sure` · `definitely` · `I'm afraid` |\n\n---\n\n## Will vs. Going To vs. Present Continuous\n\n| Tình huống | Dùng |\n|-----------|------|\n| Quyết định **tức thì** | `will` |\n| Kế hoạch **đã lên trước** | `going to` |\n| Lịch đã **đặt cụ thể** (giờ, địa điểm) | **Present Continuous** |\n| Dự đoán **không có bằng chứng** | `will` |\n| Dự đoán **có bằng chứng nhìn thấy** | `going to` |\n\n**Ví dụ minh hoạ:**\n\n| | Câu |\n|-|-----|\n| `will` (tức thì) | *Phone rings* → \"I**'ll** get it!\" |\n| `going to` (kế hoạch) | \"I**'m going to** call Tom at 7.\" *(đã lên kế hoạch)* |\n| Pres. Continuous (lịch cụ thể) | \"I**'m meeting** Tom at 7 at the café.\" *(đã đặt lịch)* |\n| `will` (dự đoán chung) | \"I think it **will** rain.\" |\n| `going to` (có bằng chứng) | \"Look at those clouds — it**'s going to** rain!\" |\n\n---\n\n## Lỗi Thường Gặp\n\n| ❌ Sai | ✅ Đúng | Giải thích |\n|-------|---------|----------|\n| She **wills** come tomorrow. | She **will** come tomorrow. | `will` không thêm -s |\n| If it **will rain**, stay inside. | If it **rains**, stay inside. | Mệnh đề `if` → Present Simple |\n| I will **to go**. | I will **go**. | `will` + V nguyên thể (không có `to`) |",
+    "examples": [
+      "— I'm so thirsty! — I'll get you a glass of water.",
+      "I believe humans will travel to Mars within this century.",
+      "I promise I won't be late — I'll leave the house by 7 a.m.",
+      "Will you do me a favour and post this letter on your way to work?",
+      "If you touch that wire, you will get an electric shock.",
+      "The next meeting will probably take place in March."
+    ],
+    "exercises": [
+      {
+        "type": "fill_blank",
+        "prompt": "Don't worry about the presentation — I'm sure you ___ (do) brilliantly.",
+        "answer": "will do",
+        "explanation": "Dự đoán tích cực → will + V nguyên thể. 'I'm sure' là tín hiệu dự đoán dùng 'will'."
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "If the weather ___ (be) good this weekend, we ___ (go) to the beach.",
+        "answer": "is, will go",
+        "explanation": "Câu điều kiện loại 1: If + Present Simple (is), ... will + V (will go). Không dùng 'will' trong mệnh đề If."
+      },
+      {
+        "type": "multiple_choice",
+        "prompt": "— I don't know how to use this software.\n— Don't worry, ___.",
+        "options": [
+          "I'm going to help you.",
+          "I will help you.",
+          "I'm helping you.",
+          "I help you."
+        ],
+        "answer": "I will help you.",
+        "explanation": "Quyết định đưa ra ngay lúc nói (không chuẩn bị trước) → will. 'Going to' hàm ý đã lên kế hoạch từ trước."
+      },
+      {
+        "type": "multiple_choice",
+        "prompt": "Which sentence uses 'will' INCORRECTLY?",
+        "options": [
+          "I'll probably be late tonight.",
+          "Will you please close the door?",
+          "If it will rain tomorrow, we'll cancel the trip.",
+          "She won't tell anyone — I trust her completely."
+        ],
+        "answer": "If it will rain tomorrow, we'll cancel the trip.",
+        "explanation": "Trong mệnh đề 'if' của câu điều kiện loại 1, phải dùng Present Simple, không dùng 'will'. Đúng: 'If it rains tomorrow...'."
+      },
+      {
+        "type": "multiple_select",
+        "prompt": "In which situations is 'will' the MOST appropriate choice (not 'going to' or Present Continuous)?",
+        "options": [
+          "You see a friend struggling with heavy bags and offer to help.",
+          "You have a dentist appointment scheduled for next Thursday.",
+          "You predict that temperatures will rise due to climate change.",
+          "You see dark clouds and predict rain.",
+          "You make a promise to your friend."
+        ],
+        "answer": ["You see a friend struggling with heavy bags and offer to help.", "You predict that temperatures will rise due to climate change.", "You make a promise to your friend."],
+        "explanation": "Đặt lịch hẹn → Present Continuous. Có bằng chứng cụ thể (dark clouds) → going to. Dự đoán chung + hứa + quyết định tức thì → will."
+      },
+      {
+        "type": "reorder",
+        "prompt": "Arrange the words to form a correct sentence:",
+        "words": ["probably", "I", "work", "will", "from", "home", "tomorrow"],
+        "answer": "I will probably work from home tomorrow",
+        "explanation": "'Probably' đứng SAU will nhưng TRƯỚC động từ chính: will + probably + V. Đây là dự đoán không chắc chắn."
+      },
+      {
+        "type": "error_correction",
+        "prompt": "Find and correct the error:\n'I'm certain she wills arrive on time — she's always punctual.'",
+        "answer": "will",
+        "explanation": "'Will' là modal verb — không bao giờ thêm -s. Luôn dùng 'will' cho mọi chủ ngữ (I/he/she/they...)."
+      },
+      {
+        "type": "transformation",
+        "prompt": "Complete the second sentence so that it has a similar meaning, using the word given.\n\nI'm certain he is not going to forget the meeting.\nWON'T\nHe _______________ the meeting.",
+        "answer": "won't forget",
+        "explanation": "'I'm certain he is not going to forget' → will not (won't) forget. Diễn đạt sự chắc chắn về tương lai bằng won't."
+      },
+      {
+        "type": "matching",
+        "prompt": "Match each sentence with the use of 'will' it demonstrates:",
+        "pairs": [
+          { "left": "I'll carry that for you — it looks heavy.", "right": "Đề nghị giúp đỡ tức thì" },
+          { "left": "I promise I will never let you down.", "right": "Lời hứa" },
+          { "left": "Scientists believe AI will transform healthcare.", "right": "Dự đoán (không có bằng chứng cụ thể)" },
+          { "left": "If you eat too much sugar, you will gain weight.", "right": "Câu điều kiện loại 1" }
+        ],
+        "explanation": "'Will' có nhiều cách dùng khác nhau — nhận biết qua ngữ cảnh và ý định người nói."
+      },
+      {
+        "type": "true_false_ng",
+        "passage": "We use 'will' for spontaneous decisions made at the moment of speaking, predictions without evidence, promises, and offers. The contracted negative form is 'won't'. In conditional sentences (Type 1), 'will' is used in the main clause, while the 'if' clause uses Present Simple. 'Will' is never used with a third-person -s ending (she wills is incorrect). The adverb 'probably' typically comes after 'will' and before the main verb.",
+        "statement": "In the sentence 'If it will snow tomorrow, I will stay home', both uses of 'will' are correct.",
+        "answer": "false",
+        "explanation": "Trong mệnh đề 'if' của điều kiện loại 1 → phải dùng Present Simple: 'If it snows tomorrow, I will stay home'. Chỉ mệnh đề kết quả mới dùng 'will'."
+      },
+      {
+        "type": "short_answer",
+        "prompt": "What is the negative contraction of 'will not'?",
+        "answer": ["won't"],
+        "explanation": "'Will not' rút gọn thành 'won't'. Chú ý: cách viết là w-o-n-'-t, không phải 'willn't'."
+      },
+      {
+        "type": "word_form",
+        "prompt": "Complete using 'will' or 'going to':\n— What are your plans for Saturday?\n— I ___ (VISIT) my grandmother. I already told her I'd come.\n— Oh, the doorbell just rang. — I ___ (GET) it!",
+        "answer": "am going to visit, will get",
+        "explanation": "Kế hoạch đã lên trước → going to. Quyết định tức thì → will."
+      }
+    ]
+  }
+]
