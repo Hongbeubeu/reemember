@@ -1,10 +1,12 @@
 ---
-title: Present Perfect (Hiện Tại Hoàn Thành)
+title: 03 Present Perfect (Hiện Tại Hoàn Thành)
 category: tenses
 level: B1
 ---
 
 # Present Perfect — Hiện Tại Hoàn Thành
+
+> **Cấp độ:** B1 · **Tần suất sử dụng:** Rất cao — đặc biệt khó với người Việt vì nhầm với Past Simple.
 
 ## Cấu Trúc
 
@@ -15,7 +17,8 @@ level: B1
 | **Nghi vấn** | `Have/Has + S + V3?` | **Have** you **met** him before? |
 
 > **Dạng rút gọn:** have not → **haven't** · has not → **hasn't**
-> **Viết tắt:** I've · You've · He's/She's · We've · They've
+> **Viết tắt:** I've · You've · He's/She's/It's · We've · They've
+> **Trợ động từ:** I/you/we/they → **have** · he/she/it → **has**
 
 ---
 
@@ -23,12 +26,12 @@ level: B1
 
 | # | Tình huống | Ví dụ |
 |---|-----------|-------|
-| 1 | **Kinh nghiệm sống** (đã từng làm gì) | Have you ever **been** to Japan? |
-| 2 | **Hành động vừa xong, kết quả ảnh hưởng hiện tại** | She **has just left**. (→ bạn sẽ không gặp được) |
-| 3 | **Bắt đầu trong QK, vẫn tiếp diễn đến nay** | He **has worked** here for ten years. |
-| 4 | **Trong khoảng thời gian chưa kết thúc** | I **have read** three books this month. |
-| 5 | **Thời điểm không xác định** | They **have built** a new bridge. |
-| 6 | **Thành tích, kỷ lục** | This is the best coffee I **have ever tasted**. |
+| 1 | **Kinh nghiệm sống** (đã từng / chưa từng) | Have you ever **been** to Japan? |
+| 2 | **Hành động vừa xong, kết quả ảnh hưởng hiện tại** | She **has just left**. (→ bạn không gặp được) |
+| 3 | **Bắt đầu trong QK, vẫn tiếp diễn đến nay** | He **has worked** here for ten years. (vẫn đang làm) |
+| 4 | **Trong khoảng thời gian chưa kết thúc** | I **have read** three books this month. (tháng chưa hết) |
+| 5 | **Hành động trong QK, thời điểm không xác định** | They **have built** a new bridge. |
+| 6 | **Thành tích, kỷ lục** (so với hiện tại) | This is the best coffee I **have ever tasted**. |
 
 ---
 
@@ -37,36 +40,62 @@ level: B1
 | Nhóm | Từ / cụm từ |
 |------|------------|
 | Trạng thái gần đây | `just` · `already` · `recently` · `lately` |
-| Chưa xảy ra | `yet` · `never` |
+| Chưa xảy ra / phủ định | `yet` · `never` · `still` (+ haven't) |
 | Kinh nghiệm | `ever` · `before` · `once/twice/three times` |
 | Thời gian liên tục | `since` (+ mốc) · `for` (+ khoảng) |
 | Đến thời điểm này | `so far` · `up to now` · `until now` |
-| Khoảng thời gian chưa kết thúc | `this morning/week/month/year` |
+| Khoảng thời gian chưa kết thúc | `this morning/week/month/year` · `today` |
+
+> **`for` vs `since`:**
+> · **`for`** + **khoảng thời gian**: for two hours, for three years, for ages.
+> · **`since`** + **mốc thời gian bắt đầu**: since 2020, since Monday, since I was a child.
+> ❌ for two hours **ago** · since two **hours** (sai)
+> ✅ for two hours · since 2 p.m.
+
+> **Vị trí trạng từ:**
+> · `just`, `already`, `never`, `ever` → giữa **have/has** và **V3**: She has **just** arrived.
+> · `yet` → cuối câu phủ định/nghi vấn: I haven't done it **yet**.
+> · `recently`, `lately` → cuối câu hoặc đầu câu.
 
 ---
 
-## Present Perfect vs. Simple Past
+## So Sánh: Present Perfect vs. Past Simple
 
-| | Present Perfect | Simple Past |
+| | Present Perfect | Past Simple |
 |-|----------------|-------------|
-| **Thời điểm** | Không xác định | Xác định cụ thể |
+| **Thời điểm** | Không xác định / chưa kết thúc | Xác định cụ thể, đã kết thúc |
+| **Liên hệ với hiện tại** | Có | Không |
 | **Ví dụ** | I **have seen** that movie. | I **saw** that movie **last Friday**. |
-| **Khoảng thời gian** | Chưa kết thúc | Đã kết thúc |
-| **Ví dụ** | I **have lived** here all my life. | I **lived** in Paris **for 2 years**. (rồi rời đi) |
+| **Khoảng thời gian** | Chưa kết thúc: this week | Đã kết thúc: last week |
+| **Trạng thái** | I **have lived** here for 5 years. (vẫn ở) | I **lived** in Paris for 2 years. (rồi rời) |
 
-> ❌ **Không dùng Present Perfect với:** `yesterday` · `last week/month` · `in 2010` · `ago` · `when`
+> ❌ **Không dùng Present Perfect với:** `yesterday` · `last week/month` · `in 2010` · `ago` · `when` (câu hỏi).
+> ❌ When **have** you arrived? → ✅ When **did** you arrive?
 
 ---
 
-## V3 Bất Quy Tắc Thường Gặp
+## V3 (Past Participle) Bất Quy Tắc Thường Gặp
 
 | Base | V3 | Base | V3 | Base | V3 |
 |------|----|------|----|------|----|
-| be | been | go | gone | give | given |
+| be | been | go | gone/been | give | given |
 | do | done | come | come | take | taken |
 | have | had | see | seen | write | written |
 | make | made | speak | spoken | know | known |
 | break | broken | choose | chosen | find | found |
+| get | got/gotten | bring | brought | think | thought |
+| eat | eaten | drink | drunk | run | run |
+| read | read | put | put | leave | left |
+
+> **`been` vs `gone`:** "She **has been** to Paris" (đã từng đi và đã về) ≠ "She **has gone** to Paris" (đang ở Paris hoặc đang trên đường).
+
+---
+
+## Cách Dùng Khác / Mở Rộng
+
+- **`This is the first time + Present Perfect`**: This is the first time I **have eaten** sushi.
+- **`It's been + khoảng thời gian + since + Past Simple`**: It's been three years since I **saw** her.
+- **Liên kết quá khứ với hiện tại trong tin tức**: A new vaccine **has been developed**...
 
 ---
 
@@ -74,9 +103,12 @@ level: B1
 
 | ❌ Sai | ✅ Đúng | Giải thích |
 |-------|---------|-----------|
-| I have seen him **yesterday**. | I **saw** him yesterday. | `yesterday` → thời điểm xác định → Simple Past |
+| I have seen him **yesterday**. | I **saw** him yesterday. | `yesterday` → thời điểm xác định → Past Simple |
 | She **has went** to Paris. | She **has gone** to Paris. | V3 của `go` là `gone`, không phải `went` |
 | **Did** you ever **try** sushi? | **Have** you ever **tried** sushi? | Kinh nghiệm → Present Perfect |
+| She **has lived** here **since** five years. | She has lived here **for** five years. | `since` + mốc, `for` + khoảng |
+| He **has** never **been go** there. | He has never **been** there. | Cấu trúc: have + V3 (`been`, không phải "been go") |
+| **When have** you finished? | **When did** you finish? | `when` câu hỏi → Past Simple |
 
 <!-- EXERCISES
 [

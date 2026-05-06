@@ -1,10 +1,12 @@
 ---
-title: Future Perfect (Tương Lai Hoàn Thành)
+title: 12 Future Perfect (Tương Lai Hoàn Thành)
 category: tenses
 level: B2
 ---
 
 # Future Perfect — Tương Lai Hoàn Thành
+
+> **Cấp độ:** B2 · **Tần suất sử dụng:** Trung bình thấp — chủ yếu trong văn viết và lập kế hoạch.
 
 ## Cấu Trúc
 
@@ -14,7 +16,8 @@ level: B2
 | **Phủ định** | `S + will + not + have + V3` | He **won't have finished** the report yet. |
 | **Nghi vấn** | `Will + S + have + V3?` | **Will** you **have left** by the time I arrive? |
 
-> **Dạng rút gọn:** will not → **won't**
+> **Dạng rút gọn:** will not → **won't** · will have → **will've** (chỉ trong khẩu ngữ)
+> **`will have`** dùng cho **mọi chủ ngữ**.
 
 ---
 
@@ -32,18 +35,29 @@ level: B2
 
 | Nhóm | Từ / cụm từ |
 |------|------------|
-| Trước thời điểm TL | `by` (+ thời điểm TL) · `by then` · `by the time` |
+| Trước thời điểm TL | `by` (+ thời điểm TL) · `by then` · `by the time` · `before` |
 | Hoàn thành | `already` · `just` · `yet` · `still` |
+
+> **Vị trí trạng từ:** `already`, `just`, `never` đứng giữa **have** và **V3**:
+> ✅ I **will have already left**. · ✅ She **will have just finished**.
 
 ---
 
-## Future Perfect vs. Future Continuous
+## So Sánh: Future Perfect vs. Future Continuous
 
 | | Future Perfect | Future Continuous |
 |-|---------------|-----------------|
 | **Nhấn mạnh** | Hoàn thành (trước thời điểm TL) | Đang diễn ra (tại thời điểm TL) |
-| **Ví dụ (at 6 p.m.)** | I **will have finished** work by 6. | I **will be finishing** work at 6. |
+| **Ví dụ (at 6 p.m.)** | I **will have finished** work by 6. (xong) | I **will be finishing** work at 6. (đang ở đoạn cuối) |
 | **Trục thời gian** | Hoàn thành → 6 p.m. → TL | Đang diễn → 6 p.m. → TL |
+| **Đếm số lượng** | ✅ I will have read 10 books. | ❌ |
+
+---
+
+## Stative Verbs
+
+`know`, `believe`, `understand`... dùng được vì Future Perfect là dạng **simple** (không continuous):
+- ✅ By next year, she **will have known** him for a decade.
 
 ---
 
@@ -55,6 +69,10 @@ level: B2
 | He **will have went** abroad. | He **will have gone** abroad. | V3 của `go` là `gone`, không phải `went` |
 | **Will** she **has** read the report? | **Will** she **have** read the report? | Sau `will` → `have` (không phải `has`) |
 | By the time she **will arrive**... | By the time she **arrives**... | `by the time` clause → Present Simple |
+| I will have **already** the work done. | I **will have already** done the work. | `already` đứng giữa have và V3 |
+
+> **Quy tắc quan trọng — mệnh đề thời gian:** Sau `by the time`, `before`, `when`, `as soon as`, dùng **Present Simple** (không `will`):
+> ✅ By the time he **arrives**, I will have left.
 
 <!-- EXERCISES
 [

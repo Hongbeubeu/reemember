@@ -1,10 +1,12 @@
 ---
-title: Future Perfect Continuous (Tương Lai Hoàn Thành Tiếp Diễn)
+title: 13 Future Perfect Continuous (Tương Lai Hoàn Thành Tiếp Diễn)
 category: tenses
 level: C1
 ---
 
 # Future Perfect Continuous — Tương Lai Hoàn Thành Tiếp Diễn
+
+> **Cấp độ:** C1 · **Tần suất sử dụng:** Rất thấp — chủ yếu trong văn viết trang trọng. Trong khẩu ngữ, người bản xứ thường thay bằng Future Perfect.
 
 ## Cấu Trúc
 
@@ -15,6 +17,20 @@ level: C1
 | **Nghi vấn** | `Will + S + have + been + V-ing?` | **Will** you **have been working** here for long by then? |
 
 > **Dạng rút gọn:** will not → **won't**
+> **`will have been`** dùng cho **mọi chủ ngữ**.
+
+---
+
+## Quy Tắc Thêm -ing
+
+(Giống các thì continuous khác)
+
+| Tận cùng | Quy tắc | Ví dụ |
+|----------|---------|-------|
+| `-e` câm | bỏ -e, thêm -ing | live → living |
+| nguyên âm ngắn + 1 phụ âm | nhân đôi phụ âm | run → running |
+| `-ie` | đổi ie → y, thêm -ing | lie → lying |
+| còn lại | thêm -ing | study → studying |
 
 ---
 
@@ -26,6 +42,10 @@ level: C1
 | 2 | **Giải thích nguyên nhân tương lai** | When he finishes the race, he **will have been running** for 3 hours — no wonder he'll be exhausted. |
 | 3 | **Quá trình liên tục đến thời điểm TL** | By the time she retires, she **will have been working** for the same company for 40 years. |
 
+> **Khi nào thực sự cần thì này?** Chỉ khi muốn nhấn mạnh **cả thời gian (`for`) lẫn quá trình liên tục** đến một mốc TL. Trong khẩu ngữ, Future Perfect thường đủ:
+> · Formal: By 2030, I **will have been living** here for 15 years.
+> · Spoken: By 2030, I **will have lived** here for 15 years. (cũng chấp nhận được)
+
 ---
 
 ## Dấu Hiệu Nhận Biết
@@ -34,11 +54,11 @@ level: C1
 |------|------------|
 | Thời điểm giới hạn TL | `by` (+ thời điểm TL) · `by then` · `by the time` |
 | Khoảng thời gian | `for + khoảng` (for 10 years, for decades) |
-| Kết hợp | `by [thời điểm], for [khoảng thời gian]` |
+| Kết hợp điển hình | `by [thời điểm], for [khoảng thời gian]` |
 
 ---
 
-## So Sánh Bốn Thì Tương Lai Hoàn Thành / Tiếp Diễn
+## So Sánh Bốn Thì Tương Lai
 
 | Thì | Công thức | Nhấn mạnh |
 |-----|-----------|-----------|
@@ -48,10 +68,29 @@ level: C1
 | Future Perfect Continuous | `will have been + V-ing` | Thời gian của quá trình trước thời điểm TL |
 
 > **Ví dụ so sánh** (tại thời điểm 5 năm nữa):
-> - *I **will work** here.* (sự kiện đơn thuần)
+> - *I **will work** here.* (sự kiện đơn thuần — sẽ đi làm)
 > - *I **will be working** here.* (đang làm việc tại thời điểm đó)
 > - *I **will have worked** here for 5 years.* (hoàn thành đủ 5 năm)
 > - *I **will have been working** here for 5 years.* (nhấn mạnh quá trình liên tục 5 năm)
+
+---
+
+## So Sánh: Future Perfect vs. Future Perfect Continuous
+
+| | Future Perfect | Future Perfect Continuous |
+|-|---------------|--------------------------|
+| **Nhấn mạnh** | Hoàn thành / kết quả | Quá trình / thời gian |
+| **Số lượng cụ thể** | ✅ I will have written 5 books. | ❌ |
+| **Stative verbs** | ✅ She will have known him for years. | ❌ |
+| **Thời lượng + động từ động** | ✅ hoặc | ✅ I will have been driving for 6 hours. |
+
+---
+
+## Stative Verbs — Không Dùng Continuous
+
+`know`, `believe`, `understand`, `want`, `love`, `own`, `belong`, `seem`...
+
+> ❌ She **will have been knowing** him. → ✅ She **will have known** him.
 
 ---
 
@@ -59,10 +98,11 @@ level: C1
 
 | ❌ Sai | ✅ Đúng | Giải thích |
 |-------|---------|-----------|
-| She **will have been know** the result. | She **will have known** the result. | `know` là stative verb — không dùng continuous |
-| By then, he **will have been work** here for a decade. | By then, he **will have been working** here for a decade. | Phải dùng `been + V-ing` |
+| She **will have been know** the result. | She **will have known** the result. | `know` là stative verb |
+| By then, he **will have been work** here for a decade. | By then, he **will have been working** here for a decade. | `been + V-ing` |
 | **Will** she **have been lived** there long? | **Will** she **have been living** there long? | `lived` → phải là `living` (V-ing) |
 | By the time she **will retire**... | By the time she **retires**... | Mệnh đề `by the time` → Present Simple |
+| By 2030, I will have been writing **five novels**. | By 2030, I **will have written** five novels. | Số lượng cụ thể → Future Perfect Simple |
 
 <!-- EXERCISES
 [

@@ -1,21 +1,24 @@
 ---
-title: Past Simple (Quá Khứ Đơn)
+title: 05 Past Simple (Quá Khứ Đơn)
 category: tenses
 level: A1
 ---
 
 # Past Simple — Quá Khứ Đơn
 
+> **Cấp độ:** A1 · **Tần suất sử dụng:** Rất cao — thì cơ bản nhất để kể về quá khứ.
+
 ## Cấu Trúc
 
 | Dạng câu | Công thức | Ví dụ |
 |----------|-----------|-------|
-| **Khẳng định** | `S + V2 (ed)` | She **worked** late yesterday. |
+| **Khẳng định** | `S + V2 (V-ed)` | She **worked** late yesterday. |
 | **Phủ định** | `S + did not + V` | He **didn't go** to school. |
 | **Nghi vấn** | `Did + S + V?` | **Did** you **see** him? |
 
 > **Dạng rút gọn:** did not → **didn't**
-> Động từ `be`: **was** (I/he/she/it) · **were** (you/we/they)
+> **Động từ `be`:** I/he/she/it → **was** · you/we/they → **were**
+> **`be` phủ định:** wasn't · weren't · **`be` nghi vấn:** Was/Were + S + ...?
 
 ---
 
@@ -24,9 +27,16 @@ level: A1
 | Tận cùng động từ | Quy tắc | Ví dụ |
 |-----------------|---------|-------|
 | phụ âm + `-e` | thêm **-d** | live → liv**ed**, love → lov**ed** |
-| nguyên âm ngắn + phụ âm | nhân đôi phụ âm + **-ed** | stop → stopp**ed**, plan → plann**ed** |
+| nguyên âm ngắn + 1 phụ âm (1 âm tiết) | nhân đôi phụ âm + **-ed** | stop → stopp**ed**, plan → plann**ed** |
+| 2 âm tiết, trọng âm cuối | nhân đôi phụ âm + **-ed** | prefer → preferr**ed**, admit → admitt**ed** |
 | phụ âm + `-y` | đổi **y → i** + **-ed** | study → stud**ied**, carry → carr**ied** |
-| còn lại | thêm **-ed** | work → work**ed**, play → play**ed** |
+| nguyên âm + `-y` | giữ nguyên + **-ed** | play → play**ed**, enjoy → enjoy**ed** |
+| còn lại | thêm **-ed** | work → work**ed**, watch → watch**ed** |
+
+> **Phát âm `-ed`:**
+> · /t/ sau **âm vô thanh** (k, p, s, sh, ch, f): worked, stopped, watched.
+> · /d/ sau **âm hữu thanh / nguyên âm**: lived, played.
+> · /ɪd/ sau **/t/, /d/**: wanted, needed, decided.
 
 ---
 
@@ -36,8 +46,9 @@ level: A1
 |---|-----------|-------|
 | 1 | **Hành động xảy ra và kết thúc trong QK** (có thời điểm xác định) | I **visited** Paris **last year**. |
 | 2 | **Chuỗi hành động liên tiếp trong QK** | He **woke up**, **had** breakfast, and **left**. |
-| 3 | **Thói quen hoặc trạng thái trong QK** (nay không còn) | She **lived** in Rome for five years. |
+| 3 | **Thói quen / trạng thái trong QK** (nay không còn) | She **lived** in Rome for five years. (giờ không còn) |
 | 4 | **Tường thuật, kể chuyện** | The detective **opened** the door and **found** a clue. |
+| 5 | **Sự thật lịch sử** | Shakespeare **wrote** 37 plays. |
 
 ---
 
@@ -45,16 +56,70 @@ level: A1
 
 | Nhóm | Từ / cụm từ |
 |------|------------|
-| Thời điểm xác định | `yesterday` · `last night/week/month/year` · `ago` |
-| Năm/mốc cụ thể | `in 2010` · `in the 1990s` · `on Monday` |
-| Câu điều kiện | `when I was young` · `when she arrived` |
+| Thời điểm xác định | `yesterday` · `last night/week/month/year` · `... ago` |
+| Năm/mốc cụ thể | `in 2010` · `in the 1990s` · `on Monday` · `at 5 p.m. yesterday` |
+| Mệnh đề thời gian | `when I was young` · `when she arrived` · `the day before` |
+| Câu hỏi | `When did...?` · `What time did...?` · `How long ago...?` |
+
+---
+
+## Cách Dùng Khác / Mở Rộng — `Used To` & `Would`
+
+Cả hai diễn đạt **thói quen / trạng thái trong QK nay không còn**, nhưng dùng khác nhau:
+
+### `Used to + V`
+
+| Dạng câu | Công thức | Ví dụ |
+|----------|-----------|-------|
+| Khẳng định | `S + used to + V` | I **used to smoke**, but I quit. |
+| Phủ định | `S + didn't use to + V` | She **didn't use to like** vegetables. |
+| Nghi vấn | `Did + S + use to + V?` | **Did** you **use to live** here? |
+
+> **Đặc điểm:**
+> · Dùng cho **cả hành động lặp lại** (used to play) **và trạng thái** (used to be / used to know / used to have).
+> · Hàm ý **đã thay đổi** — bây giờ không còn nữa.
+> · Phủ định/nghi vấn: **didn't use to** / **did... use to** (bỏ -d).
+
+### `Would + V` (cho thói quen QK)
+
+| Dạng câu | Công thức | Ví dụ |
+|----------|-----------|-------|
+| Khẳng định | `S + would + V` | Every summer, we **would visit** grandma. |
+
+> **Đặc điểm:**
+> · Chỉ dùng cho **hành động lặp lại** (action verbs) — **KHÔNG** dùng với stative verbs.
+> · ❌ I would have a dog. (sai — vì `have` ở đây là stative)
+> · ✅ I **used to have** a dog.
+> · Mang sắc thái **kể chuyện, hoài niệm**, thường có cụm chỉ thời gian (every summer, in those days).
+
+### Phân biệt nhanh
+
+| | `used to` | `would` | Past Simple |
+|-|-----------|---------|-------------|
+| Hành động lặp lại | ✅ | ✅ | ✅ |
+| Trạng thái (be / know / have) | ✅ | ❌ | ✅ |
+| Hàm ý "nay không còn" | ✅ rõ | ✅ rõ | Cần ngữ cảnh |
+
+> **Đừng nhầm với:**
+> · `be used to + V-ing/N` (= **quen với**): I **am used to** working late. (KHÔNG cùng nghĩa)
+> · `get used to + V-ing/N` (= **dần quen với**): She **is getting used to** the cold weather.
+
+---
+
+## So Sánh Nhanh: Past Simple vs. Present Perfect
+
+| | Past Simple | Present Perfect |
+|-|-------------|----------------|
+| **Thời điểm** | Xác định, đã kết thúc | Không xác định / chưa kết thúc |
+| **Ví dụ** | I **saw** him **yesterday**. | I **have seen** that movie. |
+| **Hỏi `When?`** | ✅ When did you arrive? | ❌ When have you arrived? |
 
 ---
 
 ## Động Từ Bất Quy Tắc Thường Gặp (V1 → V2)
 
 | V1 | V2 | V1 | V2 | V1 | V2 |
-|----|----|----|----|----|-----|
+|----|----|----|----|----|----|
 | be | was/were | go | went | give | gave |
 | do | did | come | came | take | took |
 | have | had | see | saw | write | wrote |
@@ -62,6 +127,9 @@ level: A1
 | buy | bought | think | thought | bring | brought |
 | get | got | find | found | leave | left |
 | run | ran | eat | ate | begin | began |
+| sit | sat | drink | drank | meet | met |
+| read | read (/red/) | put | put | cost | cost |
+| feel | felt | keep | kept | sleep | slept |
 
 ---
 
@@ -73,6 +141,8 @@ level: A1
 | **Did** he **worked** yesterday? | **Did** he **work** yesterday? | Sau `Did` → V nguyên thể |
 | I **have seen** him **yesterday**. | I **saw** him yesterday. | `yesterday` → thời điểm xác định → Past Simple |
 | They **was** tired. | They **were** tired. | `they/you/we` → **were** |
+| I **used to playing** football. | I **used to play** football. | `used to + V nguyên thể` |
+| She **didn't used to** smoke. | She **didn't use to** smoke. | Phủ định: bỏ -d → `didn't use to` |
 
 <!-- EXERCISES
 [
@@ -130,9 +200,9 @@ level: A1
   },
   {
     "type": "transformation",
-    "prompt": "Complete the second sentence so it has a similar meaning, using the word given.\n\nThis is my first visit to Tokyo.\nNEVER\nI _______________ Tokyo before.",
-    "answer": "had never visited",
-    "explanation": "Ngữ cảnh 'before' ám chỉ trước một thời điểm → Past Perfect: had never visited."
+    "prompt": "Complete the second sentence so it has a similar meaning, using the word given.\n\nWhen I was a child, I played the piano regularly. I don't anymore.\nUSED\nI _______________ the piano regularly.",
+    "answer": "used to play",
+    "explanation": "Thói quen QK nay không còn → 'used to + V nguyên thể'. Used to play."
   },
   {
     "type": "matching",
@@ -147,16 +217,16 @@ level: A1
   },
   {
     "type": "true_false_ng",
-    "passage": "Past Simple describes completed actions at a specific time in the past. For regular verbs, we add -ed or -d. Irregular verbs have unique past forms (go → went, buy → bought). In negative sentences and questions, we use 'did' followed by the base form of the verb. Unlike Present Perfect, Past Simple requires a definite time reference or context.",
+    "passage": "Past Simple describes completed actions at a specific time in the past. For regular verbs, we add -ed or -d. Irregular verbs have unique past forms (go → went, buy → bought). In negative sentences and questions, we use 'did' followed by the base form of the verb. 'Used to + verb' expresses past habits or states that no longer exist.",
     "statement": "In a Past Simple negative sentence, we say 'She didn't went to school' because 'went' is the past form of 'go'.",
     "answer": "false",
     "explanation": "Sau 'didn't' luôn dùng V nguyên thể: 'She didn't GO to school', không phải 'didn't went'."
   },
   {
     "type": "short_answer",
-    "prompt": "What are the Past Simple forms (V2) of these verbs: go, see, buy?",
-    "answer": ["went, saw, bought", "went saw bought"],
-    "explanation": "Động từ bất quy tắc: go → went, see → saw, buy → bought. Không dùng -ed."
+    "prompt": "What is the difference between 'used to' and 'would' for past habits?",
+    "answer": ["used to works for states, would only for actions", "would cannot be used with stative verbs", "used to: states + actions; would: only repeated actions"],
+    "explanation": "'Used to' dùng cho cả hành động lặp lại VÀ trạng thái (used to know/have). 'Would' chỉ dùng cho hành động lặp lại, không dùng với stative verbs."
   },
   {
     "type": "word_form",

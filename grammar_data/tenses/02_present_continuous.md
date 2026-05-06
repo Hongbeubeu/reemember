@@ -1,10 +1,12 @@
 ---
-title: Present Continuous (Hiện Tại Tiếp Diễn)
+title: 02 Present Continuous (Hiện Tại Tiếp Diễn)
 category: tenses
 level: A1
 ---
 
 # Present Continuous — Hiện Tại Tiếp Diễn
+
+> **Cấp độ:** A1 · **Tần suất sử dụng:** Rất cao — dùng nhiều trong giao tiếp hằng ngày.
 
 ## Cấu Trúc
 
@@ -14,7 +16,8 @@ level: A1
 | **Phủ định** | `S + am/is/are + not + V-ing` | I **am not watching** TV. |
 | **Nghi vấn** | `Am/Is/Are + S + V-ing?` | **Are** they **coming**? |
 
-> **Dạng rút gọn:** is not → **isn't** · are not → **aren't** · am not → **I'm not**
+> **Dạng rút gọn:** is not → **isn't** · are not → **aren't** · am not → **I'm not** (không có dạng "amn't")
+> **Trợ động từ `be`:** I **am** · he/she/it **is** · you/we/they **are**
 
 ---
 
@@ -22,10 +25,14 @@ level: A1
 
 | Tận cùng động từ | Quy tắc | Ví dụ |
 |-----------------|---------|-------|
-| `-e` câm | bỏ **-e**, thêm **-ing** | write → writ**ing**, dance → danc**ing** |
-| nguyên âm ngắn + phụ âm | nhân đôi phụ âm cuối | run → runn**ing**, sit → sitt**ing** |
-| `-ie` | đổi **ie → y**, thêm **-ing** | lie → ly**ing**, die → dy**ing** |
+| `-e` câm | bỏ **-e**, thêm **-ing** | write → writ**ing**, dance → danc**ing**, take → tak**ing** |
+| nguyên âm ngắn + 1 phụ âm (1 âm tiết) | nhân đôi phụ âm cuối | run → runn**ing**, sit → sitt**ing**, swim → swimm**ing** |
+| 2 âm tiết, trọng âm cuối + 1 phụ âm | nhân đôi phụ âm cuối | begin → beginn**ing**, prefer → preferr**ing** |
+| `-ie` | đổi **ie → y**, thêm **-ing** | lie → ly**ing**, die → dy**ing**, tie → ty**ing** |
+| `-c` (cuối) | thêm **k** rồi **-ing** | panic → panic**king**, picnic → picnic**king** |
 | còn lại | thêm **-ing** | read → read**ing**, play → play**ing** |
+
+> **Ngoại lệ không nhân đôi:** kết thúc `-w/-x/-y` (snow → snowing, fix → fixing, play → playing).
 
 ---
 
@@ -34,11 +41,15 @@ level: A1
 | # | Tình huống | Ví dụ |
 |---|-----------|-------|
 | 1 | **Hành động đang xảy ra ngay lúc nói** | Look! It **is raining** outside. |
-| 2 | **Tình huống tạm thời** | I **am staying** at a hotel this week. |
-| 3 | **Kế hoạch đã sắp xếp trong tương lai gần** | We **are meeting** the director tomorrow. |
-| 4 | **Thói quen gây khó chịu** (với `always`) | He **is always losing** his keys! |
+| 2 | **Tình huống tạm thời** (xung quanh hiện tại) | I **am staying** at a hotel this week. |
+| 3 | **Kế hoạch / cuộc hẹn đã sắp xếp trong tương lai gần** | We **are meeting** the director at 3 p.m. tomorrow. |
+| 4 | **Thói quen gây khó chịu** (với `always`, `constantly`, `forever`) | He **is always losing** his keys! |
 | 5 | **Xu hướng, thay đổi đang diễn ra** | The climate **is getting** warmer. |
 | 6 | **Nhấn mạnh chưa kết thúc** (với `still`) | She **is still sleeping** at noon. |
+
+> **Lưu ý #3 — Future arrangements:** Khi đã có **giờ + địa điểm + bên kia đồng ý**, dùng Present Continuous thay vì `will`:
+> ✅ I **am having** dinner with Sarah at 7 tomorrow. (đã hẹn)
+> Phân biệt với `going to` (ý định) và `will` (quyết định tức thời).
 
 ---
 
@@ -47,18 +58,21 @@ level: A1
 | Nhóm | Từ / cụm từ |
 |------|------------|
 | Thời điểm hiện tại | `now` · `right now` · `at the moment` · `currently` · `at present` |
-| Khoảng thời gian hiện tại | `this week/month/year` · `today` · `still` |
+| Khoảng thời gian hiện tại | `this week/month/year` · `today` · `still` · `these days` |
 | Mệnh lệnh chú ý | `Look!` · `Listen!` · `Watch!` |
+| Tương lai gần đã sắp xếp | `tomorrow` · `tonight` · `next week` (+ giờ/địa điểm cụ thể) |
 
 ---
 
-## So Sánh: Simple vs. Continuous
+## So Sánh: Present Simple vs. Present Continuous
 
 | | Present Simple | Present Continuous |
 |-|---------------|-------------------|
-| **Dùng khi** | Thói quen, sự thật | Đang xảy ra, tạm thời |
-| **Ví dụ** | She **takes** the bus (every day). | She **is taking** a taxi today (tạm thời). |
-| **Stative verbs** | ✅ I **know** the answer. | ❌ I **am knowing** the answer. |
+| **Dùng khi** | Thói quen, sự thật, lịch trình | Đang xảy ra, tạm thời, kế hoạch cá nhân |
+| **Ví dụ thói quen** | She **takes** the bus (every day). | She **is taking** a taxi today (tạm thời). |
+| **Ví dụ tương lai** | The train **leaves** at 7. (lịch hãng) | I **am meeting** Tom at 7. (cuộc hẹn) |
+| **Stative verbs** | ✅ I **know** the answer. | ❌ I am knowing the answer. |
+| **Always** | Tần suất bình thường: She **always arrives** late. | Phàn nàn: She **is always arriving** late! |
 
 ---
 
@@ -66,10 +80,17 @@ level: A1
 
 | Nhóm | Động từ |
 |------|---------|
-| Nhận thức | `know` · `understand` · `believe` · `remember` · `mean` |
-| Cảm xúc | `love` · `hate` · `like` · `want` · `need` · `prefer` |
-| Giác quan | `see` · `hear` · `smell` · `taste` (trạng thái) |
-| Sở hữu | `own` · `have` · `belong` · `contain` |
+| Nhận thức / suy nghĩ | `know` · `understand` · `believe` · `remember` · `mean` · `realise` |
+| Cảm xúc / sở thích | `love` · `hate` · `like` · `want` · `need` · `prefer` · `wish` |
+| Giác quan (trạng thái) | `see` · `hear` · `smell` · `taste` · `seem` · `appear` · `look` (= có vẻ) |
+| Sở hữu / tồn tại | `own` · `have` (sở hữu) · `belong` · `contain` · `consist` · `include` |
+| Đo lường / khác | `cost` · `weigh` · `measure` · `owe` · `matter` |
+
+> **Cùng động từ — hai nghĩa khác nhau:**
+> · `have`: I **have** a car (sở hữu) ↔ I **am having** lunch (= ăn).
+> · `see`: I **see** the point (= hiểu) ↔ I **am seeing** the doctor at 5 (= gặp).
+> · `think`: I **think** so (= cho là) ↔ I **am thinking** about it (= đang suy nghĩ).
+> · `taste`: It **tastes** good (= có vị) ↔ I **am tasting** the soup (= nếm).
 
 ---
 
@@ -80,7 +101,9 @@ level: A1
 | I am **knowing** the answer. | I **know** the answer. | `know` là stative verb |
 | She is not **wanting** to go. | She **doesn't want** to go. | `want` là stative verb |
 | **Are** you **understanding** me? | **Do** you **understand** me? | `understand` là stative verb |
-| She **were** sleeping. | She **was** sleeping. | she/he/it → **was** |
+| She **were** sleeping. | She **was** sleeping (Past) / **is** sleeping (Present) | she/he/it → **was/is** |
+| He **is run** now. | He **is running** now. | `be + V-ing`, không phải `be + V` |
+| I'm meeting Tom **at the next week**. | I'm meeting Tom **next week**. | Không dùng `at` trước `next/last/this` |
 
 <!-- EXERCISES
 [

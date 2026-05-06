@@ -1,10 +1,12 @@
 ---
-title: Present Simple (Hiện Tại Đơn)
+title: 01 Present Simple (Hiện Tại Đơn)
 category: tenses
 level: A1
 ---
 
 # Present Simple — Hiện Tại Đơn
+
+> **Cấp độ:** A1 · **Tần suất sử dụng:** Rất cao — là thì cơ bản nhất.
 
 ## Cấu Trúc
 
@@ -15,16 +17,20 @@ level: A1
 | **Nghi vấn** | `Do/Does + S + V?` | **Does** she **work** here? |
 
 > **Dạng rút gọn:** do not → **don't** · does not → **doesn't**
+> **Động từ `be`:** I **am** · he/she/it **is** · you/we/they **are**
 
 ---
 
-## Quy Tắc Chia Động Từ (Ngôi 3 Số Ít)
+## Quy Tắc Chia Động Từ (Ngôi 3 Số Ít: he / she / it)
 
 | Tận cùng động từ | Quy tắc | Ví dụ |
 |-----------------|---------|-------|
-| `-s, -sh, -ch, -x, -o` | thêm **-es** | go → go**es**, watch → watch**es** |
-| phụ âm + `-y` | đổi **y → i** rồi thêm **-es** | study → stud**ies** |
-| còn lại | thêm **-s** | work → work**s**, play → play**s** |
+| `-s, -sh, -ch, -x, -o, -ss, -z` | thêm **-es** | go → go**es**, watch → watch**es**, kiss → kiss**es** |
+| phụ âm + `-y` | đổi **y → i** rồi thêm **-es** | study → stud**ies**, fly → fl**ies** |
+| nguyên âm + `-y` | giữ nguyên, thêm **-s** | play → play**s**, buy → buy**s** |
+| còn lại | thêm **-s** | work → work**s**, run → run**s** |
+
+> **Bất quy tắc:** have → **has** · do → **does** · go → **goes** · be → **is/am/are**
 
 ---
 
@@ -34,10 +40,16 @@ level: A1
 |---|-----------|-------|
 | 1 | **Thói quen, hành động lặp lại** | I **go** to the gym every Monday. |
 | 2 | **Sự thật hiển nhiên, quy luật tự nhiên** | Water **boils** at 100°C. |
-| 3 | **Trạng thái, cảm xúc, sở thích** | She **loves** chocolate. |
-| 4 | **Lịch trình cố định, thời gian biểu** | The train **leaves** at 7 a.m. |
-| 5 | **Hướng dẫn, chỉ dẫn** | First, you **add** the flour, then you **mix** it. |
-| 6 | **Tiêu đề, tường thuật thể thao** | England **beat** Germany 3–2. |
+| 3 | **Trạng thái, cảm xúc, sở thích** (stative verbs) | She **loves** chocolate. |
+| 4 | **Lịch trình cố định, thời gian biểu** (giao thông, sự kiện công cộng) | The train **leaves** at 7 a.m. tomorrow. |
+| 5 | **Hướng dẫn, công thức, chỉ đường** | First, you **add** the flour, then you **mix** it. |
+| 6 | **Tiêu đề báo, tường thuật thể thao** | England **beat** Germany 3–2. |
+| 7 | **Trong mệnh đề `if` / `when` / `until`** (tương lai) | If it **rains**, we'll stay home. |
+
+> **Lưu ý #4:** Dùng Present Simple (không phải `will`) cho lịch trình cố định:
+> ✅ The flight **departs** at 6:30 p.m. tomorrow. (lịch hãng hàng không)
+> So sánh với kế hoạch cá nhân đã sắp xếp → **Present Continuous**:
+> ✅ I **am meeting** Tom at 6:30 tomorrow. (cuộc hẹn riêng)
 
 ---
 
@@ -45,9 +57,24 @@ level: A1
 
 | Nhóm | Từ / cụm từ |
 |------|------------|
-| Tần suất | `always` · `usually` · `often` · `sometimes` · `rarely` · `never` |
-| Thời điểm | `every day/week/month` · `on Mondays` · `once/twice a week` |
-| Thời gian trong ngày | `in the morning` · `at night` · `at noon` |
+| Tần suất | `always` · `usually` · `often` · `sometimes` · `rarely` · `seldom` · `never` · `hardly ever` |
+| Thời điểm lặp lại | `every day/week/month/year` · `on Mondays` · `once/twice a week` |
+| Thời gian trong ngày | `in the morning` · `at night` · `at noon` · `at the weekend` |
+| Sự thật / quy luật | `generally` · `as a rule` · `in general` |
+
+> **Vị trí trạng từ tần suất:** đứng **trước động từ thường**, **sau động từ `be`**:
+> ✅ She **always arrives** late. · ✅ She **is always** late.
+
+---
+
+## So Sánh Nhanh: Present Simple vs. Present Continuous
+
+| | Present Simple | Present Continuous |
+|-|---------------|-------------------|
+| **Dùng khi** | Thói quen, sự thật, lịch trình | Đang xảy ra, tạm thời, kế hoạch cá nhân |
+| **Ví dụ** | She **takes** the bus every day. | She **is taking** a taxi today (tạm thời). |
+| **Lịch / cuộc hẹn** | Lịch công cộng: The train **leaves** at 7. | Cuộc hẹn cá nhân: I **am meeting** Tom at 7. |
+| **Stative verbs** | ✅ I **know** the answer. | ❌ I am knowing the answer. |
 
 ---
 
@@ -55,11 +82,24 @@ level: A1
 
 | Nhóm | Ví dụ |
 |------|-------|
-| Nhận thức | `know` · `understand` · `believe` · `remember` · `mean` |
-| Cảm xúc / sở thích | `love` · `hate` · `like` · `want` · `need` · `prefer` |
-| Giác quan (trạng thái) | `see` · `hear` · `smell` · `taste` · `feel` |
-| Sở hữu | `own` · `have` · `belong` · `contain` · `consist` |
-| Khác | `seem` · `appear` · `cost` · `weigh` |
+| Nhận thức / suy nghĩ | `know` · `understand` · `believe` · `remember` · `mean` · `realise` |
+| Cảm xúc / sở thích | `love` · `hate` · `like` · `want` · `need` · `prefer` · `wish` |
+| Giác quan (trạng thái) | `see` · `hear` · `smell` · `taste` · `feel` · `seem` · `appear` |
+| Sở hữu / tồn tại | `own` · `have` (sở hữu) · `belong` · `contain` · `consist` · `include` |
+| Đo lường / khác | `cost` · `weigh` · `measure` · `owe` · `matter` |
+
+> **Lưu ý:** Một số động từ trên có thể dùng continuous khi nghĩa **đổi sang hành động**:
+> · `have` (= ăn/uống/trải nghiệm): I **am having** lunch.
+> · `see` (= gặp): I **am seeing** the doctor tomorrow.
+> · `think` (= cân nhắc): I **am thinking** about it.
+
+---
+
+## Cách Dùng Khác / Mở Rộng
+
+- **Tường thuật trực tiếp** (in storytelling/jokes): "A man **walks** into a bar and **says**..."
+- **Sau `here comes`, `there goes`** (đảo ngữ): Here **comes** the bus!
+- **Hợp đồng, nội quy** (formal/written): Each member **agrees** to the terms.
 
 ---
 
@@ -69,8 +109,10 @@ level: A1
 |-------|---------|-----------|
 | She **don't** like coffee. | She **doesn't** like coffee. | he/she/it → dùng **doesn't** |
 | He **work** here. | He **works** here. | ngôi 3 số ít → thêm **-s/-es** |
-| **Do** she **works** here? | **Does** she **work** here? | Does + V nguyên thể (không thêm -s) |
-| I am **knowing** the answer. | I **know** the answer. | `know` là stative verb — không dùng -ing |
+| **Do** she **works** here? | **Does** she **work** here? | Sau `Do/Does` → V nguyên thể |
+| I am **knowing** the answer. | I **know** the answer. | `know` là stative verb |
+| If it **will rain**, stay home. | If it **rains**, stay home. | Mệnh đề `if/when` → Present Simple |
+| She always **is** late. | She **is** always late. | `always` đứng **sau** động từ `be` |
 
 <!-- EXERCISES
 [

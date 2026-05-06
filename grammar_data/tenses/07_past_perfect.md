@@ -1,10 +1,12 @@
 ---
-title: Past Perfect (Quá Khứ Hoàn Thành)
+title: 07 Past Perfect (Quá Khứ Hoàn Thành)
 category: tenses
 level: B1
 ---
 
 # Past Perfect — Quá Khứ Hoàn Thành
+
+> **Cấp độ:** B1 · **Tần suất sử dụng:** Trung bình — chủ yếu trong văn viết và tường thuật.
 
 ## Cấu Trúc
 
@@ -14,8 +16,8 @@ level: B1
 | **Phủ định** | `S + had + not + V3` | He **hadn't eaten** anything all day. |
 | **Nghi vấn** | `Had + S + V3?` | **Had** you **met** him before the interview? |
 
-> **Dạng rút gọn:** had not → **hadn't**
-> **had** dùng cho mọi chủ ngữ (I/you/he/she/it/we/they)
+> **Dạng rút gọn:** had not → **hadn't** · I had → **I'd** · he had → **he'd** (lưu ý: `'d` cũng có thể là `would`)
+> **had** dùng cho **mọi chủ ngữ** (I/you/he/she/it/we/they)
 
 ---
 
@@ -25,9 +27,10 @@ level: B1
 |---|-----------|-------|
 | 1 | **Hành động xảy ra TRƯỚC một hành động khác trong QK** | When I arrived, she **had already gone**. |
 | 2 | **Hành động xảy ra TRƯỚC một thời điểm cụ thể trong QK** | By 10 p.m., they **had finished** dinner. |
-| 3 | **Điều kiện loại 3** (If clause) | If I **had studied** harder, I would have passed. |
-| 4 | **Reported speech** (lùi thì) | She said she **had forgotten** her key. |
+| 3 | **Điều kiện loại 3** (mệnh đề `if`) | If I **had studied** harder, I would have passed. |
+| 4 | **Reported speech** (lùi thì từ Present Perfect / Past Simple) | She said she **had forgotten** her key. |
 | 5 | **Diễn đạt hối tiếc / điều chưa xảy ra** | I wish I **had listened** to his advice. |
+| 6 | **Sau `It was the first time...`** | It was the first time he **had flown** alone. |
 
 ---
 
@@ -35,13 +38,14 @@ level: B1
 
 | Nhóm | Từ / cụm từ |
 |------|------------|
-| Thứ tự thời gian | `before` · `after` · `when` · `as soon as` · `by the time` |
-| Thời điểm trong QK | `by + thời điểm QK` (by noon, by 2010) |
+| Thứ tự thời gian | `before` · `after` · `when` · `as soon as` · `until` |
+| Mốc thời điểm QK | `by + thời điểm QK` (by noon, by 2010) · `by the time` |
 | Phó từ | `already` · `just` · `never` · `still` · `yet` |
+| Cấu trúc đặc biệt | `It was the first/second/best time...` · `I wish... had` |
 
 ---
 
-## Past Perfect vs. Past Simple
+## So Sánh: Past Perfect vs. Past Simple
 
 | | Past Perfect | Past Simple |
 |-|-------------|-------------|
@@ -49,8 +53,22 @@ level: B1
 | **Ví dụ** | She **had eaten** dinner before he **arrived**. | — |
 | **Trục thời gian** | `had eaten` ← → `arrived` → Now | — |
 
-> **Quy tắc:** Nếu thứ tự sự kiện đã rõ qua `before`/`after`, có thể dùng Past Simple cho cả hai.
-> ✅ She **ate** dinner **before** he **arrived**. (rõ ràng ai trước)
+> **Quy tắc thực tế:** Khi thứ tự đã rõ qua `before`/`after`, **có thể** dùng Past Simple cho cả hai mệnh đề:
+> ✅ She **ate** dinner **before** he **arrived**. (rõ ai trước nhờ `before`)
+> ✅ She **had eaten** dinner before he arrived. (nhấn mạnh thứ tự hơn)
+
+---
+
+## Phân Biệt: `By the time` vs. `When`
+
+| | `By the time` | `When` |
+|-|---------------|--------|
+| **Nghĩa** | Đến khi (mốc tới) | Khi (thời điểm xảy ra) |
+| **Mệnh đề chính** | Past Perfect (đã hoàn thành trước) | Past Perfect HOẶC Past Simple |
+| **Ví dụ** | **By the time** I arrived, he **had left**. (anh ấy đi trước) | **When** I arrived, he **had just left**. (vừa đi trước đó) |
+| | | **When** I arrived, he **left**. (đi cùng lúc/sau khi tôi đến) |
+
+> Sự khác biệt tinh tế: với `when + Past Simple`, hai sự kiện có thể xảy ra **gần như cùng lúc**; với `by the time`, sự kiện chính **chắc chắn xong trước**.
 
 ---
 
@@ -60,8 +78,9 @@ level: B1
 |-------|---------|-----------|
 | When I arrived, she **already left**. | When I arrived, she **had already left**. | Sự kiện xảy ra trước → Past Perfect |
 | I **had went** to school there. | I **had gone** to school there. | V3 của `go` là `gone`, không phải `went` |
-| By the time they came, we **finished**. | By the time they came, we **had finished**. | `by the time` + QK → phần trước dùng Past Perfect |
+| By the time they came, we **finished**. | By the time they came, we **had finished**. | `by the time` + QK → mệnh đề chính dùng Past Perfect |
 | **Had** she **go** to the meeting? | **Had** she **gone** to the meeting? | Sau `had` luôn dùng V3 |
+| I wish I **knew** that yesterday. | I wish I **had known** that yesterday. | `wish` + QK chưa xảy ra → Past Perfect |
 
 <!-- EXERCISES
 [

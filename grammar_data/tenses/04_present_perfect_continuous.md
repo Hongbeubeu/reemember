@@ -1,10 +1,12 @@
 ---
-title: Present Perfect Continuous (Hiện Tại Hoàn Thành Tiếp Diễn)
+title: 04 Present Perfect Continuous (Hiện Tại Hoàn Thành Tiếp Diễn)
 category: tenses
 level: B1
 ---
 
 # Present Perfect Continuous — Hiện Tại Hoàn Thành Tiếp Diễn
+
+> **Cấp độ:** B1 · **Tần suất sử dụng:** Cao — đặc biệt khi nhấn mạnh quá trình / thời gian.
 
 ## Cấu Trúc
 
@@ -15,6 +17,20 @@ level: B1
 | **Nghi vấn** | `Have/Has + S + been + V-ing?` | **Have** you **been waiting** long? |
 
 > **Dạng rút gọn:** have not → **haven't** · has not → **hasn't**
+> **Trợ động từ:** I/you/we/they → **have been** · he/she/it → **has been**
+
+---
+
+## Quy Tắc Thêm -ing
+
+(Xem chi tiết tại bài Present Continuous)
+
+| Tận cùng | Quy tắc | Ví dụ |
+|----------|---------|-------|
+| `-e` câm | bỏ -e, thêm -ing | write → writing |
+| nguyên âm ngắn + 1 phụ âm | nhân đôi phụ âm | run → running |
+| `-ie` | đổi ie → y, thêm -ing | lie → lying |
+| còn lại | thêm -ing | read → reading |
 
 ---
 
@@ -35,20 +51,38 @@ level: B1
 |------|------------|
 | Thời gian liên tục | `for` (+ khoảng) · `since` (+ mốc) |
 | Gần đây | `recently` · `lately` · `all day/morning/week` |
+| Câu hỏi thời lượng | `How long...?` · `How long has he been...?` |
 | Kết quả nhìn thấy | `you look tired/wet/sweaty` · `why are your hands dirty?` |
+
+> **`for` vs `since` (giống Present Perfect):**
+> · `for` + **khoảng**: for an hour, for ages.
+> · `since` + **mốc**: since 9 a.m., since Monday.
 
 ---
 
-## Present Perfect vs. Present Perfect Continuous
+## So Sánh: Present Perfect vs. Present Perfect Continuous
 
 | | Present Perfect | Present Perfect Continuous |
 |-|----------------|--------------------------|
 | **Nhấn mạnh** | Kết quả, thành tích | Quá trình, thời gian |
-| **Ví dụ** | I **have written** three emails. | I **have been writing** emails all morning. |
+| **Ví dụ** | I **have written** three emails. (xong 3 cái) | I **have been writing** emails all morning. (suốt sáng) |
+| **Số lượng cụ thể** | ✅ She has read 5 books. | ❌ (không dùng khi đếm số lượng) |
 | **Stative verbs** | ✅ I have known him for years. | ❌ I have been knowing him. |
-| **Số lượng cụ thể** | ✅ She has read 5 books. | ❌ (không dùng khi có số lượng) |
+| **Hành động lặp lại đếm được** | ✅ I have called her 3 times. | ❌ |
+| **Hành động liên tục** | ✅ hoặc ✅ | ✅ I have been waiting for an hour. |
 
-> **Lưu ý:** Stative verbs (`know`, `want`, `love`, `believe`...) **không dùng** được ở dạng continuous.
+> **Lưu ý quan trọng:** "have been" + **tính từ** (`tired`, `terrible`, `busy`) **KHÔNG phải** Present Perfect Continuous — đó là Present Perfect của động từ `be`. Cấu trúc PPC bắt buộc phải có `V-ing` ở cuối.
+> ✅ I **have been busy**. (Present Perfect of "be") ≠ I **have been working**. (PPC)
+
+---
+
+## Stative Verbs — Không Dùng Continuous
+
+Các động từ trạng thái (`know`, `believe`, `love`, `own`, `belong`, `understand`...) **không** dùng dạng continuous, kể cả ở thì này.
+
+> **Trường hợp linh hoạt:** Một số động từ như `think` (= cân nhắc), `mean` (= có ý), `feel` (= cảm thấy) **có thể** dùng continuous khi diễn đạt **quá trình suy nghĩ/cảm xúc tạm thời**:
+> ✅ I'**ve been thinking** about your offer.
+> ✅ She'**s been feeling** unwell lately.
 
 ---
 
@@ -56,10 +90,12 @@ level: B1
 
 | ❌ Sai | ✅ Đúng | Giải thích |
 |-------|---------|-----------|
-| I **have been knowing** him for years. | I **have known** him for years. | `know` là stative verb — không dùng continuous |
+| I **have been knowing** him for years. | I **have known** him for years. | `know` là stative verb |
 | She **has been writing** five reports. | She **has written** five reports. | Có số lượng cụ thể → Perfect Simple |
-| He **has been working** here **yesterday**. | He **has been working** here since yesterday. | `yesterday` → dùng `since yesterday`, không dùng trực tiếp |
+| He **has been working** here **yesterday**. | He **has been working** here since yesterday. | Cần `since/for`, không đứng trực tiếp với `yesterday` |
 | **Has** she **been wait** long? | **Has** she **been waiting** long? | `been + V-ing`, không phải `been + V` |
+| They have been waiting **since two hours**. | They have been waiting **for two hours**. | `for` + khoảng, không dùng `since` |
+| She has been knowing him **for years**. | She has **known** him for years. | Stative verb → Perfect Simple |
 
 <!-- EXERCISES
 [

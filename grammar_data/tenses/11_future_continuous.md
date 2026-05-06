@@ -1,10 +1,12 @@
 ---
-title: Future Continuous (Tương Lai Tiếp Diễn)
+title: 11 Future Continuous (Tương Lai Tiếp Diễn)
 category: tenses
 level: B1
 ---
 
 # Future Continuous — Tương Lai Tiếp Diễn
+
+> **Cấp độ:** B1 · **Tần suất sử dụng:** Trung bình — đặc biệt hữu ích để hỏi lịch sự.
 
 ## Cấu Trúc
 
@@ -15,6 +17,20 @@ level: B1
 | **Nghi vấn** | `Will + S + be + V-ing?` | **Will** you **be using** the car tomorrow? |
 
 > **Dạng rút gọn:** will not → **won't**
+> **`will be`** dùng cho **mọi chủ ngữ**.
+
+---
+
+## Quy Tắc Thêm -ing
+
+(Giống Present Continuous)
+
+| Tận cùng | Quy tắc | Ví dụ |
+|----------|---------|-------|
+| `-e` câm | bỏ -e, thêm -ing | write → writing |
+| nguyên âm ngắn + 1 phụ âm | nhân đôi phụ âm | run → running |
+| `-ie` | đổi ie → y, thêm -ing | lie → lying |
+| còn lại | thêm -ing | read → reading |
 
 ---
 
@@ -23,9 +39,12 @@ level: B1
 | # | Tình huống | Ví dụ |
 |---|-----------|-------|
 | 1 | **Hành động đang diễn ra tại một thời điểm cụ thể trong TL** | This time tomorrow, I **will be flying** to New York. |
-| 2 | **Hành động sẽ xảy ra như một phần tất yếu (lịch trình, thói quen)** | I **will be attending** the meeting at 10 as usual. |
-| 3 | **Hỏi về kế hoạch lịch sự (không gây áp lực)** | **Will** you **be using** the printer later? |
+| 2 | **Hành động sẽ xảy ra như một phần của lịch trình tự nhiên** | I **will be attending** the meeting at 10 as usual. |
+| 3 | **Hỏi về kế hoạch một cách lịch sự** (không gây áp lực) | **Will** you **be using** the printer later? |
 | 4 | **Hai hành động xảy ra song song trong TL** | While you **are sleeping**, I **will be driving** to the airport. |
+| 5 | **Diễn đạt sự chắc chắn về tương lai** | Don't worry, things **will be improving** soon. |
+
+> **Lưu ý #3:** "Will you be using...?" lịch sự hơn "Will you use...?" vì không hàm ý ép buộc — chỉ hỏi xem có sẵn hay không.
 
 ---
 
@@ -39,14 +58,23 @@ level: B1
 
 ---
 
-## Future Continuous vs. Future Simple (Will)
+## So Sánh: Future Continuous vs. Future Simple (Will)
 
-| | `will + V` | `will be + V-ing` |
-|-|-----------|-----------------|
+| | `will + V` (Future Simple) | `will be + V-ing` (Future Continuous) |
+|-|----------------------------|--------------------------------------|
 | **Quyết định tức thời** | ✅ I'll help you. | ❌ |
 | **Đang diễn ra tại thời điểm TL** | ❌ | ✅ I'll be sleeping at midnight. |
-| **Hỏi kế hoạch lịch sự** | ❌ Will you help? (có vẻ ép buộc) | ✅ Will you be using the car? |
-| **Dự đoán** | ✅ It will rain. | ✅ It will be raining. (giống nhau) |
+| **Hỏi kế hoạch lịch sự** | ❌ Will you help? (có thể ép buộc) | ✅ Will you be using the car? |
+| **Lời hứa** | ✅ I will always love you. | ❌ |
+| **Lịch trình tự nhiên** | ❌ | ✅ I will be attending as usual. |
+
+---
+
+## Stative Verbs — Không Dùng -ing
+
+`know`, `believe`, `understand`, `want`, `love`, `own`, `belong`, `seem`...
+
+> ❌ He **will be knowing** the answer. → ✅ He **will know** the answer.
 
 ---
 
@@ -54,9 +82,10 @@ level: B1
 
 | ❌ Sai | ✅ Đúng | Giải thích |
 |-------|---------|-----------|
-| She **will be work** tomorrow. | She **will be working** tomorrow. | Phải có `-ing`: `will be + V-ing` |
-| **Will** she **be know** the result? | **Will** she **know** the result? | `know` là stative verb — không dùng continuous |
+| She **will be work** tomorrow. | She **will be working** tomorrow. | `will be + V-ing` |
+| **Will** she **be know** the result? | **Will** she **know** the result? | `know` là stative verb |
 | I **will be** eat lunch at noon. | I **will be eating** lunch at noon. | `be + V-ing`, không phải `be + V` |
+| He **will being** arriving soon. | He **will be** arriving soon. | `will + be` (không phải `being`) |
 
 <!-- EXERCISES
 [

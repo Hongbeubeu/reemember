@@ -1,10 +1,12 @@
 ---
-title: Future with Going To (Tương Lai — Going To)
+title: 10 Future with Going To (Tương Lai — Going To)
 category: tenses
 level: A2
 ---
 
 # Future with Going To — Tương Lai Going To
+
+> **Cấp độ:** A2 · **Tần suất sử dụng:** Rất cao trong giao tiếp hằng ngày — đặc biệt cho kế hoạch.
 
 ## Cấu Trúc
 
@@ -15,6 +17,9 @@ level: A2
 | **Nghi vấn** | `Am/Is/Are + S + going to + V?` | **Are** you **going to apply** for the position? |
 
 > **Dạng rút gọn:** is not → **isn't** · are not → **aren't** · am not → **I'm not**
+> **Trợ động từ `be`:** I **am** · he/she/it **is** · you/we/they **are**
+> **Sau `going to`**: luôn dùng **V nguyên thể**.
+> **Cách phát âm thông tục:** "going to" → **gonna** (không dùng trong viết trang trọng).
 
 ---
 
@@ -32,21 +37,43 @@ level: A2
 
 | Nhóm | Từ / cụm từ |
 |------|------------|
-| Kế hoạch | `I've decided to...` · `I've arranged to...` · `I plan to...` |
-| Bằng chứng nhìn thấy | `Look!` · `Watch out!` · `Be careful!` |
-| Thời gian TL | `tomorrow` · `next week` · `soon` · `this weekend` |
+| Kế hoạch / ý định | `I've decided to...` · `I've arranged to...` · `I plan to...` · `I intend to...` |
+| Bằng chứng nhìn thấy | `Look!` · `Watch out!` · `Be careful!` · `Listen!` |
+| Thời gian TL | `tomorrow` · `next week` · `soon` · `this weekend` · `in a moment` |
 
 ---
 
-## Going To vs. Will vs. Present Continuous
+## So Sánh: Going To vs. Will vs. Present Continuous
 
 | | `going to` | `will` | Present Continuous |
 |-|-----------|--------|-------------------|
-| **Kế hoạch có sẵn** | ✅ | ❌ | ✅ (sắp xếp cụ thể) |
-| **Quyết định tức thời** | ❌ | ✅ | ❌ |
-| **Bằng chứng hiện tại** | ✅ | ❌ | ❌ |
-| **Lịch cố định (giao thông)** | ❌ | ❌ | ❌ → Dùng Present Simple |
-| **Ví dụ** | I'm going to call her tonight. | I'll call her! (ngay bây giờ) | I'm calling her at 8. |
+| **Kế hoạch / ý định cá nhân** | ✅ Đã quyết định | ❌ | ✅ Có lịch hẹn cụ thể |
+| **Quyết định tức thời** | ❌ | ✅ I'll get it! | ❌ |
+| **Bằng chứng hiện tại** | ✅ It's going to rain. | ❌ | ❌ |
+| **Lịch trình công cộng** | ❌ | ❌ | ❌ → dùng **Present Simple** (The train **leaves** at 7) |
+| **Lời hứa, đề nghị** | ❌ | ✅ I'll help you. | ❌ |
+| **Ví dụ minh họa** | I'**m going to call** her tonight. (ý định) | I'**ll call** her now! (quyết tức thời) | I'**m calling** her at 8. (đã hẹn giờ) |
+
+> **Cây quyết định nhanh:**
+> 1. Đã có **giờ + địa điểm + bên kia đồng ý** → Present Continuous.
+> 2. Đã có **ý định** nhưng chưa hẹn cụ thể → `going to`.
+> 3. Quyết định **ngay lúc nói** → `will`.
+> 4. Lịch **công cộng** (giao thông, sự kiện) → Present Simple.
+
+---
+
+## Cách Dùng Khác / Mở Rộng — `Was/Were Going To`
+
+Diễn đạt **kế hoạch trong QK nhưng đã không thực hiện** (hoặc bị thay đổi):
+
+| Ví dụ | Hàm ý |
+|-------|-------|
+| I **was going to call** you, but I forgot. | Tôi đã định gọi nhưng quên. |
+| We **were going to fly** to Bali, then the flight was cancelled. | Chúng tôi đã định bay nhưng bị huỷ. |
+| She **wasn't going to attend**, but she changed her mind. | Cô ấy đã không định đi, nhưng đã đổi ý. |
+
+> **Cấu trúc:** `S + was/were + going to + V (nguyên thể) + (but...)`.
+> Thường đi kèm `but` hoặc lý do giải thích vì sao kế hoạch không thực hiện.
 
 ---
 
@@ -56,8 +83,10 @@ level: A2
 |-------|---------|-----------|
 | He **is going to goes** there. | He **is going to go** there. | Sau `going to` → V nguyên thể |
 | She **going to** start tomorrow. | She **is going to** start tomorrow. | Cần trợ động từ `am/is/are` |
-| We **are going to** leave **yesterday**. | We **were going to** leave yesterday. | Kế hoạch trong QK (nhưng không thực hiện) → were going to |
+| We **are going to** leave **yesterday**. | We **were going to** leave yesterday. | Kế hoạch QK chưa thực hiện → `were going to` |
 | **Are** you **go** to the concert? | **Are** you **going to go** to the concert? | Câu hỏi: Are + S + going to + V? |
+| It **will rain** — look at those clouds! | It'**s going to rain** — ... | Có bằng chứng nhìn thấy → `going to` |
+| I **am going to going** to the gym. | I **am going to** the gym. (Pres. Continuous) HOẶC I'm going to **go** to the gym. | Tránh "going to going" |
 
 <!-- EXERCISES
 [
@@ -125,13 +154,14 @@ level: A2
     "pairs": [
       { "left": "I'm going to apply for the scholarship next week.", "right": "Kế hoạch, ý định đã quyết định" },
       { "left": "Look at that car — it's going to crash!", "right": "Dự đoán dựa trên bằng chứng nhìn thấy" },
-      { "left": "They're going to announce the results tomorrow.", "right": "Sự kiện chắc chắn xảy ra trong TL gần" }
+      { "left": "They're going to announce the results tomorrow.", "right": "Sự kiện chắc chắn xảy ra trong TL gần" },
+      { "left": "We were going to travel, but we cancelled.", "right": "Kế hoạch QK không thực hiện" }
     ],
-    "explanation": "'Going to' diễn đạt kế hoạch có sẵn hoặc dự đoán dựa trên bằng chứng hiện tại."
+    "explanation": "'Going to' diễn đạt kế hoạch có sẵn, dự đoán có bằng chứng, hoặc (ở dạng QK) kế hoạch chưa thực hiện."
   },
   {
     "type": "true_false_ng",
-    "passage": "Going to is used for planned intentions decided before the moment of speaking, and for predictions based on present evidence. It is formed with am/is/are + going to + the base form of the verb. It differs from 'will' in that 'will' is used for spontaneous decisions and predictions without evidence. Present Continuous can also express future plans, especially for fixed arrangements.",
+    "passage": "Going to is used for planned intentions decided before the moment of speaking, and for predictions based on present evidence. It is formed with am/is/are + going to + the base form of the verb. It differs from 'will' in that 'will' is used for spontaneous decisions and predictions without evidence. Present Continuous can also express future plans, especially for fixed arrangements. The past form 'was/were going to' indicates a plan that did not happen.",
     "statement": "Going to and Present Continuous have exactly the same meaning when expressing future plans.",
     "answer": "false",
     "explanation": "Không hoàn toàn giống nhau: Present Continuous nhấn mạnh sắp xếp cụ thể (giờ giấc, địa điểm đã đặt). Going to nhấn mạnh ý định. Ví dụ: 'I'm meeting him at 5' (đã hẹn) vs. 'I'm going to meet him' (dự định)."

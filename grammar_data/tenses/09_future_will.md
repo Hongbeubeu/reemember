@@ -1,10 +1,12 @@
 ---
-title: Future Simple with Will (Tương Lai Đơn — Will)
+title: 09 Future Simple with Will (Tương Lai Đơn — Will)
 category: tenses
 level: A2
 ---
 
-# Future Simple with Will — Tương Lai Đơn
+# Future Simple with Will — Tương Lai Đơn (Will)
+
+> **Cấp độ:** A2 · **Tần suất sử dụng:** Rất cao — đặc biệt cho dự đoán và quyết định tức thời.
 
 ## Cấu Trúc
 
@@ -15,6 +17,8 @@ level: A2
 | **Nghi vấn** | `Will + S + V?` | **Will** they **arrive** on time? |
 
 > **Dạng rút gọn:** will not → **won't** · I will → **I'll** · he will → **he'll** · we will → **we'll**
+> **`will`** dùng cho **mọi chủ ngữ** — không chia theo ngôi.
+> **Sau `will`**: luôn dùng **V nguyên thể** (không `to`, không `-s/-ing/-ed`).
 
 ---
 
@@ -23,12 +27,13 @@ level: A2
 | # | Tình huống | Ví dụ |
 |---|-----------|-------|
 | 1 | **Quyết định tức thời ngay lúc nói** | "It's cold in here." — "I **will close** the window." |
-| 2 | **Dự đoán không có bằng chứng** | I think it **will rain** tomorrow. |
+| 2 | **Dự đoán không có bằng chứng cụ thể** | I think it **will rain** tomorrow. |
 | 3 | **Lời hứa** | I **will always love** you. |
-| 4 | **Đề nghị, tình nguyện** | I **will carry** your bags for you. |
-| 5 | **Yêu cầu, mệnh lệnh lịch sự** | **Will** you **pass** me the salt? |
-| 6 | **Sự thật tương lai, điều chắc chắn** | The sun **will rise** at 6:14 tomorrow. |
-| 7 | **Điều kiện loại 1** | If it rains, we **will stay** inside. |
+| 4 | **Đề nghị giúp đỡ, tình nguyện** | I **will carry** your bags for you. |
+| 5 | **Yêu cầu lịch sự / mệnh lệnh** | **Will** you **pass** me the salt? |
+| 6 | **Sự thật tương lai chắc chắn** | The sun **will rise** at 6:14 tomorrow. |
+| 7 | **Mệnh đề chính của điều kiện loại 1** | If it rains, we **will stay** inside. |
+| 8 | **Từ chối / sự cố hỏng hóc** (won't = "không chịu") | The car **won't start**. |
 
 ---
 
@@ -36,20 +41,45 @@ level: A2
 
 | Nhóm | Từ / cụm từ |
 |------|------------|
-| Thời gian TL | `tomorrow` · `next week/month/year` · `soon` · `in the future` |
-| Dự đoán | `I think` · `I believe` · `probably` · `perhaps` · `I expect` |
-| Lời hứa | `I promise` · `I swear` · `don't worry` |
+| Thời gian TL | `tomorrow` · `next week/month/year` · `soon` · `in the future` · `in a minute` |
+| Dự đoán | `I think` · `I believe` · `probably` · `perhaps` · `I expect` · `I'm sure` · `I bet` |
+| Lời hứa | `I promise` · `I swear` · `don't worry` · `definitely` |
+| Đề nghị | `Shall I...?` · `I'll...` · `Don't worry, I'll...` |
+
+> **Vị trí trạng từ:** `probably`, `definitely`, `certainly` đứng **sau will** (khẳng định) và **trước won't** (phủ định):
+> ✅ He **will probably** be late. · ✅ He **probably won't** come.
 
 ---
 
-## Will vs. Going to
+## Cách Dùng Khác / Mở Rộng
+
+### Will để **nhấn mạnh / khẳng định mạnh**
+- "I **will** finish this today!" (quyết tâm)
+- "You **will** apologise to her." (mệnh lệnh nhấn mạnh)
+
+### Won't để **diễn đạt sự từ chối / không chịu**
+- The door **won't open**. (cửa không chịu mở)
+- He **won't listen** to me. (anh ấy không chịu nghe)
+
+### Shall (Anh-Anh, formal)
+- `Shall I/we...?` — đề nghị / xin ý kiến: **Shall** I open the window?
+- Hiếm dùng trong Anh-Mỹ; dùng **Should I/we...?** thay thế.
+
+---
+
+## So Sánh: Will vs. Going To
 
 | | `will` | `going to` |
 |-|--------|-----------|
 | **Quyết định** | Tức thời, ngay lúc nói | Đã lên kế hoạch trước |
 | **Dự đoán** | Không có bằng chứng | Có bằng chứng hiện tại |
-| **Ví dụ DĐ** | "I **will have** the salad." (vừa quyết định) | "I'**m going to have** the salad." (đã chọn trước) |
-| **Ví dụ DĐ** | I think prices **will rise**. | Look at those clouds — it'**s going to rain**. |
+| **Lời hứa, đề nghị** | ✅ I **will help** you. | ❌ |
+| **Ví dụ DĐ tức thời** | (Phone rings) "I'**ll get** it." | "I'**m going to get** it." (đã định trước) |
+| **Ví dụ dự đoán** | I think prices **will rise**. | Look at those clouds — it'**s going to rain**. |
+
+> **Quy tắc nhanh:**
+> · **Có bằng chứng / đã quyết định trước** → `going to`.
+> · **Không bằng chứng / quyết định ngay lúc nói** → `will`.
 
 ---
 
@@ -60,7 +90,9 @@ level: A2
 | She **will goes** to school. | She **will go** to school. | Sau `will` → V nguyên thể |
 | I **will to call** you later. | I **will call** you later. | Không dùng `to` sau `will` |
 | **Will** you **coming**? | **Will** you **come**? | Sau `will` → V nguyên thể, không phải V-ing |
-| If it **will rain**, stay inside. | If it **rains**, stay inside. | Mệnh đề `if` (điều kiện 1) → Present Simple, không phải will |
+| If it **will rain**, stay inside. | If it **rains**, stay inside. | Mệnh đề `if` (loại 1) → Present Simple |
+| Look at those clouds — it **will rain**. | ... it'**s going to rain**. | Có bằng chứng nhìn thấy → `going to` |
+| I **will probably not** be there. | I **probably won't** be there. | `probably` đứng trước `won't` ở phủ định |
 
 <!-- EXERCISES
 [
