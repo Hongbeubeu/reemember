@@ -23,12 +23,12 @@
 
 ## Modals (`category: modals`)
 
-- [ ] Can / Could
-- [ ] May / Might
-- [ ] Must / Have to
-- [ ] Should / Ought to
-- [ ] Will / Would
-- [ ] Modal Perfects (might have, should have, could have, would have, must have)
+- [x] Can / Could
+- [x] May / Might
+- [x] Must / Have to
+- [x] Should / Ought to
+- [x] Will / Would
+- [x] Modal Perfects (might have, should have, could have, would have, must have)
 
 ## Conditionals (`category: conditionals`)
 
