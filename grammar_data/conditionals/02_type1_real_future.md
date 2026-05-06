@@ -1,5 +1,5 @@
 ---
-title: "02 Conditional Type 1 — Real Future (Câu Điều Kiện Loại 1)"
+title: "02 — Type 1 — Real Future"
 category: conditionals
 level: A2
 ---

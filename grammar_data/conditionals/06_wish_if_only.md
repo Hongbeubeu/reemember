@@ -1,5 +1,5 @@
 ---
-title: "06 Wish / If Only / Would Rather / It's Time (Ước Muốn và Tiếc Nuối)"
+title: "06 — Wish / If Only / Would Rather / It's Time"
 category: conditionals
 level: B2
 ---

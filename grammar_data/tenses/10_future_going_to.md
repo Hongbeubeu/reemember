@@ -1,5 +1,5 @@
 ---
-title: 10 Future with Going To (Tương Lai — Going To)
+title: "10 — Future — Going To"
 category: tenses
 level: A2
 ---

@@ -1,5 +1,5 @@
 ---
-title: 05 Past Simple (Quá Khứ Đơn)
+title: "05 — Past Simple"
 category: tenses
 level: A1
 ---

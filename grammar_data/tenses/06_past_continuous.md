@@ -1,5 +1,5 @@
 ---
-title: 06 Past Continuous (Quá Khứ Tiếp Diễn)
+title: "06 — Past Continuous"
 category: tenses
 level: A2
 ---

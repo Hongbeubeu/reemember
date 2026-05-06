@@ -1,5 +1,5 @@
 ---
-title: "01 Conditional Type 0 — General Truth"
+title: "01 — Type 0 — General Truth"
 category: conditionals
 level: A2
 ---

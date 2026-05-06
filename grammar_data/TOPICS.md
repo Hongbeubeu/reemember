@@ -23,84 +23,84 @@
 
 ## Modals (`category: modals`)
 
-- [x] Can / Could
-- [x] May / Might
-- [x] Must / Have to
-- [x] Should / Ought to
-- [x] Will / Would
-- [x] Modal Perfects (might have, should have, could have, would have, must have)
+- [x] 01 — Can / Could
+- [x] 02 — May / Might
+- [x] 03 — Must / Have To
+- [x] 04 — Should / Ought To
+- [x] 05 — Will / Would
+- [x] 06 — Modal Perfects (might have, should have, could have, would have, must have)
 
 ## Conditionals (`category: conditionals`)
 
-- [x] Type 0 — General Truth
-- [x] Type 1 — Real Future
-- [x] Type 2 — Unreal Present / Future
-- [x] Type 3 — Unreal Past
-- [x] Mixed Conditionals
-- [x] Wish / If Only / Would Rather / It's Time
+- [x] 01 — Type 0 — General Truth
+- [x] 02 — Type 1 — Real Future
+- [x] 03 — Type 2 — Unreal Present / Future
+- [x] 04 — Type 3 — Unreal Past
+- [x] 05 — Mixed Conditionals
+- [x] 06 — Wish / If Only / Would Rather / It's Time
 
 ## Passive Voice (`category: passive`)
 
-- [ ] Present & Past Simple Passive
-- [ ] Perfect & Continuous Passive
-- [ ] Passive with Modals
-- [ ] Causative — have / get something done
+- [ ] 01 — Present & Past Simple Passive
+- [ ] 02 — Perfect & Continuous Passive
+- [ ] 03 — Passive with Modals
+- [ ] 04 — Causative — have / get something done
 
 ## Reported Speech (`category: reported_speech`)
 
-- [ ] Reported Statements (tense backshift)
-- [ ] Reported Questions
-- [ ] Reported Commands & Requests
-- [ ] Reporting Verbs (say, tell, ask, advise, warn…)
+- [ ] 01 — Reported Statements (tense backshift)
+- [ ] 02 — Reported Questions
+- [ ] 03 — Reported Commands & Requests
+- [ ] 04 — Reporting Verbs (say, tell, ask, advise, warn…)
 
 ## Verb Patterns (`category: verb_patterns`)
 
-- [ ] Gerunds (V-ing as subject / object)
-- [ ] Infinitives (to + V)
-- [ ] Verb + Gerund vs Verb + Infinitive (remember, forget, stop, try, regret…)
-- [ ] Participle Clauses
+- [ ] 01 — Gerunds (V-ing as subject / object)
+- [ ] 02 — Infinitives (to + V)
+- [ ] 03 — Verb + Gerund vs Verb + Infinitive (remember, forget, stop, try, regret…)
+- [ ] 04 — Participle Clauses
 
 ## Questions (`category: questions`)
 
-- [ ] Question Formation (auxiliaries, inversion)
-- [ ] Indirect / Embedded Questions
-- [ ] Question Tags
+- [ ] 01 — Question Formation (auxiliaries, inversion)
+- [ ] 02 — Indirect / Embedded Questions
+- [ ] 03 — Question Tags
 
 ## Relative Clauses (`category: relative_clauses`)
 
-- [ ] Defining Relative Clauses (who / which / that)
-- [ ] Non-defining Relative Clauses
-- [ ] Reduced Relative Clauses
+- [ ] 01 — Defining Relative Clauses (who / which / that)
+- [ ] 02 — Non-defining Relative Clauses
+- [ ] 03 — Reduced Relative Clauses
 
 ## Articles & Determiners (`category: articles`)
 
-- [ ] Articles — a / an / the / zero article
-- [ ] Some / Any / No
-- [ ] Much / Many / A lot of / Few / Little
-- [ ] All / Both / Neither / Either / Each / Every
+- [ ] 01 — Articles — a / an / the / zero article
+- [ ] 02 — Some / Any / No
+- [ ] 03 — Much / Many / A lot of / Few / Little
+- [ ] 04 — All / Both / Neither / Either / Each / Every
 
 ## Adjectives & Adverbs (`category: adjectives`)
 
-- [ ] Adjective Order
-- [ ] Comparison — Comparative & Superlative
-- [ ] Adverbs of Manner / Frequency / Degree
-- [ ] Too / Enough / Very / Quite / Rather
+- [ ] 01 — Adjective Order
+- [ ] 02 — Comparison — Comparative & Superlative
+- [ ] 03 — Adverbs of Manner / Frequency / Degree
+- [ ] 04 — Too / Enough / Very / Quite / Rather
 
 ## Prepositions (`category: prepositions`)
 
-- [ ] Prepositions of Time (at / on / in)
-- [ ] Prepositions of Place & Movement
-- [ ] Dependent Prepositions (verb / adj + preposition)
+- [ ] 01 — Prepositions of Time (at / on / in)
+- [ ] 02 — Prepositions of Place & Movement
+- [ ] 03 — Dependent Prepositions (verb / adj + preposition)
 
 ## Clauses & Linking (`category: clauses`)
 
-- [ ] Conjunctions (and / but / so / because / although…)
-- [ ] Adverbial Clauses (time / reason / contrast / purpose / result)
-- [ ] Cleft Sentences (It is… / What…)
+- [ ] 01 — Conjunctions (and / but / so / because / although…)
+- [ ] 02 — Adverbial Clauses (time / reason / contrast / purpose / result)
+- [ ] 03 — Cleft Sentences (It is… / What…)
 
 ## Special Structures (`category: special_structures`)
 
-- [ ] Inversion (Never have I… / Rarely does…)
-- [ ] Emphatic Do (I DO like it)
-- [ ] Ellipsis & Substitution
-- [ ] Phrasal Verbs — top 100 nhóm theo nghĩa
+- [ ] 01 — Inversion (Never have I… / Rarely does…)
+- [ ] 02 — Emphatic Do (I DO like it)
+- [ ] 03 — Ellipsis & Substitution
+- [ ] 04 — Phrasal Verbs — top 100 nhóm theo nghĩa
