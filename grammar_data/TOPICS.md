@@ -32,12 +32,12 @@
 
 ## Conditionals (`category: conditionals`)
 
-- [ ] Type 0 — General Truth
-- [ ] Type 1 — Real Future
-- [ ] Type 2 — Unreal Present / Future
-- [ ] Type 3 — Unreal Past
-- [ ] Mixed Conditionals
-- [ ] Wish / If Only / Would Rather / It's Time
+- [x] Type 0 — General Truth
+- [x] Type 1 — Real Future
+- [x] Type 2 — Unreal Present / Future
+- [x] Type 3 — Unreal Past
+- [x] Mixed Conditionals
+- [x] Wish / If Only / Would Rather / It's Time
 
 ## Passive Voice (`category: passive`)
 
