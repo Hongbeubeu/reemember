@@ -200,6 +200,17 @@ pub fn init_schema(conn: &Connection) -> Result<(), DbError> {
     )?;
 
     conn.execute(
+        "CREATE TABLE IF NOT EXISTS grammar_groups (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL UNIQUE,
+            description TEXT,
+            sort_order INTEGER NOT NULL DEFAULT 0,
+            created_at TEXT NOT NULL
+        )",
+        [],
+    )?;
+
+    conn.execute(
         "CREATE TABLE IF NOT EXISTS grammar_docs (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             title TEXT NOT NULL,
@@ -207,10 +218,22 @@ pub fn init_schema(conn: &Connection) -> Result<(), DbError> {
             level TEXT,
             content TEXT NOT NULL DEFAULT '',
             examples TEXT NOT NULL DEFAULT '[]',
-            created_at TEXT NOT NULL
+            group_id INTEGER,
+            created_at TEXT NOT NULL,
+            FOREIGN KEY(group_id) REFERENCES grammar_groups(id) ON DELETE SET NULL
         )",
         [],
     )?;
+
+    // Migration: add group_id to existing grammar_docs tables that predate it.
+    let has_group_id: i64 = conn.query_row(
+        "SELECT COUNT(*) FROM pragma_table_info('grammar_docs') WHERE name = 'group_id'",
+        [],
+        |row| row.get(0),
+    ).unwrap_or(0);
+    if has_group_id == 0 {
+        conn.execute("ALTER TABLE grammar_docs ADD COLUMN group_id INTEGER", [])?;
+    }
 
     conn.execute(
         "CREATE TABLE IF NOT EXISTS grammar_exercises (
@@ -226,6 +249,10 @@ pub fn init_schema(conn: &Connection) -> Result<(), DbError> {
 
     conn.execute(
         "CREATE INDEX IF NOT EXISTS idx_grammar_exercises_doc_id ON grammar_exercises(doc_id)",
+        [],
+    )?;
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_grammar_docs_group_id ON grammar_docs(group_id)",
         [],
     )?;
 

@@ -425,7 +425,41 @@ pub struct GrammarDocDto {
     pub category: Option<String>,
     pub level: Option<String>,
     pub exercise_count: usize,
+    pub group_id: Option<i64>,
     pub created_at: String,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GrammarGroupDto {
+    pub id: i64,
+    pub name: String,
+    pub description: Option<String>,
+    pub sort_order: i64,
+    pub doc_count: usize,
+    pub created_at: String,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct CreateGrammarGroupRequest {
+    pub name: String,
+    pub description: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct UpdateGrammarGroupRequest {
+    pub id: i64,
+    pub name: Option<String>,
+    pub description: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct MoveGrammarDocRequest {
+    pub doc_id: i64,
+    pub group_id: Option<i64>,
 }
 
 #[derive(Debug, Serialize)]
@@ -446,6 +480,7 @@ pub struct GrammarDocDetailDto {
     pub content: String,
     pub examples: Vec<String>,
     pub exercises: Vec<GrammarExerciseDto>,
+    pub group_id: Option<i64>,
     pub created_at: String,
 }
 
@@ -469,6 +504,7 @@ pub fn list_grammar_docs() -> Result<Vec<GrammarDocDto>, String> {
             category: d.category,
             level: d.level,
             exercise_count: d.exercise_count,
+            group_id: d.group_id,
             created_at: d.created_at,
         }).collect()
     })
@@ -491,8 +527,19 @@ pub fn get_grammar_doc(id: i64) -> Result<Option<GrammarDocDetailDto>, String> {
             exercise_type: e.exercise_type,
             data: e.data,
         }).collect(),
+        group_id: d.doc.group_id,
         created_at: d.doc.created_at,
     }))
+}
+
+/// Resolve a `category` string to an existing-or-newly-created group id.
+/// Used by import to auto-assign group based on frontmatter `category`.
+fn resolve_group_for_category(repo: &GrammarRepository, category: &Option<String>) -> Option<i64> {
+    let name = category.as_ref()?.trim();
+    if name.is_empty() {
+        return None;
+    }
+    repo.find_or_create_group(name).ok()
 }
 
 #[tauri::command]
@@ -506,17 +553,21 @@ pub fn import_grammar(content: String) -> Result<GrammarImportResultDto, String>
     // Auto-detect format: frontmatter "---" or leading "# " → Markdown; otherwise JSON array
     if trimmed.starts_with("---") || trimmed.starts_with("# ") {
         match parse_grammar_md(&content) {
-            Ok(doc) => match repo.insert_doc(&doc) {
-                Ok(_) => imported_count += 1,
-                Err(e) => errors.push(format!("{}: {}", doc.title, e)),
-            },
+            Ok(doc) => {
+                let group_id = resolve_group_for_category(&repo, &doc.category);
+                match repo.insert_doc(&doc, group_id) {
+                    Ok(_) => imported_count += 1,
+                    Err(e) => errors.push(format!("{}: {}", doc.title, e)),
+                }
+            }
             Err(e) => errors.push(e.to_string()),
         }
     } else {
         match parse_grammar_json(&content) {
             Ok(docs) => {
                 for doc in &docs {
-                    match repo.insert_doc(doc) {
+                    let group_id = resolve_group_for_category(&repo, &doc.category);
+                    match repo.insert_doc(doc, group_id) {
                         Ok(_) => imported_count += 1,
                         Err(e) => errors.push(format!("{}: {}", doc.title, e)),
                     }
@@ -527,6 +578,61 @@ pub fn import_grammar(content: String) -> Result<GrammarImportResultDto, String>
     }
 
     Ok(GrammarImportResultDto { imported_count, errors })
+}
+
+#[tauri::command]
+pub fn list_grammar_groups() -> Result<Vec<GrammarGroupDto>, String> {
+    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let repo = GrammarRepository::new(conn);
+    repo.list_groups().map_err(|e| e.to_string()).map(|groups| {
+        groups.into_iter().map(|g| GrammarGroupDto {
+            id: g.id,
+            name: g.name,
+            description: g.description,
+            sort_order: g.sort_order,
+            doc_count: g.doc_count,
+            created_at: g.created_at,
+        }).collect()
+    })
+}
+
+#[tauri::command]
+pub fn create_grammar_group(payload: CreateGrammarGroupRequest) -> Result<GrammarGroupDto, String> {
+    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let repo = GrammarRepository::new(conn);
+    let g = repo.create_group(&payload.name, payload.description.as_deref())
+        .map_err(|e| e.to_string())?;
+    Ok(GrammarGroupDto {
+        id: g.id,
+        name: g.name,
+        description: g.description,
+        sort_order: g.sort_order,
+        doc_count: 0,
+        created_at: g.created_at,
+    })
+}
+
+#[tauri::command]
+pub fn update_grammar_group(payload: UpdateGrammarGroupRequest) -> Result<(), String> {
+    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let repo = GrammarRepository::new(conn);
+    let desc_arg = payload.description.as_ref().map(|s| Some(s.as_str()));
+    repo.update_group(payload.id, payload.name.as_deref(), desc_arg)
+        .map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+pub fn delete_grammar_group(id: i64) -> Result<(), String> {
+    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let repo = GrammarRepository::new(conn);
+    repo.delete_group(id).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+pub fn move_grammar_doc(payload: MoveGrammarDocRequest) -> Result<(), String> {
+    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let repo = GrammarRepository::new(conn);
+    repo.move_doc(payload.doc_id, payload.group_id).map_err(|e| e.to_string())
 }
 
 #[tauri::command]

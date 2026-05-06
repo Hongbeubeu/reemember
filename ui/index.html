@@ -287,11 +287,31 @@
     .grammar-sidebar { width: var(--sidebar-w); flex-shrink: 0; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
     .grammar-content { flex: 1; min-width: 0; }
 
-    .grammar-sidebar-header { padding: 12px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-    .grammar-sidebar-header span { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
+    .grammar-sidebar-header { padding: 12px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+    .grammar-sidebar-header span.section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
+    .grammar-sidebar-header select { font-size: 11px; padding: 3px 6px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); cursor: pointer; }
+    .grammar-sidebar-toolbar { padding: 8px 14px; border-bottom: 1px solid var(--border); display: flex; gap: 6px; }
+    .grammar-sidebar-toolbar button { font-size: 11px; padding: 4px 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); cursor: pointer; color: var(--text); }
+    .grammar-sidebar-toolbar button:hover { background: #eef2ff; border-color: var(--primary); color: var(--primary); }
+
+    /* Group sections */
+    .grammar-group { border-bottom: 1px solid var(--border); }
+    .grammar-group.drag-over { background: #eef4ff; outline: 2px dashed var(--primary); outline-offset: -2px; }
+    .grammar-group-header { padding: 8px 14px; display: flex; align-items: center; justify-content: space-between; gap: 6px; cursor: pointer; background: #fafbff; user-select: none; }
+    .grammar-group-header:hover { background: #f0f5ff; }
+    .grammar-group-title { font-size: 12px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 6px; flex: 1; min-width: 0; }
+    .grammar-group-toggle { font-size: 10px; color: var(--muted); width: 10px; }
+    .grammar-group-count { font-size: 10px; font-weight: 600; color: var(--muted); padding: 1px 6px; background: #eef2ff; border-radius: 999px; }
+    .grammar-group-actions { display: none; gap: 2px; flex-shrink: 0; }
+    .grammar-group-header:hover .grammar-group-actions { display: flex; }
+    .grammar-group-body { padding: 0; }
+    .grammar-group-body.collapsed { display: none; }
+    .grammar-group-empty { padding: 8px 14px; font-size: 11px; color: var(--muted); font-style: italic; }
+
     .grammar-doc-item { padding: 10px 14px; cursor: pointer; border-left: 3px solid transparent; transition: background .1s, border-color .1s; display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; }
     .grammar-doc-item:hover { background: #f8faff; }
     .grammar-doc-item.active { border-left-color: var(--primary); background: #eef2ff; }
+    .grammar-doc-item.dragging { opacity: 0.4; }
     .grammar-doc-item .item-actions { display: none; gap: 4px; flex-shrink: 0; }
     .grammar-doc-item:hover .item-actions { display: flex; }
     .grammar-doc-body { flex: 1; min-width: 0; }
@@ -620,7 +640,17 @@
           <!-- Sidebar -->
           <div class="grammar-sidebar">
             <div class="grammar-sidebar-header">
-              <span>Grammar Docs</span>
+              <span class="section-title">Grammar Docs</span>
+              <select id="grammarSortMode" onchange="onGrammarSortChange()" title="Sort">
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+                <option value="title-asc">Title A → Z</option>
+                <option value="title-desc">Title Z → A</option>
+                <option value="level">Level (A1 → C1)</option>
+              </select>
+            </div>
+            <div class="grammar-sidebar-toolbar">
+              <button onclick="createGrammarGroupPrompt()">+ New group</button>
             </div>
             <div id="grammarDocList"></div>
             <div class="grammar-import-wrap">
@@ -736,6 +766,33 @@
     <div class="modal-actions">
       <button class="btn btn-ghost btn-sm" onclick="closeModal('collectionModal')">Cancel</button>
       <button class="btn btn-primary btn-sm" onclick="saveCollection()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Grammar group modal -->
+<div class="modal-overlay" id="grammarGroupModal">
+  <div class="modal">
+    <h3 id="grammarGroupModalTitle">New Group</h3>
+    <div class="field"><label for="grammarGroupNameInput">Name</label><input type="text" id="grammarGroupNameInput" placeholder="Group name" onkeydown="if(event.key==='Enter'){event.preventDefault();saveGrammarGroup();}" /></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost btn-sm" onclick="closeModal('grammarGroupModal')">Cancel</button>
+      <button class="btn btn-primary btn-sm" onclick="saveGrammarGroup()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Move grammar doc to group modal -->
+<div class="modal-overlay" id="grammarMoveModal">
+  <div class="modal">
+    <h3>Move to Group</h3>
+    <div class="field">
+      <label for="grammarMoveGroupSel">Group</label>
+      <select id="grammarMoveGroupSel"></select>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost btn-sm" onclick="closeModal('grammarMoveModal')">Cancel</button>
+      <button class="btn btn-primary btn-sm" onclick="confirmMoveGrammarDoc()">Move</button>
     </div>
   </div>
 </div>
@@ -1465,6 +1522,9 @@
      GRAMMAR
   ══════════════════════════════════════════════════════════════════════════ */
   let grammarDocs = [];
+  let grammarGroups = [];
+  let grammarSortMode = localStorage.getItem('grammarSortMode') || 'newest';
+  let collapsedGroups = new Set(JSON.parse(localStorage.getItem('grammarCollapsedGroups') || '[]'));
   let currentDocDetail = null;
   let exIndex = 0;
   let exSession = { correct: 0, total: 0 };
@@ -1480,19 +1540,124 @@
 
   async function loadGrammarDocs() {
     try {
-      grammarDocs = await invoke('list_grammar_docs');
+      const [docs, groups] = await Promise.all([
+        invoke('list_grammar_docs'),
+        invoke('list_grammar_groups'),
+      ]);
+      grammarDocs = docs;
+      grammarGroups = groups;
+      // Restore the persisted sort mode in the dropdown.
+      const sortEl = document.getElementById('grammarSortMode');
+      if (sortEl) sortEl.value = grammarSortMode;
       renderGrammarList();
     } catch (err) { console.error('loadGrammarDocs:', err); }
   }
 
+  function sortDocs(docs) {
+    const arr = [...docs];
+    const levelOrder = { 'A1': 1, 'A2': 2, 'B1': 3, 'B2': 4, 'C1': 5, 'C2': 6 };
+    switch (grammarSortMode) {
+      case 'oldest':
+        arr.sort((a, b) => (a.createdAt || '').localeCompare(b.createdAt || ''));
+        break;
+      case 'title-asc':
+        arr.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+        break;
+      case 'title-desc':
+        arr.sort((a, b) => (b.title || '').localeCompare(a.title || ''));
+        break;
+      case 'level':
+        arr.sort((a, b) => {
+          const la = levelOrder[a.level] || 99;
+          const lb = levelOrder[b.level] || 99;
+          if (la !== lb) return la - lb;
+          return (a.title || '').localeCompare(b.title || '');
+        });
+        break;
+      case 'newest':
+      default:
+        arr.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
+    }
+    return arr;
+  }
+
   function renderGrammarList() {
     const el = document.getElementById('grammarDocList');
-    if (grammarDocs.length === 0) {
-      el.innerHTML = '<div style="padding:14px;font-size:13px;color:var(--muted)">No docs yet. Import a JSON file.</div>';
+    if (grammarDocs.length === 0 && grammarGroups.length === 0) {
+      el.innerHTML = '<div style="padding:14px;font-size:13px;color:var(--muted)">No docs yet. Create a group or import a file.</div>';
       return;
     }
-    el.innerHTML = grammarDocs.map(d => `
-      <div class="grammar-doc-item" id="gditem_${d.id}" onclick="openGrammarDoc(${d.id})">
+
+    const docsByGroup = new Map();
+    docsByGroup.set(null, []);
+    for (const g of grammarGroups) docsByGroup.set(g.id, []);
+    for (const d of grammarDocs) {
+      const key = d.groupId ?? null;
+      // Fall through to Ungrouped if the doc points to a stale/deleted group.
+      const bucket = docsByGroup.get(key) || docsByGroup.get(null);
+      bucket.push(d);
+    }
+
+    const sections = [];
+    for (const g of grammarGroups) {
+      sections.push(renderGroupSection(g, docsByGroup.get(g.id) || []));
+    }
+    // Ungrouped section (always shown if there are docs in it OR if there are no groups at all)
+    const ungrouped = docsByGroup.get(null) || [];
+    if (ungrouped.length > 0 || grammarGroups.length === 0) {
+      sections.push(renderUngroupedSection(ungrouped));
+    }
+    el.innerHTML = sections.join('');
+  }
+
+  function renderGroupSection(group, docs) {
+    const collapsed = collapsedGroups.has(group.id);
+    return `
+      <div class="grammar-group" data-group-id="${group.id}">
+        <div class="grammar-group-header" onclick="toggleGroup(${group.id})">
+          <div class="grammar-group-title">
+            <span class="grammar-group-toggle">${collapsed ? '▶' : '▼'}</span>
+            <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(group.name)}</span>
+            <span class="grammar-group-count">${docs.length}</span>
+          </div>
+          <div class="grammar-group-actions">
+            <button class="btn-icon" title="Rename" onclick="renameGrammarGroup(${group.id}); event.stopPropagation()">✎</button>
+            <button class="btn-icon" title="Delete group" onclick="deleteGrammarGroup(${group.id}); event.stopPropagation()">✕</button>
+          </div>
+        </div>
+        <div class="grammar-group-body ${collapsed ? 'collapsed' : ''}">
+          ${docs.length === 0
+            ? '<div class="grammar-group-empty">Drop a doc here</div>'
+            : sortDocs(docs).map(renderDocItem).join('')}
+        </div>
+      </div>`;
+  }
+
+  function renderUngroupedSection(docs) {
+    const collapsed = collapsedGroups.has('__ungrouped__');
+    return `
+      <div class="grammar-group" data-group-id="">
+        <div class="grammar-group-header" onclick="toggleGroup('__ungrouped__')">
+          <div class="grammar-group-title">
+            <span class="grammar-group-toggle">${collapsed ? '▶' : '▼'}</span>
+            <span>Ungrouped</span>
+            <span class="grammar-group-count">${docs.length}</span>
+          </div>
+        </div>
+        <div class="grammar-group-body ${collapsed ? 'collapsed' : ''}">
+          ${docs.length === 0
+            ? '<div class="grammar-group-empty">Drop a doc here</div>'
+            : sortDocs(docs).map(renderDocItem).join('')}
+        </div>
+      </div>`;
+  }
+
+  function renderDocItem(d) {
+    return `
+      <div class="grammar-doc-item" id="gditem_${d.id}"
+           draggable="true"
+           data-doc-id="${d.id}"
+           onclick="openGrammarDoc(${d.id})">
         <div class="grammar-doc-body">
           <div class="grammar-doc-title">${esc(d.title)}</div>
           <div class="grammar-doc-meta">
@@ -1502,9 +1667,214 @@
           </div>
         </div>
         <div class="item-actions">
+          <button class="btn-icon" title="Move to group" onclick="openMoveGrammarDoc(${d.id}); event.stopPropagation()">📁</button>
           <button class="btn-icon" title="Delete" onclick="deleteGrammarDoc(${d.id}); event.stopPropagation()">✕</button>
         </div>
-      </div>`).join('');
+      </div>`;
+  }
+
+  function onGrammarSortChange() {
+    grammarSortMode = document.getElementById('grammarSortMode').value;
+    localStorage.setItem('grammarSortMode', grammarSortMode);
+    renderGrammarList();
+  }
+
+  function toggleGroup(id) {
+    if (collapsedGroups.has(id)) collapsedGroups.delete(id);
+    else collapsedGroups.add(id);
+    localStorage.setItem('grammarCollapsedGroups', JSON.stringify([...collapsedGroups]));
+    renderGrammarList();
+  }
+
+  // ── Group CRUD ────────────────────────────────────────────────────────────
+  let editingGrammarGroupId = null;
+
+  function createGrammarGroupPrompt() {
+    editingGrammarGroupId = null;
+    document.getElementById('grammarGroupModalTitle').textContent = 'New Group';
+    const input = document.getElementById('grammarGroupNameInput');
+    input.value = '';
+    openModal('grammarGroupModal');
+    setTimeout(() => input.focus(), 50);
+  }
+
+  function renameGrammarGroup(id) {
+    const g = grammarGroups.find(x => x.id === id);
+    if (!g) return;
+    editingGrammarGroupId = id;
+    document.getElementById('grammarGroupModalTitle').textContent = 'Rename Group';
+    const input = document.getElementById('grammarGroupNameInput');
+    input.value = g.name;
+    openModal('grammarGroupModal');
+    setTimeout(() => { input.focus(); input.select(); }, 50);
+  }
+
+  async function saveGrammarGroup() {
+    const name = document.getElementById('grammarGroupNameInput').value.trim();
+    if (!name) { alert('Name is required.'); return; }
+    try {
+      if (editingGrammarGroupId) {
+        await invoke('update_grammar_group', { payload: { id: editingGrammarGroupId, name } });
+      } else {
+        await invoke('create_grammar_group', { payload: { name } });
+      }
+      closeModal('grammarGroupModal');
+      await loadGrammarDocs();
+    } catch (err) { alert('Error: ' + err); }
+  }
+
+  async function deleteGrammarGroup(id) {
+    const g = grammarGroups.find(x => x.id === id);
+    if (!g) return;
+    if (!confirm(`Delete group "${g.name}"? Docs in it will become Ungrouped.`)) return;
+    try {
+      await invoke('delete_grammar_group', { id });
+      await loadGrammarDocs();
+    } catch (err) { alert('Error: ' + err); }
+  }
+
+  // ── Drag & drop ───────────────────────────────────────────────────────────
+  // Delegated listeners on the list container; previous per-item inline
+  // handlers were fragile (drag-over flickered on child elements and drops
+  // sometimes failed). One source of truth fixes both.
+  let draggedDocId = null;
+  let autoscrollRAF = null;
+  let autoscrollSpeed = 0;
+
+  function clearDragOver() {
+    document.querySelectorAll('.grammar-group.drag-over').forEach(el => el.classList.remove('drag-over'));
+  }
+
+  function setupGrammarDnD() {
+    const list = document.getElementById('grammarDocList');
+    if (!list || list.dataset.dndReady === '1') return;
+    list.dataset.dndReady = '1';
+
+    list.addEventListener('dragstart', (e) => {
+      const item = e.target.closest('.grammar-doc-item');
+      if (!item) return;
+      draggedDocId = parseInt(item.dataset.docId, 10);
+      item.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+      try { e.dataTransfer.setData('text/plain', String(draggedDocId)); } catch {}
+    });
+
+    list.addEventListener('dragend', () => {
+      document.querySelectorAll('.grammar-doc-item.dragging').forEach(el => el.classList.remove('dragging'));
+      clearDragOver();
+      draggedDocId = null;
+      stopAutoscroll();
+    });
+
+    list.addEventListener('dragover', (e) => {
+      if (draggedDocId == null) return;
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      const group = e.target.closest('.grammar-group');
+      if (!group) { clearDragOver(); return; }
+      list.querySelectorAll('.grammar-group.drag-over').forEach(el => {
+        if (el !== group) el.classList.remove('drag-over');
+      });
+      group.classList.add('drag-over');
+    });
+
+    list.addEventListener('dragleave', (e) => {
+      if (!list.contains(e.relatedTarget)) clearDragOver();
+    });
+
+    list.addEventListener('drop', async (e) => {
+      e.preventDefault();
+      const group = e.target.closest('.grammar-group');
+      clearDragOver();
+      const docId = draggedDocId;
+      draggedDocId = null;
+      stopAutoscroll();
+      if (docId == null || !group) return;
+      const attr = group.getAttribute('data-group-id');
+      const groupId = (attr === '' || attr == null) ? null : parseInt(attr, 10);
+      const doc = grammarDocs.find(d => d.id === docId);
+      if (doc && (doc.groupId ?? null) === groupId) return;
+      try {
+        await invoke('move_grammar_doc', { payload: { docId, groupId } });
+        await loadGrammarDocs();
+      } catch (err) { alert('Error: ' + err); }
+    });
+
+    // Autoscroll the active page while dragging near top/bottom edges.
+    // Capture phase so we still react when dragover happens outside the list
+    // (e.g. cursor over header/empty areas of the page).
+    document.addEventListener('dragover', (e) => {
+      if (draggedDocId == null) return;
+      const page = document.querySelector('.page.active');
+      if (!page) { autoscrollSpeed = 0; return; }
+      const rect = page.getBoundingClientRect();
+      const edge = 70;
+      const maxSpeed = 18;
+      const y = e.clientY;
+      if (y < rect.top + edge) {
+        autoscrollSpeed = -Math.min(maxSpeed, Math.max(2, (rect.top + edge - y) / 3));
+      } else if (y > rect.bottom - edge) {
+        autoscrollSpeed = Math.min(maxSpeed, Math.max(2, (y - (rect.bottom - edge)) / 3));
+      } else {
+        autoscrollSpeed = 0;
+      }
+      if (autoscrollSpeed !== 0 && autoscrollRAF == null) {
+        const tick = () => {
+          if (draggedDocId == null || autoscrollSpeed === 0) {
+            autoscrollRAF = null;
+            return;
+          }
+          const p = document.querySelector('.page.active');
+          if (p) p.scrollTop += autoscrollSpeed;
+          autoscrollRAF = requestAnimationFrame(tick);
+        };
+        autoscrollRAF = requestAnimationFrame(tick);
+      }
+    }, true);
+  }
+
+  function stopAutoscroll() {
+    autoscrollSpeed = 0;
+    if (autoscrollRAF) {
+      cancelAnimationFrame(autoscrollRAF);
+      autoscrollRAF = null;
+    }
+  }
+
+  // ── Move-to-group modal ───────────────────────────────────────────────────
+  let movingDocId = null;
+
+  function openMoveGrammarDoc(id) {
+    movingDocId = id;
+    const doc = grammarDocs.find(d => d.id === id);
+    const sel = document.getElementById('grammarMoveGroupSel');
+    sel.innerHTML = '';
+    const ungrouped = document.createElement('option');
+    ungrouped.value = '';
+    ungrouped.textContent = '— Ungrouped —';
+    sel.appendChild(ungrouped);
+    for (const g of grammarGroups) {
+      const opt = document.createElement('option');
+      opt.value = String(g.id);
+      opt.textContent = g.name;
+      sel.appendChild(opt);
+    }
+    sel.value = doc && doc.groupId != null ? String(doc.groupId) : '';
+    openModal('grammarMoveModal');
+    setTimeout(() => sel.focus(), 50);
+  }
+
+  async function confirmMoveGrammarDoc() {
+    if (movingDocId == null) return;
+    const sel = document.getElementById('grammarMoveGroupSel');
+    const groupId = sel.value === '' ? null : parseInt(sel.value, 10);
+    const docId = movingDocId;
+    try {
+      await invoke('move_grammar_doc', { payload: { docId, groupId } });
+      closeModal('grammarMoveModal');
+      movingDocId = null;
+      await loadGrammarDocs();
+    } catch (err) { alert('Error: ' + err); }
   }
 
   async function openGrammarDoc(id) {
@@ -1945,6 +2315,7 @@
   /* ── Init ─────────────────────────────────────────────────────────────────── */
   loadCollections();
   loadGrammarDocs();
+  setupGrammarDnD();
 </script>
 </body>
 </html>

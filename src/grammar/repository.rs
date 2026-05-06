@@ -2,7 +2,7 @@ use std::cell::RefCell;
 use rusqlite::Connection;
 use chrono::Utc;
 use crate::db::DbError;
-use super::{GrammarDoc, GrammarDocDetail, GrammarDocSummary, GrammarExercise};
+use super::{GrammarDoc, GrammarDocDetail, GrammarDocSummary, GrammarExercise, GrammarGroup, GrammarGroupSummary};
 use super::parser::GrammarDocInput;
 
 pub struct GrammarRepository {
@@ -14,10 +14,12 @@ impl GrammarRepository {
         GrammarRepository { conn: RefCell::new(conn) }
     }
 
+    // ── Docs ─────────────────────────────────────────────────────────────────
+
     pub fn list_docs(&self) -> Result<Vec<GrammarDocSummary>, DbError> {
         let conn = self.conn.borrow();
         let mut stmt = conn.prepare(
-            "SELECT g.id, g.title, g.category, g.level, g.created_at, \
+            "SELECT g.id, g.title, g.category, g.level, g.group_id, g.created_at, \
              COUNT(e.id) as exercise_count \
              FROM grammar_docs g \
              LEFT JOIN grammar_exercises e ON e.doc_id = g.id \
@@ -30,8 +32,9 @@ impl GrammarRepository {
                 title: row.get(1)?,
                 category: row.get(2)?,
                 level: row.get(3)?,
-                created_at: row.get(4)?,
-                exercise_count: row.get::<_, i64>(5)? as usize,
+                group_id: row.get(4)?,
+                created_at: row.get(5)?,
+                exercise_count: row.get::<_, i64>(6)? as usize,
             })
         }).map_err(DbError::Sqlite)?;
 
@@ -43,7 +46,7 @@ impl GrammarRepository {
 
         let doc = {
             let mut stmt = conn.prepare(
-                "SELECT id, title, category, level, content, examples, created_at \
+                "SELECT id, title, category, level, content, examples, group_id, created_at \
                  FROM grammar_docs WHERE id = ?",
             ).map_err(DbError::Sqlite)?;
             let mut rows = stmt.query([id]).map_err(DbError::Sqlite)?;
@@ -57,7 +60,8 @@ impl GrammarRepository {
                     content: row.get(4)?,
                     examples: serde_json::from_str(&row.get::<_, String>(5)?)
                         .unwrap_or_default(),
-                    created_at: row.get(6)?,
+                    group_id: row.get(6)?,
+                    created_at: row.get(7)?,
                 },
             }
         };
@@ -83,7 +87,7 @@ impl GrammarRepository {
         Ok(Some(GrammarDocDetail { doc, exercises }))
     }
 
-    pub fn insert_doc(&self, input: &GrammarDocInput) -> Result<i64, DbError> {
+    pub fn insert_doc(&self, input: &GrammarDocInput, group_id: Option<i64>) -> Result<i64, DbError> {
         let now = Utc::now().to_rfc3339();
         let examples_json = serde_json::to_string(&input.examples)
             .map_err(|e| DbError::Validation(e.to_string()))?;
@@ -92,11 +96,11 @@ impl GrammarRepository {
         let tx = conn.transaction().map_err(DbError::Sqlite)?;
 
         tx.execute(
-            "INSERT INTO grammar_docs (title, category, level, content, examples, created_at) \
-             VALUES (?, ?, ?, ?, ?, ?)",
+            "INSERT INTO grammar_docs (title, category, level, content, examples, group_id, created_at) \
+             VALUES (?, ?, ?, ?, ?, ?, ?)",
             rusqlite::params![
                 &input.title, &input.category, &input.level,
-                &input.content, &examples_json, &now
+                &input.content, &examples_json, &group_id, &now
             ],
         ).map_err(DbError::Sqlite)?;
 
@@ -124,6 +128,118 @@ impl GrammarRepository {
         let conn = self.conn.borrow();
         conn.execute("DELETE FROM grammar_docs WHERE id = ?", [id])
             .map_err(DbError::Sqlite)?;
+        Ok(())
+    }
+
+    pub fn move_doc(&self, doc_id: i64, group_id: Option<i64>) -> Result<(), DbError> {
+        let conn = self.conn.borrow();
+        conn.execute(
+            "UPDATE grammar_docs SET group_id = ? WHERE id = ?",
+            rusqlite::params![group_id, doc_id],
+        ).map_err(DbError::Sqlite)?;
+        Ok(())
+    }
+
+    // ── Groups ───────────────────────────────────────────────────────────────
+
+    pub fn list_groups(&self) -> Result<Vec<GrammarGroupSummary>, DbError> {
+        let conn = self.conn.borrow();
+        let mut stmt = conn.prepare(
+            "SELECT g.id, g.name, g.description, g.sort_order, g.created_at, \
+             COUNT(d.id) as doc_count \
+             FROM grammar_groups g \
+             LEFT JOIN grammar_docs d ON d.group_id = g.id \
+             GROUP BY g.id ORDER BY g.sort_order, g.name",
+        ).map_err(DbError::Sqlite)?;
+
+        let rows = stmt.query_map([], |row| {
+            Ok(GrammarGroupSummary {
+                id: row.get(0)?,
+                name: row.get(1)?,
+                description: row.get(2)?,
+                sort_order: row.get(3)?,
+                created_at: row.get(4)?,
+                doc_count: row.get::<_, i64>(5)? as usize,
+            })
+        }).map_err(DbError::Sqlite)?;
+
+        rows.collect::<Result<Vec<_>, _>>().map_err(DbError::Sqlite)
+    }
+
+    pub fn create_group(&self, name: &str, description: Option<&str>) -> Result<GrammarGroup, DbError> {
+        let trimmed = name.trim();
+        if trimmed.is_empty() {
+            return Err(DbError::Validation("group name is required".into()));
+        }
+        let now = Utc::now().to_rfc3339();
+        let conn = self.conn.borrow();
+        conn.execute(
+            "INSERT INTO grammar_groups (name, description, sort_order, created_at) VALUES (?, ?, 0, ?)",
+            rusqlite::params![trimmed, description, &now],
+        ).map_err(DbError::Sqlite)?;
+        let id = conn.last_insert_rowid();
+        Ok(GrammarGroup {
+            id,
+            name: trimmed.to_string(),
+            description: description.map(|s| s.to_string()),
+            sort_order: 0,
+            created_at: now,
+        })
+    }
+
+    /// Find a group by exact name (case-sensitive); create if absent.
+    pub fn find_or_create_group(&self, name: &str) -> Result<i64, DbError> {
+        let trimmed = name.trim();
+        if trimmed.is_empty() {
+            return Err(DbError::Validation("group name is required".into()));
+        }
+        let conn = self.conn.borrow();
+        let existing: Option<i64> = conn
+            .query_row(
+                "SELECT id FROM grammar_groups WHERE name = ?",
+                rusqlite::params![trimmed],
+                |row| row.get(0),
+            )
+            .ok();
+        if let Some(id) = existing {
+            return Ok(id);
+        }
+        drop(conn);
+        let group = self.create_group(trimmed, None)?;
+        Ok(group.id)
+    }
+
+    pub fn update_group(&self, id: i64, name: Option<&str>, description: Option<Option<&str>>) -> Result<(), DbError> {
+        let conn = self.conn.borrow();
+        if let Some(name) = name {
+            let trimmed = name.trim();
+            if trimmed.is_empty() {
+                return Err(DbError::Validation("group name is required".into()));
+            }
+            conn.execute(
+                "UPDATE grammar_groups SET name = ? WHERE id = ?",
+                rusqlite::params![trimmed, id],
+            ).map_err(DbError::Sqlite)?;
+        }
+        if let Some(desc) = description {
+            conn.execute(
+                "UPDATE grammar_groups SET description = ? WHERE id = ?",
+                rusqlite::params![desc, id],
+            ).map_err(DbError::Sqlite)?;
+        }
+        Ok(())
+    }
+
+    /// Delete the group; docs in it become Ungrouped (group_id = NULL).
+    /// Done explicitly because pre-existing DBs may lack the FK ON DELETE SET NULL.
+    pub fn delete_group(&self, id: i64) -> Result<(), DbError> {
+        let mut conn = self.conn.borrow_mut();
+        let tx = conn.transaction().map_err(DbError::Sqlite)?;
+        tx.execute("UPDATE grammar_docs SET group_id = NULL WHERE group_id = ?", [id])
+            .map_err(DbError::Sqlite)?;
+        tx.execute("DELETE FROM grammar_groups WHERE id = ?", [id])
+            .map_err(DbError::Sqlite)?;
+        tx.commit().map_err(DbError::Sqlite)?;
         Ok(())
     }
 }

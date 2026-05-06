@@ -14,6 +14,7 @@ pub struct GrammarDoc {
     pub level: Option<String>,
     pub content: String,
     pub examples: Vec<String>,
+    pub group_id: Option<i64>,
     pub created_at: String,
 }
 
@@ -24,6 +25,26 @@ pub struct GrammarDocSummary {
     pub category: Option<String>,
     pub level: Option<String>,
     pub exercise_count: usize,
+    pub group_id: Option<i64>,
+    pub created_at: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct GrammarGroup {
+    pub id: i64,
+    pub name: String,
+    pub description: Option<String>,
+    pub sort_order: i64,
+    pub created_at: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct GrammarGroupSummary {
+    pub id: i64,
+    pub name: String,
+    pub description: Option<String>,
+    pub sort_order: i64,
+    pub doc_count: usize,
     pub created_at: String,
 }
 

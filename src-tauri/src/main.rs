@@ -8,6 +8,8 @@ use commands::{
     next_question, save_export, submit_answer,
     update_collection, update_topic,
     list_grammar_docs, get_grammar_doc, import_grammar, delete_grammar_doc,
+    list_grammar_groups, create_grammar_group, update_grammar_group,
+    delete_grammar_group, move_grammar_doc,
 };
 use tauri::{WebviewUrl, WebviewWindowBuilder};
 
@@ -34,6 +36,11 @@ fn main() {
             get_grammar_doc,
             import_grammar,
             delete_grammar_doc,
+            list_grammar_groups,
+            create_grammar_group,
+            update_grammar_group,
+            delete_grammar_group,
+            move_grammar_doc,
         ])
         .setup(|app| {
             WebviewWindowBuilder::new(app, "main", WebviewUrl::App("index.html".into()))
