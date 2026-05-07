@@ -41,7 +41,7 @@ pub fn parse_grammar_json(input: &str) -> Result<Vec<GrammarDocInput>, ParseErro
 
 /// Parse a single `.md` file with the format:
 ///
-/// ```
+/// ```text
 /// ---
 /// title: Present Simple
 /// category: tenses

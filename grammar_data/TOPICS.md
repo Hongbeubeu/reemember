@@ -41,10 +41,10 @@
 
 ## Passive Voice (`category: passive`)
 
-- [ ] 01 — Present & Past Simple Passive
-- [ ] 02 — Perfect & Continuous Passive
-- [ ] 03 — Passive with Modals
-- [ ] 04 — Causative — have / get something done
+- [x] 01 — Present & Past Simple Passive
+- [x] 02 — Perfect & Continuous Passive
+- [x] 03 — Passive with Modals
+- [x] 04 — Causative — have / get something done
 
 ## Reported Speech (`category: reported_speech`)
 
