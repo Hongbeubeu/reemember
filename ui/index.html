@@ -593,6 +593,10 @@
 
     .import-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
     .import-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .manifest-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .manifest-toggle { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text); cursor: pointer; user-select: none; }
+    .manifest-toggle input { width: 16px; height: 16px; accent-color: var(--primary); }
+    .manifest-meta { margin-top: 8px; font-size: 12px; color: var(--muted); }
 
     .import-result { padding: 12px 16px; border-radius: 10px; font-size: 13px; display: none; margin-top: 12px; }
     .import-result.visible { display: block; }
@@ -637,6 +641,8 @@
       .import-opts { grid-template-columns: 1fr; }
       .import-actions { flex-direction: column; }
       .import-actions .btn { width: 100%; }
+      .manifest-actions { flex-direction: column; align-items: stretch; }
+      .manifest-actions .btn { width: 100%; }
       .export-actions { flex-direction: column; }
       .export-actions .btn { width: 100%; }
     }
@@ -985,6 +991,26 @@
     <!-- ══ IMPORT / EXPORT ════════════════════════════════════════════════════ -->
     <div id="importExportPage" class="page">
       <div class="page-inner">
+
+        <div class="card">
+          <div class="card-title">Manifest sync</div>
+
+          <div class="field">
+            <label for="manifestUrl">Manifest URL</label>
+            <input type="url" id="manifestUrl" placeholder="https://gist.githubusercontent.com/user/gist/raw/manifest.json" oninput="saveManifestSyncPrefs()" />
+          </div>
+
+          <div class="manifest-actions">
+            <button class="btn btn-primary" id="manifestSyncBtn" onclick="syncManifest(true)">Sync now</button>
+            <label class="manifest-toggle" for="manifestAutoSync">
+              <input type="checkbox" id="manifestAutoSync" onchange="saveManifestSyncPrefs()" />
+              Sync on startup
+            </label>
+          </div>
+
+          <div class="manifest-meta" id="manifestLastSync"></div>
+          <div class="import-result" id="manifestResult"></div>
+        </div>
 
         <div class="card">
           <div class="card-title">Import vocabulary</div>
@@ -1808,6 +1834,89 @@
   /* ══════════════════════════════════════════════════════════════════════════
      IMPORT / EXPORT
   ══════════════════════════════════════════════════════════════════════════ */
+  const MANIFEST_URL_KEY = 'reemember.manifest.url';
+  const MANIFEST_AUTO_SYNC_KEY = 'reemember.manifest.autoSync';
+  const MANIFEST_LAST_SYNC_KEY = 'reemember.manifest.lastSync';
+  const MANIFEST_LAST_VERSION_KEY = 'reemember.manifest.lastVersion';
+
+  function initManifestSyncControls() {
+    const urlInput = document.getElementById('manifestUrl');
+    const autoInput = document.getElementById('manifestAutoSync');
+    urlInput.value = localStorage.getItem(MANIFEST_URL_KEY) || '';
+    autoInput.checked = localStorage.getItem(MANIFEST_AUTO_SYNC_KEY) === 'true';
+    updateManifestLastSyncLabel();
+  }
+
+  function saveManifestSyncPrefs() {
+    const url = document.getElementById('manifestUrl').value.trim();
+    const autoSync = document.getElementById('manifestAutoSync').checked;
+    localStorage.setItem(MANIFEST_URL_KEY, url);
+    localStorage.setItem(MANIFEST_AUTO_SYNC_KEY, autoSync ? 'true' : 'false');
+  }
+
+  function updateManifestLastSyncLabel() {
+    const el = document.getElementById('manifestLastSync');
+    const lastSync = localStorage.getItem(MANIFEST_LAST_SYNC_KEY);
+    const lastVersion = localStorage.getItem(MANIFEST_LAST_VERSION_KEY);
+    el.textContent = lastSync
+      ? `Last sync: ${lastSync}${lastVersion ? ` - version ${lastVersion}` : ''}`
+      : '';
+  }
+
+  async function syncManifest(manual = true) {
+    saveManifestSyncPrefs();
+    const manifestUrl = document.getElementById('manifestUrl').value.trim();
+    if (!manifestUrl) {
+      if (manual) alert('Manifest URL is required.');
+      return;
+    }
+
+    const btn = document.getElementById('manifestSyncBtn');
+    const box = document.getElementById('manifestResult');
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Syncing...';
+    box.className = 'import-result';
+    box.innerHTML = '';
+
+    try {
+      const result = await invoke('sync_manifest_url', { payload: { manifestUrl } });
+      const now = new Date().toLocaleString();
+      localStorage.setItem(MANIFEST_LAST_SYNC_KEY, now);
+      if (result.version) localStorage.setItem(MANIFEST_LAST_VERSION_KEY, result.version);
+      updateManifestLastSyncLabel();
+      showManifestResult(result);
+      await Promise.all([loadCollections(), loadGrammarDocs()]);
+    } catch (err) {
+      box.className = 'import-result visible err';
+      box.textContent = (manual ? 'Error: ' : 'Startup sync error: ') + err;
+    } finally {
+      btn.disabled = false;
+      btn.textContent = originalText;
+    }
+  }
+
+  function showManifestResult(r) {
+    const box = document.getElementById('manifestResult');
+    const hasErrors = r.errors && r.errors.length > 0;
+    box.className = 'import-result visible ' + (hasErrors ? 'err' : 'ok');
+    let html = r.version ? `Version: <strong>${esc(r.version)}</strong><br>` : '';
+    html += `Vocabulary: inserted <strong>${r.vocabularyInsertedCount}</strong>, updated <strong>${r.vocabularyUpdatedCount}</strong>, skipped <strong>${r.vocabularySkippedCount}</strong><br>`;
+    html += `Grammar: inserted <strong>${r.grammarInsertedCount}</strong>, updated <strong>${r.grammarUpdatedCount}</strong>`;
+    if (hasErrors) {
+      html += `<br><br><strong>Errors (${r.errorCount}):</strong><ul>`;
+      r.errors.forEach(e => { html += `<li>${esc(e)}</li>`; });
+      html += '</ul>';
+    }
+    box.innerHTML = html;
+  }
+
+  async function syncManifestOnStartup() {
+    const shouldSync = localStorage.getItem(MANIFEST_AUTO_SYNC_KEY) === 'true';
+    if (!shouldSync) return;
+    await syncManifest(false);
+  }
+
   const dropZone = document.getElementById('dropZone');
   dropZone.addEventListener('dragover',  e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
   dropZone.addEventListener('dragleave', ()  => dropZone.classList.remove('drag-over'));
@@ -2692,18 +2801,22 @@
 
   async function importGrammarFiles(files) {
     let imported = 0;
+    let inserted = 0;
+    let updated = 0;
     const errors = [];
     for (const file of files) {
       try {
         const content = await readFileAsText(file);
         const result = await invoke('import_grammar', { content });
         imported += result.importedCount;
+        inserted += result.insertedCount || 0;
+        updated += result.updatedCount || 0;
         for (const err of result.errors) errors.push(`${file.name}: ${err}`);
       } catch (err) {
         errors.push(`${file.name}: ${err}`);
       }
     }
-    alert(`Imported ${imported} grammar document(s) from ${files.length} file(s).` +
+    alert(`Imported ${imported} grammar document(s) from ${files.length} file(s).\nInserted: ${inserted} | Updated: ${updated}` +
           (errors.length ? '\nErrors:\n' + errors.join('\n') : ''));
     await loadGrammarDocs();
   }
@@ -2772,8 +2885,13 @@
   }
 
   /* ── Init ─────────────────────────────────────────────────────────────────── */
-  loadCollections();
-  loadGrammarDocs();
+  async function initApp() {
+    initManifestSyncControls();
+    await Promise.all([loadCollections(), loadGrammarDocs()]);
+    await syncManifestOnStartup();
+  }
+
+  initApp();
 </script>
 </body>
 </html>

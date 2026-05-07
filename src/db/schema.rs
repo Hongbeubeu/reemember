@@ -220,6 +220,7 @@ pub fn init_schema(conn: &Connection) -> Result<(), DbError> {
             examples TEXT NOT NULL DEFAULT '[]',
             group_id INTEGER,
             created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL DEFAULT '',
             FOREIGN KEY(group_id) REFERENCES grammar_groups(id) ON DELETE SET NULL
         )",
         [],
@@ -233,6 +234,17 @@ pub fn init_schema(conn: &Connection) -> Result<(), DbError> {
     ).unwrap_or(0);
     if has_group_id == 0 {
         conn.execute("ALTER TABLE grammar_docs ADD COLUMN group_id INTEGER", [])?;
+    }
+
+    // Migration: add updated_at to existing grammar_docs tables that predate it.
+    let has_updated_at: i64 = conn.query_row(
+        "SELECT COUNT(*) FROM pragma_table_info('grammar_docs') WHERE name = 'updated_at'",
+        [],
+        |row| row.get(0),
+    ).unwrap_or(0);
+    if has_updated_at == 0 {
+        conn.execute("ALTER TABLE grammar_docs ADD COLUMN updated_at TEXT", [])?;
+        conn.execute("UPDATE grammar_docs SET updated_at = created_at", [])?;
     }
 
     conn.execute(

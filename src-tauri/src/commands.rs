@@ -99,12 +99,56 @@ pub struct TopicDto {
 
 // ── Import/Export DTOs ────────────────────────────────────────────────────────
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Serialize, Default, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct ImportReportDto {
     pub inserted_count: usize,
     pub updated_count: usize,
     pub skipped_count: usize,
+    pub error_count: usize,
+    pub errors: Vec<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SyncManifestUrlRequest {
+    pub manifest_url: String,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct RemoteManifest {
+    #[serde(default)]
+    version: Option<String>,
+    files: Vec<RemoteManifestFile>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct RemoteManifestFile {
+    kind: String,
+    #[serde(default)]
+    name: Option<String>,
+    #[serde(default)]
+    url: Option<String>,
+    #[serde(default)]
+    content: Option<String>,
+    #[serde(default)]
+    collection_name: Option<String>,
+    #[serde(default)]
+    topic_name: Option<String>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ManifestSyncResultDto {
+    pub version: Option<String>,
+    pub vocabulary_inserted_count: usize,
+    pub vocabulary_updated_count: usize,
+    pub vocabulary_skipped_count: usize,
+    pub grammar_inserted_count: usize,
+    pub grammar_updated_count: usize,
+    pub grammar_imported_count: usize,
     pub error_count: usize,
     pub errors: Vec<String>,
 }
@@ -366,6 +410,99 @@ pub fn import_vocabulary(payload: ImportVocabularyRequest) -> Result<ImportRepor
 }
 
 #[tauri::command]
+pub async fn sync_manifest_url(
+    payload: SyncManifestUrlRequest,
+) -> Result<ManifestSyncResultDto, String> {
+    let manifest_url = payload.manifest_url.trim();
+    if manifest_url.is_empty() {
+        return Err("manifest URL is required".to_string());
+    }
+
+    let client = reqwest::Client::new();
+    let manifest_text = fetch_remote_text(&client, manifest_url).await?;
+    let manifest: RemoteManifest = serde_json::from_str(&manifest_text)
+        .map_err(|e| format!("manifest JSON is invalid: {}", e))?;
+
+    let mut fetched_files = Vec::with_capacity(manifest.files.len());
+    for file in manifest.files {
+        let content = match file.content.clone() {
+            Some(content) => content,
+            None => {
+                let file_url = file.url.as_deref().ok_or_else(|| {
+                    format!(
+                        "{} is missing both url and content",
+                        manifest_file_label(&file)
+                    )
+                })?;
+                let resolved_url = resolve_manifest_url(manifest_url, file_url)?;
+                fetch_remote_text(&client, &resolved_url)
+                    .await
+                    .map_err(|e| format!("{}: {}", manifest_file_label(&file), e))?
+            }
+        };
+        fetched_files.push((file, content));
+    }
+
+    let vocab_conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let vocab_repo = WordRepository::new(vocab_conn);
+    let grammar_conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let grammar_repo = GrammarRepository::new(grammar_conn);
+
+    let mut result = ManifestSyncResultDto {
+        version: manifest.version,
+        vocabulary_inserted_count: 0,
+        vocabulary_updated_count: 0,
+        vocabulary_skipped_count: 0,
+        grammar_inserted_count: 0,
+        grammar_updated_count: 0,
+        grammar_imported_count: 0,
+        error_count: 0,
+        errors: vec![],
+    };
+
+    for (file, content) in fetched_files {
+        match file.kind.trim().to_lowercase().as_str() {
+            "vocabulary" | "vocab" | "words" => {
+                match VocabularyService::import_json_scoped(
+                    &vocab_repo,
+                    &content,
+                    file.collection_name.as_deref(),
+                    file.topic_name.as_deref(),
+                ) {
+                    Ok(report) => {
+                        result.vocabulary_inserted_count += report.inserted_count;
+                        result.vocabulary_updated_count += report.updated_count;
+                        result.vocabulary_skipped_count += report.skipped_count;
+                    }
+                    Err(e) => result
+                        .errors
+                        .push(format!("{}: {}", manifest_file_label(&file), e)),
+                }
+            }
+            "grammar" | "grammar_doc" | "grammar-doc" => {
+                let report = import_grammar_content(&grammar_repo, &content);
+                result.grammar_inserted_count += report.inserted_count;
+                result.grammar_updated_count += report.updated_count;
+                result.grammar_imported_count += report.imported_count;
+                for err in report.errors {
+                    result
+                        .errors
+                        .push(format!("{}: {}", manifest_file_label(&file), err));
+                }
+            }
+            other => result.errors.push(format!(
+                "{}: unsupported manifest file kind '{}'",
+                manifest_file_label(&file),
+                other
+            )),
+        }
+    }
+
+    result.error_count = result.errors.len();
+    Ok(result)
+}
+
+#[tauri::command]
 pub async fn save_export(app: tauri::AppHandle) -> Result<Option<String>, String> {
     use tauri_plugin_dialog::{DialogExt, FilePath};
 
@@ -399,6 +536,41 @@ pub async fn save_export(app: tauri::AppHandle) -> Result<Option<String>, String
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
+
+async fn fetch_remote_text(client: &reqwest::Client, url: &str) -> Result<String, String> {
+    let response = client
+        .get(url)
+        .header(reqwest::header::USER_AGENT, "reemember/0.1")
+        .send()
+        .await
+        .map_err(|e| format!("failed to fetch {}: {}", url, e))?;
+
+    let status = response.status();
+    if !status.is_success() {
+        return Err(format!("{} returned HTTP {}", url, status));
+    }
+
+    response
+        .text()
+        .await
+        .map_err(|e| format!("failed to read {}: {}", url, e))
+}
+
+fn resolve_manifest_url(manifest_url: &str, file_url: &str) -> Result<String, String> {
+    let base = reqwest::Url::parse(manifest_url)
+        .map_err(|e| format!("manifest URL is invalid: {}", e))?;
+    base.join(file_url)
+        .map(|url| url.to_string())
+        .map_err(|e| format!("manifest file URL is invalid: {}", e))
+}
+
+fn manifest_file_label(file: &RemoteManifestFile) -> String {
+    file.name
+        .as_deref()
+        .or(file.url.as_deref())
+        .unwrap_or(file.kind.as_str())
+        .to_string()
+}
 
 fn parse_mode(value: &str) -> Result<TestMode, String> {
     match value.trim().to_lowercase().as_str() {
@@ -516,10 +688,12 @@ pub struct GrammarDocDetailDto {
     pub created_at: String,
 }
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Serialize, Default, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GrammarImportResultDto {
     pub imported_count: usize,
+    pub inserted_count: usize,
+    pub updated_count: usize,
     pub errors: Vec<String>,
 }
 
@@ -582,31 +756,48 @@ fn resolve_group_for_category(repo: &GrammarRepository, category: &Option<String
 
 #[tauri::command]
 pub fn import_grammar(content: String) -> Result<GrammarImportResultDto, String> {
-    let trimmed = content.trim_start();
     let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
-    let mut imported_count = 0;
+    Ok(import_grammar_content(&repo, &content))
+}
+
+fn import_grammar_content(repo: &GrammarRepository, content: &str) -> GrammarImportResultDto {
+    let trimmed = content.trim_start();
+    let mut inserted_count = 0;
+    let mut updated_count = 0;
     let mut errors = vec![];
 
     // Auto-detect format: frontmatter "---" or leading "# " → Markdown; otherwise JSON array
     if trimmed.starts_with("---") || trimmed.starts_with("# ") {
-        match parse_grammar_md(&content) {
+        match parse_grammar_md(content) {
             Ok(doc) => {
-                let group_id = resolve_group_for_category(&repo, &doc.category);
-                match repo.insert_doc(&doc, group_id) {
-                    Ok(_) => imported_count += 1,
+                let group_id = resolve_group_for_category(repo, &doc.category);
+                match repo.upsert_doc(&doc, group_id) {
+                    Ok(result) => {
+                        if result.inserted {
+                            inserted_count += 1;
+                        } else {
+                            updated_count += 1;
+                        }
+                    }
                     Err(e) => errors.push(format!("{}: {}", doc.title, e)),
                 }
             }
             Err(e) => errors.push(e.to_string()),
         }
     } else {
-        match parse_grammar_json(&content) {
+        match parse_grammar_json(content) {
             Ok(docs) => {
                 for doc in &docs {
-                    let group_id = resolve_group_for_category(&repo, &doc.category);
-                    match repo.insert_doc(doc, group_id) {
-                        Ok(_) => imported_count += 1,
+                    let group_id = resolve_group_for_category(repo, &doc.category);
+                    match repo.upsert_doc(doc, group_id) {
+                        Ok(result) => {
+                            if result.inserted {
+                                inserted_count += 1;
+                            } else {
+                                updated_count += 1;
+                            }
+                        }
                         Err(e) => errors.push(format!("{}: {}", doc.title, e)),
                     }
                 }
@@ -615,10 +806,12 @@ pub fn import_grammar(content: String) -> Result<GrammarImportResultDto, String>
         }
     }
 
-    Ok(GrammarImportResultDto {
-        imported_count,
+    GrammarImportResultDto {
+        imported_count: inserted_count + updated_count,
+        inserted_count,
+        updated_count,
         errors,
-    })
+    }
 }
 
 #[tauri::command]

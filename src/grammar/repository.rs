@@ -1,9 +1,15 @@
-use std::cell::RefCell;
-use rusqlite::Connection;
 use chrono::Utc;
 use crate::db::DbError;
+use rusqlite::{Connection, OptionalExtension, Transaction};
+use std::cell::RefCell;
 use super::{GrammarDoc, GrammarDocDetail, GrammarDocSummary, GrammarExercise, GrammarGroup, GrammarGroupSummary};
 use super::parser::GrammarDocInput;
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct GrammarDocUpsertResult {
+    pub id: i64,
+    pub inserted: bool,
+}
 
 pub struct GrammarRepository {
     conn: RefCell<Connection>,
@@ -88,6 +94,9 @@ impl GrammarRepository {
     }
 
     pub fn insert_doc(&self, input: &GrammarDocInput, group_id: Option<i64>) -> Result<i64, DbError> {
+        let title = normalize_required(&input.title, "title")?;
+        let category = normalize_optional(&input.category);
+        let level = normalize_optional(&input.level);
         let now = Utc::now().to_rfc3339();
         let examples_json = serde_json::to_string(&input.examples)
             .map_err(|e| DbError::Validation(e.to_string()))?;
@@ -96,32 +105,90 @@ impl GrammarRepository {
         let tx = conn.transaction().map_err(DbError::Sqlite)?;
 
         tx.execute(
-            "INSERT INTO grammar_docs (title, category, level, content, examples, group_id, created_at) \
-             VALUES (?, ?, ?, ?, ?, ?, ?)",
+            "INSERT INTO grammar_docs (title, category, level, content, examples, group_id, created_at, updated_at) \
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
             rusqlite::params![
-                &input.title, &input.category, &input.level,
-                &input.content, &examples_json, &group_id, &now
+                &title, &category, &level, &input.content, &examples_json, &group_id, &now, &now
             ],
         ).map_err(DbError::Sqlite)?;
 
         let doc_id = tx.last_insert_rowid();
-
-        for (i, exercise) in input.exercises.iter().enumerate() {
-            let exercise_type = exercise.get("type")
-                .and_then(|v| v.as_str())
-                .unwrap_or("unknown")
-                .to_string();
-            let data_json = serde_json::to_string(exercise)
-                .map_err(|e| DbError::Validation(e.to_string()))?;
-            tx.execute(
-                "INSERT INTO grammar_exercises (doc_id, order_index, exercise_type, data) \
-                 VALUES (?, ?, ?, ?)",
-                rusqlite::params![doc_id, i as i32, &exercise_type, &data_json],
-            ).map_err(DbError::Sqlite)?;
-        }
+        Self::insert_exercises_tx(&tx, doc_id, input)?;
 
         tx.commit().map_err(DbError::Sqlite)?;
         Ok(doc_id)
+    }
+
+    pub fn upsert_doc(
+        &self,
+        input: &GrammarDocInput,
+        group_id: Option<i64>,
+    ) -> Result<GrammarDocUpsertResult, DbError> {
+        let title = normalize_required(&input.title, "title")?;
+        let category = normalize_optional(&input.category);
+        let category_key = category.as_deref().unwrap_or("");
+        let level = normalize_optional(&input.level);
+        let now = Utc::now().to_rfc3339();
+        let examples_json = serde_json::to_string(&input.examples)
+            .map_err(|e| DbError::Validation(e.to_string()))?;
+
+        let mut conn = self.conn.borrow_mut();
+        let tx = conn.transaction().map_err(DbError::Sqlite)?;
+
+        let existing_id = tx
+            .query_row(
+                "SELECT id FROM grammar_docs \
+                 WHERE title = ? AND IFNULL(category, '') = ? \
+                 ORDER BY id LIMIT 1",
+                rusqlite::params![&title, category_key],
+                |row| row.get::<_, i64>(0),
+            )
+            .optional()
+            .map_err(DbError::Sqlite)?;
+
+        let (doc_id, inserted) = if let Some(doc_id) = existing_id {
+            tx.execute(
+                "UPDATE grammar_docs \
+                 SET title = ?, category = ?, level = ?, content = ?, examples = ?, group_id = ?, updated_at = ? \
+                 WHERE id = ?",
+                rusqlite::params![
+                    &title,
+                    &category,
+                    &level,
+                    &input.content,
+                    &examples_json,
+                    &group_id,
+                    &now,
+                    doc_id
+                ],
+            )
+            .map_err(DbError::Sqlite)?;
+            tx.execute("DELETE FROM grammar_exercises WHERE doc_id = ?", [doc_id])
+                .map_err(DbError::Sqlite)?;
+            (doc_id, false)
+        } else {
+            tx.execute(
+                "INSERT INTO grammar_docs (title, category, level, content, examples, group_id, created_at, updated_at) \
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                rusqlite::params![
+                    &title,
+                    &category,
+                    &level,
+                    &input.content,
+                    &examples_json,
+                    &group_id,
+                    &now,
+                    &now
+                ],
+            )
+            .map_err(DbError::Sqlite)?;
+            (tx.last_insert_rowid(), true)
+        };
+
+        Self::insert_exercises_tx(&tx, doc_id, input)?;
+
+        tx.commit().map_err(DbError::Sqlite)?;
+        Ok(GrammarDocUpsertResult { id: doc_id, inserted })
     }
 
     pub fn delete_doc(&self, id: i64) -> Result<(), DbError> {
@@ -242,4 +309,43 @@ impl GrammarRepository {
         tx.commit().map_err(DbError::Sqlite)?;
         Ok(())
     }
+
+    fn insert_exercises_tx(
+        tx: &Transaction<'_>,
+        doc_id: i64,
+        input: &GrammarDocInput,
+    ) -> Result<(), DbError> {
+        for (i, exercise) in input.exercises.iter().enumerate() {
+            let exercise_type = exercise
+                .get("type")
+                .and_then(|v| v.as_str())
+                .unwrap_or("unknown")
+                .to_string();
+            let data_json =
+                serde_json::to_string(exercise).map_err(|e| DbError::Validation(e.to_string()))?;
+            tx.execute(
+                "INSERT INTO grammar_exercises (doc_id, order_index, exercise_type, data) \
+                 VALUES (?, ?, ?, ?)",
+                rusqlite::params![doc_id, i as i32, &exercise_type, &data_json],
+            )
+            .map_err(DbError::Sqlite)?;
+        }
+        Ok(())
+    }
+}
+
+fn normalize_optional(value: &Option<String>) -> Option<String> {
+    value
+        .as_ref()
+        .map(|s| s.trim())
+        .filter(|s| !s.is_empty())
+        .map(|s| s.to_string())
+}
+
+fn normalize_required(value: &str, field_name: &str) -> Result<String, DbError> {
+    let trimmed = value.trim();
+    if trimmed.is_empty() {
+        return Err(DbError::Validation(format!("{} is required", field_name)));
+    }
+    Ok(trimmed.to_string())
 }

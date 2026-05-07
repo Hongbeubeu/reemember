@@ -5,7 +5,7 @@ use commands::{
     delete_grammar_doc, delete_grammar_group, delete_topic, delete_word, get_grammar_doc,
     import_grammar, import_vocabulary, list_collections, list_grammar_docs, list_grammar_groups,
     list_topics, list_words, move_grammar_doc, next_question, save_export, set_app_theme,
-    submit_answer, update_collection, update_grammar_group, update_topic,
+    submit_answer, sync_manifest_url, update_collection, update_grammar_group, update_topic,
 };
 use tauri::{WebviewUrl, WebviewWindowBuilder};
 
@@ -19,6 +19,7 @@ fn main() {
             list_words,
             delete_word,
             import_vocabulary,
+            sync_manifest_url,
             save_export,
             list_collections,
             create_collection,
