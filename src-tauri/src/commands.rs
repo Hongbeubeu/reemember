@@ -1,11 +1,23 @@
 use reemember::db::init_db;
+use reemember::grammar::{GrammarRepository, parse_grammar_json, parse_grammar_md};
 use reemember::model::{Collection, Topic};
 use reemember::repository::{QueryOptions, SortBy, WordRepository};
 use reemember::service::VocabularyService;
-use reemember::testing::{Question, TestMode, TestingOptions};
 use reemember::testing::QuestionDirection;
-use reemember::grammar::{GrammarRepository, parse_grammar_json, parse_grammar_md};
+use reemember::testing::{Question, TestMode, TestingOptions};
 use serde::{Deserialize, Serialize};
+
+#[tauri::command]
+pub fn set_app_theme(window: tauri::WebviewWindow, mode: String) -> Result<(), String> {
+    let theme = match mode.as_str() {
+        "light" => Some(tauri::Theme::Light),
+        "dark" => Some(tauri::Theme::Dark),
+        "system" => None,
+        other => return Err(format!("unsupported theme mode: {}", other)),
+    };
+
+    window.set_theme(theme).map_err(|e| e.to_string())
+}
 
 // ── Study DTOs ────────────────────────────────────────────────────────────────
 
@@ -105,9 +117,13 @@ pub fn next_question(payload: NextQuestionRequest) -> Result<Option<QuestionDto>
     let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
 
-    let options = TestingOptions { srs_enabled: payload.srs_enabled, topic_id: payload.topic_id };
-    let maybe_question = reemember::testing::TestingEngine::generate_question_with_options(&repo, mode, options)
-        .map_err(|e| e.to_string())?;
+    let options = TestingOptions {
+        srs_enabled: payload.srs_enabled,
+        topic_id: payload.topic_id,
+    };
+    let maybe_question =
+        reemember::testing::TestingEngine::generate_question_with_options(&repo, mode, options)
+            .map_err(|e| e.to_string())?;
 
     Ok(maybe_question.map(from_question))
 }
@@ -123,7 +139,8 @@ pub fn submit_answer(payload: SubmitAnswerRequest) -> Result<AnswerResultDto, St
         &question,
         &payload.answer,
         payload.srs_enabled,
-    ).map_err(|e| e.to_string())?;
+    )
+    .map_err(|e| e.to_string())?;
 
     Ok(AnswerResultDto {
         correct: result.correct,
@@ -160,34 +177,40 @@ pub fn list_words(payload: Option<ListWordsRequest>) -> Result<Vec<WordSummaryDt
 
     let records = repo.query(&options).map_err(|e| e.to_string())?;
 
-    Ok(records.into_iter().map(|r| {
-        let meanings: Vec<String> = r.definitions.iter().map(|d| {
-            match &d.pos {
-                Some(pos) => format!("[{}] {}", pos, d.meaning),
-                None => d.meaning.clone(),
+    Ok(records
+        .into_iter()
+        .map(|r| {
+            let meanings: Vec<String> = r
+                .definitions
+                .iter()
+                .map(|d| match &d.pos {
+                    Some(pos) => format!("[{}] {}", pos, d.meaning),
+                    None => d.meaning.clone(),
+                })
+                .collect();
+            let examples_count = r.examples.len();
+            WordSummaryDto {
+                word_key: r.word_key(),
+                word: r.word,
+                phonetic: r.phonetic,
+                meanings,
+                tags: r.metadata.tags,
+                review_count: r.metadata.review_count,
+                examples_count,
+                synonyms: r.synonyms,
+                antonyms: r.antonyms,
+                family_words: r.family_words,
             }
-        }).collect();
-        let examples_count = r.examples.len();
-        WordSummaryDto {
-            word_key: r.word_key(),
-            word: r.word,
-            phonetic: r.phonetic,
-            meanings,
-            tags: r.metadata.tags,
-            review_count: r.metadata.review_count,
-            examples_count,
-            synonyms: r.synonyms,
-            antonyms: r.antonyms,
-            family_words: r.family_words,
-        }
-    }).collect())
+        })
+        .collect())
 }
 
 #[tauri::command]
 pub fn delete_word(word_key: String) -> Result<(), String> {
     let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
-    repo.delete_by_word_key(&word_key).map_err(|e| e.to_string())
+    repo.delete_by_word_key(&word_key)
+        .map_err(|e| e.to_string())
 }
 
 // ── Collection commands ───────────────────────────────────────────────────────
@@ -196,7 +219,8 @@ pub fn delete_word(word_key: String) -> Result<(), String> {
 pub fn list_collections() -> Result<Vec<CollectionDto>, String> {
     let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
-    repo.list_collections().map_err(|e| e.to_string())
+    repo.list_collections()
+        .map_err(|e| e.to_string())
         .map(|cols| cols.into_iter().map(from_collection).collect())
 }
 
@@ -245,7 +269,8 @@ pub fn delete_collection(id: i64) -> Result<(), String> {
 pub fn list_topics(collection_id: i64) -> Result<Vec<TopicDto>, String> {
     let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
-    repo.list_topics(collection_id).map_err(|e| e.to_string())
+    repo.list_topics(collection_id)
+        .map_err(|e| e.to_string())
         .map(|topics| topics.into_iter().map(from_topic).collect())
 }
 
@@ -261,9 +286,13 @@ pub struct CreateTopicRequest {
 pub fn create_topic(payload: CreateTopicRequest) -> Result<TopicDto, String> {
     let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
-    repo.create_topic(payload.collection_id, &payload.name, payload.description.as_deref())
-        .map_err(|e| e.to_string())
-        .map(from_topic)
+    repo.create_topic(
+        payload.collection_id,
+        &payload.name,
+        payload.description.as_deref(),
+    )
+    .map_err(|e| e.to_string())
+    .map(from_topic)
 }
 
 #[derive(Debug, Deserialize)]
@@ -324,7 +353,8 @@ pub fn import_vocabulary(payload: ImportVocabularyRequest) -> Result<ImportRepor
         &payload.content,
         payload.collection_name.as_deref(),
         payload.topic_name.as_deref(),
-    ).map_err(|e| e.to_string())?;
+    )
+    .map_err(|e| e.to_string())?;
 
     Ok(ImportReportDto {
         inserted_count: report.inserted_count,
@@ -349,7 +379,9 @@ pub async fn save_export(app: tauri::AppHandle) -> Result<Option<String>, String
         .file()
         .set_file_name("reemember-export.json")
         .add_filter("JSON file", &["json"])
-        .save_file(move |path| { let _ = tx.send(path); });
+        .save_file(move |path| {
+            let _ = tx.send(path);
+        });
 
     let chosen = tauri::async_runtime::spawn_blocking(move || rx.recv())
         .await
@@ -498,15 +530,17 @@ pub fn list_grammar_docs() -> Result<Vec<GrammarDocDto>, String> {
     let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
     repo.list_docs().map_err(|e| e.to_string()).map(|docs| {
-        docs.into_iter().map(|d| GrammarDocDto {
-            id: d.id,
-            title: d.title,
-            category: d.category,
-            level: d.level,
-            exercise_count: d.exercise_count,
-            group_id: d.group_id,
-            created_at: d.created_at,
-        }).collect()
+        docs.into_iter()
+            .map(|d| GrammarDocDto {
+                id: d.id,
+                title: d.title,
+                category: d.category,
+                level: d.level,
+                exercise_count: d.exercise_count,
+                group_id: d.group_id,
+                created_at: d.created_at,
+            })
+            .collect()
     })
 }
 
@@ -522,11 +556,15 @@ pub fn get_grammar_doc(id: i64) -> Result<Option<GrammarDocDetailDto>, String> {
         level: d.doc.level,
         content: d.doc.content,
         examples: d.doc.examples,
-        exercises: d.exercises.into_iter().map(|e| GrammarExerciseDto {
-            id: e.id,
-            exercise_type: e.exercise_type,
-            data: e.data,
-        }).collect(),
+        exercises: d
+            .exercises
+            .into_iter()
+            .map(|e| GrammarExerciseDto {
+                id: e.id,
+                exercise_type: e.exercise_type,
+                data: e.data,
+            })
+            .collect(),
         group_id: d.doc.group_id,
         created_at: d.doc.created_at,
     }))
@@ -577,7 +615,10 @@ pub fn import_grammar(content: String) -> Result<GrammarImportResultDto, String>
         }
     }
 
-    Ok(GrammarImportResultDto { imported_count, errors })
+    Ok(GrammarImportResultDto {
+        imported_count,
+        errors,
+    })
 }
 
 #[tauri::command]
@@ -585,14 +626,17 @@ pub fn list_grammar_groups() -> Result<Vec<GrammarGroupDto>, String> {
     let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
     repo.list_groups().map_err(|e| e.to_string()).map(|groups| {
-        groups.into_iter().map(|g| GrammarGroupDto {
-            id: g.id,
-            name: g.name,
-            description: g.description,
-            sort_order: g.sort_order,
-            doc_count: g.doc_count,
-            created_at: g.created_at,
-        }).collect()
+        groups
+            .into_iter()
+            .map(|g| GrammarGroupDto {
+                id: g.id,
+                name: g.name,
+                description: g.description,
+                sort_order: g.sort_order,
+                doc_count: g.doc_count,
+                created_at: g.created_at,
+            })
+            .collect()
     })
 }
 
@@ -600,7 +644,8 @@ pub fn list_grammar_groups() -> Result<Vec<GrammarGroupDto>, String> {
 pub fn create_grammar_group(payload: CreateGrammarGroupRequest) -> Result<GrammarGroupDto, String> {
     let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
-    let g = repo.create_group(&payload.name, payload.description.as_deref())
+    let g = repo
+        .create_group(&payload.name, payload.description.as_deref())
         .map_err(|e| e.to_string())?;
     Ok(GrammarGroupDto {
         id: g.id,
@@ -632,7 +677,8 @@ pub fn delete_grammar_group(id: i64) -> Result<(), String> {
 pub fn move_grammar_doc(payload: MoveGrammarDocRequest) -> Result<(), String> {
     let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
-    repo.move_doc(payload.doc_id, payload.group_id).map_err(|e| e.to_string())
+    repo.move_doc(payload.doc_id, payload.group_id)
+        .map_err(|e| e.to_string())
 }
 
 #[tauri::command]
@@ -645,9 +691,19 @@ pub fn delete_grammar_doc(id: i64) -> Result<(), String> {
 // ─────────────────────────────────────────────────────────────────────────────
 
 fn from_collection(c: Collection) -> CollectionDto {
-    CollectionDto { id: c.id, name: c.name, description: c.description, created_at: c.created_at }
+    CollectionDto {
+        id: c.id,
+        name: c.name,
+        description: c.description,
+        created_at: c.created_at,
+    }
 }
 
 fn from_topic(t: Topic) -> TopicDto {
-    TopicDto { id: t.id, collection_id: t.collection_id, name: t.name, description: t.description }
+    TopicDto {
+        id: t.id,
+        collection_id: t.collection_id,
+        name: t.name,
+        description: t.description,
+    }
 }

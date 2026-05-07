@@ -1,15 +1,11 @@
 mod commands;
 
 use commands::{
-    assign_word_to_topic,
-    create_collection, create_topic,
-    delete_collection, delete_topic, delete_word,
-    import_vocabulary, list_collections, list_topics, list_words,
-    next_question, save_export, submit_answer,
-    update_collection, update_topic,
-    list_grammar_docs, get_grammar_doc, import_grammar, delete_grammar_doc,
-    list_grammar_groups, create_grammar_group, update_grammar_group,
-    delete_grammar_group, move_grammar_doc,
+    assign_word_to_topic, create_collection, create_grammar_group, create_topic, delete_collection,
+    delete_grammar_doc, delete_grammar_group, delete_topic, delete_word, get_grammar_doc,
+    import_grammar, import_vocabulary, list_collections, list_grammar_docs, list_grammar_groups,
+    list_topics, list_words, move_grammar_doc, next_question, save_export, set_app_theme,
+    submit_answer, update_collection, update_grammar_group, update_topic,
 };
 use tauri::{WebviewUrl, WebviewWindowBuilder};
 
@@ -18,6 +14,7 @@ fn main() {
         .plugin(tauri_plugin_dialog::init())
         .invoke_handler(tauri::generate_handler![
             next_question,
+            set_app_theme,
             submit_answer,
             list_words,
             delete_word,
