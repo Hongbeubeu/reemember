@@ -296,27 +296,29 @@
 
     /* Group sections */
     .grammar-group { border-bottom: 1px solid var(--border); }
-    .grammar-group.drag-over { background: #eef4ff; outline: 2px dashed var(--primary); outline-offset: -2px; }
     .grammar-group-header { padding: 8px 14px; display: flex; align-items: center; justify-content: space-between; gap: 6px; cursor: pointer; background: #fafbff; user-select: none; }
     .grammar-group-header:hover { background: #f0f5ff; }
     .grammar-group-title { font-size: 12px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 6px; flex: 1; min-width: 0; }
     .grammar-group-toggle { font-size: 10px; color: var(--muted); width: 10px; }
     .grammar-group-count { font-size: 10px; font-weight: 600; color: var(--muted); padding: 1px 6px; background: #eef2ff; border-radius: 999px; }
-    .grammar-group-actions { display: none; gap: 2px; flex-shrink: 0; }
-    .grammar-group-header:hover .grammar-group-actions { display: flex; }
+    .grammar-group-actions { display: flex; gap: 2px; flex-shrink: 0; visibility: hidden; }
+    .grammar-group-header:hover .grammar-group-actions { visibility: visible; }
     .grammar-group-body { padding: 0; }
     .grammar-group-body.collapsed { display: none; }
     .grammar-group-empty { padding: 8px 14px; font-size: 11px; color: var(--muted); font-style: italic; }
 
-    .grammar-doc-item { padding: 10px 14px; cursor: pointer; border-left: 3px solid transparent; transition: background .1s, border-color .1s; display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; }
-    .grammar-doc-item:hover { background: #f8faff; }
-    .grammar-doc-item.active { border-left-color: var(--primary); background: #eef2ff; }
-    .grammar-doc-item.dragging { opacity: 0.4; }
-    .grammar-doc-item .item-actions { display: none; gap: 4px; flex-shrink: 0; }
-    .grammar-doc-item:hover .item-actions { display: flex; }
-    .grammar-doc-body { flex: 1; min-width: 0; }
+    .grammar-doc-item { border-left: 3px solid transparent; transition: border-color .1s; }
+    .grammar-doc-item.active { border-left-color: var(--primary); }
+    .grammar-doc-item-content { display: flex; align-items: center; gap: 8px; padding: 8px 14px; background: var(--surface); cursor: pointer; }
+    .grammar-doc-item-content:hover { background: #f8faff; }
+    .grammar-doc-item.active .grammar-doc-item-content { background: #eef2ff; }
+    .grammar-ctx-menu { position: fixed; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,.15); z-index: 200; min-width: 150px; overflow: hidden; display: none; }
+    .grammar-ctx-menu button { display: block; width: 100%; padding: 8px 14px; text-align: left; background: none; border: none; cursor: pointer; font-size: 13px; }
+    .grammar-ctx-menu button:hover { background: #f0f5ff; }
+    .grammar-ctx-menu button.danger { color: var(--danger); }
+.grammar-doc-body { flex: 1; min-width: 0; }
     .grammar-doc-title { font-size: 13px; font-weight: 600; color: var(--text); }
-    .grammar-doc-meta { font-size: 11px; color: var(--muted); margin-top: 3px; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .grammar-doc-meta { font-size: 11px; color: var(--muted); margin-top: 2px; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
     .level-badge { padding: 1px 6px; border-radius: 999px; font-size: 10px; font-weight: 700; background: #eef2ff; color: var(--primary); }
 
     /* Doc content view */
@@ -651,6 +653,7 @@
             </div>
             <div class="grammar-sidebar-toolbar">
               <button onclick="createGrammarGroupPrompt()">+ New group</button>
+              <button onclick="dropAllGrammarDocs()" style="color:var(--danger)">Drop All</button>
             </div>
             <div id="grammarDocList"></div>
             <div class="grammar-import-wrap">
@@ -793,6 +796,24 @@
     <div class="modal-actions">
       <button class="btn btn-ghost btn-sm" onclick="closeModal('grammarMoveModal')">Cancel</button>
       <button class="btn btn-primary btn-sm" onclick="confirmMoveGrammarDoc()">Move</button>
+    </div>
+  </div>
+</div>
+
+<!-- Grammar doc right-click context menu -->
+<div id="grammarCtxMenu" class="grammar-ctx-menu">
+  <button onclick="ctxMenuMove()">Move to group</button>
+  <button class="danger" onclick="ctxMenuDelete()">Delete</button>
+</div>
+
+<!-- Confirm delete grammar doc modal -->
+<div class="modal-overlay" id="grammarDeleteModal">
+  <div class="modal">
+    <h3>Delete doc?</h3>
+    <p id="grammarDeleteModalBody" style="font-size:14px;color:var(--muted);margin-bottom:0"></p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost btn-sm" onclick="closeModal('grammarDeleteModal')">Cancel</button>
+      <button class="btn btn-danger btn-sm" onclick="confirmDeleteGrammarDoc()">Delete</button>
     </div>
   </div>
 </div>
@@ -1010,8 +1031,12 @@
 
   async function doDeleteCollection(id) {
     const col = allCollections.find(c => c.id === id);
-    if (!confirm(`Delete collection "${col?.name}"? This will also delete all its topics and remove words from those topics.`)) return;
+    if (!confirm(`Delete collection "${col?.name}"? This will permanently delete all its topics and words.`)) return;
     try {
+      const words = await invoke('list_words', { payload: { collectionId: id, topicId: null } });
+      for (const w of words) {
+        await invoke('delete_word', { wordKey: w.wordKey });
+      }
       await invoke('delete_collection', { id });
       if (scopeFilter.collectionId === id) setScopeFilter(null, null);
       await loadCollections();
@@ -1525,6 +1550,32 @@
   let grammarGroups = [];
   let grammarSortMode = localStorage.getItem('grammarSortMode') || 'newest';
   let collapsedGroups = new Set(JSON.parse(localStorage.getItem('grammarCollapsedGroups') || '[]'));
+
+  // ── Right-click context menu for grammar doc items ────────────────────────
+  let ctxMenuDocId = null;
+  const grammarCtxMenu = document.getElementById('grammarCtxMenu');
+
+  function showGrammarCtxMenu(e, docId) {
+    e.preventDefault();
+    ctxMenuDocId = docId;
+    grammarCtxMenu.style.display = 'block';
+    const menuW = grammarCtxMenu.offsetWidth;
+    const menuH = grammarCtxMenu.offsetHeight;
+    grammarCtxMenu.style.left = Math.min(e.clientX, window.innerWidth  - menuW - 4) + 'px';
+    grammarCtxMenu.style.top  = Math.min(e.clientY, window.innerHeight - menuH - 4) + 'px';
+  }
+
+  function hideGrammarCtxMenu() {
+    grammarCtxMenu.style.display = 'none';
+    ctxMenuDocId = null;
+  }
+
+  function ctxMenuMove()   { const id = ctxMenuDocId; hideGrammarCtxMenu(); openMoveGrammarDoc(id); }
+  function ctxMenuDelete() { const id = ctxMenuDocId; hideGrammarCtxMenu(); deleteGrammarDoc(id); }
+
+  document.addEventListener('click', hideGrammarCtxMenu);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideGrammarCtxMenu(); });
+
   let currentDocDetail = null;
   let exIndex = 0;
   let exSession = { correct: 0, total: 0 };
@@ -1627,8 +1678,8 @@
         </div>
         <div class="grammar-group-body ${collapsed ? 'collapsed' : ''}">
           ${docs.length === 0
-            ? '<div class="grammar-group-empty">Drop a doc here</div>'
-            : sortDocs(docs).map(renderDocItem).join('')}
+            ? '<div class="grammar-group-empty">No docs in this group</div>'
+            : sortDocs(docs).map(d => renderDocItem(d)).join('')}
         </div>
       </div>`;
   }
@@ -1646,29 +1697,24 @@
         </div>
         <div class="grammar-group-body ${collapsed ? 'collapsed' : ''}">
           ${docs.length === 0
-            ? '<div class="grammar-group-empty">Drop a doc here</div>'
-            : sortDocs(docs).map(renderDocItem).join('')}
+            ? '<div class="grammar-group-empty">No docs in this group</div>'
+            : sortDocs(docs).map(d => renderDocItem(d)).join('')}
         </div>
       </div>`;
   }
 
   function renderDocItem(d) {
     return `
-      <div class="grammar-doc-item" id="gditem_${d.id}"
-           draggable="true"
-           data-doc-id="${d.id}"
-           onclick="openGrammarDoc(${d.id})">
-        <div class="grammar-doc-body">
-          <div class="grammar-doc-title">${esc(d.title)}</div>
-          <div class="grammar-doc-meta">
-            ${d.level    ? `<span class="level-badge">${esc(d.level)}</span>` : ''}
-            ${d.category ? `<span>${esc(d.category)}</span>` : ''}
-            <span>${d.exerciseCount} ex.</span>
+      <div class="grammar-doc-item" id="gditem_${d.id}">
+        <div class="grammar-doc-item-content" onclick="openGrammarDoc(${d.id})" oncontextmenu="showGrammarCtxMenu(event,${d.id})">
+          <div class="grammar-doc-body">
+            <div class="grammar-doc-title">${esc(d.title)}</div>
+            <div class="grammar-doc-meta">
+              ${d.level    ? `<span class="level-badge">${esc(d.level)}</span>` : ''}
+              ${d.category ? `<span>${esc(d.category)}</span>` : ''}
+              <span>${d.exerciseCount} ex.</span>
+            </div>
           </div>
-        </div>
-        <div class="item-actions">
-          <button class="btn-icon" title="Move to group" onclick="openMoveGrammarDoc(${d.id}); event.stopPropagation()">📁</button>
-          <button class="btn-icon" title="Delete" onclick="deleteGrammarDoc(${d.id}); event.stopPropagation()">✕</button>
         </div>
       </div>`;
   }
@@ -1726,118 +1772,29 @@
   async function deleteGrammarGroup(id) {
     const g = grammarGroups.find(x => x.id === id);
     if (!g) return;
-    if (!confirm(`Delete group "${g.name}"? Docs in it will become Ungrouped.`)) return;
-    try {
-      await invoke('delete_grammar_group', { id });
-      await loadGrammarDocs();
-    } catch (err) { alert('Error: ' + err); }
-  }
-
-  // ── Drag & drop ───────────────────────────────────────────────────────────
-  // Delegated listeners on the list container; previous per-item inline
-  // handlers were fragile (drag-over flickered on child elements and drops
-  // sometimes failed). One source of truth fixes both.
-  let draggedDocId = null;
-  let autoscrollRAF = null;
-  let autoscrollSpeed = 0;
-
-  function clearDragOver() {
-    document.querySelectorAll('.grammar-group.drag-over').forEach(el => el.classList.remove('drag-over'));
-  }
-
-  function setupGrammarDnD() {
-    const list = document.getElementById('grammarDocList');
-    if (!list || list.dataset.dndReady === '1') return;
-    list.dataset.dndReady = '1';
-
-    list.addEventListener('dragstart', (e) => {
-      const item = e.target.closest('.grammar-doc-item');
-      if (!item) return;
-      draggedDocId = parseInt(item.dataset.docId, 10);
-      item.classList.add('dragging');
-      e.dataTransfer.effectAllowed = 'move';
-      try { e.dataTransfer.setData('text/plain', String(draggedDocId)); } catch {}
-    });
-
-    list.addEventListener('dragend', () => {
-      document.querySelectorAll('.grammar-doc-item.dragging').forEach(el => el.classList.remove('dragging'));
-      clearDragOver();
-      draggedDocId = null;
-      stopAutoscroll();
-    });
-
-    list.addEventListener('dragover', (e) => {
-      if (draggedDocId == null) return;
-      e.preventDefault();
-      e.dataTransfer.dropEffect = 'move';
-      const group = e.target.closest('.grammar-group');
-      if (!group) { clearDragOver(); return; }
-      list.querySelectorAll('.grammar-group.drag-over').forEach(el => {
-        if (el !== group) el.classList.remove('drag-over');
-      });
-      group.classList.add('drag-over');
-    });
-
-    list.addEventListener('dragleave', (e) => {
-      if (!list.contains(e.relatedTarget)) clearDragOver();
-    });
-
-    list.addEventListener('drop', async (e) => {
-      e.preventDefault();
-      const group = e.target.closest('.grammar-group');
-      clearDragOver();
-      const docId = draggedDocId;
-      draggedDocId = null;
-      stopAutoscroll();
-      if (docId == null || !group) return;
-      const attr = group.getAttribute('data-group-id');
-      const groupId = (attr === '' || attr == null) ? null : parseInt(attr, 10);
-      const doc = grammarDocs.find(d => d.id === docId);
-      if (doc && (doc.groupId ?? null) === groupId) return;
+    const deleteAll = confirm(`Delete group "${g.name}"? Click OK to also delete all docs inside, or Cancel to keep docs.`);
+    if (deleteAll) {
       try {
-        await invoke('move_grammar_doc', { payload: { docId, groupId } });
+        const docsInGroup = grammarDocs.filter(d => d.groupId === id);
+        await invoke('delete_grammar_group', { id });
+        for (const d of docsInGroup) {
+          await invoke('delete_grammar_doc', { id: d.id });
+        }
+        if (currentDocDetail && docsInGroup.some(d => d.id === currentDocDetail.id)) {
+          currentDocDetail = null;
+          document.getElementById('grammarDocView').style.display  = 'none';
+          document.getElementById('grammarExRunner').style.display = 'none';
+          document.getElementById('grammarScore').style.display    = 'none';
+          document.getElementById('grammarEmpty').style.display    = 'block';
+        }
         await loadGrammarDocs();
       } catch (err) { alert('Error: ' + err); }
-    });
-
-    // Autoscroll the active page while dragging near top/bottom edges.
-    // Capture phase so we still react when dragover happens outside the list
-    // (e.g. cursor over header/empty areas of the page).
-    document.addEventListener('dragover', (e) => {
-      if (draggedDocId == null) return;
-      const page = document.querySelector('.page.active');
-      if (!page) { autoscrollSpeed = 0; return; }
-      const rect = page.getBoundingClientRect();
-      const edge = 70;
-      const maxSpeed = 18;
-      const y = e.clientY;
-      if (y < rect.top + edge) {
-        autoscrollSpeed = -Math.min(maxSpeed, Math.max(2, (rect.top + edge - y) / 3));
-      } else if (y > rect.bottom - edge) {
-        autoscrollSpeed = Math.min(maxSpeed, Math.max(2, (y - (rect.bottom - edge)) / 3));
-      } else {
-        autoscrollSpeed = 0;
-      }
-      if (autoscrollSpeed !== 0 && autoscrollRAF == null) {
-        const tick = () => {
-          if (draggedDocId == null || autoscrollSpeed === 0) {
-            autoscrollRAF = null;
-            return;
-          }
-          const p = document.querySelector('.page.active');
-          if (p) p.scrollTop += autoscrollSpeed;
-          autoscrollRAF = requestAnimationFrame(tick);
-        };
-        autoscrollRAF = requestAnimationFrame(tick);
-      }
-    }, true);
-  }
-
-  function stopAutoscroll() {
-    autoscrollSpeed = 0;
-    if (autoscrollRAF) {
-      cancelAnimationFrame(autoscrollRAF);
-      autoscrollRAF = null;
+    } else {
+      if (!confirm('Keep docs as Ungrouped?')) return;
+      try {
+        await invoke('delete_grammar_group', { id });
+        await loadGrammarDocs();
+      } catch (err) { alert('Error: ' + err); }
     }
   }
 
@@ -2296,9 +2253,37 @@
     e.target.value = '';
   }
 
-  async function deleteGrammarDoc(id) {
+  async function dropAllGrammarDocs() {
+    if (grammarDocs.length === 0) { alert('No grammar docs to delete.'); return; }
+    if (!confirm('Delete ALL grammar docs? This cannot be undone.')) return;
+    try {
+      for (const d of grammarDocs) {
+        await invoke('delete_grammar_doc', { id: d.id });
+      }
+      currentDocDetail = null;
+      document.getElementById('grammarDocView').style.display  = 'none';
+      document.getElementById('grammarExRunner').style.display = 'none';
+      document.getElementById('grammarScore').style.display    = 'none';
+      document.getElementById('grammarEmpty').style.display    = 'block';
+      await loadGrammarDocs();
+    } catch (err) { alert('Error: ' + err); }
+  }
+
+  let deletingDocId = null;
+
+  function deleteGrammarDoc(id) {
+    deletingDocId = id;
     const doc = grammarDocs.find(d => d.id === id);
-    if (!confirm(`Delete "${doc?.title}"?`)) return;
+    document.getElementById('grammarDeleteModalBody').textContent =
+      `"${doc?.title ?? 'this doc'}" will be permanently removed.`;
+    openModal('grammarDeleteModal');
+  }
+
+  async function confirmDeleteGrammarDoc() {
+    const id = deletingDocId;
+    if (id == null) return;
+    closeModal('grammarDeleteModal');
+    deletingDocId = null;
     try {
       await invoke('delete_grammar_doc', { id });
       if (currentDocDetail && currentDocDetail.id === id) {
@@ -2315,7 +2300,6 @@
   /* ── Init ─────────────────────────────────────────────────────────────────── */
   loadCollections();
   loadGrammarDocs();
-  setupGrammarDnD();
 </script>
 </body>
 </html>

@@ -73,11 +73,11 @@ pub fn parse_grammar_md(input: &str) -> Result<GrammarDocInput, ParseError> {
 
     for line in frontmatter.lines() {
         if let Some(v) = line.strip_prefix("title:") {
-            title = v.trim().to_string();
+            title = v.trim().trim_matches('"').to_string();
         } else if let Some(v) = line.strip_prefix("category:") {
-            category = Some(v.trim().to_string());
+            category = Some(v.trim().trim_matches('"').to_string());
         } else if let Some(v) = line.strip_prefix("level:") {
-            level = Some(v.trim().to_string());
+            level = Some(v.trim().trim_matches('"').to_string());
         }
     }
 
