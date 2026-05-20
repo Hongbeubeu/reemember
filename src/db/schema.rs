@@ -268,6 +268,25 @@ pub fn init_schema(conn: &Connection) -> Result<(), DbError> {
         [],
     )?;
 
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS bilingual_articles (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT NOT NULL,
+            book TEXT NOT NULL DEFAULT '',
+            level TEXT,
+            paragraphs TEXT NOT NULL DEFAULT '[]',
+            structures TEXT NOT NULL DEFAULT '[]',
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL DEFAULT '',
+            UNIQUE(book, title)
+        )",
+        [],
+    )?;
+
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_bilingual_articles_book_title ON bilingual_articles(book, title)",
+        [],
+    )?;
+
     Ok(())
 }
-

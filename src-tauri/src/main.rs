@@ -2,10 +2,11 @@ mod commands;
 
 use commands::{
     assign_word_to_topic, create_collection, create_grammar_group, create_topic, delete_collection,
-    delete_grammar_doc, delete_grammar_group, delete_topic, delete_word, get_grammar_doc,
-    import_grammar, import_vocabulary, list_collections, list_grammar_docs, list_grammar_groups,
-    list_topics, list_words, move_grammar_doc, next_question, save_export, set_app_theme,
-    submit_answer, sync_manifest_url, update_collection, update_grammar_group, update_topic,
+    delete_grammar_doc, delete_grammar_group, delete_topic, delete_word, get_bilingual_article,
+    get_grammar_doc, import_bilingual, import_grammar, import_vocabulary,
+    list_bilingual_articles, list_collections, list_grammar_docs, list_grammar_groups, list_topics,
+    list_words, move_grammar_doc, next_question, save_export, set_app_theme, submit_answer,
+    sync_manifest_url, update_collection, update_grammar_group, update_topic,
 };
 use tauri::{WebviewUrl, WebviewWindowBuilder};
 
@@ -30,6 +31,9 @@ fn main() {
             update_topic,
             delete_topic,
             assign_word_to_topic,
+            list_bilingual_articles,
+            get_bilingual_article,
+            import_bilingual,
             list_grammar_docs,
             get_grammar_doc,
             import_grammar,

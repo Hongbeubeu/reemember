@@ -1,0 +1,203 @@
+[
+  {
+    "book": "The Open Boat",
+    "level": "B1",
+    "title": "05 - Signals from the Shore",
+    "paragraphs": [
+      [
+        { "en": "In the morning, the men saw people walking near the shore.", "vi": "Vào buổi sáng, những người đàn ông nhìn thấy vài người đi lại gần bờ." },
+        { "en": "The sight made them sit up straighter.", "vi": "Cảnh tượng đó khiến họ ngồi thẳng hơn." },
+        { "en": "If people could see them, help might come soon.", "vi": "Nếu người ta có thể nhìn thấy họ, sự giúp đỡ có thể sẽ đến sớm." }
+      ],
+      [
+        { "en": "One man on the beach waved something in the air.", "vi": "Một người trên bãi biển vẫy thứ gì đó trong không trung." },
+        { "en": "The men in the boat waved back with hope.", "vi": "Những người trên thuyền vẫy lại với niềm hy vọng." },
+        { "en": "They believed that the signal meant a rescue was beginning.", "vi": "Họ tin rằng tín hiệu ấy có nghĩa là cuộc cứu hộ đang bắt đầu." }
+      ],
+      [
+        { "en": "The captain studied the shore carefully.", "vi": "Người thuyền trưởng quan sát bờ biển rất kỹ." },
+        { "en": "He wanted to know whether the people understood their danger.", "vi": "Ông muốn biết liệu những người kia có hiểu được sự nguy hiểm của họ không." },
+        { "en": "The shore looked close,", "vi": "Bờ biển trông có vẻ gần," },
+        { "en": "but the surf between them was terrible.", "vi": "nhưng lớp sóng vỡ giữa họ và bờ thật khủng khiếp." }
+      ],
+      [
+        { "en": "Because the surf was too high, they could not land at once.", "vi": "Vì sóng vỗ vào bờ quá cao, họ không thể cập bờ ngay lập tức." },
+        { "en": "They had to wait outside the broken water.", "vi": "Họ phải chờ bên ngoài vùng sóng vỡ." },
+        { "en": "Waiting was almost as hard as rowing.", "vi": "Chờ đợi gần như cũng khó như chèo thuyền." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "In the morning, + past simple",
+        "example": "In the morning, the men saw people walking near the shore.",
+        "note": "Cụm thời gian ở đầu câu giúp đặt bối cảnh trước khi nói hành động chính."
+      },
+      {
+        "pattern": "If + past/simple modal possibility",
+        "example": "If people could see them, help might come soon.",
+        "note": "If kết hợp với could/might diễn tả một khả năng chưa chắc chắn."
+      },
+      {
+        "pattern": "Believed that + clause",
+        "example": "They believed that the signal meant a rescue was beginning.",
+        "note": "Believed that dùng để nói về niềm tin hoặc suy đoán của nhân vật."
+      },
+      {
+        "pattern": "Because + reason, main clause",
+        "example": "Because the surf was too high, they could not land at once.",
+        "note": "Because nêu lý do; mệnh đề chính cho biết điều xảy ra vì lý do đó."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat",
+    "level": "B1",
+    "title": "06 - False Hope",
+    "paragraphs": [
+      [
+        { "en": "The men watched the beach for a long time.", "vi": "Những người đàn ông nhìn bãi biển trong một thời gian dài." },
+        { "en": "No boat came out.", "vi": "Không có chiếc thuyền nào đi ra." },
+        { "en": "No one seemed to understand what they needed.", "vi": "Dường như không ai hiểu họ cần gì." }
+      ],
+      [
+        { "en": "Although the people on shore were near, they felt impossibly far away.", "vi": "Mặc dù những người trên bờ ở gần, họ lại có cảm giác xa đến không thể với tới." },
+        { "en": "The men could see them clearly.", "vi": "Những người trên thuyền có thể nhìn thấy họ rõ ràng." },
+        { "en": "But being seen was not the same as being saved.", "vi": "Nhưng được nhìn thấy không giống với được cứu." }
+      ],
+      [
+        { "en": "The correspondent began to feel angry at the unfairness of it all.", "vi": "Anh phóng viên bắt đầu thấy giận dữ trước sự bất công của tất cả chuyện này." },
+        { "en": "They had survived the wreck.", "vi": "Họ đã sống sót sau vụ đắm tàu." },
+        { "en": "They had rowed through the night.", "vi": "Họ đã chèo suốt đêm." },
+        { "en": "Yet rescue still refused to arrive.", "vi": "Vậy mà sự cứu giúp vẫn không chịu đến." }
+      ],
+      [
+        { "en": "The longer they waited, the heavier hope became.", "vi": "Họ càng chờ lâu, hy vọng càng trở nên nặng nề." },
+        { "en": "It was no longer bright and easy.", "vi": "Nó không còn sáng sủa và dễ chịu nữa." },
+        { "en": "It became another weight in the boat.", "vi": "Nó trở thành một sức nặng khác trong chiếc thuyền." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "Seemed to + verb",
+        "example": "No one seemed to understand what they needed.",
+        "note": "Seemed to diễn tả ấn tượng hoặc cảm nhận của người quan sát, không khẳng định tuyệt đối."
+      },
+      {
+        "pattern": "Although + clause, main clause",
+        "example": "Although the people on shore were near, they felt impossibly far away.",
+        "note": "Although tạo sự tương phản giữa khoảng cách thực tế và cảm giác của nhân vật."
+      },
+      {
+        "pattern": "Begin to + verb",
+        "example": "The correspondent began to feel angry at the unfairness of it all.",
+        "note": "Begin to dùng để diễn tả một cảm xúc hoặc hành động bắt đầu xuất hiện."
+      },
+      {
+        "pattern": "The comparative + clause, the comparative + clause",
+        "example": "The longer they waited, the heavier hope became.",
+        "note": "Cấu trúc the more...the more diễn tả hai thay đổi tăng hoặc giảm cùng nhau."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat",
+    "level": "B1",
+    "title": "07 - The Long Pull",
+    "paragraphs": [
+      [
+        { "en": "The boat moved slowly along the coast.", "vi": "Chiếc thuyền di chuyển chậm rãi dọc theo bờ biển." },
+        { "en": "The men searched for a safer place to land.", "vi": "Họ tìm một nơi an toàn hơn để cập bờ." },
+        { "en": "Each wave reminded them that the shore could kill as easily as the sea.", "vi": "Mỗi con sóng nhắc họ rằng bờ biển cũng có thể giết người dễ dàng như biển khơi." }
+      ],
+      [
+        { "en": "The oiler and the correspondent kept changing places at the oars.", "vi": "Người thợ máy và anh phóng viên liên tục đổi chỗ ở mái chèo." },
+        { "en": "When one man became too tired, the other took his place.", "vi": "Khi một người quá mệt, người kia thay chỗ anh." },
+        { "en": "Their hands hurt,", "vi": "Tay họ đau nhức," },
+        { "en": "but they did not speak much about pain.", "vi": "nhưng họ không nói nhiều về cơn đau." }
+      ],
+      [
+        { "en": "The cook kept looking toward the shore as if he could pull it closer with his eyes.", "vi": "Người đầu bếp cứ nhìn về phía bờ như thể anh có thể kéo nó lại gần bằng ánh mắt." },
+        { "en": "He talked about food.", "vi": "Anh nói về thức ăn." },
+        { "en": "He talked about rescue.", "vi": "Anh nói về cuộc cứu hộ." },
+        { "en": "Talking helped him fight the cold.", "vi": "Nói chuyện giúp anh chống lại cái lạnh." }
+      ],
+      [
+        { "en": "The captain knew that they had to save their strength.", "vi": "Người thuyền trưởng biết rằng họ phải giữ sức." },
+        { "en": "If they spent everything too early, they would have nothing left for the surf.", "vi": "Nếu họ tiêu hết sức quá sớm, họ sẽ không còn gì cho vùng sóng vỡ." },
+        { "en": "The hardest part was still ahead.", "vi": "Phần khó nhất vẫn còn ở phía trước." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "Each + singular noun + verb",
+        "example": "Each wave reminded them that the shore could kill as easily as the sea.",
+        "note": "Each đi với danh từ số ít để nhấn mạnh từng yếu tố riêng lẻ trong một nhóm."
+      },
+      {
+        "pattern": "When + clause, main clause",
+        "example": "When one man became too tired, the other took his place.",
+        "note": "When dùng để nói điều xảy ra ngay sau hoặc trong một tình huống cụ thể."
+      },
+      {
+        "pattern": "As if + clause",
+        "example": "The cook kept looking toward the shore as if he could pull it closer with his eyes.",
+        "note": "As if diễn tả một hình ảnh tưởng tượng hoặc cảm giác không thực."
+      },
+      {
+        "pattern": "If + past simple, would + verb",
+        "example": "If they spent everything too early, they would have nothing left for the surf.",
+        "note": "Cấu trúc điều kiện giả định cho thấy một kết quả có thể xảy ra nếu họ mắc sai lầm."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat",
+    "level": "B1",
+    "title": "08 - Nature Does Not Answer",
+    "paragraphs": [
+      [
+        { "en": "As the hours passed, the correspondent thought about fate.", "vi": "Khi nhiều giờ trôi qua, anh phóng viên nghĩ về số phận." },
+        { "en": "He wondered whether the universe cared about four men in a boat.", "vi": "Anh tự hỏi liệu vũ trụ có quan tâm đến bốn người đàn ông trên một chiếc thuyền không." },
+        { "en": "The waves gave no answer.", "vi": "Những con sóng không đưa ra câu trả lời nào." }
+      ],
+      [
+        { "en": "It seemed cruel that they might drown so close to land.", "vi": "Thật tàn nhẫn khi họ có thể chết đuối ngay gần đất liền như vậy." },
+        { "en": "The thought returned again and again.", "vi": "Ý nghĩ ấy quay lại hết lần này đến lần khác." },
+        { "en": "Why had they come so far if they were not meant to live?", "vi": "Tại sao họ đã đi xa đến thế nếu họ không được định sẵn để sống?" }
+      ],
+      [
+        { "en": "Nature was not angry with them.", "vi": "Thiên nhiên không giận dữ với họ." },
+        { "en": "Nature was not kind to them either.", "vi": "Thiên nhiên cũng không tử tế với họ." },
+        { "en": "It was simply present, immense, and silent.", "vi": "Nó chỉ đơn giản hiện diện, mênh mông và im lặng." }
+      ],
+      [
+        { "en": "Because no answer came, the men returned to the only thing they could do.", "vi": "Vì không có câu trả lời nào đến, những người đàn ông quay lại với điều duy nhất họ có thể làm." },
+        { "en": "They rowed.", "vi": "Họ chèo." },
+        { "en": "They bailed water.", "vi": "Họ tát nước." },
+        { "en": "They watched the waves and waited for their chance.", "vi": "Họ nhìn sóng và chờ cơ hội của mình." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "As + clause, main clause",
+        "example": "As the hours passed, the correspondent thought about fate.",
+        "note": "As dùng để diễn tả hai việc xảy ra cùng lúc hoặc một quá trình làm nền cho suy nghĩ chính."
+      },
+      {
+        "pattern": "Wondered whether + clause",
+        "example": "He wondered whether the universe cared about four men in a boat.",
+        "note": "Wondered whether dùng để diễn tả câu hỏi nội tâm dạng có hoặc không."
+      },
+      {
+        "pattern": "It seemed + adjective + that + clause",
+        "example": "It seemed cruel that they might drown so close to land.",
+        "note": "It seemed + tính từ dùng để nêu cảm nhận hoặc đánh giá về một tình huống."
+      },
+      {
+        "pattern": "Because + clause, main clause",
+        "example": "Because no answer came, the men returned to the only thing they could do.",
+        "note": "Because nêu lý do khiến nhân vật quay lại với hành động thực tế."
+      }
+    ]
+  }
+]

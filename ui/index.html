@@ -606,6 +606,46 @@
 
     .export-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
+    /* BILINGUAL BOOKS */
+    #bilingualPage .page-inner { max-width: var(--max-lib); }
+    .bilingual-layout { display: flex; gap: 16px; align-items: flex-start; }
+    .bilingual-sidebar { width: var(--sidebar-w); flex-shrink: 0; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .bilingual-content { flex: 1; min-width: 0; }
+    .bilingual-sidebar-header { padding: 12px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .bilingual-sidebar-header span { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
+    .bilingual-book-group { border-bottom: 1px solid var(--border); }
+    .bilingual-book-header { padding: 9px 14px; display: flex; align-items: center; justify-content: space-between; gap: 8px; background: var(--surface-subtle); cursor: pointer; user-select: none; }
+    .bilingual-book-header:hover { background: var(--surface-hover); }
+    .bilingual-book-title { flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--text); }
+    .bilingual-book-toggle { width: 10px; flex-shrink: 0; color: var(--muted); font-size: 10px; }
+    .bilingual-book-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .bilingual-book-count { font-size: 10px; font-weight: 600; color: var(--muted); padding: 1px 6px; background: var(--surface-active); border-radius: 999px; }
+    .bilingual-book-body.collapsed { display: none; }
+    .bilingual-article-item { border-left: 3px solid transparent; padding: 10px 14px; cursor: pointer; transition: background .1s, border-color .1s; }
+    .bilingual-article-item:hover { background: var(--surface-soft); }
+    .bilingual-article-item.active { border-left-color: var(--primary); background: var(--surface-active); }
+    .bilingual-book-body .bilingual-article-item { padding-left: 28px; }
+    .bilingual-article-title { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.35; }
+    .bilingual-article-meta { margin-top: 3px; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; font-size: 11px; color: var(--muted); }
+    .bilingual-toolbar { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
+    .bilingual-toolbar .field select { min-width: 240px; }
+    .bilingual-doc-header h2 { font-size: 22px; line-height: 1.25; margin-bottom: 6px; }
+    .bilingual-doc-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; color: var(--muted); font-size: 12px; }
+    .bilingual-reading { font-size: 16px; line-height: 1.9; color: var(--text); }
+    .bilingual-reading p { margin-bottom: 16px; }
+    .bilingual-sentence { border-radius: 5px; scroll-margin-top: 18px; }
+    .bilingual-sentence.has-structure { font-weight: 700; cursor: pointer; border-bottom: 1px dotted var(--primary); }
+    .bilingual-sentence.has-structure:hover { background: var(--surface-hover); color: var(--primary); }
+    .bilingual-phrase { margin-right: 2px; }
+    .bilingual-phrase-vi { color: var(--text-secondary); font-size: .95em; }
+    .bilingual-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-bottom: 10px; }
+    .bilingual-structure-list { display: grid; gap: 8px; }
+    .bilingual-structure { border-left: 3px solid var(--primary); background: var(--surface-soft); border-radius: 0 8px 8px 0; padding: 10px 14px; scroll-margin-top: 18px; transition: background .15s, box-shadow .15s; }
+    .bilingual-structure.active { background: var(--surface-active); box-shadow: 0 0 0 2px var(--primary); }
+    .bilingual-structure-pattern { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .bilingual-structure-example { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+    .bilingual-structure-note { margin-top: 4px; font-size: 12px; color: var(--muted); line-height: 1.5; }
+
     /* ═══════════════════════════════════ RESPONSIVE ══════════════════════════ */
     @media (max-width: 639px) {
       .top-nav { display: none; }
@@ -645,6 +685,11 @@
       .manifest-actions .btn { width: 100%; }
       .export-actions { flex-direction: column; }
       .export-actions .btn { width: 100%; }
+      .bilingual-layout { flex-direction: column; }
+      .bilingual-sidebar { width: 100%; }
+      .bilingual-toolbar { flex-direction: column; align-items: stretch; }
+      .bilingual-toolbar .field select { width: 100%; min-width: 0; }
+      .bilingual-reading { font-size: 15px; line-height: 1.8; }
     }
 
     @media (min-width: 640px) and (max-width: 1023px) {
@@ -843,6 +888,7 @@
     <button class="nav-btn active" id="navStudy"        onclick="switchTab('study')">Study</button>
     <button class="nav-btn"        id="navLibrary"      onclick="switchTab('library')">Library</button>
     <button class="nav-btn"        id="navImportExport" onclick="switchTab('importExport')">Import / Export</button>
+    <button class="nav-btn"        id="navBilingual"    onclick="switchTab('bilingual')">Bilingual Books</button>
     <button class="nav-btn"        id="navGrammar"      onclick="switchTab('grammar')">Grammar</button>
     <div class="theme-picker theme-picker-top">
       <label for="themeSelect">Theme</label>
@@ -1056,6 +1102,59 @@
       </div>
     </div>
 
+    <!-- BILINGUAL BOOKS -->
+    <div id="bilingualPage" class="page">
+      <div class="page-inner">
+        <div class="bilingual-layout">
+
+          <div class="bilingual-sidebar">
+            <div class="bilingual-sidebar-header">
+              <span>Bilingual Books</span>
+              <span id="bilingualArticleCount"></span>
+            </div>
+            <div id="bilingualArticleList"></div>
+            <div class="grammar-import-wrap">
+              <div class="grammar-import-drop" onclick="document.getElementById('bilingualFileInput').click()">
+                <input type="file" id="bilingualFileInput" accept=".json" multiple onchange="onBilingualFileSelected(event)" />
+                Import file(s) (.json)
+              </div>
+              <div class="grammar-import-drop" style="margin-top:8px" onclick="importSampleBilingualData()">
+                Import sample data
+              </div>
+            </div>
+          </div>
+
+          <div class="bilingual-content">
+            <div class="card">
+              <div class="bilingual-toolbar">
+                <div class="bilingual-doc-header">
+                  <h2 id="bilingualTitle"></h2>
+                  <div class="bilingual-doc-meta">
+                    <span id="bilingualBook"></span>
+                    <span id="bilingualLevel" class="level-badge"></span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="bilingualMode">Mode</label>
+                  <select id="bilingualMode" onchange="renderBilingualArticle()">
+                    <option value="english">English only</option>
+                    <option value="vietnamese">Vietnamese only</option>
+                    <option value="phrase">English + Vietnamese phrases</option>
+                  </select>
+                </div>
+              </div>
+              <div id="bilingualReading" class="bilingual-reading"></div>
+            </div>
+
+            <div class="card">
+              <div class="bilingual-section-title">English sentence structures</div>
+              <div id="bilingualStructures" class="bilingual-structure-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ══ GRAMMAR ══════════════════════════════════════════════════════════════ -->
     <div id="grammarPage" class="page">
       <div class="page-inner">
@@ -1176,6 +1275,7 @@
       <button class="bot-nav-btn active" id="botNavStudy"        onclick="switchTab('study')"><span class="icon">📖</span><span>Study</span></button>
       <button class="bot-nav-btn"        id="botNavLibrary"      onclick="switchTab('library')"><span class="icon">📚</span><span>Library</span></button>
       <button class="bot-nav-btn"        id="botNavImportExport" onclick="switchTab('importExport')"><span class="icon">⬆</span><span>Import</span></button>
+      <button class="bot-nav-btn"        id="botNavBilingual"    onclick="switchTab('bilingual')"><span class="icon">EN</span><span>Books</span></button>
       <button class="bot-nav-btn"        id="botNavGrammar"      onclick="switchTab('grammar')"><span class="icon">📝</span><span>Grammar</span></button>
       <div class="theme-picker theme-picker-mobile">
         <label for="themeSelectMobile">Theme</label>
@@ -1338,7 +1438,7 @@
   applyThemeMode(getThemeMode(), false);
 
   /* ── Tab routing ──────────────────────────────────────────────────────────── */
-  const TAB_IDS = ['study', 'library', 'importExport', 'grammar'];
+  const TAB_IDS = ['study', 'library', 'importExport', 'bilingual', 'grammar'];
 
   function switchTab(name) {
     TAB_IDS.forEach(t => {
@@ -1886,7 +1986,7 @@
       if (result.version) localStorage.setItem(MANIFEST_LAST_VERSION_KEY, result.version);
       updateManifestLastSyncLabel();
       showManifestResult(result);
-      await Promise.all([loadCollections(), loadGrammarDocs()]);
+      await Promise.all([loadCollections(), loadGrammarDocs(), loadBilingualArticles()]);
     } catch (err) {
       box.className = 'import-result visible err';
       box.textContent = (manual ? 'Error: ' : 'Startup sync error: ') + err;
@@ -1902,7 +2002,8 @@
     box.className = 'import-result visible ' + (hasErrors ? 'err' : 'ok');
     let html = r.version ? `Version: <strong>${esc(r.version)}</strong><br>` : '';
     html += `Vocabulary: inserted <strong>${r.vocabularyInsertedCount}</strong>, updated <strong>${r.vocabularyUpdatedCount}</strong>, skipped <strong>${r.vocabularySkippedCount}</strong><br>`;
-    html += `Grammar: inserted <strong>${r.grammarInsertedCount}</strong>, updated <strong>${r.grammarUpdatedCount}</strong>`;
+    html += `Grammar: inserted <strong>${r.grammarInsertedCount}</strong>, updated <strong>${r.grammarUpdatedCount}</strong><br>`;
+    html += `Bilingual books: inserted <strong>${r.bilingualInsertedCount || 0}</strong>, updated <strong>${r.bilingualUpdatedCount || 0}</strong>`;
     if (hasErrors) {
       html += `<br><br><strong>Errors (${r.errorCount}):</strong><ul>`;
       r.errors.forEach(e => { html += `<li>${esc(e)}</li>`; });
@@ -2017,6 +2118,394 @@
     return String(str)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;')
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function jsArg(value) {
+    return esc(JSON.stringify(String(value)));
+  }
+
+  /* Bilingual books */
+  const BILINGUAL_SAMPLE_ARTICLES = [
+    {
+      id: 'rainy-morning',
+      book: 'Everyday Stories',
+      level: 'A2',
+      title: 'A Rainy Morning',
+      paragraphs: [
+        [
+          { en: 'When Lina woke up,', vi: 'Khi Lina th\u1ee9c d\u1eady,' },
+          { en: 'rain was tapping gently on the window.', vi: 'm\u01b0a \u0111ang g\u00f5 nh\u1eb9 l\u00ean c\u1eeda s\u1ed5.' },
+          { en: 'She opened her notebook', vi: 'C\u00f4 \u1ea5y m\u1edf cu\u1ed1n s\u1ed5 tay' },
+          { en: 'and wrote three new words', vi: 'v\u00e0 vi\u1ebft ba t\u1eeb m\u1edbi' },
+          { en: 'before breakfast.', vi: 'tr\u01b0\u1edbc b\u1eefa s\u00e1ng.' },
+        ],
+        [
+          { en: 'Her brother asked why', vi: 'Em trai c\u00f4 \u1ea5y h\u1ecfi t\u1ea1i sao' },
+          { en: 'she studied so early,', vi: 'c\u00f4 \u1ea5y h\u1ecdc s\u1edbm nh\u01b0 v\u1eady,' },
+          { en: 'and Lina smiled.', vi: 'v\u00e0 Lina m\u1ec9m c\u01b0\u1eddi.' },
+          { en: 'If I learn a little every day,', vi: 'N\u1ebfu ch\u1ecb h\u1ecdc m\u1ed9t ch\u00fat m\u1ed7i ng\u00e0y,' },
+          { en: 'I will remember more, she said.', vi: 'ch\u1ecb s\u1ebd nh\u1edb \u0111\u01b0\u1ee3c nhi\u1ec1u h\u01a1n, c\u00f4 \u1ea5y n\u00f3i.' },
+        ],
+        [
+          { en: 'Later, while she was walking to school,', vi: 'Sau \u0111\u00f3, trong khi c\u00f4 \u1ea5y \u0111ang \u0111i b\u1ed9 \u0111\u1ebfn tr\u01b0\u1eddng,' },
+          { en: 'she saw the same words', vi: 'c\u00f4 \u1ea5y nh\u00ecn th\u1ea5y nh\u1eefng t\u1eeb \u0111\u00f3' },
+          { en: 'on a poster near the bus stop.', vi: 'tr\u00ean m\u1ed9t t\u1ea5m \u00e1p ph\u00edch g\u1ea7n tr\u1ea1m xe bu\u00fdt.' },
+          { en: 'The morning suddenly felt useful.', vi: 'Bu\u1ed5i s\u00e1ng b\u1ed7ng tr\u1edf n\u00ean h\u1eefu \u00edch.' },
+        ],
+      ],
+      structures: [
+        {
+          pattern: 'When + past simple, past continuous',
+          example: 'When Lina woke up, rain was tapping gently on the window.',
+          note: 'D\u00f9ng when \u0111\u1ec3 \u0111\u1eb7t m\u1ed1c th\u1eddi gian trong qu\u00e1 kh\u1ee9, sau \u0111\u00f3 d\u00f9ng qu\u00e1 kh\u1ee9 ti\u1ebfp di\u1ec5n cho h\u00e0nh \u0111\u1ed9ng \u0111ang x\u1ea3y ra t\u1ea1i th\u1eddi \u0111i\u1ec3m \u0111\u00f3.',
+        },
+        {
+          pattern: 'Indirect question: asked why + clause',
+          example: 'Her brother asked why she studied so early.',
+          note: 'Sau asked why, gi\u1eef tr\u1eadt t\u1ef1 c\u00e2u tr\u1ea7n thu\u1eadt: ch\u1ee7 ng\u1eef \u0111\u1ee9ng tr\u01b0\u1edbc \u0111\u1ed9ng t\u1eeb.',
+        },
+        {
+          pattern: 'First conditional: If + present simple, will + verb',
+          example: 'If I learn a little every day, I will remember more.',
+          note: 'D\u00f9ng c\u1ea5u tr\u00fac n\u00e0y \u0111\u1ec3 n\u00f3i v\u1ec1 m\u1ed9t k\u1ebft qu\u1ea3 c\u00f3 kh\u1ea3 n\u0103ng x\u1ea3y ra trong t\u01b0\u01a1ng lai.',
+        },
+        {
+          pattern: 'While + past continuous, past simple',
+          example: 'While she was walking to school, she saw the same words.',
+          note: 'D\u00f9ng while cho h\u00e0nh \u0111\u1ed9ng n\u1ec1n k\u00e9o d\u00e0i v\u00e0 qu\u00e1 kh\u1ee9 \u0111\u01a1n cho s\u1ef1 ki\u1ec7n ng\u1eafn h\u01a1n.',
+        },
+      ],
+    },
+    {
+      id: 'small-bookshop',
+      book: 'City Moments',
+      level: 'B1',
+      title: 'The Small Bookshop',
+      paragraphs: [
+        [
+          { en: 'There was a small bookshop', vi: 'C\u00f3 m\u1ed9t hi\u1ec7u s\u00e1ch nh\u1ecf' },
+          { en: 'at the end of the old street.', vi: '\u1edf cu\u1ed1i con ph\u1ed1 c\u0169.' },
+          { en: 'Although the shop looked quiet,', vi: 'M\u1eb7c d\u00f9 c\u1eeda h\u00e0ng tr\u00f4ng y\u00ean t\u0129nh,' },
+          { en: 'people came in every evening', vi: 'm\u1ecdi ng\u01b0\u1eddi gh\u00e9 v\u00e0o m\u1ed7i t\u1ed1i' },
+          { en: 'to talk about stories.', vi: '\u0111\u1ec3 n\u00f3i v\u1ec1 nh\u1eefng c\u00e2u chuy\u1ec7n.' },
+        ],
+        [
+          { en: 'The owner, Mr. An,', vi: '\u00d4ng ch\u1ee7, \u00f4ng An,' },
+          { en: 'had been collecting English novels for twenty years.', vi: '\u0111\u00e3 s\u01b0u t\u1ea7m ti\u1ec3u thuy\u1ebft ti\u1ebfng Anh su\u1ed1t hai m\u01b0\u01a1i n\u0103m.' },
+          { en: 'He believed that a good sentence', vi: '\u00d4ng tin r\u1eb1ng m\u1ed9t c\u00e2u v\u0103n hay' },
+          { en: 'could teach more than a long rule.', vi: 'c\u00f3 th\u1ec3 d\u1ea1y nhi\u1ec1u h\u01a1n m\u1ed9t quy t\u1eafc d\u00e0i.' },
+        ],
+        [
+          { en: 'One day, a student who wanted to improve her speaking', vi: 'M\u1ed9t ng\u00e0y n\u1ecd, m\u1ed9t sinh vi\u00ean mu\u1ed1n c\u1ea3i thi\u1ec7n k\u1ef9 n\u0103ng n\u00f3i' },
+          { en: 'asked him to recommend a book.', vi: '\u0111\u00e3 nh\u1edd \u00f4ng gi\u1edbi thi\u1ec7u m\u1ed9t cu\u1ed1n s\u00e1ch.' },
+          { en: 'Instead of giving her the easiest one,', vi: 'Thay v\u00ec \u0111\u01b0a cho c\u00f4 \u1ea5y cu\u1ed1n d\u1ec5 nh\u1ea5t,' },
+          { en: 'he chose the one that made her curious.', vi: '\u00f4ng ch\u1ecdn cu\u1ed1n khi\u1ebfn c\u00f4 \u1ea5y t\u00f2 m\u00f2.' },
+        ],
+      ],
+      structures: [
+        {
+          pattern: 'There was/were + noun + place',
+          example: 'There was a small bookshop at the end of the old street.',
+          note: 'D\u00f9ng there was \u0111\u1ec3 gi\u1edbi thi\u1ec7u r\u1eb1ng m\u1ed9t s\u1ef1 v\u1eadt ho\u1eb7c s\u1ef1 vi\u1ec7c t\u1ed3n t\u1ea1i \u1edf m\u1ed9t n\u01a1i.',
+        },
+        {
+          pattern: 'Although + clause, main clause',
+          example: 'Although the shop looked quiet, people came in every evening.',
+          note: 'Although di\u1ec5n t\u1ea3 s\u1ef1 t\u01b0\u01a1ng ph\u1ea3n gi\u1eefa \u0111i\u1ec1u \u0111\u01b0\u1ee3c mong \u0111\u1ee3i v\u00e0 th\u1ef1c t\u1ebf.',
+        },
+        {
+          pattern: 'Past perfect continuous: had been + V-ing',
+          example: 'Mr. An had been collecting English novels for twenty years.',
+          note: 'D\u00f9ng c\u1ea5u tr\u00fac n\u00e0y \u0111\u1ec3 di\u1ec5n t\u1ea3 m\u1ed9t ho\u1ea1t \u0111\u1ed9ng \u0111\u00e3 k\u00e9o d\u00e0i tr\u01b0\u1edbc m\u1ed9t th\u1eddi \u0111i\u1ec3m trong qu\u00e1 kh\u1ee9.',
+        },
+        {
+          pattern: 'Relative clause: noun + who/that + verb',
+          example: 'A student who wanted to improve her speaking asked him to recommend a book.',
+          note: 'D\u00f9ng who cho ng\u01b0\u1eddi, v\u00e0 that cho ng\u01b0\u1eddi ho\u1eb7c v\u1eadt trong m\u1ec7nh \u0111\u1ec1 quan h\u1ec7 x\u00e1c \u0111\u1ecbnh.',
+        },
+      ],
+    },
+  ];
+
+  let bilingualArticles = [];
+  let bilingualSelectedArticleId = null;
+  let currentBilingualArticle = null;
+  let collapsedBilingualBooks = new Set(JSON.parse(localStorage.getItem('bilingualCollapsedBooks') || '[]'));
+
+  async function loadBilingualArticles() {
+    try {
+      bilingualArticles = await invoke('list_bilingual_articles');
+      if (bilingualArticles.length > 0 && !bilingualSelectedArticleId) {
+        bilingualSelectedArticleId = bilingualArticles[0].id;
+      }
+      if (bilingualSelectedArticleId && !bilingualArticles.some(a => a.id === bilingualSelectedArticleId)) {
+        bilingualSelectedArticleId = bilingualArticles[0]?.id || null;
+      }
+      renderBilingualArticleList();
+      if (bilingualSelectedArticleId) {
+        await openBilingualArticle(bilingualSelectedArticleId, false);
+      } else {
+        renderBilingualEmpty();
+      }
+    } catch (err) {
+      console.error('loadBilingualArticles:', err);
+      renderBilingualEmpty('Error: ' + err);
+    }
+  }
+
+  function renderBilingualBooks() {
+    loadBilingualArticles();
+  }
+
+  function renderBilingualArticleList() {
+    const list = document.getElementById('bilingualArticleList');
+    const countEl = document.getElementById('bilingualArticleCount');
+    if (countEl) countEl.textContent = `${bilingualArticles.length} article${bilingualArticles.length === 1 ? '' : 's'}`;
+    if (!list) return;
+    if (bilingualArticles.length === 0) {
+      list.innerHTML = '<div style="padding:14px;font-size:13px;color:var(--muted)">No bilingual articles yet.</div>';
+      return;
+    }
+    const books = groupBilingualArticlesByBook();
+    list.innerHTML = books.map(book => renderBilingualBookGroup(book)).join('');
+  }
+
+  function groupBilingualArticlesByBook() {
+    const grouped = new Map();
+    for (const article of bilingualArticles) {
+      const book = article.book || 'Bilingual Books';
+      if (!grouped.has(book)) grouped.set(book, []);
+      grouped.get(book).push(article);
+    }
+    return [...grouped.entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([book, articles]) => ({
+        book,
+        articles: articles.sort((a, b) => (a.title || '').localeCompare(b.title || '')),
+      }));
+  }
+
+  function renderBilingualBookGroup(group) {
+    const collapsed = collapsedBilingualBooks.has(group.book);
+    return `
+      <div class="bilingual-book-group">
+        <div class="bilingual-book-header" onclick="toggleBilingualBook(${jsArg(group.book)})">
+          <div class="bilingual-book-title">
+            <span class="bilingual-book-toggle">${collapsed ? '▶' : '▼'}</span>
+            <span class="bilingual-book-name">${esc(group.book)}</span>
+          </div>
+          <span class="bilingual-book-count">${group.articles.length}</span>
+        </div>
+        <div class="bilingual-book-body ${collapsed ? 'collapsed' : ''}">
+          ${group.articles.map(article => renderBilingualArticleItem(article)).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  function renderBilingualArticleItem(article) {
+    return `
+      <div class="bilingual-article-item ${article.id === bilingualSelectedArticleId ? 'active' : ''}" onclick="selectBilingualArticle(${article.id})">
+        <div class="bilingual-article-title">${esc(article.title)}</div>
+        <div class="bilingual-article-meta">
+          <span>Chapter</span>
+          ${article.level ? `<span class="level-badge">${esc(article.level)}</span>` : ''}
+          <span>${article.paragraphCount} p.</span>
+          <span>${article.structureCount} structures</span>
+        </div>
+      </div>
+    `;
+  }
+
+  function toggleBilingualBook(book) {
+    if (collapsedBilingualBooks.has(book)) collapsedBilingualBooks.delete(book);
+    else collapsedBilingualBooks.add(book);
+    localStorage.setItem('bilingualCollapsedBooks', JSON.stringify([...collapsedBilingualBooks]));
+    renderBilingualArticleList();
+  }
+
+  async function selectBilingualArticle(id) {
+    await openBilingualArticle(id);
+  }
+
+  async function openBilingualArticle(id, refreshList = true) {
+    bilingualSelectedArticleId = id;
+    try {
+      currentBilingualArticle = await invoke('get_bilingual_article', { id });
+      if (!currentBilingualArticle) {
+        renderBilingualEmpty();
+        return;
+      }
+      if (refreshList) renderBilingualArticleList();
+      renderBilingualArticle();
+    } catch (err) {
+      alert('Error: ' + err);
+    }
+  }
+
+  function renderBilingualArticle() {
+    const article = currentBilingualArticle;
+    if (!article) {
+      renderBilingualEmpty();
+      return;
+    }
+    document.getElementById('bilingualTitle').textContent = article.title;
+    document.getElementById('bilingualBook').textContent = article.book;
+    const levelEl = document.getElementById('bilingualLevel');
+    if (article.level) {
+      levelEl.textContent = article.level;
+      levelEl.style.display = '';
+    } else {
+      levelEl.style.display = 'none';
+    }
+    const structureLookup = buildBilingualStructureLookup(article);
+    document.getElementById('bilingualReading').innerHTML = (article.paragraphs || [])
+      .map(paragraph => `<p>${renderBilingualParagraph(paragraph, structureLookup)}</p>`)
+      .join('');
+    document.getElementById('bilingualStructures').innerHTML = (article.structures || []).length
+      ? article.structures.map((item, index) => `
+          <div class="bilingual-structure" id="bilingualStructure_${index}" tabindex="-1">
+            <div class="bilingual-structure-pattern">${esc(item.pattern)}</div>
+            <div class="bilingual-structure-example">${esc(item.example)}</div>
+            ${item.note ? `<div class="bilingual-structure-note">${esc(item.note)}</div>` : ''}
+          </div>
+        `).join('')
+      : '<div style="font-size:13px;color:var(--muted)">No sentence structures recorded for this article.</div>';
+  }
+
+  function renderBilingualParagraph(segments, structureLookup) {
+    return splitBilingualSentences(segments)
+      .map(sentenceSegments => renderBilingualSentence(sentenceSegments, structureLookup))
+      .join(' ');
+  }
+
+  function renderBilingualSentence(segments, structureLookup) {
+    const mode = document.getElementById('bilingualMode')?.value || 'english';
+    const structureIndex = findBilingualStructureIndex(segments, structureLookup);
+    const content = mode === 'english'
+      ? esc((segments || []).map(segment => segment.en).join(' '))
+      : mode === 'vietnamese'
+        ? esc((segments || []).map(segment => segment.vi).join(' '))
+        : (segments || []).map(segment =>
+            `<span class="bilingual-phrase">${esc(segment.en)} <span class="bilingual-phrase-vi">(${esc(segment.vi)})</span></span>`
+          ).join(' ');
+
+    if (structureIndex < 0) return `<span class="bilingual-sentence">${content}</span>`;
+    return `<span class="bilingual-sentence has-structure" role="button" tabindex="0" onclick="jumpToBilingualStructure(${structureIndex})" onkeydown="onBilingualSentenceKeydown(event, ${structureIndex})">${content}</span>`;
+  }
+
+  function splitBilingualSentences(segments) {
+    const sentences = [];
+    let current = [];
+    for (const segment of segments || []) {
+      current.push(segment);
+      if (/[.!?]["')\]]?\s*$/.test(String(segment.en || '').trim())) {
+        sentences.push(current);
+        current = [];
+      }
+    }
+    if (current.length > 0) sentences.push(current);
+    return sentences;
+  }
+
+  function buildBilingualStructureLookup(article) {
+    const lookup = new Map();
+    (article.structures || []).forEach((structure, index) => {
+      const key = normalizeBilingualSentence(structure.example);
+      if (key) lookup.set(key, index);
+    });
+    return lookup;
+  }
+
+  function findBilingualStructureIndex(segments, structureLookup) {
+    const sentenceKey = normalizeBilingualSentence((segments || []).map(segment => segment.en).join(' '));
+    if (!sentenceKey) return -1;
+    if (structureLookup.has(sentenceKey)) return structureLookup.get(sentenceKey);
+    for (const [exampleKey, index] of structureLookup.entries()) {
+      if (sentenceKey.includes(exampleKey) || exampleKey.includes(sentenceKey)) return index;
+    }
+    return -1;
+  }
+
+  function normalizeBilingualSentence(value) {
+    return String(value || '')
+      .toLowerCase()
+      .replace(/[“”"'`]/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function jumpToBilingualStructure(index) {
+    const target = document.getElementById('bilingualStructure_' + index);
+    if (!target) return;
+    document.querySelectorAll('.bilingual-structure.active').forEach(el => el.classList.remove('active'));
+    target.classList.add('active');
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    target.focus({ preventScroll: true });
+    setTimeout(() => target.classList.remove('active'), 2400);
+  }
+
+  function onBilingualSentenceKeydown(event, index) {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    jumpToBilingualStructure(index);
+  }
+
+  function renderBilingualEmpty(message = 'Import a bilingual JSON file, or load the sample data to get started.') {
+    currentBilingualArticle = null;
+    document.getElementById('bilingualTitle').textContent = 'No bilingual article selected';
+    document.getElementById('bilingualBook').textContent = '';
+    document.getElementById('bilingualLevel').style.display = 'none';
+    document.getElementById('bilingualReading').innerHTML =
+      `<div class="empty-state" style="padding:34px 20px">${esc(message)}</div>`;
+    document.getElementById('bilingualStructures').innerHTML =
+      '<div style="font-size:13px;color:var(--muted)">No sentence structures to show.</div>';
+  }
+
+  async function importBilingualContent(content, label) {
+    try {
+      const result = await invoke('import_bilingual', { content });
+      const errors = result.errors || [];
+      alert(`Imported ${result.importedCount} bilingual article(s) from ${label}.\nInserted: ${result.insertedCount} | Updated: ${result.updatedCount}` +
+            (errors.length ? '\nErrors:\n' + errors.join('\n') : ''));
+      await loadBilingualArticles();
+    } catch (err) {
+      alert('Error: ' + err);
+    }
+  }
+
+  async function importBilingualFiles(files) {
+    let imported = 0;
+    let inserted = 0;
+    let updated = 0;
+    const errors = [];
+    for (const file of files) {
+      try {
+        const content = await readFileAsText(file);
+        const result = await invoke('import_bilingual', { content });
+        imported += result.importedCount;
+        inserted += result.insertedCount || 0;
+        updated += result.updatedCount || 0;
+        for (const err of result.errors || []) errors.push(`${file.name}: ${err}`);
+      } catch (err) {
+        errors.push(`${file.name}: ${err}`);
+      }
+    }
+    alert(`Imported ${imported} bilingual article(s) from ${files.length} file(s).\nInserted: ${inserted} | Updated: ${updated}` +
+          (errors.length ? '\nErrors:\n' + errors.join('\n') : ''));
+    await loadBilingualArticles();
+  }
+
+  async function onBilingualFileSelected(e) {
+    const files = Array.from(e.target.files || []);
+    if (!files.length) return;
+    await importBilingualFiles(files);
+    e.target.value = '';
+  }
+
+  async function importSampleBilingualData() {
+    await importBilingualContent(JSON.stringify(BILINGUAL_SAMPLE_ARTICLES), 'sample data');
   }
 
   /* ── Markdown renderer ────────────────────────────────────────────────────── */
@@ -2887,7 +3376,7 @@
   /* ── Init ─────────────────────────────────────────────────────────────────── */
   async function initApp() {
     initManifestSyncControls();
-    await Promise.all([loadCollections(), loadGrammarDocs()]);
+    await Promise.all([loadCollections(), loadGrammarDocs(), loadBilingualArticles()]);
     await syncManifestOnStartup();
   }
 

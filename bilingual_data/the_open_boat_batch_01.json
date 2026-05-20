@@ -1,0 +1,210 @@
+[
+  {
+    "book": "The Open Boat",
+    "level": "B1",
+    "title": "01 - The Boat and the Waves",
+    "paragraphs": [
+      [
+        { "en": "None of the men knew the color of the sky.", "vi": "Không ai trong số những người đàn ông biết bầu trời màu gì." },
+        { "en": "Their eyes were fixed on the waves.", "vi": "Mắt họ dán chặt vào những con sóng." },
+        { "en": "The sea rose around them", "vi": "Biển dâng lên quanh họ" },
+        { "en": "like moving hills.", "vi": "như những ngọn đồi đang chuyển động." }
+      ],
+      [
+        { "en": "The waves were lifting the small boat again and again.", "vi": "Những con sóng cứ nâng chiếc thuyền nhỏ lên hết lần này đến lần khác." },
+        { "en": "Sometimes the boat climbed slowly,", "vi": "Đôi khi chiếc thuyền leo lên chậm rãi," },
+        { "en": "and sometimes it dropped suddenly.", "vi": "và đôi khi nó rơi xuống đột ngột." },
+        { "en": "Every drop made the men hold their breath.", "vi": "Mỗi lần rơi xuống khiến những người đàn ông nín thở." }
+      ],
+      [
+        { "en": "Although the boat was small, the men kept working together.", "vi": "Mặc dù chiếc thuyền rất nhỏ, họ vẫn tiếp tục phối hợp với nhau." },
+        { "en": "The captain watched the sea.", "vi": "Người thuyền trưởng quan sát mặt biển." },
+        { "en": "The oiler and the correspondent rowed.", "vi": "Người thợ máy và anh phóng viên chèo thuyền." },
+        { "en": "The cook bailed water with a small tin.", "vi": "Người đầu bếp tát nước bằng một cái lon nhỏ." }
+      ],
+      [
+        { "en": "The sea was so rough that every movement felt dangerous.", "vi": "Biển động dữ đến mức mỗi cử động đều có vẻ nguy hiểm." },
+        { "en": "Still, the men did not stop.", "vi": "Dù vậy, họ không dừng lại." },
+        { "en": "They had only a tiny boat,", "vi": "Họ chỉ có một chiếc thuyền rất nhỏ," },
+        { "en": "but it was the only thing between them and death.", "vi": "nhưng đó là thứ duy nhất nằm giữa họ và cái chết." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "None of + plural noun + verb",
+        "example": "None of the men knew the color of the sky.",
+        "note": "Dùng none of để nói rằng không có ai hoặc không có cái nào trong một nhóm."
+      },
+      {
+        "pattern": "Past continuous: was/were + V-ing",
+        "example": "The waves were lifting the small boat again and again.",
+        "note": "Quá khứ tiếp diễn diễn tả một hành động đang diễn ra trong quá khứ."
+      },
+      {
+        "pattern": "Although + clause, main clause",
+        "example": "Although the boat was small, the men kept working together.",
+        "note": "Although dùng để nói về sự tương phản giữa điều kiện khó khăn và hành động chính."
+      },
+      {
+        "pattern": "So + adjective + that + clause",
+        "example": "The sea was so rough that every movement felt dangerous.",
+        "note": "So...that diễn tả mức độ mạnh đến nỗi gây ra một kết quả rõ ràng."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat",
+    "level": "B1",
+    "title": "02 - Four Men Together",
+    "paragraphs": [
+      [
+        { "en": "The captain had injured his arm,", "vi": "Người thuyền trưởng đã bị thương ở cánh tay," },
+        { "en": "so he could not row.", "vi": "nên ông không thể chèo thuyền." },
+        { "en": "He spoke quietly,", "vi": "Ông nói khẽ," },
+        { "en": "but the others listened to him.", "vi": "nhưng những người khác vẫn lắng nghe ông." }
+      ],
+      [
+        { "en": "Because the captain understood the sea, the men trusted his orders.", "vi": "Vì người thuyền trưởng hiểu biển, những người đàn ông tin vào mệnh lệnh của ông." },
+        { "en": "He told them when to row.", "vi": "Ông bảo họ khi nào cần chèo." },
+        { "en": "He told them when to rest.", "vi": "Ông bảo họ khi nào cần nghỉ." },
+        { "en": "His calm voice made the boat feel less lonely.", "vi": "Giọng nói bình tĩnh của ông khiến chiếc thuyền bớt cô đơn hơn." }
+      ],
+      [
+        { "en": "The oiler was the strongest rower in the boat.", "vi": "Người thợ máy là tay chèo khỏe nhất trên thuyền." },
+        { "en": "He worked without complaint.", "vi": "Anh làm việc mà không than phiền." },
+        { "en": "When his hands grew tired,", "vi": "Khi đôi tay anh mỏi," },
+        { "en": "the correspondent took the oars.", "vi": "anh phóng viên nhận lấy mái chèo." }
+      ],
+      [
+        { "en": "The cook did not row as much as the others.", "vi": "Người đầu bếp không chèo nhiều như những người khác." },
+        { "en": "Instead, he kept the boat clear of water.", "vi": "Thay vào đó, anh giữ cho thuyền không bị đầy nước." },
+        { "en": "If he stopped bailing, the boat would become heavier.", "vi": "Nếu anh ngừng tát nước, chiếc thuyền sẽ nặng hơn." },
+        { "en": "No task was small in that sea.", "vi": "Không có việc nào là nhỏ giữa vùng biển ấy." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "So + clause of result",
+        "example": "The captain had injured his arm, so he could not row.",
+        "note": "So dùng để nói kết quả trực tiếp của một sự việc trước đó."
+      },
+      {
+        "pattern": "Because + reason, result",
+        "example": "Because the captain understood the sea, the men trusted his orders.",
+        "note": "Because đưa ra lý do; mệnh đề chính cho biết kết quả hoặc hành động."
+      },
+      {
+        "pattern": "Superlative adjective: the strongest",
+        "example": "The oiler was the strongest rower in the boat.",
+        "note": "Dạng so sánh nhất dùng để nói một người hoặc vật đứng đầu trong một nhóm."
+      },
+      {
+        "pattern": "Conditional: If + past simple, would + verb",
+        "example": "If he stopped bailing, the boat would become heavier.",
+        "note": "Cấu trúc này nói về một kết quả giả định nếu một hành động thay đổi."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat",
+    "level": "B1",
+    "title": "03 - A Shore Far Away",
+    "paragraphs": [
+      [
+        { "en": "After many hours, the men saw a thin line of land.", "vi": "Sau nhiều giờ, những người đàn ông thấy một đường đất mỏng manh." },
+        { "en": "It looked close at first,", "vi": "Ban đầu nó trông có vẻ gần," },
+        { "en": "but the sea made every mile feel longer.", "vi": "nhưng biển khiến mỗi dặm đường như dài hơn." }
+      ],
+      [
+        { "en": "They thought that people on shore might see them.", "vi": "Họ nghĩ rằng người trên bờ có thể nhìn thấy họ." },
+        { "en": "A house stood near the beach.", "vi": "Một ngôi nhà nằm gần bãi biển." },
+        { "en": "A small figure moved on the sand.", "vi": "Một bóng người nhỏ di chuyển trên cát." },
+        { "en": "Hope rose quickly in the boat.", "vi": "Hy vọng nhanh chóng dâng lên trong chiếc thuyền." }
+      ],
+      [
+        { "en": "The men waved their coats so that someone would notice them.", "vi": "Họ vẫy áo khoác để ai đó có thể chú ý đến họ." },
+        { "en": "The figure on shore seemed to wave back.", "vi": "Bóng người trên bờ có vẻ vẫy lại." },
+        { "en": "For a moment, the men felt almost safe.", "vi": "Trong một khoảnh khắc, họ gần như cảm thấy an toàn." }
+      ],
+      [
+        { "en": "However, no rescue boat came out to meet them.", "vi": "Tuy nhiên, không có thuyền cứu hộ nào ra đón họ." },
+        { "en": "The shore was visible,", "vi": "Bờ biển có thể nhìn thấy," },
+        { "en": "yet it remained beyond their reach.", "vi": "nhưng nó vẫn nằm ngoài tầm với của họ." },
+        { "en": "That was harder to bear than the open sea.", "vi": "Điều đó còn khó chịu hơn cả biển khơi rộng lớn." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "After + time phrase, main clause",
+        "example": "After many hours, the men saw a thin line of land.",
+        "note": "After dùng để đặt mốc thời gian trước hành động chính."
+      },
+      {
+        "pattern": "Thought that + clause",
+        "example": "They thought that people on shore might see them.",
+        "note": "Thought that dùng để nói về suy nghĩ hoặc niềm tin của nhân vật."
+      },
+      {
+        "pattern": "So that + purpose clause",
+        "example": "The men waved their coats so that someone would notice them.",
+        "note": "So that diễn tả mục đích của hành động."
+      },
+      {
+        "pattern": "However + contrast",
+        "example": "However, no rescue boat came out to meet them.",
+        "note": "However dùng để chuyển sang ý trái ngược với điều vừa hy vọng hoặc mong đợi."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat",
+    "level": "B1",
+    "title": "04 - Night on the Water",
+    "paragraphs": [
+      [
+        { "en": "When night came, the sea became darker and colder.", "vi": "Khi đêm đến, biển trở nên tối hơn và lạnh hơn." },
+        { "en": "The men could no longer see the shore clearly.", "vi": "Họ không còn nhìn thấy bờ biển rõ ràng nữa." },
+        { "en": "Only the sound of the waves stayed near them.", "vi": "Chỉ có tiếng sóng là vẫn ở gần họ." }
+      ],
+      [
+        { "en": "They rowed in turns because no one had enough strength to row forever.", "vi": "Họ thay phiên nhau chèo vì không ai có đủ sức để chèo mãi." },
+        { "en": "One man worked.", "vi": "Một người làm việc." },
+        { "en": "Another man rested.", "vi": "Một người khác nghỉ." },
+        { "en": "The rhythm kept them alive.", "vi": "Nhịp điệu đó giữ cho họ sống." }
+      ],
+      [
+        { "en": "The correspondent wondered why nature seemed so indifferent.", "vi": "Anh phóng viên tự hỏi tại sao thiên nhiên có vẻ thờ ơ đến vậy." },
+        { "en": "The sea did not hate them.", "vi": "Biển không ghét họ." },
+        { "en": "It simply moved as it had always moved.", "vi": "Nó chỉ đơn giản chuyển động như nó vẫn luôn chuyển động." }
+      ],
+      [
+        { "en": "Even though the men were exhausted, they kept looking for a chance.", "vi": "Dù những người đàn ông đã kiệt sức, họ vẫn tiếp tục tìm cơ hội." },
+        { "en": "A light appeared in the distance.", "vi": "Một ánh đèn xuất hiện ở phía xa." },
+        { "en": "It was small,", "vi": "Nó rất nhỏ," },
+        { "en": "but it gave them something to follow.", "vi": "nhưng nó cho họ một thứ để hướng theo." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "When + past simple, main clause",
+        "example": "When night came, the sea became darker and colder.",
+        "note": "When đặt bối cảnh thời gian cho hành động hoặc thay đổi chính."
+      },
+      {
+        "pattern": "Because + reason",
+        "example": "They rowed in turns because no one had enough strength to row forever.",
+        "note": "Because giải thích lý do của hành động trong mệnh đề chính."
+      },
+      {
+        "pattern": "Wondered why + clause",
+        "example": "The correspondent wondered why nature seemed so indifferent.",
+        "note": "Wondered why dùng để diễn tả một câu hỏi nội tâm, không cần đảo trợ động từ."
+      },
+      {
+        "pattern": "Even though + clause, main clause",
+        "example": "Even though the men were exhausted, they kept looking for a chance.",
+        "note": "Even though nhấn mạnh sự tương phản mạnh hơn although."
+      }
+    ]
+  }
+]

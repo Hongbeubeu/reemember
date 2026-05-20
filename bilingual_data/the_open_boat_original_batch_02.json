@@ -1,0 +1,432 @@
+[
+  {
+    "book": "The Open Boat - Original PDF",
+    "level": "Original",
+    "title": "05 - Command and Oneness",
+    "paragraphs": [
+      [
+        { "en": "The hurt captain,", "vi": "Người thuyền trưởng bị thương," },
+        { "en": "lying against the water jar", "vi": "đang nằm tựa vào bình nước" },
+        { "en": "in the front,", "vi": "ở phía trước," },
+        { "en": "spoke always in a low voice", "vi": "luôn nói bằng giọng thấp" },
+        { "en": "and calmly.", "vi": "và bình tĩnh." }
+      ],
+      [
+        { "en": "But he could never command", "vi": "Nhưng ông không bao giờ có thể chỉ huy" },
+        { "en": "a more ready-to-obey ship's company", "vi": "một nhóm thủy thủ sẵn sàng tuân lệnh hơn" },
+        { "en": "than the other three", "vi": "ba người còn lại" },
+        { "en": "in the boat.", "vi": "trên chiếc thuyền." },
+        { "en": "It was more than", "vi": "Đó còn hơn cả" },
+        { "en": "a mere recognition", "vi": "một sự nhận biết đơn thuần" },
+        { "en": "of what was best", "vi": "về điều gì là tốt nhất" },
+        { "en": "for their safety.", "vi": "cho sự an toàn của họ." }
+      ],
+      [
+        { "en": "There was surely in it", "vi": "Chắc chắn trong đó có" },
+        { "en": "a quality", "vi": "một phẩm chất" },
+        { "en": "that was personal and heartfelt.", "vi": "mang tính riêng tư và chân thành." },
+        { "en": "And after this devotion", "vi": "Và sau sự tận tụy này" },
+        { "en": "to the commander of the boat,", "vi": "đối với người chỉ huy chiếc thuyền," },
+        { "en": "there was this oneness.", "vi": "còn có sự hòa làm một này." }
+      ],
+      [
+        { "en": "The correspondent,", "vi": "Anh phóng viên," },
+        { "en": "who had been taught", "vi": "người đã được dạy" },
+        { "en": "to be a hard judge of men,", "vi": "phải đánh giá con người một cách khắt khe," },
+        { "en": "knew even at the time", "vi": "ngay lúc đó cũng biết" },
+        { "en": "that it was the best experience", "vi": "rằng đó là trải nghiệm tốt đẹp nhất" },
+        { "en": "of his life.", "vi": "trong đời anh." },
+        { "en": "But no one said it was so.", "vi": "Nhưng không ai nói điều đó là như vậy." },
+        { "en": "No one mentioned it.", "vi": "Không ai nhắc đến nó." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "Present participle phrase",
+        "example": "The hurt captain, lying against the water jar in the front, spoke always in a low voice and calmly.",
+        "note": "Cụm V-ing lying against... chen vào sau chủ ngữ để bổ sung trạng thái của người thuyền trưởng."
+      },
+      {
+        "pattern": "Could never + base verb",
+        "example": "But he could never command a more ready-to-obey ship's company than the other three in the boat.",
+        "note": "Could never dùng để nhấn mạnh điều không thể xảy ra trong hoàn cảnh được nói đến."
+      },
+      {
+        "pattern": "More than + noun phrase",
+        "example": "It was more than a mere recognition of what was best for their safety.",
+        "note": "More than cho thấy điều được nói đến vượt quá một mức hoặc một cách hiểu đơn giản."
+      },
+      {
+        "pattern": "Relative clause: who + had been + V3",
+        "example": "The correspondent, who had been taught to be a hard judge of men, knew even at the time that it was the best experience of his life.",
+        "note": "Mệnh đề who had been taught bổ sung thông tin nền về the correspondent."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat - Original PDF",
+    "level": "Original",
+    "title": "06 - The Coat and the Land",
+    "paragraphs": [
+      [
+        { "en": "\"I wish we had a sail,\"", "vi": "\"Ước gì chúng ta có một cánh buồm,\"" },
+        { "en": "remarked the captain.", "vi": "người thuyền trưởng nói." },
+        { "en": "\"We might try my coat", "vi": "\"Có thể thử dùng áo khoác của tôi" },
+        { "en": "on the end of an oar.", "vi": "ở đầu một mái chèo." },
+        { "en": "It would give you two boys", "vi": "Nó sẽ cho hai cậu" },
+        { "en": "a chance to rest.\"", "vi": "một cơ hội nghỉ ngơi.\"" }
+      ],
+      [
+        { "en": "So the cook and the correspondent", "vi": "Vậy là người đầu bếp và anh phóng viên" },
+        { "en": "held the oar", "vi": "giữ mái chèo" },
+        { "en": "and spread wide the coat.", "vi": "và căng rộng chiếc áo khoác." },
+        { "en": "Sometimes the oiler", "vi": "Đôi khi người thợ máy" },
+        { "en": "had to turn sharply", "vi": "phải bẻ hướng thật gấp" },
+        { "en": "to keep the sea", "vi": "để giữ biển" },
+        { "en": "from breaking into the boat.", "vi": "khỏi tràn vào thuyền." },
+        { "en": "But, otherwise,", "vi": "Nhưng ngoài điều đó ra," },
+        { "en": "sailing was a success.", "vi": "việc căng buồm đã thành công." }
+      ],
+      [
+        { "en": "The lighthouse had been growing", "vi": "Ngọn hải đăng đã đang lớn dần" },
+        { "en": "slowly larger.", "vi": "một cách chậm rãi." },
+        { "en": "It now almost had color", "vi": "Bây giờ nó gần như đã có màu sắc" },
+        { "en": "and appeared like", "vi": "và hiện ra giống như" },
+        { "en": "a little gray shadow", "vi": "một cái bóng xám nhỏ" },
+        { "en": "on the sky.", "vi": "trên bầu trời." },
+        { "en": "The men holding high the oar", "vi": "Những người đang giơ cao mái chèo" },
+        { "en": "could not be prevented", "vi": "không thể bị ngăn lại" },
+        { "en": "from turning their heads", "vi": "khỏi việc quay đầu" },
+        { "en": "quite often", "vi": "khá thường xuyên" },
+        { "en": "to glance at this little gray shadow.", "vi": "để liếc nhìn cái bóng xám nhỏ ấy." }
+      ],
+      [
+        { "en": "At last,", "vi": "Cuối cùng," },
+        { "en": "from the top of each wave,", "vi": "từ đỉnh của mỗi con sóng," },
+        { "en": "the men in the rolling boat", "vi": "những người trên chiếc thuyền chòng chành" },
+        { "en": "could see land.", "vi": "có thể nhìn thấy đất liền." },
+        { "en": "As the lighthouse was a shadow", "vi": "Khi ngọn hải đăng là một cái bóng" },
+        { "en": "on the sky,", "vi": "trên bầu trời," },
+        { "en": "this land seemed only", "vi": "vùng đất này dường như chỉ là" },
+        { "en": "a long black shadow", "vi": "một cái bóng đen dài" },
+        { "en": "on the sea.", "vi": "trên mặt biển." },
+        { "en": "It certainly was thinner than paper.", "vi": "Nó chắc chắn còn mỏng hơn giấy." }
+      ],
+      [
+        { "en": "The wind slowly died away.", "vi": "Gió chậm rãi lặng đi." },
+        { "en": "The cook and the correspondent", "vi": "Người đầu bếp và anh phóng viên" },
+        { "en": "did not now have to labor", "vi": "giờ không còn phải vất vả" },
+        { "en": "to hold high the oar.", "vi": "để giữ cao mái chèo." },
+        { "en": "But the waves continued", "vi": "Nhưng những con sóng vẫn tiếp tục" },
+        { "en": "pushing and turning", "vi": "đẩy và xoay" },
+        { "en": "and washing the boat.", "vi": "và rửa qua chiếc thuyền." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "I wish + past simple",
+        "example": "\"I wish we had a sail,\" remarked the captain.",
+        "note": "I wish + quá khứ đơn diễn tả một mong muốn trái với thực tế hiện tại."
+      },
+      {
+        "pattern": "Would give + object + a chance to + verb",
+        "example": "It would give you two boys a chance to rest.",
+        "note": "Give someone a chance to do something nghĩa là tạo cơ hội cho ai làm việc gì."
+      },
+      {
+        "pattern": "Could not be prevented from + V-ing",
+        "example": "The men holding high the oar could not be prevented from turning their heads quite often to glance at this little gray shadow.",
+        "note": "Be prevented from + V-ing dùng để nói việc bị ngăn khỏi làm gì; phủ định nhấn mạnh rằng họ vẫn cứ làm."
+      },
+      {
+        "pattern": "As + clause, main clause",
+        "example": "As the lighthouse was a shadow on the sky, this land seemed only a long black shadow on the sea.",
+        "note": "As ở đây đặt hai hình ảnh song song để so sánh cách chúng hiện ra trong tầm nhìn."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat - Original PDF",
+    "level": "Original",
+    "title": "07 - Strange They Do Not See Us",
+    "paragraphs": [
+      [
+        { "en": "Slowly the land rose", "vi": "Chậm rãi, đất liền nhô lên" },
+        { "en": "from the sea.", "vi": "từ biển." },
+        { "en": "From a black line", "vi": "Từ một đường đen" },
+        { "en": "it became a line", "vi": "nó trở thành một đường" },
+        { "en": "of black and white—trees and sand.", "vi": "đen và trắng—cây cối và cát." },
+        { "en": "Finally the captain said", "vi": "Cuối cùng người thuyền trưởng nói" },
+        { "en": "he could see a house", "vi": "ông có thể thấy một ngôi nhà" },
+        { "en": "on the shore.", "vi": "trên bờ." },
+        { "en": "\"They'll see us before long", "vi": "\"Chẳng bao lâu nữa họ sẽ thấy chúng ta" },
+        { "en": "and come out after us,\"", "vi": "và ra ngoài đón chúng ta,\"" },
+        { "en": "said the cook.", "vi": "người đầu bếp nói." }
+      ],
+      [
+        { "en": "The distant lighthouse rose high.", "vi": "Ngọn hải đăng xa xa vươn cao." },
+        { "en": "\"The keeper ought to be able", "vi": "\"Người gác hải đăng hẳn phải có thể" },
+        { "en": "to see us now,\"", "vi": "nhìn thấy chúng ta bây giờ,\"" },
+        { "en": "said the captain.", "vi": "người thuyền trưởng nói." },
+        { "en": "\"None of those other boats", "vi": "\"Không chiếc thuyền nào trong số những chiếc kia" },
+        { "en": "could have reached shore", "vi": "có thể đã vào được bờ" },
+        { "en": "to give word of our ship,\"", "vi": "để báo tin về tàu của chúng ta,\"" },
+        { "en": "said the oiler,", "vi": "người thợ máy nói," },
+        { "en": "in a low voice,", "vi": "bằng giọng thấp," },
+        { "en": "\"or the lifeboat would be out", "vi": "\"nếu không thì thuyền cứu sinh đã ra ngoài" },
+        { "en": "hunting for us.\"", "vi": "tìm chúng ta rồi.\"" }
+      ],
+      [
+        { "en": "Slowly and beautifully", "vi": "Chậm rãi và đẹp đẽ" },
+        { "en": "the land came out", "vi": "đất liền hiện ra" },
+        { "en": "of the sea.", "vi": "từ biển." },
+        { "en": "The wind came again.", "vi": "Gió lại nổi lên." },
+        { "en": "Finally a new sound", "vi": "Cuối cùng một âm thanh mới" },
+        { "en": "struck the ears", "vi": "đập vào tai" },
+        { "en": "of the men in the boat.", "vi": "những người trên thuyền." },
+        { "en": "It was the low thunder", "vi": "Đó là tiếng sấm trầm" },
+        { "en": "of waves beating the shore.", "vi": "của sóng đánh vào bờ." },
+        { "en": "\"We'll never be able", "vi": "\"Chúng ta sẽ không bao giờ có thể" },
+        { "en": "to reach the lighthouse now,\"", "vi": "tới được ngọn hải đăng lúc này,\"" },
+        { "en": "said the captain.", "vi": "người thuyền trưởng nói." },
+        { "en": "\"Swing her a little more north, Billie.\"", "vi": "\"Hướng nó thêm một chút về phía bắc, Billie.\"" }
+      ],
+      [
+        { "en": "\"A little more north, sir,\"", "vi": "\"Thêm một chút về phía bắc, thưa ông,\"" },
+        { "en": "said the oiler.", "vi": "người thợ máy nói." },
+        { "en": "So the little boat", "vi": "Vậy là chiếc thuyền nhỏ" },
+        { "en": "turned her nose", "vi": "quay mũi" },
+        { "en": "once more down the wind.", "vi": "một lần nữa xuôi theo gió." },
+        { "en": "All except the oarsman", "vi": "Tất cả trừ người chèo" },
+        { "en": "watched the shore grow.", "vi": "đều nhìn bờ lớn dần." },
+        { "en": "Doubt and fear were leaving", "vi": "Nghi ngờ và sợ hãi đang rời khỏi" },
+        { "en": "the minds of the men.", "vi": "tâm trí của những người đàn ông." }
+      ],
+      [
+        { "en": "The management of the boat", "vi": "Việc điều khiển chiếc thuyền" },
+        { "en": "still took most of their attention,", "vi": "vẫn chiếm phần lớn sự chú ý của họ," },
+        { "en": "but it could not prevent", "vi": "nhưng nó không thể ngăn" },
+        { "en": "a quiet cheerfulness.", "vi": "một niềm vui âm thầm." },
+        { "en": "In an hour, perhaps,", "vi": "Có lẽ trong một giờ nữa," },
+        { "en": "they would be on shore.", "vi": "họ sẽ ở trên bờ." },
+        { "en": "The nearness of success", "vi": "Sự gần kề của thành công" },
+        { "en": "shone in their eyes.", "vi": "ánh lên trong mắt họ." },
+        { "en": "Everybody took a drink of water.", "vi": "Mọi người đều uống một ngụm nước." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "From + noun phrase + it became",
+        "example": "From a black line it became a line of black and white—trees and sand.",
+        "note": "From...it became... diễn tả sự thay đổi hình dạng hoặc trạng thái theo thời gian."
+      },
+      {
+        "pattern": "Ought to be able to + verb",
+        "example": "\"The keeper ought to be able to see us now,\" said the captain.",
+        "note": "Ought to be able to diễn tả một kỳ vọng hợp lý rằng ai đó có khả năng làm gì."
+      },
+      {
+        "pattern": "Could have + past participle",
+        "example": "\"None of those other boats could have reached shore to give word of our ship,\" said the oiler, in a low voice, \"or the lifeboat would be out hunting for us.\"",
+        "note": "Could have reached nói về một khả năng trong quá khứ mà người nói đang suy đoán."
+      },
+      {
+        "pattern": "Past continuous: was/were + V-ing",
+        "example": "Doubt and fear were leaving the minds of the men.",
+        "note": "Were leaving diễn tả một sự thay đổi đang diễn ra tại thời điểm trong quá khứ."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat - Original PDF",
+    "level": "Original",
+    "title": "08 - The First Try for Shore",
+    "paragraphs": [
+      [
+        { "en": "\"Cook,\"", "vi": "\"Đầu bếp,\"" },
+        { "en": "remarked the captain,", "vi": "người thuyền trưởng nói," },
+        { "en": "\"there doesn't seem to be", "vi": "\"dường như không có" },
+        { "en": "any sign of life", "vi": "bất kỳ dấu hiệu sự sống nào" },
+        { "en": "about the house.\"", "vi": "quanh ngôi nhà.\"" },
+        { "en": "\"No,\"", "vi": "\"Không,\"" },
+        { "en": "replied the cook.", "vi": "người đầu bếp đáp." },
+        { "en": "\"Strange they don't see us.\"", "vi": "\"Lạ là họ không thấy chúng ta.\"" }
+      ],
+      [
+        { "en": "Tide, wind and waves", "vi": "Thủy triều, gió và sóng" },
+        { "en": "were swinging the boat north.", "vi": "đang đẩy chiếc thuyền về phía bắc." },
+        { "en": "\"Strange they don't see us,\"", "vi": "\"Lạ là họ không thấy chúng ta,\"" },
+        { "en": "said the men.", "vi": "những người đàn ông nói." },
+        { "en": "The sea's roar", "vi": "Tiếng gầm của biển" },
+        { "en": "was here dulled,", "vi": "ở đây bị làm trầm xuống," },
+        { "en": "but its tone was nevertheless", "vi": "nhưng âm điệu của nó vẫn" },
+        { "en": "thundering and huge.", "vi": "vang như sấm và khổng lồ." },
+        { "en": "As the boat swam", "vi": "Khi chiếc thuyền lướt" },
+        { "en": "over the great waves,", "vi": "qua những con sóng lớn," },
+        { "en": "the men sat listening", "vi": "những người đàn ông ngồi lắng nghe" },
+        { "en": "to this roar.", "vi": "tiếng gầm ấy." },
+        { "en": "\"We'll overturn,\"", "vi": "\"Chúng ta sẽ lật mất,\"" },
+        { "en": "said everybody.", "vi": "mọi người nói." }
+      ],
+      [
+        { "en": "It is fair to say here", "vi": "Công bằng mà nói ở đây" },
+        { "en": "that there was not", "vi": "rằng không có" },
+        { "en": "a lifesaving station", "vi": "một trạm cứu sinh nào" },
+        { "en": "within twenty miles", "vi": "trong phạm vi hai mươi dặm" },
+        { "en": "in either direction.", "vi": "theo bất kỳ hướng nào." },
+        { "en": "But the men did not know this fact,", "vi": "Nhưng những người đàn ông không biết sự thật này," },
+        { "en": "and so they made bitter remarks", "vi": "vì vậy họ đưa ra những lời cay đắng" },
+        { "en": "concerning the eyesight", "vi": "về thị lực" },
+        { "en": "of the nation's lifesavers.", "vi": "của những người cứu sinh trong nước." },
+        { "en": "Four unhappy men", "vi": "Bốn người đàn ông bất hạnh" },
+        { "en": "sat in the boat", "vi": "ngồi trên thuyền" },
+        { "en": "and murmured,", "vi": "và lẩm bẩm," },
+        { "en": "\"Strange they don't see us.\"", "vi": "\"Lạ là họ không thấy chúng ta.\"" }
+      ],
+      [
+        { "en": "The earlier lightheartedness", "vi": "Sự nhẹ nhõm trước đó" },
+        { "en": "had completely disappeared.", "vi": "đã hoàn toàn biến mất." },
+        { "en": "To their sharpened minds", "vi": "Trong tâm trí đã sắc nhọn của họ" },
+        { "en": "it was easy to imagine", "vi": "thật dễ tưởng tượng" },
+        { "en": "all kinds of idleness and blindness,", "vi": "mọi kiểu lười biếng và mù quáng," },
+        { "en": "and indeed, lack of courage.", "vi": "và thật ra là cả sự thiếu can đảm." },
+        { "en": "There was the shore of the land,", "vi": "Bờ đất liền ở ngay đó," },
+        { "en": "and it was bitter and bitter to them", "vi": "và điều đó thật cay đắng, cay đắng đối với họ" },
+        { "en": "that from it came no sign.", "vi": "rằng từ đó không có dấu hiệu nào đến." }
+      ],
+      [
+        { "en": "The captain said at last,", "vi": "Cuối cùng người thuyền trưởng nói," },
+        { "en": "\"I suppose we'll have to make a try", "vi": "\"Tôi nghĩ chúng ta sẽ phải thử" },
+        { "en": "for ourselves.", "vi": "tự mình vào bờ." },
+        { "en": "If we stay out here too long,", "vi": "Nếu chúng ta ở ngoài này quá lâu," },
+        { "en": "none of us will have strength", "vi": "không ai trong chúng ta sẽ còn sức" },
+        { "en": "to swim after the boat goes under.\"", "vi": "để bơi sau khi thuyền chìm.\"" }
+      ],
+      [
+        { "en": "And so the oiler,", "vi": "Và thế là người thợ máy," },
+        { "en": "who was at the oars,", "vi": "người đang ở chỗ mái chèo," },
+        { "en": "turned the boat straight", "vi": "quay thuyền thẳng" },
+        { "en": "for the shore.", "vi": "về phía bờ." },
+        { "en": "There was a sudden tightening", "vi": "Có một sự căng lên đột ngột" },
+        { "en": "of muscles.", "vi": "của các bắp cơ." },
+        { "en": "There was some thinking.", "vi": "Có một ít suy nghĩ." }
+      ],
+      [
+        { "en": "\"If we don't all get to shore,\"", "vi": "\"Nếu không phải tất cả chúng ta vào được bờ,\"" },
+        { "en": "said the captain,", "vi": "người thuyền trưởng nói," },
+        { "en": "\"—if we don't all get to shore,", "vi": "\"—nếu không phải tất cả chúng ta vào được bờ," },
+        { "en": "I suppose you fellows know", "vi": "tôi nghĩ các anh biết" },
+        { "en": "where to send news", "vi": "nên gửi tin tức tới đâu" },
+        { "en": "of my finish?\"", "vi": "về kết cục của tôi?\"" },
+        { "en": "Then they briefly exchanged", "vi": "Rồi họ trao đổi ngắn gọn" },
+        { "en": "some addresses and instructions.", "vi": "vài địa chỉ và lời dặn." }
+      ],
+      [
+        { "en": "As for the thoughts of the men,", "vi": "Còn về suy nghĩ của những người đàn ông," },
+        { "en": "there was a great deal of anger", "vi": "có rất nhiều tức giận" },
+        { "en": "in them.", "vi": "trong đó." },
+        { "en": "They might be summed up this way:", "vi": "Chúng có thể được tóm lại như thế này:" },
+        { "en": "\"If I am going to lose my life", "vi": "\"Nếu tôi sắp mất mạng" },
+        { "en": "to the sea—", "vi": "vì biển—" },
+        { "en": "if I am going to lose my life", "vi": "nếu tôi sắp mất mạng" },
+        { "en": "to the sea—", "vi": "vì biển—" },
+        { "en": "why was I allowed", "vi": "tại sao tôi lại được phép" },
+        { "en": "to come this far", "vi": "đi xa đến thế này" },
+        { "en": "to see sand and trees?", "vi": "để nhìn thấy cát và cây?" },
+        { "en": "Was I brought here merely", "vi": "Có phải tôi chỉ được đưa đến đây" },
+        { "en": "to have my nose dragged away", "vi": "để bị kéo mũi đi" },
+        { "en": "as I was about to taste", "vi": "ngay khi tôi sắp nếm" },
+        { "en": "the holy food of life?", "vi": "thức ăn thiêng liêng của sự sống?" }
+      ],
+      [
+        { "en": "\"It is crazy.", "vi": "\"Thật điên rồ." },
+        { "en": "If this old fool woman, Fate,", "vi": "Nếu bà già ngu ngốc tên Số phận này" },
+        { "en": "cannot do better than this,", "vi": "không thể làm tốt hơn thế này," },
+        { "en": "she should be forced", "vi": "bà ta nên bị buộc" },
+        { "en": "from the management", "vi": "rời khỏi việc quản lý" },
+        { "en": "of men's fortunes.", "vi": "vận mệnh của con người." },
+        { "en": "She is an old chicken", "vi": "Bà ta là một kẻ nhát gan già nua" },
+        { "en": "who knows not her purposes.", "vi": "không biết mục đích của mình." },
+        { "en": "If she has decided to kill me,", "vi": "Nếu bà ta đã quyết định giết tôi," },
+        { "en": "why did she not do it", "vi": "tại sao bà ta không làm điều đó" },
+        { "en": "in the beginning", "vi": "ngay từ đầu" },
+        { "en": "and save me all this trouble?", "vi": "và để tôi khỏi mọi rắc rối này?" },
+        { "en": "The whole affair is mad—", "vi": "Toàn bộ chuyện này thật điên rồ—" },
+        { "en": "but no;", "vi": "nhưng không;" },
+        { "en": "she cannot mean to kill me.", "vi": "bà ta không thể có ý định giết tôi." },
+        { "en": "She dare not.", "vi": "Bà ta không dám." },
+        { "en": "She cannot.", "vi": "Bà ta không thể." },
+        { "en": "Not after all this work.\"", "vi": "Không thể sau tất cả công sức này.\"" }
+      ],
+      [
+        { "en": "The waves that came at this time", "vi": "Những con sóng đến vào lúc này" },
+        { "en": "were more fierce.", "vi": "dữ dội hơn." },
+        { "en": "They seemed always", "vi": "Chúng dường như luôn" },
+        { "en": "to break and roll", "vi": "vỡ ra và cuộn" },
+        { "en": "over the little boat", "vi": "qua chiếc thuyền nhỏ" },
+        { "en": "in a mass of boiling white and gray.", "vi": "thành một khối trắng xám sôi sục." },
+        { "en": "The shore was still far away.", "vi": "Bờ vẫn còn xa." },
+        { "en": "The oiler was a wise seaman.", "vi": "Người thợ máy là một thủy thủ khôn ngoan." }
+      ],
+      [
+        { "en": "\"Boys,\"", "vi": "\"Các anh,\"" },
+        { "en": "he cried out,", "vi": "anh hét lên," },
+        { "en": "\"she won't live three minutes more,", "vi": "\"nó sẽ không trụ nổi thêm ba phút nữa," },
+        { "en": "and we're too far out to swim.", "vi": "và chúng ta còn quá xa để bơi." },
+        { "en": "Shall I take her to sea again, Captain?\"", "vi": "Tôi đưa nó ra biển lại nhé, thuyền trưởng?\"" },
+        { "en": "\"Yes, go ahead!\"", "vi": "\"Đúng, cứ làm đi!\"" },
+        { "en": "said the captain.", "vi": "người thuyền trưởng nói." }
+      ],
+      [
+        { "en": "The oiler,", "vi": "Người thợ máy," },
+        { "en": "by a series of quick movements,", "vi": "bằng một loạt động tác nhanh," },
+        { "en": "great skill,", "vi": "kỹ năng tuyệt vời," },
+        { "en": "and fast and steady work", "vi": "và sự làm việc nhanh, vững" },
+        { "en": "with the oars,", "vi": "với mái chèo," },
+        { "en": "turned the boat", "vi": "đã quay chiếc thuyền" },
+        { "en": "in the middle of the tide", "vi": "giữa dòng triều" },
+        { "en": "and took her to sea again.", "vi": "và đưa nó ra biển lần nữa." }
+      ],
+      [
+        { "en": "There was a long silence", "vi": "Có một sự im lặng dài" },
+        { "en": "as the boat rose and dropped", "vi": "khi chiếc thuyền nâng lên và rơi xuống" },
+        { "en": "over the rough sea", "vi": "trên biển dữ" },
+        { "en": "to deeper water.", "vi": "để ra vùng nước sâu hơn." },
+        { "en": "Then somebody slowly spoke:", "vi": "Rồi ai đó chậm rãi nói:" },
+        { "en": "\"Well, they must have seen us", "vi": "\"À, chắc hẳn họ đã thấy chúng ta" },
+        { "en": "from shore by now.\"", "vi": "từ bờ rồi.\"" },
+        { "en": "\"What do you think", "vi": "\"Anh nghĩ gì" },
+        { "en": "of those lifesaving people?\"", "vi": "về những người cứu sinh kia?\"" },
+        { "en": "\"Strange they haven't seen us.\"", "vi": "\"Lạ là họ vẫn chưa thấy chúng ta.\"" },
+        { "en": "\"Maybe they think", "vi": "\"Có lẽ họ nghĩ" },
+        { "en": "we are out here for sport!", "vi": "chúng ta ra đây để chơi!" },
+        { "en": "Maybe they think", "vi": "Có lẽ họ nghĩ" },
+        { "en": "we're fishing.", "vi": "chúng ta đang câu cá." },
+        { "en": "Maybe they think", "vi": "Có lẽ họ nghĩ" },
+        { "en": "we are fools.\"", "vi": "chúng ta là những kẻ ngốc.\"" }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "There doesn't seem to be + noun phrase",
+        "example": "\"Cook,\" remarked the captain, \"there doesn't seem to be any sign of life about the house.\"",
+        "note": "There doesn't seem to be dùng để nói rằng dường như không có điều gì đó tồn tại hoặc xuất hiện."
+      },
+      {
+        "pattern": "As + clause, main clause",
+        "example": "As the boat swam over the great waves, the men sat listening to this roar.",
+        "note": "As cho biết hai hành động hoặc trạng thái xảy ra cùng lúc."
+      },
+      {
+        "pattern": "It is fair to say that + clause",
+        "example": "It is fair to say here that there was not a lifesaving station within twenty miles in either direction.",
+        "note": "It is fair to say that dùng để đưa ra một nhận định mà người nói cho là hợp lý hoặc công bằng."
+      },
+      {
+        "pattern": "If + present simple, will + verb",
+        "example": "If we stay out here too long, none of us will have strength to swim after the boat goes under.",
+        "note": "Đây là câu điều kiện loại 1, nói về kết quả có thể xảy ra trong tương lai nếu điều kiện xảy ra."
+      }
+    ]
+  }
+]

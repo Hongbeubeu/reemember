@@ -1,0 +1,426 @@
+[
+  {
+    "book": "The Open Boat - Original PDF",
+    "level": "Original",
+    "title": "09 - The Long Afternoon",
+    "paragraphs": [
+      [
+        { "en": "It was a long afternoon.", "vi": "Đó là một buổi chiều dài." },
+        { "en": "A changed tide", "vi": "Một dòng triều đã đổi hướng" },
+        { "en": "tried to force them south,", "vi": "cố ép họ đi về phía nam," },
+        { "en": "but wind and wave", "vi": "nhưng gió và sóng" },
+        { "en": "said north.", "vi": "lại nói phía bắc." },
+        { "en": "Far ahead,", "vi": "Xa phía trước," },
+        { "en": "where coastline, sea and sky met,", "vi": "nơi bờ biển, biển và bầu trời gặp nhau," },
+        { "en": "there were little dots", "vi": "có những chấm nhỏ" },
+        { "en": "which seemed to indicate", "vi": "dường như chỉ ra" },
+        { "en": "a city on the shore.", "vi": "một thành phố trên bờ." }
+      ],
+      [
+        { "en": "\"St. Augustine?\"", "vi": "\"St. Augustine à?\"" },
+        { "en": "The captain shook his head.", "vi": "Người thuyền trưởng lắc đầu." },
+        { "en": "\"Too near Mosquito Inlet.\"", "vi": "\"Quá gần Mosquito Inlet.\"" },
+        { "en": "And the oiler rowed,", "vi": "Và người thợ máy chèo," },
+        { "en": "and the correspondent rowed.", "vi": "và anh phóng viên chèo." },
+        { "en": "It was a tiring business.", "vi": "Đó là một việc mệt mỏi." }
+      ],
+      [
+        { "en": "\"Did you ever like to row, Billie?\"", "vi": "\"Anh đã bao giờ thích chèo thuyền chưa, Billie?\"" },
+        { "en": "asked the correspondent.", "vi": "anh phóng viên hỏi." },
+        { "en": "\"No,\"", "vi": "\"Chưa,\"" },
+        { "en": "said the oiler,", "vi": "người thợ máy nói," },
+        { "en": "\"I hate it!\"", "vi": "\"tôi ghét nó!\"" }
+      ],
+      [
+        { "en": "When one exchanged the rowing seat", "vi": "Khi một người đổi chỗ chèo" },
+        { "en": "for a place in the bottom of the boat,", "vi": "lấy một chỗ dưới đáy thuyền," },
+        { "en": "he suffered a bodily experience", "vi": "anh chịu một trải nghiệm thân thể" },
+        { "en": "that caused him to be careless", "vi": "khiến anh không còn để tâm" },
+        { "en": "of everything", "vi": "đến bất cứ điều gì" },
+        { "en": "except an obligation", "vi": "ngoại trừ một bổn phận" },
+        { "en": "to move one finger.", "vi": "phải cử động một ngón tay." },
+        { "en": "There was cold sea water", "vi": "Có nước biển lạnh" },
+        { "en": "washing back and forth", "vi": "đang rửa qua lại" },
+        { "en": "in the boat,", "vi": "trong thuyền," },
+        { "en": "and he lay in it.", "vi": "và anh nằm trong đó." }
+      ],
+      [
+        { "en": "His head was pillowed on wood", "vi": "Đầu anh tựa trên gỗ" },
+        { "en": "within an inch of the waves", "vi": "cách những con sóng chưa đầy một inch" },
+        { "en": "along the side.", "vi": "dọc theo mạn thuyền." },
+        { "en": "Sometimes the sea came in", "vi": "Đôi khi biển tràn vào" },
+        { "en": "and bathed him once more.", "vi": "và tắm anh thêm một lần nữa." },
+        { "en": "But this did not trouble him.", "vi": "Nhưng điều này không làm anh bận tâm." },
+        { "en": "It is almost certain", "vi": "Gần như chắc chắn" },
+        { "en": "that if the boat had sunk", "vi": "rằng nếu chiếc thuyền đã chìm" },
+        { "en": "he would have fallen comfortably", "vi": "anh sẽ rơi xuống một cách thoải mái" },
+        { "en": "out upon the ocean", "vi": "ra trên đại dương" },
+        { "en": "as if it were a great soft bed.", "vi": "như thể đó là một chiếc giường lớn mềm mại." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "It was + noun phrase",
+        "example": "It was a long afternoon.",
+        "note": "It was + cụm danh từ dùng để giới thiệu hoặc đánh giá một tình huống trong quá khứ."
+      },
+      {
+        "pattern": "Where + clause",
+        "example": "Far ahead, where coastline, sea and sky met, there were little dots which seemed to indicate a city on the shore.",
+        "note": "Where coastline, sea and sky met bổ sung địa điểm cho Far ahead."
+      },
+      {
+        "pattern": "When + clause, main clause",
+        "example": "When one exchanged the rowing seat for a place in the bottom of the boat, he suffered a bodily experience that caused him to be careless of everything except an obligation to move one finger.",
+        "note": "When đặt bối cảnh thời gian; mệnh đề chính nói điều xảy ra trong bối cảnh đó."
+      },
+      {
+        "pattern": "If + past perfect, would have + V3",
+        "example": "It is almost certain that if the boat had sunk he would have fallen comfortably out upon the ocean as if it were a great soft bed.",
+        "note": "Đây là cấu trúc điều kiện giả định về quá khứ, nói điều có thể đã xảy ra nhưng không xảy ra."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat - Original PDF",
+    "level": "Original",
+    "title": "10 - A Man on the Shore",
+    "paragraphs": [
+      [
+        { "en": "\"Look!", "vi": "\"Nhìn kìa!" },
+        { "en": "There's a man on the shore!\"", "vi": "Có một người đàn ông trên bờ!\"" },
+        { "en": "\"Where?\"", "vi": "\"Ở đâu?\"" },
+        { "en": "\"There!", "vi": "\"Kia!" },
+        { "en": "See him?", "vi": "Thấy anh ta không?" },
+        { "en": "See him?\"", "vi": "Thấy anh ta không?\"" },
+        { "en": "\"Yes, sure!", "vi": "\"Có, chắc rồi!" },
+        { "en": "He's walking along.\"", "vi": "Anh ta đang đi dọc bờ.\"" }
+      ],
+      [
+        { "en": "\"Now he's stopped.", "vi": "\"Bây giờ anh ta đã dừng lại." },
+        { "en": "Look!", "vi": "Nhìn kìa!" },
+        { "en": "He's facing us!\"", "vi": "Anh ta đang quay mặt về phía chúng ta!\"" },
+        { "en": "\"He's waving at us!\"", "vi": "\"Anh ta đang vẫy tay với chúng ta!\"" },
+        { "en": "\"So he is!", "vi": "\"Đúng là vậy!" },
+        { "en": "By thunder!\"", "vi": "Trời đất!\"" },
+        { "en": "\"Now we're all right!", "vi": "\"Giờ thì chúng ta ổn rồi!" },
+        { "en": "Now we're all right!", "vi": "Giờ thì chúng ta ổn rồi!" },
+        { "en": "There'll be a boat out here", "vi": "Sẽ có một chiếc thuyền ra đây" },
+        { "en": "for us in half an hour.\"", "vi": "đón chúng ta trong nửa giờ nữa.\"" }
+      ],
+      [
+        { "en": "\"He's going on.", "vi": "\"Anh ta đang đi tiếp." },
+        { "en": "He's running.", "vi": "Anh ta đang chạy." },
+        { "en": "He's going up", "vi": "Anh ta đang đi lên" },
+        { "en": "to that house there.\"", "vi": "tới ngôi nhà kia.\"" },
+        { "en": "The distant beach", "vi": "Bãi biển xa" },
+        { "en": "seemed lower than the sea,", "vi": "dường như thấp hơn biển," },
+        { "en": "and required a searching glance", "vi": "và đòi hỏi một cái nhìn chăm chú" },
+        { "en": "to see the little black figure!", "vi": "mới thấy được hình người nhỏ màu đen!" }
+      ],
+      [
+        { "en": "The captain saw a floating stick,", "vi": "Người thuyền trưởng thấy một cây gậy đang nổi," },
+        { "en": "and they rowed to it.", "vi": "và họ chèo tới nó." },
+        { "en": "A white cloth", "vi": "Một mảnh vải trắng" },
+        { "en": "was by some strange chance", "vi": "bằng một cơ may lạ lùng nào đó" },
+        { "en": "in the boat.", "vi": "lại có trong thuyền." },
+        { "en": "Tying this on the stick,", "vi": "Buộc nó vào cây gậy," },
+        { "en": "the captain waved it.", "vi": "người thuyền trưởng vẫy nó." }
+      ],
+      [
+        { "en": "The man at the oars", "vi": "Người đang cầm mái chèo" },
+        { "en": "did not dare turn his head,", "vi": "không dám quay đầu," },
+        { "en": "so he was obliged", "vi": "vì vậy anh buộc phải" },
+        { "en": "to ask questions.", "vi": "hỏi." },
+        { "en": "\"What's he doing now?\"", "vi": "\"Bây giờ anh ta đang làm gì?\"" }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "There is/are + noun phrase",
+        "example": "\"Look! There's a man on the shore!\"",
+        "note": "There is dùng để giới thiệu sự xuất hiện hoặc tồn tại của một người/vật."
+      },
+      {
+        "pattern": "Seem + adjective/comparative",
+        "example": "The distant beach seemed lower than the sea, and required a searching glance to see the little black figure!",
+        "note": "Seemed lower than diễn tả cách sự vật xuất hiện trong cảm nhận của người quan sát."
+      },
+      {
+        "pattern": "V-ing phrase at sentence start",
+        "example": "Tying this on the stick, the captain waved it.",
+        "note": "Cụm V-ing đứng đầu câu mô tả hành động xảy ra cùng lúc hoặc ngay trước hành động chính."
+      },
+      {
+        "pattern": "So + clause",
+        "example": "The man at the oars did not dare turn his head, so he was obliged to ask questions.",
+        "note": "So nối nguyên nhân với kết quả: vì không dám quay đầu nên anh phải hỏi."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat - Original PDF",
+    "level": "Original",
+    "title": "11 - The Waving Coat",
+    "paragraphs": [
+      [
+        { "en": "\"He's standing still again.", "vi": "\"Anh ta lại đứng yên." },
+        { "en": "He's looking,", "vi": "Anh ta đang nhìn," },
+        { "en": "I think.", "vi": "tôi nghĩ vậy." },
+        { "en": "There he goes again", "vi": "Anh ta lại đi kìa" },
+        { "en": "toward the house.", "vi": "về phía ngôi nhà." },
+        { "en": "Now he's stopping again.\"", "vi": "Giờ anh ta lại dừng lại.\"" },
+        { "en": "\"Is he waving at us?\"", "vi": "\"Anh ta có đang vẫy tay với chúng ta không?\"" },
+        { "en": "\"No, not now;", "vi": "\"Không, bây giờ thì không;" },
+        { "en": "he was, though.\"", "vi": "dù trước đó thì có.\"" }
+      ],
+      [
+        { "en": "\"Look!", "vi": "\"Nhìn kìa!" },
+        { "en": "There comes another man!\"", "vi": "Có một người đàn ông khác đang tới!\"" },
+        { "en": "\"He's running.\"", "vi": "\"Anh ta đang chạy.\"" },
+        { "en": "\"Look at him go!\"", "vi": "\"Nhìn anh ta chạy kìa!\"" },
+        { "en": "\"Look!", "vi": "\"Nhìn kìa!" },
+        { "en": "There's a fellow waving a little black flag.", "vi": "Có một gã đang vẫy một lá cờ đen nhỏ." },
+        { "en": "I've never seen anyone", "vi": "Tôi chưa từng thấy ai" },
+        { "en": "wave so hard!", "vi": "vẫy mạnh đến vậy!" },
+        { "en": "There come those other two fellows.", "vi": "Hai gã kia cũng đang tới." },
+        { "en": "Now they are talking together.", "vi": "Giờ họ đang nói chuyện với nhau." },
+        { "en": "Look at the fellow with the flag.", "vi": "Nhìn gã cầm cờ kìa." },
+        { "en": "I've never seen anyone", "vi": "Tôi chưa từng thấy ai" },
+        { "en": "wave so hard!\"", "vi": "vẫy mạnh đến vậy!\"" }
+      ],
+      [
+        { "en": "\"That isn't a flag, is it?", "vi": "\"Đó không phải là cờ, phải không?" },
+        { "en": "That's his coat.", "vi": "Đó là áo khoác của anh ta." },
+        { "en": "Certainly, that's his coat.\"", "vi": "Chắc chắn đó là áo khoác của anh ta.\"" },
+        { "en": "\"So it is;", "vi": "\"Đúng là vậy;" },
+        { "en": "it's his coat!", "vi": "đó là áo khoác của anh ta!" },
+        { "en": "He's taken it off", "vi": "Anh ta đã cởi nó ra" },
+        { "en": "and is waving around his head.", "vi": "và đang vẫy quanh đầu." },
+        { "en": "But would you look", "vi": "Nhưng anh nhìn xem" },
+        { "en": "at him swing it!\"", "vi": "anh ta vung nó kìa!\"" }
+      ],
+      [
+        { "en": "\"What does that fool", "vi": "\"Gã ngốc đó" },
+        { "en": "with the coat mean?", "vi": "với chiếc áo khoác muốn nói gì?" },
+        { "en": "What's he signaling anyhow?\"", "vi": "Rốt cuộc anh ta đang ra hiệu gì?\"" },
+        { "en": "\"It looks as if", "vi": "\"Có vẻ như" },
+        { "en": "he were trying to tell us", "vi": "anh ta đang cố bảo chúng ta" },
+        { "en": "to go north.", "vi": "đi về phía bắc." },
+        { "en": "There must be", "vi": "Chắc phải có" },
+        { "en": "a lifesaving station", "vi": "một trạm cứu sinh" },
+        { "en": "up there.\"", "vi": "ở trên đó.\"" },
+        { "en": "\"No, he thinks we're fishing.", "vi": "\"Không, anh ta nghĩ chúng ta đang câu cá." },
+        { "en": "Just giving us", "vi": "Chỉ là đang cho chúng ta" },
+        { "en": "a merry hand.", "vi": "một cái vẫy tay vui vẻ." },
+        { "en": "See?", "vi": "Thấy không?" },
+        { "en": "There, Billie.\"", "vi": "Kìa, Billie.\"" }
+      ],
+      [
+        { "en": "\"I wish I could understand", "vi": "\"Ước gì tôi có thể hiểu" },
+        { "en": "those signals.", "vi": "những tín hiệu đó." },
+        { "en": "What do you suppose", "vi": "Anh cho rằng" },
+        { "en": "he means?\"", "vi": "anh ta muốn nói gì?\"" },
+        { "en": "\"He doesn't mean anything;", "vi": "\"Anh ta chẳng có ý gì cả;" },
+        { "en": "he's just playing.\"", "vi": "anh ta chỉ đang đùa thôi.\"" }
+      ],
+      [
+        { "en": "\"Well, if he'd just signal us", "vi": "\"Chà, nếu anh ta chỉ cần ra hiệu cho chúng ta" },
+        { "en": "to try again;", "vi": "thử lại;" },
+        { "en": "or to go to sea and wait;", "vi": "hoặc ra biển và chờ;" },
+        { "en": "or go north,", "vi": "hoặc đi về phía bắc," },
+        { "en": "or go south,", "vi": "hoặc đi về phía nam," },
+        { "en": "or go to hell,", "vi": "hoặc đi xuống địa ngục," },
+        { "en": "there would be some reason", "vi": "thì cũng sẽ có chút lý do" },
+        { "en": "in it.", "vi": "trong chuyện đó." },
+        { "en": "But look at him!", "vi": "Nhưng nhìn anh ta kìa!" },
+        { "en": "He stands there", "vi": "Anh ta đứng đó" },
+        { "en": "and keeps his coat turning around", "vi": "và cứ xoay áo khoác của mình" },
+        { "en": "like a wheel.", "vi": "như một cái bánh xe." },
+        { "en": "The fool!\"", "vi": "Đồ ngốc!\"" }
+      ],
+      [
+        { "en": "\"There come some more people.\"", "vi": "\"Có thêm vài người nữa đang tới.\"" },
+        { "en": "\"Now there's quite a mob.", "vi": "\"Giờ có cả một đám đông rồi." },
+        { "en": "Look!", "vi": "Nhìn kìa!" },
+        { "en": "Isn't that a boat?\"", "vi": "Đó không phải là một chiếc thuyền sao?\"" },
+        { "en": "\"Where?", "vi": "\"Ở đâu?" },
+        { "en": "Oh, I see where you mean.", "vi": "Ồ, tôi thấy chỗ anh nói rồi." },
+        { "en": "No, that's no boat.\"", "vi": "Không, đó không phải thuyền.\"" },
+        { "en": "\"That fellow is still", "vi": "\"Gã đó vẫn còn" },
+        { "en": "waving his coat.\"", "vi": "vẫy áo khoác.\"" },
+        { "en": "\"He must think", "vi": "\"Chắc anh ta nghĩ" },
+        { "en": "we like to see him do that.", "vi": "chúng ta thích xem anh ta làm thế." },
+        { "en": "Why doesn't he stop it?", "vi": "Sao anh ta không dừng lại?" },
+        { "en": "It doesn't mean anything.\"", "vi": "Nó chẳng có nghĩa gì cả.\"" },
+        { "en": "\"I don't know.", "vi": "\"Tôi không biết." },
+        { "en": "I think he is trying", "vi": "Tôi nghĩ anh ta đang cố" },
+        { "en": "to make us go north.", "vi": "khiến chúng ta đi về phía bắc." },
+        { "en": "There must be", "vi": "Chắc phải có" },
+        { "en": "a lifesaving station", "vi": "một trạm cứu sinh" },
+        { "en": "there somewhere.\"", "vi": "ở đâu đó phía ấy.\"" }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "There comes + noun phrase",
+        "example": "\"Look! There comes another man!\"",
+        "note": "There comes dùng để chỉ một người hoặc vật đang xuất hiện và tiến lại gần."
+      },
+      {
+        "pattern": "It looks as if + clause",
+        "example": "\"It looks as if he were trying to tell us to go north.",
+        "note": "It looks as if diễn tả suy đoán dựa trên những gì người nói nhìn thấy."
+      },
+      {
+        "pattern": "I wish + could + verb",
+        "example": "\"I wish I could understand those signals.",
+        "note": "I wish I could diễn tả mong muốn có một khả năng mà hiện tại người nói không có."
+      },
+      {
+        "pattern": "If + would clause",
+        "example": "\"Well, if he'd just signal us to try again; or to go to sea and wait; or go north, or go south, or go to hell, there would be some reason in it.",
+        "note": "If...there would be... diễn tả một tình huống giả định và kết quả có thể hợp lý hơn."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat - Original PDF",
+    "level": "Original",
+    "title": "12 - The Shore Grows Dark",
+    "paragraphs": [
+      [
+        { "en": "\"He isn't tired yet.", "vi": "\"Anh ta vẫn chưa mệt." },
+        { "en": "Look at him wave!\"", "vi": "Nhìn anh ta vẫy kìa!\"" },
+        { "en": "\"I wonder how long", "vi": "\"Tôi tự hỏi bao lâu" },
+        { "en": "he can do that.", "vi": "anh ta có thể làm thế." },
+        { "en": "He's been swinging his coat around", "vi": "Anh ta đã vung áo khoác quanh" },
+        { "en": "ever since he caught sight of us.", "vi": "từ lúc anh ta nhìn thấy chúng ta." },
+        { "en": "He's crazy.", "vi": "Anh ta điên rồi." },
+        { "en": "Why aren't they getting men", "vi": "Sao họ không gọi người" },
+        { "en": "to bring a boat out?", "vi": "đưa thuyền ra?" },
+        { "en": "A fishing boat", "vi": "Một chiếc thuyền đánh cá" },
+        { "en": "could come out here all right.", "vi": "có thể ra đây dễ dàng." },
+        { "en": "Why won't he do something?\"", "vi": "Sao anh ta không làm gì đó?\"" }
+      ],
+      [
+        { "en": "\"Oh, it's all right now.\"", "vi": "\"Ồ, bây giờ ổn rồi.\"" },
+        { "en": "\"They'll have a boat out here", "vi": "\"Họ sẽ đưa thuyền ra đây" },
+        { "en": "for us soon,", "vi": "đón chúng ta sớm thôi," },
+        { "en": "now that they have seen us.\"", "vi": "vì giờ họ đã thấy chúng ta.\"" },
+        { "en": "A faint yellow color", "vi": "Một màu vàng nhạt" },
+        { "en": "came into the sky", "vi": "đi vào bầu trời" },
+        { "en": "over the low land.", "vi": "phía trên vùng đất thấp." },
+        { "en": "The shadows on the sea", "vi": "Những bóng tối trên biển" },
+        { "en": "slowly deepened.", "vi": "chậm rãi đậm dần." },
+        { "en": "The wind brought coldness with it,", "vi": "Gió mang theo hơi lạnh," },
+        { "en": "and the men felt it.", "vi": "và những người đàn ông cảm nhận được." }
+      ],
+      [
+        { "en": "\"My God!\"", "vi": "\"Chúa ơi!\"" },
+        { "en": "said one,", "vi": "một người nói," },
+        { "en": "allowing his voice", "vi": "để giọng mình" },
+        { "en": "to express his feeling.", "vi": "bộc lộ cảm xúc." },
+        { "en": "\"If we have to wait around out here!", "vi": "\"Nếu chúng ta phải chờ ở ngoài này!" },
+        { "en": "If we've got to stay out here all night!\"", "vi": "Nếu chúng ta phải ở ngoài này cả đêm!\"" },
+        { "en": "\"Oh, we'll never have to stay here all night!", "vi": "\"Ồ, chúng ta sẽ không bao giờ phải ở đây cả đêm đâu!" },
+        { "en": "Don't worry!", "vi": "Đừng lo!" },
+        { "en": "They've seen us now,", "vi": "Bây giờ họ đã thấy chúng ta," },
+        { "en": "and they'll come out after us soon.\"", "vi": "và họ sẽ sớm ra đón chúng ta.\"" }
+      ],
+      [
+        { "en": "The shore grew dark.", "vi": "Bờ biển tối dần." },
+        { "en": "The man waving the coat", "vi": "Người đàn ông đang vẫy áo khoác" },
+        { "en": "and the group of people", "vi": "và nhóm người" },
+        { "en": "gradually became part", "vi": "dần dần trở thành một phần" },
+        { "en": "of this darkness.", "vi": "của bóng tối này." },
+        { "en": "\"I'd like to catch the one", "vi": "\"Tôi muốn bắt được kẻ" },
+        { "en": "who waved the coat.", "vi": "đã vẫy chiếc áo đó." },
+        { "en": "I feel like hitting him hard,", "vi": "Tôi muốn đánh hắn thật mạnh," },
+        { "en": "just for luck.\"", "vi": "chỉ để lấy may.\"" },
+        { "en": "\"Why?", "vi": "\"Tại sao?" },
+        { "en": "What did he do?\"", "vi": "Anh ta đã làm gì?\"" },
+        { "en": "\"Oh, nothing,", "vi": "\"Ồ, chẳng gì cả," },
+        { "en": "but he seemed so - cheerful!\"", "vi": "nhưng anh ta có vẻ quá - vui vẻ!\"" }
+      ],
+      [
+        { "en": "And so the oiler rowed,", "vi": "Và thế là người thợ máy chèo," },
+        { "en": "and then the correspondent rowed,", "vi": "rồi anh phóng viên chèo," },
+        { "en": "and then the oiler rowed.", "vi": "rồi người thợ máy lại chèo." },
+        { "en": "Gray-faced and bent forward steadily,", "vi": "Mặt xám lại và đều đặn cúi về phía trước," },
+        { "en": "turn by turn,", "vi": "lần lượt," },
+        { "en": "they lifted the heavy oars.", "vi": "họ nhấc những mái chèo nặng." },
+        { "en": "The form of the lighthouse", "vi": "Hình dạng của ngọn hải đăng" },
+        { "en": "was gone from their view,", "vi": "đã biến mất khỏi tầm nhìn của họ," },
+        { "en": "but finally a pale star appeared,", "vi": "nhưng cuối cùng một ngôi sao nhợt nhạt xuất hiện," },
+        { "en": "just lifting from the sea.", "vi": "vừa nhô lên từ biển." }
+      ],
+      [
+        { "en": "\"If I am going to lose my life", "vi": "\"Nếu tôi sắp mất mạng" },
+        { "en": "to the sea -", "vi": "vì biển -" },
+        { "en": "if I am going to lose my life", "vi": "nếu tôi sắp mất mạng" },
+        { "en": "to the sea -", "vi": "vì biển -" },
+        { "en": "why was I allowed", "vi": "tại sao tôi lại được phép" },
+        { "en": "to come this far", "vi": "đi xa đến thế này" },
+        { "en": "and see sand and trees?", "vi": "và nhìn thấy cát và cây?" },
+        { "en": "Was I brought here merely", "vi": "Có phải tôi chỉ được đưa đến đây" },
+        { "en": "to have my nose dragged away", "vi": "để bị kéo mũi đi" },
+        { "en": "as I was about to taste", "vi": "ngay khi tôi sắp nếm" },
+        { "en": "the holy food of life?\"", "vi": "thức ăn thiêng liêng của sự sống?\"" }
+      ],
+      [
+        { "en": "The patient captain,", "vi": "Người thuyền trưởng kiên nhẫn," },
+        { "en": "leaning against the water jar,", "vi": "đang tựa vào bình nước," },
+        { "en": "was sometimes obliged", "vi": "đôi khi buộc phải" },
+        { "en": "to speak to the oarsman.", "vi": "nói với người chèo." },
+        { "en": "\"Keep her head up!", "vi": "\"Giữ mũi thuyền lên!" },
+        { "en": "Keep her head up!\"", "vi": "Giữ mũi thuyền lên!\"" },
+        { "en": "\"Keep her head up, sir.\"", "vi": "\"Giữ mũi thuyền lên, thưa ông.\"" },
+        { "en": "The voices were tired and low.", "vi": "Những giọng nói mệt mỏi và trầm thấp." }
+      ],
+      [
+        { "en": "This was surely a quiet evening.", "vi": "Đây chắc chắn là một buổi tối yên lặng." },
+        { "en": "All except the oarsman", "vi": "Tất cả trừ người chèo" },
+        { "en": "lay heavily motionless", "vi": "nằm nặng nề bất động" },
+        { "en": "in the boat's bottom.", "vi": "dưới đáy thuyền." },
+        { "en": "A night on the sea", "vi": "Một đêm trên biển" },
+        { "en": "in an open boat", "vi": "trong một chiếc thuyền mở" },
+        { "en": "is a long night.", "vi": "là một đêm dài." },
+        { "en": "As darkness fell,", "vi": "Khi bóng tối buông xuống," },
+        { "en": "the shine of the light,", "vi": "ánh sáng của ngọn đèn," },
+        { "en": "lifting from the sea in the south,", "vi": "nhô lên từ biển ở phía nam," },
+        { "en": "changed to full gold.", "vi": "chuyển thành màu vàng rực." },
+        { "en": "In the north,", "vi": "Ở phía bắc," },
+        { "en": "a new light appeared", "vi": "một ánh đèn mới xuất hiện" },
+        { "en": "a small blue glow", "vi": "một vầng sáng xanh nhỏ" },
+        { "en": "on the edge of the waters.", "vi": "ở rìa mặt nước." },
+        { "en": "These two lights", "vi": "Hai ánh đèn này" },
+        { "en": "were the furniture of the world.", "vi": "là đồ đạc của thế giới." },
+        { "en": "Otherwise there was nothing", "vi": "Ngoài ra chẳng có gì" },
+        { "en": "but waves.", "vi": "ngoài sóng." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "Present perfect continuous",
+        "example": "He's been swinging his coat around ever since he caught sight of us.",
+        "note": "Has/have been + V-ing diễn tả hành động bắt đầu trong quá khứ và vẫn còn tiếp diễn."
+      },
+      {
+        "pattern": "Now that + clause",
+        "example": "\"They'll have a boat out here for us soon, now that they have seen us.\"",
+        "note": "Now that nghĩa là vì bây giờ điều gì đó đã xảy ra, nên một kết quả khác có thể xảy ra."
+      },
+      {
+        "pattern": "Relative clause: who + verb",
+        "example": "\"I'd like to catch the one who waved the coat.",
+        "note": "Who waved the coat bổ sung thông tin để xác định the one là người nào."
+      },
+      {
+        "pattern": "As + clause, main clause",
+        "example": "As darkness fell, the shine of the light, lifting from the sea in the south, changed to full gold.",
+        "note": "As darkness fell đặt bối cảnh thời gian cho sự thay đổi của ánh sáng."
+      }
+    ]
+  }
+]

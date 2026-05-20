@@ -1,4 +1,5 @@
 use reemember::db::init_db;
+use reemember::bilingual::{BilingualRepository, parse_bilingual_json};
 use reemember::grammar::{GrammarRepository, parse_grammar_json, parse_grammar_md};
 use reemember::model::{Collection, Topic};
 use reemember::repository::{QueryOptions, SortBy, WordRepository};
@@ -149,6 +150,9 @@ pub struct ManifestSyncResultDto {
     pub grammar_inserted_count: usize,
     pub grammar_updated_count: usize,
     pub grammar_imported_count: usize,
+    pub bilingual_inserted_count: usize,
+    pub bilingual_updated_count: usize,
+    pub bilingual_imported_count: usize,
     pub error_count: usize,
     pub errors: Vec<String>,
 }
@@ -447,6 +451,8 @@ pub async fn sync_manifest_url(
     let vocab_repo = WordRepository::new(vocab_conn);
     let grammar_conn = init_db("reemember.db").map_err(|e| e.to_string())?;
     let grammar_repo = GrammarRepository::new(grammar_conn);
+    let bilingual_conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let bilingual_repo = BilingualRepository::new(bilingual_conn);
 
     let mut result = ManifestSyncResultDto {
         version: manifest.version,
@@ -456,6 +462,9 @@ pub async fn sync_manifest_url(
         grammar_inserted_count: 0,
         grammar_updated_count: 0,
         grammar_imported_count: 0,
+        bilingual_inserted_count: 0,
+        bilingual_updated_count: 0,
+        bilingual_imported_count: 0,
         error_count: 0,
         errors: vec![],
     };
@@ -484,6 +493,18 @@ pub async fn sync_manifest_url(
                 result.grammar_inserted_count += report.inserted_count;
                 result.grammar_updated_count += report.updated_count;
                 result.grammar_imported_count += report.imported_count;
+                for err in report.errors {
+                    result
+                        .errors
+                        .push(format!("{}: {}", manifest_file_label(&file), err));
+                }
+            }
+            "bilingual" | "bilingual_book" | "bilingual-book" | "bilingual_books"
+            | "bilingual-books" => {
+                let report = import_bilingual_content(&bilingual_repo, &content);
+                result.bilingual_inserted_count += report.inserted_count;
+                result.bilingual_updated_count += report.updated_count;
+                result.bilingual_imported_count += report.imported_count;
                 for err in report.errors {
                     result
                         .errors
@@ -620,6 +641,157 @@ fn to_question(dto: &QuestionDto) -> Result<Question, String> {
 }
 
 // ── Grammar DTOs ──────────────────────────────────────────────────────────────
+
+// Bilingual book DTOs
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct BilingualArticleDto {
+    pub id: i64,
+    pub title: String,
+    pub book: String,
+    pub level: Option<String>,
+    pub paragraphs: Vec<Vec<BilingualSegmentDto>>,
+    pub structures: Vec<BilingualStructureDto>,
+    pub created_at: String,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct BilingualArticleSummaryDto {
+    pub id: i64,
+    pub title: String,
+    pub book: String,
+    pub level: Option<String>,
+    pub paragraph_count: usize,
+    pub structure_count: usize,
+    pub created_at: String,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct BilingualSegmentDto {
+    pub en: String,
+    pub vi: String,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct BilingualStructureDto {
+    pub pattern: String,
+    pub example: String,
+    pub note: Option<String>,
+}
+
+#[derive(Debug, Serialize, Default, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct BilingualImportResultDto {
+    pub imported_count: usize,
+    pub inserted_count: usize,
+    pub updated_count: usize,
+    pub errors: Vec<String>,
+}
+
+// Bilingual book commands
+
+#[tauri::command]
+pub fn list_bilingual_articles() -> Result<Vec<BilingualArticleSummaryDto>, String> {
+    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let repo = BilingualRepository::new(conn);
+    repo.list_articles()
+        .map_err(|e| e.to_string())
+        .map(|articles| {
+            articles
+                .into_iter()
+                .map(|a| BilingualArticleSummaryDto {
+                    id: a.id,
+                    title: a.title,
+                    book: a.book,
+                    level: a.level,
+                    paragraph_count: a.paragraph_count,
+                    structure_count: a.structure_count,
+                    created_at: a.created_at,
+                })
+                .collect()
+        })
+}
+
+#[tauri::command]
+pub fn get_bilingual_article(id: i64) -> Result<Option<BilingualArticleDto>, String> {
+    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let repo = BilingualRepository::new(conn);
+    let article = repo.get_article(id).map_err(|e| e.to_string())?;
+    Ok(article.map(|a| BilingualArticleDto {
+        id: a.id,
+        title: a.title,
+        book: a.book,
+        level: a.level,
+        paragraphs: a
+            .paragraphs
+            .into_iter()
+            .map(|paragraph| {
+                paragraph
+                    .into_iter()
+                    .map(|segment| BilingualSegmentDto {
+                        en: segment.en,
+                        vi: segment.vi,
+                    })
+                    .collect()
+            })
+            .collect(),
+        structures: a
+            .structures
+            .into_iter()
+            .map(|structure| BilingualStructureDto {
+                pattern: structure.pattern,
+                example: structure.example,
+                note: structure.note,
+            })
+            .collect(),
+        created_at: a.created_at,
+    }))
+}
+
+#[tauri::command]
+pub fn import_bilingual(content: String) -> Result<BilingualImportResultDto, String> {
+    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let repo = BilingualRepository::new(conn);
+    Ok(import_bilingual_content(&repo, &content))
+}
+
+fn import_bilingual_content(
+    repo: &BilingualRepository,
+    content: &str,
+) -> BilingualImportResultDto {
+    let mut inserted_count = 0;
+    let mut updated_count = 0;
+    let mut errors = vec![];
+
+    match parse_bilingual_json(content) {
+        Ok(articles) => {
+            for article in &articles {
+                match repo.upsert_article(article) {
+                    Ok(result) => {
+                        if result.inserted {
+                            inserted_count += 1;
+                        } else {
+                            updated_count += 1;
+                        }
+                    }
+                    Err(e) => errors.push(format!("{}: {}", article.title, e)),
+                }
+            }
+        }
+        Err(e) => errors.push(e.to_string()),
+    }
+
+    BilingualImportResultDto {
+        imported_count: inserted_count + updated_count,
+        inserted_count,
+        updated_count,
+        errors,
+    }
+}
 
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]

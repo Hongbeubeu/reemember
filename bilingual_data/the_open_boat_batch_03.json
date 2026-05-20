@@ -1,0 +1,199 @@
+[
+  {
+    "book": "The Open Boat",
+    "level": "B1",
+    "title": "09 - Into the Surf",
+    "paragraphs": [
+      [
+        { "en": "At last, the captain knew that waiting would not save them.", "vi": "Cuối cùng, người thuyền trưởng hiểu rằng chờ đợi sẽ không cứu được họ." },
+        { "en": "The men had to take the boat into the surf.", "vi": "Những người đàn ông phải đưa thuyền vào vùng sóng vỡ." },
+        { "en": "It was the most dangerous part of the journey.", "vi": "Đó là phần nguy hiểm nhất của cuộc hành trình." }
+      ],
+      [
+        { "en": "Before they moved closer, the captain told each man what to do.", "vi": "Trước khi họ tiến gần hơn, người thuyền trưởng nói cho từng người biết phải làm gì." },
+        { "en": "They listened carefully, because one mistake could turn the boat over.", "vi": "Họ lắng nghe cẩn thận, vì một sai lầm có thể làm thuyền bị lật." },
+        { "en": "The sea in front of them was white and loud.", "vi": "Biển trước mặt họ trắng xóa và ồn ào." }
+      ],
+      [
+        { "en": "The oiler and the correspondent rowed with the last of their strength.", "vi": "Người thợ máy và anh phóng viên chèo bằng chút sức lực cuối cùng." },
+        { "en": "The cook held himself low in the boat.", "vi": "Người đầu bếp cúi thấp người trong thuyền." },
+        { "en": "The captain watched every wave as if he could read its mind.", "vi": "Người thuyền trưởng nhìn từng con sóng như thể ông có thể đọc được ý nghĩ của nó." }
+      ],
+      [
+        { "en": "When a great wave rose behind them, the captain shouted his order.", "vi": "Khi một con sóng lớn dâng lên phía sau họ, người thuyền trưởng hét lên mệnh lệnh." },
+        { "en": "The men bent forward and pulled hard.", "vi": "Những người đàn ông cúi người về phía trước và kéo mái chèo thật mạnh." },
+        { "en": "For a moment, the boat seemed to fly toward the beach.", "vi": "Trong một khoảnh khắc, chiếc thuyền dường như bay về phía bãi biển." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "At last, + clause",
+        "example": "At last, the captain knew that waiting would not save them.",
+        "note": "At last dùng để nói rằng điều gì đó cuối cùng cũng xảy ra sau một thời gian chờ đợi hoặc chịu đựng."
+      },
+      {
+        "pattern": "Before + clause, main clause",
+        "example": "Before they moved closer, the captain told each man what to do.",
+        "note": "Before đặt một hành động xảy ra trước hành động chính, giúp người đọc thấy rõ thứ tự thời gian."
+      },
+      {
+        "pattern": "With the last of + possessive + noun",
+        "example": "The oiler and the correspondent rowed with the last of their strength.",
+        "note": "With the last of their strength nhấn mạnh rằng họ dùng phần sức lực cuối cùng còn lại."
+      },
+      {
+        "pattern": "When + clause, main clause",
+        "example": "When a great wave rose behind them, the captain shouted his order.",
+        "note": "When nối thời điểm xảy ra sự việc với hành động chính trong câu."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat",
+    "level": "B1",
+    "title": "10 - The Boat Overturns",
+    "paragraphs": [
+      [
+        { "en": "The boat rushed forward on the back of the wave.", "vi": "Chiếc thuyền lao về phía trước trên lưng con sóng." },
+        { "en": "Then the water fell away beneath it.", "vi": "Rồi nước tụt xuống bên dưới nó." },
+        { "en": "The little boat dropped as if the sea had opened a hole.", "vi": "Chiếc thuyền nhỏ rơi xuống như thể biển đã mở ra một cái hố." }
+      ],
+      [
+        { "en": "A second wave struck the side before they could recover.", "vi": "Một con sóng thứ hai đập vào mạn thuyền trước khi họ kịp lấy lại thăng bằng." },
+        { "en": "The boat turned over, and the men were thrown into the cold water.", "vi": "Chiếc thuyền bị lật, và những người đàn ông bị ném xuống làn nước lạnh." },
+        { "en": "For a few seconds, no one could see anything but foam.", "vi": "Trong vài giây, không ai có thể nhìn thấy gì ngoài bọt nước." }
+      ],
+      [
+        { "en": "The captain held on to the overturned boat.", "vi": "Người thuyền trưởng bám vào chiếc thuyền bị lật." },
+        { "en": "Because his arm was injured, he could not swim freely.", "vi": "Vì cánh tay ông bị thương, ông không thể bơi một cách thoải mái." },
+        { "en": "Still, he called to the others and tried to guide them.", "vi": "Dù vậy, ông vẫn gọi những người khác và cố gắng hướng dẫn họ." }
+      ],
+      [
+        { "en": "The cook floated near a piece of life-saving gear.", "vi": "Người đầu bếp nổi gần một món dụng cụ cứu sinh." },
+        { "en": "The correspondent found himself alone between two waves.", "vi": "Anh phóng viên thấy mình đơn độc giữa hai con sóng." },
+        { "en": "The oiler swam ahead, stronger than all the rest.", "vi": "Người thợ máy bơi lên phía trước, khỏe hơn tất cả những người còn lại." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "As if + clause",
+        "example": "The little boat dropped as if the sea had opened a hole.",
+        "note": "As if dùng để so sánh cảm giác hoặc hình ảnh, không nhất thiết là sự thật."
+      },
+      {
+        "pattern": "Before + clause",
+        "example": "A second wave struck the side before they could recover.",
+        "note": "Before diễn tả một việc xảy ra trước khi việc khác kịp xảy ra."
+      },
+      {
+        "pattern": "Because + reason, main clause",
+        "example": "Because his arm was injured, he could not swim freely.",
+        "note": "Because đưa ra nguyên nhân, còn mệnh đề chính nói kết quả của nguyên nhân đó."
+      },
+      {
+        "pattern": "Comparative phrase: stronger than + noun phrase",
+        "example": "The oiler swam ahead, stronger than all the rest.",
+        "note": "Stronger than dùng để so sánh sức mạnh của một người hoặc vật với nhóm còn lại."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat",
+    "level": "B1",
+    "title": "11 - The Swim for Shore",
+    "paragraphs": [
+      [
+        { "en": "The shore was close, but the water made every yard difficult.", "vi": "Bờ biển ở gần, nhưng nước khiến từng thước đường trở nên khó khăn." },
+        { "en": "The correspondent tried to swim slowly so that he would not waste his strength.", "vi": "Anh phóng viên cố bơi chậm để không lãng phí sức lực." },
+        { "en": "Each wave lifted him and then pushed him under again.", "vi": "Mỗi con sóng nâng anh lên rồi lại đẩy anh xuống dưới." }
+      ],
+      [
+        { "en": "He saw a man running on the beach.", "vi": "Anh nhìn thấy một người đàn ông đang chạy trên bãi biển." },
+        { "en": "The man was waving and taking off his clothes.", "vi": "Người ấy đang vẫy tay và cởi bớt quần áo." },
+        { "en": "It seemed that someone had finally understood their danger.", "vi": "Dường như cuối cùng cũng có người hiểu được mối nguy hiểm của họ." }
+      ],
+      [
+        { "en": "Although help was coming, the correspondent still had to fight the sea alone.", "vi": "Mặc dù sự giúp đỡ đang đến, anh phóng viên vẫn phải một mình chống lại biển." },
+        { "en": "His arms felt heavy.", "vi": "Hai cánh tay anh cảm thấy nặng trĩu." },
+        { "en": "His legs moved more slowly with every stroke.", "vi": "Hai chân anh di chuyển chậm hơn sau mỗi nhịp bơi." }
+      ],
+      [
+        { "en": "When he could no longer swim well, a wave carried him forward.", "vi": "Khi anh không còn có thể bơi tốt nữa, một con sóng đã đẩy anh về phía trước." },
+        { "en": "Hands reached him in the shallow water.", "vi": "Những bàn tay vươn tới anh trong vùng nước nông." },
+        { "en": "He was pulled toward the beach, half awake and half lost.", "vi": "Anh được kéo về phía bãi biển, nửa tỉnh nửa mê." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "So that + clause",
+        "example": "The correspondent tried to swim slowly so that he would not waste his strength.",
+        "note": "So that dùng để nói mục đích của hành động đứng trước nó."
+      },
+      {
+        "pattern": "It seemed that + clause",
+        "example": "It seemed that someone had finally understood their danger.",
+        "note": "It seemed that diễn tả cảm nhận hoặc suy đoán của người kể."
+      },
+      {
+        "pattern": "Although + clause, main clause",
+        "example": "Although help was coming, the correspondent still had to fight the sea alone.",
+        "note": "Although tạo sự tương phản giữa điều có vẻ thuận lợi và thực tế vẫn khó khăn."
+      },
+      {
+        "pattern": "When + clause, main clause",
+        "example": "When he could no longer swim well, a wave carried him forward.",
+        "note": "When cho biết thời điểm một hành động hoặc sự thay đổi xảy ra."
+      }
+    ]
+  },
+  {
+    "book": "The Open Boat",
+    "level": "B1",
+    "title": "12 - After the Sea",
+    "paragraphs": [
+      [
+        { "en": "The cook reached the beach and lay there breathing hard.", "vi": "Người đầu bếp vào được bờ và nằm đó thở dốc." },
+        { "en": "The captain was carried from the water by the people on shore.", "vi": "Người thuyền trưởng được những người trên bờ đưa ra khỏi nước." },
+        { "en": "The correspondent was too tired to understand where he was.", "vi": "Anh phóng viên quá mệt đến mức không hiểu mình đang ở đâu." }
+      ],
+      [
+        { "en": "Soon they looked for the oiler, because he had been the strongest swimmer.", "vi": "Chẳng bao lâu sau, họ tìm người thợ máy, vì anh đã là người bơi khỏe nhất." },
+        { "en": "For a moment, they believed he must already be safe.", "vi": "Trong một khoảnh khắc, họ tin rằng chắc hẳn anh đã an toàn." },
+        { "en": "Then they saw him lying face down near the edge of the water.", "vi": "Rồi họ nhìn thấy anh nằm úp mặt gần mép nước." }
+      ],
+      [
+        { "en": "The man who had rowed the hardest did not rise again.", "vi": "Người đã chèo nhiều nhất không đứng dậy nữa." },
+        { "en": "No one could explain why the sea had chosen him.", "vi": "Không ai có thể giải thích vì sao biển lại chọn anh." },
+        { "en": "The others were alive, but their safety felt heavy with sorrow.", "vi": "Những người còn lại vẫn sống, nhưng sự an toàn của họ trở nên nặng trĩu buồn đau." }
+      ],
+      [
+        { "en": "That night, the survivors listened to the sound of the waves.", "vi": "Đêm ấy, những người sống sót lắng nghe tiếng sóng." },
+        { "en": "They understood the sea differently after what had happened.", "vi": "Họ hiểu biển theo một cách khác sau những gì đã xảy ra." },
+        { "en": "It was not cruel, and it was not kind.", "vi": "Nó không tàn nhẫn, và nó cũng không tử tế." },
+        { "en": "It was simply there.", "vi": "Nó chỉ đơn giản là ở đó." }
+      ]
+    ],
+    "structures": [
+      {
+        "pattern": "Too + adjective + to + verb",
+        "example": "The correspondent was too tired to understand where he was.",
+        "note": "Too...to diễn tả mức độ quá cao khiến một hành động không thể xảy ra."
+      },
+      {
+        "pattern": "Because + clause",
+        "example": "Soon they looked for the oiler, because he had been the strongest swimmer.",
+        "note": "Because giải thích lý do cho hành động hoặc suy nghĩ trong mệnh đề chính."
+      },
+      {
+        "pattern": "Relative clause: who + verb",
+        "example": "The man who had rowed the hardest did not rise again.",
+        "note": "Who had rowed the hardest bổ sung thông tin về the man mà không cần tách thành câu mới."
+      },
+      {
+        "pattern": "After + noun clause",
+        "example": "They understood the sea differently after what had happened.",
+        "note": "After what had happened nói về thời điểm sau một sự việc đã xảy ra."
+      }
+    ]
+  }
+]
