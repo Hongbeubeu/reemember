@@ -8,6 +8,8 @@ use reemember::testing::QuestionDirection;
 use reemember::testing::{Question, TestMode, TestingOptions};
 use serde::{Deserialize, Serialize};
 
+const DB_PATH: &str = concat!(env!("CARGO_MANIFEST_DIR"), "/reemember.db");
+
 #[tauri::command]
 pub fn set_app_theme(window: tauri::WebviewWindow, mode: String) -> Result<(), String> {
     let theme = match mode.as_str() {
@@ -162,7 +164,7 @@ pub struct ManifestSyncResultDto {
 #[tauri::command]
 pub fn next_question(payload: NextQuestionRequest) -> Result<Option<QuestionDto>, String> {
     let mode = parse_mode(&payload.mode)?;
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
 
     let options = TestingOptions {
@@ -178,7 +180,7 @@ pub fn next_question(payload: NextQuestionRequest) -> Result<Option<QuestionDto>
 
 #[tauri::command]
 pub fn submit_answer(payload: SubmitAnswerRequest) -> Result<AnswerResultDto, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
 
     let question = to_question(&payload.question)?;
@@ -208,7 +210,7 @@ pub struct ListWordsRequest {
 
 #[tauri::command]
 pub fn list_words(payload: Option<ListWordsRequest>) -> Result<Vec<WordSummaryDto>, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
 
     let mut options = QueryOptions {
@@ -255,7 +257,7 @@ pub fn list_words(payload: Option<ListWordsRequest>) -> Result<Vec<WordSummaryDt
 
 #[tauri::command]
 pub fn delete_word(word_key: String) -> Result<(), String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
     repo.delete_by_word_key(&word_key)
         .map_err(|e| e.to_string())
@@ -265,7 +267,7 @@ pub fn delete_word(word_key: String) -> Result<(), String> {
 
 #[tauri::command]
 pub fn list_collections() -> Result<Vec<CollectionDto>, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
     repo.list_collections()
         .map_err(|e| e.to_string())
@@ -281,7 +283,7 @@ pub struct CreateCollectionRequest {
 
 #[tauri::command]
 pub fn create_collection(payload: CreateCollectionRequest) -> Result<CollectionDto, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
     repo.create_collection(&payload.name, payload.description.as_deref())
         .map_err(|e| e.to_string())
@@ -298,7 +300,7 @@ pub struct UpdateCollectionRequest {
 
 #[tauri::command]
 pub fn update_collection(payload: UpdateCollectionRequest) -> Result<(), String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
     repo.update_collection(payload.id, &payload.name, payload.description.as_deref())
         .map_err(|e| e.to_string())
@@ -306,7 +308,7 @@ pub fn update_collection(payload: UpdateCollectionRequest) -> Result<(), String>
 
 #[tauri::command]
 pub fn delete_collection(id: i64) -> Result<(), String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
     repo.delete_collection(id).map_err(|e| e.to_string())
 }
@@ -315,7 +317,7 @@ pub fn delete_collection(id: i64) -> Result<(), String> {
 
 #[tauri::command]
 pub fn list_topics(collection_id: i64) -> Result<Vec<TopicDto>, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
     repo.list_topics(collection_id)
         .map_err(|e| e.to_string())
@@ -332,7 +334,7 @@ pub struct CreateTopicRequest {
 
 #[tauri::command]
 pub fn create_topic(payload: CreateTopicRequest) -> Result<TopicDto, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
     repo.create_topic(
         payload.collection_id,
@@ -353,7 +355,7 @@ pub struct UpdateTopicRequest {
 
 #[tauri::command]
 pub fn update_topic(payload: UpdateTopicRequest) -> Result<(), String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
     repo.update_topic(payload.id, &payload.name, payload.description.as_deref())
         .map_err(|e| e.to_string())
@@ -361,7 +363,7 @@ pub fn update_topic(payload: UpdateTopicRequest) -> Result<(), String> {
 
 #[tauri::command]
 pub fn delete_topic(id: i64) -> Result<(), String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
     repo.delete_topic(id).map_err(|e| e.to_string())
 }
@@ -375,7 +377,7 @@ pub struct AssignWordToTopicRequest {
 
 #[tauri::command]
 pub fn assign_word_to_topic(payload: AssignWordToTopicRequest) -> Result<(), String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
     repo.assign_word_to_topic(&payload.word_key, payload.topic_id)
         .map_err(|e| e.to_string())
@@ -393,7 +395,7 @@ pub struct ImportVocabularyRequest {
 
 #[tauri::command]
 pub fn import_vocabulary(payload: ImportVocabularyRequest) -> Result<ImportReportDto, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
 
     let report = VocabularyService::import_json_scoped(
@@ -447,11 +449,11 @@ pub async fn sync_manifest_url(
         fetched_files.push((file, content));
     }
 
-    let vocab_conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let vocab_conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let vocab_repo = WordRepository::new(vocab_conn);
-    let grammar_conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let grammar_conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let grammar_repo = GrammarRepository::new(grammar_conn);
-    let bilingual_conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let bilingual_conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let bilingual_repo = BilingualRepository::new(bilingual_conn);
 
     let mut result = ManifestSyncResultDto {
@@ -527,7 +529,7 @@ pub async fn sync_manifest_url(
 pub async fn save_export(app: tauri::AppHandle) -> Result<Option<String>, String> {
     use tauri_plugin_dialog::{DialogExt, FilePath};
 
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = WordRepository::new(conn);
     let content = VocabularyService::export_json(&repo).map_err(|e| e.to_string())?;
 
@@ -696,7 +698,7 @@ pub struct BilingualImportResultDto {
 
 #[tauri::command]
 pub fn list_bilingual_articles() -> Result<Vec<BilingualArticleSummaryDto>, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = BilingualRepository::new(conn);
     repo.list_articles()
         .map_err(|e| e.to_string())
@@ -718,7 +720,7 @@ pub fn list_bilingual_articles() -> Result<Vec<BilingualArticleSummaryDto>, Stri
 
 #[tauri::command]
 pub fn get_bilingual_article(id: i64) -> Result<Option<BilingualArticleDto>, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = BilingualRepository::new(conn);
     let article = repo.get_article(id).map_err(|e| e.to_string())?;
     Ok(article.map(|a| BilingualArticleDto {
@@ -754,7 +756,7 @@ pub fn get_bilingual_article(id: i64) -> Result<Option<BilingualArticleDto>, Str
 
 #[tauri::command]
 pub fn import_bilingual(content: String) -> Result<BilingualImportResultDto, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = BilingualRepository::new(conn);
     Ok(import_bilingual_content(&repo, &content))
 }
@@ -873,7 +875,7 @@ pub struct GrammarImportResultDto {
 
 #[tauri::command]
 pub fn list_grammar_docs() -> Result<Vec<GrammarDocDto>, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
     repo.list_docs().map_err(|e| e.to_string()).map(|docs| {
         docs.into_iter()
@@ -892,7 +894,7 @@ pub fn list_grammar_docs() -> Result<Vec<GrammarDocDto>, String> {
 
 #[tauri::command]
 pub fn get_grammar_doc(id: i64) -> Result<Option<GrammarDocDetailDto>, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
     let detail = repo.get_doc_with_exercises(id).map_err(|e| e.to_string())?;
     Ok(detail.map(|d| GrammarDocDetailDto {
@@ -928,7 +930,7 @@ fn resolve_group_for_category(repo: &GrammarRepository, category: &Option<String
 
 #[tauri::command]
 pub fn import_grammar(content: String) -> Result<GrammarImportResultDto, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
     Ok(import_grammar_content(&repo, &content))
 }
@@ -988,7 +990,7 @@ fn import_grammar_content(repo: &GrammarRepository, content: &str) -> GrammarImp
 
 #[tauri::command]
 pub fn list_grammar_groups() -> Result<Vec<GrammarGroupDto>, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
     repo.list_groups().map_err(|e| e.to_string()).map(|groups| {
         groups
@@ -1007,7 +1009,7 @@ pub fn list_grammar_groups() -> Result<Vec<GrammarGroupDto>, String> {
 
 #[tauri::command]
 pub fn create_grammar_group(payload: CreateGrammarGroupRequest) -> Result<GrammarGroupDto, String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
     let g = repo
         .create_group(&payload.name, payload.description.as_deref())
@@ -1024,7 +1026,7 @@ pub fn create_grammar_group(payload: CreateGrammarGroupRequest) -> Result<Gramma
 
 #[tauri::command]
 pub fn update_grammar_group(payload: UpdateGrammarGroupRequest) -> Result<(), String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
     let desc_arg = payload.description.as_ref().map(|s| Some(s.as_str()));
     repo.update_group(payload.id, payload.name.as_deref(), desc_arg)
@@ -1033,14 +1035,14 @@ pub fn update_grammar_group(payload: UpdateGrammarGroupRequest) -> Result<(), St
 
 #[tauri::command]
 pub fn delete_grammar_group(id: i64) -> Result<(), String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
     repo.delete_group(id).map_err(|e| e.to_string())
 }
 
 #[tauri::command]
 pub fn move_grammar_doc(payload: MoveGrammarDocRequest) -> Result<(), String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
     repo.move_doc(payload.doc_id, payload.group_id)
         .map_err(|e| e.to_string())
@@ -1048,7 +1050,7 @@ pub fn move_grammar_doc(payload: MoveGrammarDocRequest) -> Result<(), String> {
 
 #[tauri::command]
 pub fn delete_grammar_doc(id: i64) -> Result<(), String> {
-    let conn = init_db("reemember.db").map_err(|e| e.to_string())?;
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
     let repo = GrammarRepository::new(conn);
     repo.delete_doc(id).map_err(|e| e.to_string())
 }
