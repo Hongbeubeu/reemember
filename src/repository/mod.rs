@@ -111,7 +111,8 @@ impl WordRepository {
         let mut query = "SELECT DISTINCT words.id, words.word, words.phonetic, words.created_at, words.review_count FROM words".to_string();
 
         let mut joins = vec![];
-        let mut conditions = vec![];
+        let mut conditions: Vec<&str> = vec![];
+        let mut param_values: Vec<Box<dyn rusqlite::types::ToSql>> = vec![];
 
         if options.tag_filter.is_some() {
             joins.push("JOIN word_tags ON words.id = word_tags.word_id JOIN tags ON word_tags.tag_id = tags.id");
@@ -126,13 +127,16 @@ impl WordRepository {
         }
 
         if let Some(ref tag) = options.tag_filter {
-            conditions.push(format!("tags.name = '{}'", tag.replace("'", "''")));
+            conditions.push("tags.name = ?");
+            param_values.push(Box::new(tag.clone()));
         }
         if let Some(tid) = options.topic_id {
-            conditions.push(format!("word_topics.topic_id = {}", tid));
+            conditions.push("word_topics.topic_id = ?");
+            param_values.push(Box::new(tid));
         }
         if let Some(cid) = options.collection_id {
-            conditions.push(format!("topics.collection_id = {}", cid));
+            conditions.push("topics.collection_id = ?");
+            param_values.push(Box::new(cid));
         }
 
         if !conditions.is_empty() {
@@ -149,7 +153,8 @@ impl WordRepository {
 
         let conn = self.conn.borrow();
         let mut stmt = conn.prepare(&query).map_err(DbError::Sqlite)?;
-        let rows_result = stmt.query_map([], |row| {
+        let param_refs: Vec<&dyn rusqlite::types::ToSql> = param_values.iter().map(|p| p.as_ref()).collect();
+        let rows_result = stmt.query_map(param_refs.as_slice(), |row| {
             Ok((
                 row.get::<_, i64>(0)?,
                 row.get::<_, String>(1)?,
@@ -188,18 +193,25 @@ impl WordRepository {
     }
 
     pub fn pick_random_word_scoped(&self, topic_id: Option<i64>) -> Result<Option<WordRecord>, DbError> {
-        let sql = if let Some(tid) = topic_id {
-            format!(
+        let conn = self.conn.borrow();
+        let maybe = if let Some(tid) = topic_id {
+            conn.query_row(
                 "SELECT words.id, words.word, words.phonetic, words.created_at, words.review_count \
                  FROM words JOIN word_topics ON words.id = word_topics.word_id \
-                 WHERE word_topics.topic_id = {} ORDER BY RANDOM() LIMIT 1",
-                tid
-            )
+                 WHERE word_topics.topic_id = ? ORDER BY RANDOM() LIMIT 1",
+                [tid],
+                |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?, row.get(4)?)),
+            ).optional().map_err(DbError::Sqlite)?
         } else {
-            "SELECT id, word, phonetic, created_at, review_count FROM words ORDER BY RANDOM() LIMIT 1".to_string()
+            conn.query_row(
+                "SELECT id, word, phonetic, created_at, review_count FROM words ORDER BY RANDOM() LIMIT 1",
+                [],
+                |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?, row.get(4)?)),
+            ).optional().map_err(DbError::Sqlite)?
         };
+        drop(conn);
 
-        self.load_one_word_from_sql(&sql)
+        self.build_word_record_from_row(maybe)
     }
 
     pub fn increment_review_count_by_word_key(&self, word_key: &str) -> Result<(), DbError> {
@@ -216,26 +228,30 @@ impl WordRepository {
     }
 
     pub fn pick_due_word_scoped(&self, now_utc: &str, topic_id: Option<i64>) -> Result<Option<WordRecord>, DbError> {
-        let sql = if let Some(tid) = topic_id {
-            format!(
+        let conn = self.conn.borrow();
+        let maybe = if let Some(tid) = topic_id {
+            conn.query_row(
                 "SELECT words.id, words.word, words.phonetic, words.created_at, words.review_count \
                  FROM words \
                  JOIN review_schedule ON words.id = review_schedule.word_id \
                  JOIN word_topics ON words.id = word_topics.word_id \
-                 WHERE review_schedule.due_at <= '{}' AND word_topics.topic_id = {} \
+                 WHERE review_schedule.due_at <= ? AND word_topics.topic_id = ? \
                  ORDER BY review_schedule.due_at ASC LIMIT 1",
-                now_utc.replace("'", "''"), tid
-            )
+                rusqlite::params![now_utc, tid],
+                |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?, row.get(4)?)),
+            ).optional().map_err(DbError::Sqlite)?
         } else {
-            format!(
+            conn.query_row(
                 "SELECT words.id, words.word, words.phonetic, words.created_at, words.review_count \
                  FROM words JOIN review_schedule ON words.id = review_schedule.word_id \
-                 WHERE review_schedule.due_at <= '{}' ORDER BY review_schedule.due_at ASC LIMIT 1",
-                now_utc.replace("'", "''")
-            )
+                 WHERE review_schedule.due_at <= ? ORDER BY review_schedule.due_at ASC LIMIT 1",
+                [now_utc],
+                |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?, row.get(4)?)),
+            ).optional().map_err(DbError::Sqlite)?
         };
+        drop(conn);
 
-        self.load_one_word_from_sql(&sql)
+        self.build_word_record_from_row(maybe)
     }
 
     pub fn pick_next_word(&self, srs_enabled: bool, now_utc: &str) -> Result<Option<WordRecord>, DbError> {
@@ -479,30 +495,20 @@ impl WordRepository {
         })
     }
 
-    fn load_one_word_from_sql(&self, sql: &str) -> Result<Option<WordRecord>, DbError> {
-        let conn = self.conn.borrow();
-        let mut stmt = conn.prepare(sql).map_err(DbError::Sqlite)?;
-        let mut rows = stmt.query([]).map_err(DbError::Sqlite)?;
-        let row = match rows.next().map_err(DbError::Sqlite)? {
-            Some(r) => r,
+    fn build_word_record_from_row(
+        &self,
+        row: Option<(i64, String, Option<String>, Option<String>, u32)>,
+    ) -> Result<Option<WordRecord>, DbError> {
+        let (id, word, phonetic, created_at, review_count) = match row {
             None => return Ok(None),
+            Some(r) => r,
         };
-        let id: i64 = row.get(0).map_err(DbError::Sqlite)?;
-        let word: String = row.get(1).map_err(DbError::Sqlite)?;
-        let phonetic: Option<String> = row.get(2).map_err(DbError::Sqlite)?;
-        let created_at: Option<String> = row.get(3).map_err(DbError::Sqlite)?;
-        let review_count: u32 = row.get(4).map_err(DbError::Sqlite)?;
-        drop(rows);
-        drop(stmt);
-        drop(conn);
-
         let definitions = self.load_definitions(id)?;
         let examples = self.load_examples(id)?;
         let tags = self.load_tags(id)?;
         let synonyms = self.load_relations(id, "synonym")?;
         let antonyms = self.load_relations(id, "antonym")?;
         let family_words = self.load_relations(id, "family")?;
-
         Ok(Some(WordRecord {
             word, phonetic, definitions, examples, synonyms, antonyms, family_words,
             metadata: Metadata { tags, created_at, review_count },
