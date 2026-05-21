@@ -8,8 +8,8 @@ use commands::{
     get_grammar_doc, get_stats, import_bilingual, import_grammar, import_vocabulary,
     import_vocabulary_batch, list_bilingual_articles, list_collections, list_grammar_docs,
     list_grammar_groups, list_topics, list_words, move_grammar_doc, next_question, save_export,
-    set_app_theme, submit_answer, sync_manifest_url, update_collection, update_grammar_group,
-    update_topic,
+    set_app_theme, submit_answer, sync_local_data, sync_manifest_url, update_collection,
+    update_grammar_group, update_topic,
 };
 use reemember::db::init_db;
 use reemember::repository::WordRepository;
@@ -54,6 +54,7 @@ fn main() {
             move_grammar_doc,
             get_stats,
             import_vocabulary_batch,
+            sync_local_data,
         ])
         .setup(|app| {
             WebviewWindowBuilder::new(app, "main", WebviewUrl::App("index.html".into()))

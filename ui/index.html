@@ -1144,6 +1144,17 @@
       <div class="page-inner">
 
         <div class="card">
+          <div class="card-title">Sync local data</div>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:16px">
+            Import tất cả dữ liệu từ thư mục <code>vocabulary_data/</code>, <code>grammar_data/</code>, và <code>bilingual_data/</code> trong project.
+          </p>
+          <div class="import-actions">
+            <button class="btn btn-primary" id="localSyncBtn" onclick="syncLocalData()">Sync now</button>
+          </div>
+          <div class="import-result" id="localSyncResult"></div>
+        </div>
+
+        <div class="card">
           <div class="card-title">Manifest sync</div>
 
           <div class="field">
@@ -2495,6 +2506,38 @@
       html += '</ul>';
     }
     box.innerHTML = html;
+  }
+
+  async function syncLocalData() {
+    const btn = document.getElementById('localSyncBtn');
+    const box = document.getElementById('localSyncResult');
+    btn.disabled = true;
+    box.className = 'import-result';
+    box.innerHTML = '';
+    showLoading('Syncing local data…');
+
+    try {
+      const r = await invoke('sync_local_data');
+      const hasErrors = r.errors && r.errors.length > 0;
+      box.className = 'import-result visible ' + (hasErrors ? 'err' : 'ok');
+      let html = `Files synced: <strong>${r.fileCount}</strong><br>`;
+      html += `Vocabulary: inserted <strong>${r.vocabularyInsertedCount}</strong>, updated <strong>${r.vocabularyUpdatedCount}</strong>, skipped <strong>${r.vocabularySkippedCount}</strong><br>`;
+      html += `Grammar: inserted <strong>${r.grammarInsertedCount}</strong>, updated <strong>${r.grammarUpdatedCount}</strong><br>`;
+      html += `Bilingual: inserted <strong>${r.bilingualInsertedCount}</strong>, updated <strong>${r.bilingualUpdatedCount}</strong>`;
+      if (hasErrors) {
+        html += `<br><br><strong>Errors (${r.errorCount}):</strong><ul>`;
+        r.errors.forEach(e => { html += `<li>${esc(e)}</li>`; });
+        html += '</ul>';
+      }
+      box.innerHTML = html;
+      await Promise.all([loadCollections(), loadGrammarDocs(), loadBilingualArticles()]);
+    } catch (err) {
+      box.className = 'import-result visible err';
+      box.textContent = 'Error: ' + err;
+    } finally {
+      btn.disabled = false;
+      hideLoading();
+    }
   }
 
   async function syncManifestOnStartup() {

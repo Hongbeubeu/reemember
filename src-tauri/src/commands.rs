@@ -9,6 +9,9 @@ use reemember::testing::{Question, TestMode, TestingOptions};
 use serde::{Deserialize, Serialize};
 
 const DB_PATH: &str = concat!(env!("CARGO_MANIFEST_DIR"), "/reemember.db");
+const VOCAB_DATA_DIR: &str = concat!(env!("CARGO_MANIFEST_DIR"), "/../vocabulary_data");
+const GRAMMAR_DATA_DIR: &str = concat!(env!("CARGO_MANIFEST_DIR"), "/../grammar_data");
+const BILINGUAL_DATA_DIR: &str = concat!(env!("CARGO_MANIFEST_DIR"), "/../bilingual_data");
 
 #[tauri::command]
 pub fn set_app_theme(window: tauri::WebviewWindow, mode: String) -> Result<(), String> {
@@ -508,6 +511,107 @@ pub fn import_vocabulary_batch(files: Vec<BatchImportFileRequest>) -> Result<Bat
         total_updated: report.updated,
         file_count: files.len(),
     })
+}
+
+#[derive(Debug, Serialize, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct LocalSyncResultDto {
+    pub vocabulary_inserted_count: usize,
+    pub vocabulary_updated_count: usize,
+    pub vocabulary_skipped_count: usize,
+    pub grammar_inserted_count: usize,
+    pub grammar_updated_count: usize,
+    pub bilingual_inserted_count: usize,
+    pub bilingual_updated_count: usize,
+    pub file_count: usize,
+    pub error_count: usize,
+    pub errors: Vec<String>,
+}
+
+fn collect_files_by_ext(dir: &str, extensions: &[&str]) -> Vec<std::path::PathBuf> {
+    let mut files = Vec::new();
+    let mut stack = vec![std::path::PathBuf::from(dir)];
+    while let Some(current) = stack.pop() {
+        if let Ok(entries) = std::fs::read_dir(&current) {
+            for entry in entries.flatten() {
+                let path = entry.path();
+                if path.is_dir() {
+                    stack.push(path);
+                } else if let Some(ext) = path.extension().and_then(|e| e.to_str()) {
+                    if extensions.contains(&ext) {
+                        files.push(path);
+                    }
+                }
+            }
+        }
+    }
+    files
+}
+
+#[tauri::command]
+pub fn sync_local_data() -> Result<LocalSyncResultDto, String> {
+    let vocab_conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
+    let vocab_repo = WordRepository::new(vocab_conn);
+    let grammar_conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
+    let grammar_repo = GrammarRepository::new(grammar_conn);
+    let bilingual_conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
+    let bilingual_repo = BilingualRepository::new(bilingual_conn);
+
+    let mut result = LocalSyncResultDto::default();
+
+    for path in collect_files_by_ext(VOCAB_DATA_DIR, &["json"]) {
+        result.file_count += 1;
+        match std::fs::read_to_string(&path) {
+            Err(e) => result.errors.push(format!("{}: {}", path.display(), e)),
+            Ok(content) => match VocabularyService::import_json_scoped(&vocab_repo, &content, None, None) {
+                Ok(report) => {
+                    result.vocabulary_inserted_count += report.inserted_count;
+                    result.vocabulary_updated_count += report.updated_count;
+                    result.vocabulary_skipped_count += report.skipped_count;
+                }
+                Err(e) => result.errors.push(format!("{}: {}", path.display(), e)),
+            },
+        }
+    }
+
+    for path in collect_files_by_ext(GRAMMAR_DATA_DIR, &["md", "json"]) {
+        match std::fs::read_to_string(&path) {
+            Err(e) => result.errors.push(format!("{}: {}", path.display(), e)),
+            Ok(content) => {
+                // Skip .md files that are not grammar lessons (no YAML frontmatter)
+                if path.extension().and_then(|e| e.to_str()) == Some("md")
+                    && !content.trim_start().starts_with("---")
+                {
+                    continue;
+                }
+                result.file_count += 1;
+                let report = import_grammar_content(&grammar_repo, &content);
+                result.grammar_inserted_count += report.inserted_count;
+                result.grammar_updated_count += report.updated_count;
+                for e in report.errors {
+                    result.errors.push(format!("{}: {}", path.display(), e));
+                }
+            }
+        }
+    }
+
+    for path in collect_files_by_ext(BILINGUAL_DATA_DIR, &["json"]) {
+        result.file_count += 1;
+        match std::fs::read_to_string(&path) {
+            Err(e) => result.errors.push(format!("{}: {}", path.display(), e)),
+            Ok(content) => {
+                let report = import_bilingual_content(&bilingual_repo, &content);
+                result.bilingual_inserted_count += report.inserted_count;
+                result.bilingual_updated_count += report.updated_count;
+                for e in report.errors {
+                    result.errors.push(format!("{}: {}", path.display(), e));
+                }
+            }
+        }
+    }
+
+    result.error_count = result.errors.len();
+    Ok(result)
 }
 
 #[tauri::command]
