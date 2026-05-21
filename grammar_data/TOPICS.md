@@ -90,7 +90,7 @@
 
 - [ ] 01 — Prepositions of Time (at / on / in)
 - [ ] 02 — Prepositions of Place & Movement
-- [ ] 03 — Dependent Prepositions (verb / adj + preposition)
+- [x] 03 — Dependent Prepositions (verb / adj + preposition)
 
 ## Clauses & Linking (`category: clauses`)
 
@@ -103,4 +103,4 @@
 - [ ] 01 — Inversion (Never have I… / Rarely does…)
 - [ ] 02 — Emphatic Do (I DO like it)
 - [ ] 03 — Ellipsis & Substitution
-- [ ] 04 — Phrasal Verbs — top 100 nhóm theo nghĩa
+- [x] 04 — Phrasal Verbs — top 100 nhóm theo nghĩa

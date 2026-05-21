@@ -775,6 +775,11 @@
     .md-body th { background: var(--ghost-bg); font-weight: 700; text-align: left; padding: 7px 10px; border: 1px solid var(--border); white-space: nowrap; position: static; top: auto; }
     .md-body td { padding: 6px 10px; border: 1px solid var(--border); vertical-align: top; }
     .md-body tr:nth-child(even) td { background: var(--surface-subtle); }
+    .freq-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; border: 1px solid transparent; font-size: 11px; font-weight: 800; line-height: 1.45; white-space: nowrap; }
+    .freq-very { background: #dcfce7; border-color: #86efac; color: #166534; }
+    .freq-common { background: #dbeafe; border-color: #93c5fd; color: #1d4ed8; }
+    .freq-somewhat { background: #fef3c7; border-color: #fcd34d; color: #92400e; }
+    .freq-formal { background: #ede9fe; border-color: #c4b5fd; color: #6d28d9; }
     .md-body strong { font-weight: 700; }
     .md-body em { font-style: italic; color: var(--text-secondary); }
     .grammar-examples-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-bottom: 8px; }
@@ -2511,12 +2516,25 @@
   /* ── Markdown renderer ────────────────────────────────────────────────────── */
   function renderMd(src) {
     // Inline formatting: escape HTML, then apply bold / italic / inline-code
+    function decorateFrequencyLabels(s) {
+      const labels = [
+        ['Rất phổ biến', 'freq-very'],
+        ['Phổ biến', 'freq-common'],
+        ['Khá phổ biến', 'freq-somewhat'],
+        ['Ít gặp/trang trọng', 'freq-formal'],
+      ];
+      for (const [label, cls] of labels) {
+        s = s.replaceAll(label, `<span class="freq-badge ${cls}">${label}</span>`);
+      }
+      return s;
+    }
+
     function fmt(s) {
-      return s
+      return decorateFrequencyLabels(s
         .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
         .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*([^*\n]+?)\*/g, '<em>$1</em>')
-        .replace(/`([^`]+)`/g, '<code>$1</code>');
+        .replace(/`([^`]+)`/g, '<code>$1</code>'));
     }
 
     const lines = src.split('\n');
