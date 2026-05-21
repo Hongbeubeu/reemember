@@ -247,6 +247,16 @@ pub fn init_schema(conn: &Connection) -> Result<(), DbError> {
         conn.execute("UPDATE grammar_docs SET updated_at = created_at", [])?;
     }
 
+    // Migration: add level to existing words tables that predate it.
+    let has_level: i64 = conn.query_row(
+        "SELECT COUNT(*) FROM pragma_table_info('words') WHERE name = 'level'",
+        [],
+        |row| row.get(0),
+    ).unwrap_or(0);
+    if has_level == 0 {
+        conn.execute("ALTER TABLE words ADD COLUMN level TEXT", [])?;
+    }
+
     conn.execute(
         "CREATE TABLE IF NOT EXISTS grammar_exercises (
             id INTEGER PRIMARY KEY AUTOINCREMENT,

@@ -1,0 +1,380 @@
+{
+  "collection": "Daily Life",
+  "topic": "Hobbies & Free Time",
+  "words": [
+    {
+      "word": "pastime",
+      "level": "B1",
+      "phonetic": "/ˈpæstaɪm/",
+      "definitions": [{ "pos": "noun", "meaning": "sở thích, hoạt động giải trí lúc rảnh rỗi" }],
+      "examples": [
+        "Reading is her favourite pastime.",
+        "Gardening is a popular pastime among older people."
+      ],
+      "synonyms": ["hobby", "leisure activity"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["hobbies", "leisure", "free time"] }
+    },
+    {
+      "word": "hobby",
+      "level": "A2",
+      "phonetic": "/ˈhɒbi/",
+      "definitions": [{ "pos": "noun", "meaning": "sở thích cá nhân, thú tiêu khiển" }],
+      "examples": [
+        "His hobby is collecting vintage stamps.",
+        "She took up painting as a hobby after she retired."
+      ],
+      "synonyms": ["pastime", "interest"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["hobbies", "leisure", "free time"] }
+    },
+    {
+      "word": "craft",
+      "level": "A2",
+      "phonetic": "/krɑːft/",
+      "definitions": [
+        { "pos": "noun", "meaning": "nghề thủ công, đồ thủ công mỹ nghệ" },
+        { "pos": "verb", "meaning": "làm thủ công, chế tác bằng tay" }
+      ],
+      "examples": [
+        "She sells handmade crafts at the local market every weekend.",
+        "He crafted a wooden box as a gift for his father."
+      ],
+      "synonyms": ["handicraft", "artwork"],
+      "antonyms": [],
+      "family_words": ["crafty (adj)", "craftsman (noun)"],
+      "metadata": { "tags": ["hobbies", "creative", "free time"] }
+    },
+    {
+      "word": "sketch",
+      "level": "B1",
+      "phonetic": "/skɛtʃ/",
+      "definitions": [
+        { "pos": "noun", "meaning": "bản phác thảo, bức vẽ nhanh" },
+        { "pos": "verb", "meaning": "phác thảo, vẽ nhanh" }
+      ],
+      "examples": [
+        "She carries a notebook to sketch ideas whenever she is inspired.",
+        "He made a quick sketch of the building before painting it."
+      ],
+      "synonyms": ["drawing", "draft"],
+      "antonyms": [],
+      "family_words": ["sketching (noun)", "sketcher (noun)"],
+      "metadata": { "tags": ["hobbies", "creative", "art"] }
+    },
+    {
+      "word": "knit",
+      "level": "B1",
+      "phonetic": "/nɪt/",
+      "definitions": [{ "pos": "verb", "meaning": "đan len, đan móc" }],
+      "examples": [
+        "My grandmother taught me how to knit when I was a child.",
+        "She knits scarves and hats to donate to charity every winter."
+      ],
+      "synonyms": ["weave"],
+      "antonyms": [],
+      "family_words": ["knitting (noun)", "knitter (noun)"],
+      "metadata": { "tags": ["hobbies", "creative", "crafts"] }
+    },
+    {
+      "word": "photography",
+      "level": "A2",
+      "phonetic": "/fəˈtɒɡrəfi/",
+      "definitions": [{ "pos": "noun", "meaning": "nhiếp ảnh, nghệ thuật chụp ảnh" }],
+      "examples": [
+        "He discovered a passion for photography during a trip to Japan.",
+        "Wildlife photography requires a lot of patience and skill."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["photograph (noun/verb)", "photographer (noun)", "photographic (adj)"],
+      "metadata": { "tags": ["hobbies", "creative", "art"] }
+    },
+    {
+      "word": "gardening",
+      "level": "A2",
+      "phonetic": "/ˈɡɑːdənɪŋ/",
+      "definitions": [{ "pos": "noun", "meaning": "làm vườn, trồng cây" }],
+      "examples": [
+        "Gardening helps her relax after a long week at work.",
+        "He spends most of his weekends gardening and growing vegetables."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["garden (noun/verb)", "gardener (noun)"],
+      "metadata": { "tags": ["hobbies", "outdoor", "free time"] }
+    },
+    {
+      "word": "hiking",
+      "level": "A2",
+      "phonetic": "/ˈhaɪkɪŋ/",
+      "definitions": [{ "pos": "noun", "meaning": "đi bộ đường dài, leo núi" }],
+      "examples": [
+        "They go hiking in the mountains every summer.",
+        "Hiking is a great way to enjoy nature and stay fit."
+      ],
+      "synonyms": ["trekking", "walking"],
+      "antonyms": [],
+      "family_words": ["hike (noun/verb)", "hiker (noun)"],
+      "metadata": { "tags": ["hobbies", "outdoor", "sport"] }
+    },
+    {
+      "word": "cooking",
+      "level": "A1",
+      "phonetic": "/ˈkʊkɪŋ/",
+      "definitions": [{ "pos": "noun", "meaning": "nấu ăn, nghệ thuật bếp núc" }],
+      "examples": [
+        "Cooking is both a necessity and a creative outlet for him.",
+        "She took a cooking class to learn how to make Italian food."
+      ],
+      "synonyms": ["cuisine"],
+      "antonyms": [],
+      "family_words": ["cook (noun/verb)", "cooker (noun)"],
+      "metadata": { "tags": ["hobbies", "creative", "daily life"] }
+    },
+    {
+      "word": "baking",
+      "level": "A2",
+      "phonetic": "/ˈbeɪkɪŋ/",
+      "definitions": [{ "pos": "noun", "meaning": "nướng bánh, làm bánh" }],
+      "examples": [
+        "She enjoys baking bread and pastries on weekends.",
+        "Baking requires precision with measurements and timing."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["bake (verb)", "baker (noun)", "bakery (noun)"],
+      "metadata": { "tags": ["hobbies", "creative", "food"] }
+    },
+    {
+      "word": "collect",
+      "level": "A2",
+      "phonetic": "/kəˈlɛkt/",
+      "definitions": [{ "pos": "verb", "meaning": "sưu tầm, thu thập" }],
+      "examples": [
+        "He has been collecting comic books since he was a teenager.",
+        "She collects antique coins from different countries around the world."
+      ],
+      "synonyms": ["gather", "accumulate"],
+      "antonyms": ["discard", "throw away"],
+      "family_words": ["collection (noun)", "collector (noun)", "collectible (adj/noun)"],
+      "metadata": { "tags": ["hobbies", "leisure"] }
+    },
+    {
+      "word": "volunteer",
+      "level": "B1",
+      "phonetic": "/ˌvɒlənˈtɪər/",
+      "definitions": [
+        { "pos": "verb", "meaning": "tình nguyện, làm việc không lương" },
+        { "pos": "noun", "meaning": "tình nguyện viên" }
+      ],
+      "examples": [
+        "She volunteers at the local animal shelter every Saturday.",
+        "Many volunteers help clean up the beach during the summer."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["volunteering (noun)", "voluntary (adj)"],
+      "metadata": { "tags": ["hobbies", "community", "free time"] }
+    },
+    {
+      "word": "meditate",
+      "level": "B1",
+      "phonetic": "/ˈmɛdɪteɪt/",
+      "definitions": [{ "pos": "verb", "meaning": "thiền định, ngồi thiền" }],
+      "examples": [
+        "He meditates for twenty minutes each morning before breakfast.",
+        "Many people meditate to reduce stress and improve focus."
+      ],
+      "synonyms": ["reflect", "contemplate"],
+      "antonyms": [],
+      "family_words": ["meditation (noun)", "meditative (adj)"],
+      "metadata": { "tags": ["hobbies", "wellness", "free time"] }
+    },
+    {
+      "word": "journal",
+      "level": "B1",
+      "phonetic": "/ˈdʒɜːnəl/",
+      "definitions": [
+        { "pos": "noun", "meaning": "nhật ký, sổ ghi chép cá nhân" },
+        { "pos": "verb", "meaning": "viết nhật ký" }
+      ],
+      "examples": [
+        "She writes in her journal every night before going to sleep.",
+        "Keeping a journal helps him track his thoughts and feelings."
+      ],
+      "synonyms": ["diary", "log"],
+      "antonyms": [],
+      "family_words": ["journaling (noun)", "journalist (noun)"],
+      "metadata": { "tags": ["hobbies", "creative", "writing"] }
+    },
+    {
+      "word": "play",
+      "level": "A1",
+      "phonetic": "/pleɪ/",
+      "definitions": [
+        { "pos": "verb", "meaning": "chơi, biểu diễn (nhạc cụ)" },
+        { "pos": "noun", "meaning": "trò chơi, vở kịch" }
+      ],
+      "examples": [
+        "She plays the guitar at small cafes on Friday evenings.",
+        "The children play in the park after school every day."
+      ],
+      "synonyms": ["perform", "engage in"],
+      "antonyms": ["work"],
+      "family_words": ["player (noun)", "playful (adj)"],
+      "metadata": { "tags": ["hobbies", "leisure", "free time"] }
+    },
+    {
+      "word": "dance",
+      "level": "A1",
+      "phonetic": "/dɑːns/",
+      "definitions": [
+        { "pos": "verb", "meaning": "nhảy múa, khiêu vũ" },
+        { "pos": "noun", "meaning": "điệu nhảy, buổi khiêu vũ" }
+      ],
+      "examples": [
+        "She dances salsa every Thursday evening at the community centre.",
+        "They took dance lessons together before their wedding."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["dancer (noun)", "dancing (noun)"],
+      "metadata": { "tags": ["hobbies", "art", "sport"] }
+    },
+    {
+      "word": "sing",
+      "level": "A1",
+      "phonetic": "/sɪŋ/",
+      "definitions": [{ "pos": "verb", "meaning": "hát, ca hát" }],
+      "examples": [
+        "He sings in a local choir every Sunday morning.",
+        "She loves to sing along to songs on the radio while driving."
+      ],
+      "synonyms": ["perform", "chant"],
+      "antonyms": [],
+      "family_words": ["singer (noun)", "song (noun)", "singing (noun)"],
+      "metadata": { "tags": ["hobbies", "music", "creative"] }
+    },
+    {
+      "word": "travel",
+      "level": "A1",
+      "phonetic": "/ˈtrævəl/",
+      "definitions": [
+        { "pos": "verb", "meaning": "du lịch, đi lại" },
+        { "pos": "noun", "meaning": "chuyến du lịch, việc đi lại" }
+      ],
+      "examples": [
+        "She travels to a new country at least once a year.",
+        "Budget travel has become more popular among young people."
+      ],
+      "synonyms": ["journey", "explore"],
+      "antonyms": [],
+      "family_words": ["traveller (noun)", "traveller (noun)", "travelogue (noun)"],
+      "metadata": { "tags": ["hobbies", "leisure", "outdoor"] }
+    },
+    {
+      "word": "swim",
+      "level": "A1",
+      "phonetic": "/swɪm/",
+      "definitions": [{ "pos": "verb", "meaning": "bơi lội" }],
+      "examples": [
+        "He swims at the local pool three times a week to stay fit.",
+        "She learned to swim when she was just four years old."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["swimmer (noun)", "swimming (noun)"],
+      "metadata": { "tags": ["hobbies", "sport", "outdoor"] }
+    },
+    {
+      "word": "cycle",
+      "level": "A2",
+      "phonetic": "/ˈsaɪkəl/",
+      "definitions": [{ "pos": "verb", "meaning": "đạp xe, đi xe đạp" }],
+      "examples": [
+        "They cycle along the river path every weekend.",
+        "She cycles to work to save money and exercise at the same time."
+      ],
+      "synonyms": ["bike", "ride"],
+      "antonyms": [],
+      "family_words": ["cycling (noun)", "cyclist (noun)", "bicycle (noun)"],
+      "metadata": { "tags": ["hobbies", "sport", "outdoor"] }
+    },
+    {
+      "word": "watch",
+      "level": "A1",
+      "phonetic": "/wɒtʃ/",
+      "definitions": [{ "pos": "verb", "meaning": "xem, theo dõi" }],
+      "examples": [
+        "He watches documentaries about history in his spare time.",
+        "They watch a film together every Friday night as a family tradition."
+      ],
+      "synonyms": ["view", "observe"],
+      "antonyms": [],
+      "family_words": ["watcher (noun)", "watchable (adj)"],
+      "metadata": { "tags": ["hobbies", "leisure", "free time"] }
+    },
+    {
+      "word": "read",
+      "level": "A1",
+      "phonetic": "/riːd/",
+      "definitions": [{ "pos": "verb", "meaning": "đọc sách, đọc tài liệu" }],
+      "examples": [
+        "She reads at least one book a month to expand her knowledge.",
+        "He reads the newspaper every morning with a cup of coffee."
+      ],
+      "synonyms": ["study", "browse"],
+      "antonyms": [],
+      "family_words": ["reader (noun)", "reading (noun)", "readable (adj)"],
+      "metadata": { "tags": ["hobbies", "leisure", "learning"] }
+    },
+    {
+      "word": "relax",
+      "level": "A2",
+      "phonetic": "/rɪˈlæks/",
+      "definitions": [{ "pos": "verb", "meaning": "thư giãn, nghỉ ngơi" }],
+      "examples": [
+        "She likes to relax in the garden with a good book after work.",
+        "Listening to music helps him relax when he feels stressed."
+      ],
+      "synonyms": ["unwind", "rest"],
+      "antonyms": ["stress", "tense"],
+      "family_words": ["relaxation (noun)", "relaxing (adj)", "relaxed (adj)"],
+      "metadata": { "tags": ["leisure", "free time", "wellness"] }
+    },
+    {
+      "word": "explore",
+      "level": "A2",
+      "phonetic": "/ɪkˈsplɔːr/",
+      "definitions": [{ "pos": "verb", "meaning": "khám phá, tìm hiểu" }],
+      "examples": [
+        "They love to explore new neighbourhoods whenever they visit a city.",
+        "She spends her holidays exploring local markets and hidden cafes."
+      ],
+      "synonyms": ["discover", "investigate"],
+      "antonyms": [],
+      "family_words": ["exploration (noun)", "explorer (noun)"],
+      "metadata": { "tags": ["hobbies", "outdoor", "leisure"] }
+    },
+    {
+      "word": "paint",
+      "level": "A1",
+      "phonetic": "/peɪnt/",
+      "definitions": [
+        { "pos": "verb", "meaning": "vẽ tranh, tô màu" },
+        { "pos": "noun", "meaning": "sơn, màu vẽ" }
+      ],
+      "examples": [
+        "She paints watercolour landscapes on Sunday afternoons.",
+        "He started to paint as a way to express his emotions during difficult times."
+      ],
+      "synonyms": ["draw", "illustrate"],
+      "antonyms": [],
+      "family_words": ["painter (noun)", "painting (noun)"],
+      "metadata": { "tags": ["hobbies", "creative", "art"] }
+    }
+  ]
+}

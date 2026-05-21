@@ -2,7 +2,7 @@ use reemember::db::init_db;
 use reemember::bilingual::{BilingualRepository, parse_bilingual_json};
 use reemember::grammar::{GrammarRepository, parse_grammar_json, parse_grammar_md};
 use reemember::model::{Collection, Topic};
-use reemember::repository::{QueryOptions, SortBy, WordRepository};
+use reemember::repository::{BatchImportItem, QueryOptions, SortBy, WordRepository, Stats};
 use reemember::service::VocabularyService;
 use reemember::testing::QuestionDirection;
 use reemember::testing::{Question, TestMode, TestingOptions};
@@ -48,6 +48,7 @@ pub struct QuestionDto {
     pub prompt: String,
     pub word: Option<String>,
     pub phonetic: Option<String>,
+    pub level: Option<String>,
     pub examples: Vec<String>,
     pub expected_answers: Vec<String>,
     pub synonyms: Vec<String>,
@@ -75,9 +76,11 @@ pub struct WordSummaryDto {
     pub tags: Vec<String>,
     pub review_count: u32,
     pub examples_count: usize,
+    pub examples: Vec<String>,
     pub synonyms: Vec<String>,
     pub antonyms: Vec<String>,
     pub family_words: Vec<String>,
+    pub level: Option<String>,
 }
 
 // ── Collection / Topic DTOs ───────────────────────────────────────────────────
@@ -98,6 +101,43 @@ pub struct TopicDto {
     pub collection_id: i64,
     pub name: String,
     pub description: Option<String>,
+}
+
+// ── Stats DTO ─────────────────────────────────────────────────────────────────
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct StatsDto {
+    pub streak_days: u32,
+    pub today_reviews: u32,
+    pub today_correct: u32,
+    pub total_words: u32,
+    pub due_count: u32,
+    pub all_time_reviews: u32,
+    pub all_time_correct: u32,
+}
+
+impl From<Stats> for StatsDto {
+    fn from(s: Stats) -> Self {
+        StatsDto {
+            streak_days: s.streak_days,
+            today_reviews: s.today_reviews,
+            today_correct: s.today_correct,
+            total_words: s.total_words,
+            due_count: s.due_count,
+            all_time_reviews: s.all_time_reviews,
+            all_time_correct: s.all_time_correct,
+        }
+    }
+}
+
+#[tauri::command]
+pub fn get_stats() -> Result<StatsDto, String> {
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
+    let repo = WordRepository::new(conn);
+    repo.get_stats()
+        .map(StatsDto::from)
+        .map_err(|e| e.to_string())
 }
 
 // ── Import/Export DTOs ────────────────────────────────────────────────────────
@@ -247,9 +287,11 @@ pub fn list_words(payload: Option<ListWordsRequest>) -> Result<Vec<WordSummaryDt
                 tags: r.metadata.tags,
                 review_count: r.metadata.review_count,
                 examples_count,
+                examples: r.examples,
                 synonyms: r.synonyms,
                 antonyms: r.antonyms,
                 family_words: r.family_words,
+                level: r.level,
             }
         })
         .collect())
@@ -412,6 +454,59 @@ pub fn import_vocabulary(payload: ImportVocabularyRequest) -> Result<ImportRepor
         skipped_count: report.skipped_count,
         error_count: 0,
         errors: vec![],
+    })
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct BatchImportFileRequest {
+    pub content: String,
+    pub file_name: String,
+    pub collection_name: Option<String>,
+    pub topic_name: Option<String>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct BatchImportResultDto {
+    pub total_inserted: usize,
+    pub total_updated: usize,
+    pub file_count: usize,
+}
+
+#[tauri::command]
+pub fn import_vocabulary_batch(files: Vec<BatchImportFileRequest>) -> Result<BatchImportResultDto, String> {
+    use reemember::parser::parse_json_bundle;
+
+    // Phase 1: parse all JSON up front; fail before touching the DB
+    let mut items: Vec<BatchImportItem> = Vec::new();
+    for file in &files {
+        let bundle = parse_json_bundle(&file.content)
+            .map_err(|e| format!("{}: {}", file.file_name, e))?;
+
+        let col = file.collection_name.clone()
+            .or_else(|| bundle.collection.clone());
+        let topic = file.topic_name.clone()
+            .or_else(|| bundle.topic.clone());
+
+        for record in bundle.words {
+            items.push(BatchImportItem {
+                record,
+                collection_name: col.clone(),
+                topic_name: topic.clone(),
+            });
+        }
+    }
+
+    // Phase 2: single atomic transaction — rollback everything on any error
+    let conn = init_db(DB_PATH).map_err(|e| e.to_string())?;
+    let repo = WordRepository::new(conn);
+    let report = repo.import_batch_atomic(&items).map_err(|e| e.to_string())?;
+
+    Ok(BatchImportResultDto {
+        total_inserted: report.inserted,
+        total_updated: report.updated,
+        file_count: files.len(),
     })
 }
 
@@ -614,6 +709,7 @@ fn from_question(question: Question) -> QuestionDto {
         prompt: question.prompt,
         word: question.word,
         phonetic: question.phonetic,
+        level: question.level,
         examples: question.examples,
         expected_answers: question.expected_answers,
         synonyms: question.synonyms,
@@ -634,6 +730,7 @@ fn to_question(dto: &QuestionDto) -> Result<Question, String> {
         prompt: dto.prompt.clone(),
         word: dto.word.clone(),
         phonetic: dto.phonetic.clone(),
+        level: dto.level.clone(),
         examples: dto.examples.clone(),
         expected_answers: dto.expected_answers.clone(),
         synonyms: dto.synonyms.clone(),

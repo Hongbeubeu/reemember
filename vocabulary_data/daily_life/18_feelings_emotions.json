@@ -1,0 +1,356 @@
+{
+  "collection": "Daily Life",
+  "topic": "Feelings & Emotions",
+  "words": [
+    {
+      "word": "overwhelmed",
+      "level": "B2",
+      "phonetic": "/ˌoʊvərˈwelmd/",
+      "definitions": [{ "pos": "adjective", "meaning": "bị áp đảo, quá tải, không thể đối phó được" }],
+      "examples": [
+        "She felt overwhelmed by the amount of work she had to do.",
+        "Moving to a new city can feel overwhelming at first."
+      ],
+      "synonyms": ["swamped", "stressed", "inundated"],
+      "antonyms": ["calm", "composed"],
+      "family_words": ["overwhelm", "overwhelming"],
+      "metadata": { "tags": ["emotions", "mental health"] }
+    },
+    {
+      "word": "anxious",
+      "level": "B1",
+      "phonetic": "/ˈæŋkʃəs/",
+      "definitions": [{ "pos": "adjective", "meaning": "lo lắng, hồi hộp, bồn chồn" }],
+      "examples": [
+        "He felt anxious before the job interview and couldn't sleep.",
+        "She gets anxious in large crowds and prefers smaller gatherings."
+      ],
+      "synonyms": ["worried", "nervous", "uneasy"],
+      "antonyms": ["calm", "relaxed", "at ease"],
+      "family_words": ["anxiety", "anxiously"],
+      "metadata": { "tags": ["emotions", "mental health", "feelings"] }
+    },
+    {
+      "word": "content",
+      "level": "B2",
+      "phonetic": "/kənˈtent/",
+      "definitions": [{ "pos": "adjective", "meaning": "mãn nguyện, hài lòng, thỏa mãn" }],
+      "examples": [
+        "She was content with a simple life in the countryside.",
+        "After a good meal with family, he felt truly content."
+      ],
+      "synonyms": ["satisfied", "pleased", "fulfilled"],
+      "antonyms": ["dissatisfied", "restless", "discontent"],
+      "family_words": ["contentment", "contentedly"],
+      "metadata": { "tags": ["emotions", "feelings", "positive"] }
+    },
+    {
+      "word": "frustrated",
+      "level": "B1",
+      "phonetic": "/ˈfrʌstreɪtɪd/",
+      "definitions": [{ "pos": "adjective", "meaning": "bực bội, thất vọng vì không đạt được điều mình muốn" }],
+      "examples": [
+        "He was frustrated when his computer crashed right before saving his work.",
+        "She felt frustrated that nobody was listening to her ideas."
+      ],
+      "synonyms": ["annoyed", "exasperated", "irritated"],
+      "antonyms": ["satisfied", "pleased", "relieved"],
+      "family_words": ["frustrate", "frustration", "frustrating"],
+      "metadata": { "tags": ["emotions", "feelings", "negative"] }
+    },
+    {
+      "word": "grateful",
+      "level": "B1",
+      "phonetic": "/ˈɡreɪtfəl/",
+      "definitions": [{ "pos": "adjective", "meaning": "biết ơn, cảm kích" }],
+      "examples": [
+        "She was deeply grateful for all the support her friends gave her.",
+        "He wrote a thank-you note to show how grateful he felt."
+      ],
+      "synonyms": ["thankful", "appreciative"],
+      "antonyms": ["ungrateful", "unappreciative"],
+      "family_words": ["gratitude", "gratefully"],
+      "metadata": { "tags": ["emotions", "feelings", "positive"] }
+    },
+    {
+      "word": "melancholy",
+      "level": "C1",
+      "phonetic": "/ˈmelənkɒli/",
+      "definitions": [{ "pos": "noun", "meaning": "nỗi u sầu, cảm giác buồn bã kéo dài, ưu tư" }, { "pos": "adjective", "meaning": "u sầu, buồn bã, ảm đạm" }],
+      "examples": [
+        "A sense of melancholy came over her as she looked at old photographs.",
+        "The rainy afternoon gave the whole town a melancholy feeling."
+      ],
+      "synonyms": ["sadness", "gloom", "sorrow"],
+      "antonyms": ["cheerfulness", "joy", "elation"],
+      "family_words": ["melancholic"],
+      "metadata": { "tags": ["emotions", "feelings", "negative"] }
+    },
+    {
+      "word": "relieved",
+      "level": "B1",
+      "phonetic": "/rɪˈliːvd/",
+      "definitions": [{ "pos": "adjective", "meaning": "nhẹ nhõm, thoải mái sau khi lo lắng hoặc căng thẳng" }],
+      "examples": [
+        "She was relieved to hear that her test results were normal.",
+        "He felt relieved when he finally finished the difficult project."
+      ],
+      "synonyms": ["reassured", "comforted", "eased"],
+      "antonyms": ["anxious", "worried", "tense"],
+      "family_words": ["relief", "relieve"],
+      "metadata": { "tags": ["emotions", "feelings", "positive"] }
+    },
+    {
+      "word": "jealous",
+      "level": "A2",
+      "phonetic": "/ˈdʒeləs/",
+      "definitions": [{ "pos": "adjective", "meaning": "ghen tị, đố kỵ" }],
+      "examples": [
+        "He was jealous of his colleague's promotion and struggled to hide it.",
+        "She felt jealous when she saw her ex with someone new."
+      ],
+      "synonyms": ["envious", "resentful", "covetous"],
+      "antonyms": ["secure", "trusting", "content"],
+      "family_words": ["jealousy", "jealously"],
+      "metadata": { "tags": ["emotions", "feelings", "negative"] }
+    },
+    {
+      "word": "proud",
+      "level": "A2",
+      "phonetic": "/praʊd/",
+      "definitions": [{ "pos": "adjective", "meaning": "tự hào, hãnh diện" }],
+      "examples": [
+        "Her parents were proud of her when she graduated at the top of her class.",
+        "He felt proud after completing his first marathon."
+      ],
+      "synonyms": ["pleased", "honoured", "satisfied"],
+      "antonyms": ["ashamed", "embarrassed", "humiliated"],
+      "family_words": ["pride", "proudly"],
+      "metadata": { "tags": ["emotions", "feelings", "positive"] }
+    },
+    {
+      "word": "ashamed",
+      "level": "B1",
+      "phonetic": "/əˈʃeɪmd/",
+      "definitions": [{ "pos": "adjective", "meaning": "xấu hổ, hổ thẹn về hành động của mình" }],
+      "examples": [
+        "She was ashamed of how she had treated her friend and apologised immediately.",
+        "He felt ashamed for lying, even though no one found out."
+      ],
+      "synonyms": ["embarrassed", "guilty", "remorseful"],
+      "antonyms": ["proud", "unashamed", "shameless"],
+      "family_words": ["shame", "shameful", "shamefully"],
+      "metadata": { "tags": ["emotions", "feelings", "negative"] }
+    },
+    {
+      "word": "thrilled",
+      "level": "B1",
+      "phonetic": "/θrɪld/",
+      "definitions": [{ "pos": "adjective", "meaning": "phấn khích, vô cùng vui mừng" }],
+      "examples": [
+        "She was thrilled to get tickets to her favourite band's concert.",
+        "The children were thrilled when they saw the snow for the first time."
+      ],
+      "synonyms": ["excited", "delighted", "ecstatic"],
+      "antonyms": ["disappointed", "indifferent", "bored"],
+      "family_words": ["thrill", "thrilling", "thrillingly"],
+      "metadata": { "tags": ["emotions", "feelings", "positive"] }
+    },
+    {
+      "word": "embarrassed",
+      "level": "B1",
+      "phonetic": "/ɪmˈbærəst/",
+      "definitions": [{ "pos": "adjective", "meaning": "ngượng ngùng, bối rối vì xấu hổ trước người khác" }],
+      "examples": [
+        "He was embarrassed when he called his teacher 'Mum' by accident.",
+        "She felt embarrassed about forgetting her colleague's name."
+      ],
+      "synonyms": ["self-conscious", "flustered", "humiliated"],
+      "antonyms": ["confident", "composed", "proud"],
+      "family_words": ["embarrassment", "embarrassing", "embarrassingly"],
+      "metadata": { "tags": ["emotions", "feelings", "negative"] }
+    },
+    {
+      "word": "lonely",
+      "level": "A2",
+      "phonetic": "/ˈloʊnli/",
+      "definitions": [{ "pos": "adjective", "meaning": "cô đơn, cảm thấy thiếu sự kết nối với người khác" }],
+      "examples": [
+        "Living alone in a new city made her feel lonely at first.",
+        "He was surrounded by people but still felt lonely inside."
+      ],
+      "synonyms": ["isolated", "solitary", "friendless"],
+      "antonyms": ["connected", "accompanied", "sociable"],
+      "family_words": ["loneliness", "lone"],
+      "metadata": { "tags": ["emotions", "feelings", "mental health", "negative"] }
+    },
+    {
+      "word": "hopeful",
+      "level": "B1",
+      "phonetic": "/ˈhoʊpfəl/",
+      "definitions": [{ "pos": "adjective", "meaning": "đầy hy vọng, lạc quan về tương lai" }],
+      "examples": [
+        "Despite the setbacks, she remained hopeful that things would improve.",
+        "He was hopeful about his chances of getting the job after the interview."
+      ],
+      "synonyms": ["optimistic", "encouraged", "positive"],
+      "antonyms": ["hopeless", "pessimistic", "discouraged"],
+      "family_words": ["hope", "hopefully", "hopeless"],
+      "metadata": { "tags": ["emotions", "feelings", "positive"] }
+    },
+    {
+      "word": "irritated",
+      "level": "B1",
+      "phonetic": "/ˈɪrɪteɪtɪd/",
+      "definitions": [{ "pos": "adjective", "meaning": "bực mình, khó chịu vì điều gì đó nhỏ nhặt" }],
+      "examples": [
+        "She was irritated by the constant noise coming from next door.",
+        "He got irritated when the meeting ran over its scheduled time."
+      ],
+      "synonyms": ["annoyed", "agitated", "bothered"],
+      "antonyms": ["pleased", "patient", "calm"],
+      "family_words": ["irritate", "irritation", "irritating"],
+      "metadata": { "tags": ["emotions", "feelings", "negative"] }
+    },
+    {
+      "word": "nostalgic",
+      "level": "B2",
+      "phonetic": "/nɒˈstældʒɪk/",
+      "definitions": [{ "pos": "adjective", "meaning": "hoài niệm, nhớ về quá khứ với tình cảm ấm áp và đôi chút tiếc nuối" }],
+      "examples": [
+        "Hearing that old song made her feel nostalgic about her school days.",
+        "He became nostalgic when he visited his hometown after ten years."
+      ],
+      "synonyms": ["sentimental", "wistful", "reminiscent"],
+      "antonyms": [],
+      "family_words": ["nostalgia", "nostalgically"],
+      "metadata": { "tags": ["emotions", "feelings"] }
+    },
+    {
+      "word": "confident",
+      "level": "B1",
+      "phonetic": "/ˈkɒnfɪdənt/",
+      "definitions": [{ "pos": "adjective", "meaning": "tự tin, tin tưởng vào khả năng của bản thân" }],
+      "examples": [
+        "She walked into the room feeling confident and ready to present her ideas.",
+        "He became more confident after practising his speech several times."
+      ],
+      "synonyms": ["self-assured", "bold", "secure"],
+      "antonyms": ["insecure", "shy", "doubtful"],
+      "family_words": ["confidence", "confidently"],
+      "metadata": { "tags": ["emotions", "feelings", "positive"] }
+    },
+    {
+      "word": "guilty",
+      "level": "B1",
+      "phonetic": "/ˈɡɪlti/",
+      "definitions": [{ "pos": "adjective", "meaning": "cảm thấy có lỗi, mang cảm giác tội lỗi" }],
+      "examples": [
+        "She felt guilty about eating the last piece of cake without asking.",
+        "He had a guilty conscience after cancelling on his friend at the last minute."
+      ],
+      "synonyms": ["remorseful", "ashamed", "regretful"],
+      "antonyms": ["innocent", "guiltless", "unashamed"],
+      "family_words": ["guilt", "guiltily"],
+      "metadata": { "tags": ["emotions", "feelings", "negative"] }
+    },
+    {
+      "word": "curious",
+      "level": "A2",
+      "phonetic": "/ˈkjʊəriəs/",
+      "definitions": [{ "pos": "adjective", "meaning": "tò mò, muốn tìm hiểu hoặc biết thêm" }],
+      "examples": [
+        "She was curious about the new neighbour who had just moved in.",
+        "Children are naturally curious and love asking questions."
+      ],
+      "synonyms": ["inquisitive", "interested", "eager to know"],
+      "antonyms": ["indifferent", "uninterested", "apathetic"],
+      "family_words": ["curiosity", "curiously"],
+      "metadata": { "tags": ["emotions", "feelings"] }
+    },
+    {
+      "word": "bored",
+      "level": "A2",
+      "phonetic": "/bɔːrd/",
+      "definitions": [{ "pos": "adjective", "meaning": "chán nản, không hứng thú vì thiếu kích thích" }],
+      "examples": [
+        "He was bored during the long meeting because none of the topics were relevant to him.",
+        "She felt bored on rainy days when she had nothing to do."
+      ],
+      "synonyms": ["uninterested", "restless", "apathetic"],
+      "antonyms": ["engaged", "interested", "excited"],
+      "family_words": ["boredom", "boring", "boringly"],
+      "metadata": { "tags": ["emotions", "feelings", "negative"] }
+    },
+    {
+      "word": "heartbroken",
+      "level": "B1",
+      "phonetic": "/ˈhɑːrtˌbroʊkən/",
+      "definitions": [{ "pos": "adjective", "meaning": "tan nát cõi lòng, đau khổ tột cùng vì mất mát hoặc thất tình" }],
+      "examples": [
+        "She was heartbroken when her relationship of five years came to an end.",
+        "He was heartbroken after losing his beloved dog."
+      ],
+      "synonyms": ["devastated", "grief-stricken", "crushed"],
+      "antonyms": ["joyful", "elated", "overjoyed"],
+      "family_words": ["heartbreak"],
+      "metadata": { "tags": ["emotions", "feelings", "negative"] }
+    },
+    {
+      "word": "at ease",
+      "level": "B1",
+      "phonetic": "/ət iːz/",
+      "definitions": [{ "pos": "adjective", "meaning": "thoải mái, không căng thẳng, cảm thấy yên bình" }],
+      "examples": [
+        "She felt at ease in the company of old friends.",
+        "His calm voice put the nervous patient at ease."
+      ],
+      "synonyms": ["relaxed", "comfortable", "calm"],
+      "antonyms": ["tense", "nervous", "uncomfortable"],
+      "family_words": [],
+      "metadata": { "tags": ["emotions", "feelings", "positive"] }
+    },
+    {
+      "word": "bitter",
+      "level": "B1",
+      "phonetic": "/ˈbɪtər/",
+      "definitions": [{ "pos": "adjective", "meaning": "cay đắng, oán hận do bị đối xử bất công hoặc thất vọng" }],
+      "examples": [
+        "He was bitter about losing the promotion to a less experienced colleague.",
+        "She tried not to feel bitter after the breakup, but it was difficult."
+      ],
+      "synonyms": ["resentful", "embittered", "sour"],
+      "antonyms": ["forgiving", "content", "grateful"],
+      "family_words": ["bitterness", "bitterly"],
+      "metadata": { "tags": ["emotions", "feelings", "negative"] }
+    },
+    {
+      "word": "moved",
+      "level": "B2",
+      "phonetic": "/muːvd/",
+      "definitions": [{ "pos": "adjective", "meaning": "xúc động, cảm động sâu sắc" }],
+      "examples": [
+        "She was deeply moved by the soldier's story of sacrifice.",
+        "He was moved to tears watching his daughter's first dance recital."
+      ],
+      "synonyms": ["touched", "affected", "stirred"],
+      "antonyms": ["unmoved", "indifferent", "cold"],
+      "family_words": ["move", "moving", "movingly"],
+      "metadata": { "tags": ["emotions", "feelings"] }
+    },
+    {
+      "word": "insecure",
+      "level": "B2",
+      "phonetic": "/ˌɪnsɪˈkjʊər/",
+      "definitions": [{ "pos": "adjective", "meaning": "thiếu tự tin, không chắc chắn về bản thân, dễ bị lung lay" }],
+      "examples": [
+        "She felt insecure about her English and avoided speaking in meetings.",
+        "Growing up without stability made him feel insecure in relationships."
+      ],
+      "synonyms": ["self-doubting", "uncertain", "vulnerable"],
+      "antonyms": ["confident", "secure", "self-assured"],
+      "family_words": ["insecurity", "insecurely"],
+      "metadata": { "tags": ["emotions", "feelings", "mental health", "negative"] }
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "collection": "Daily Life",
+  "topic": "Clothing & Fashion",
+  "words": [
+    {
+      "word": "outfit",
+      "level": "A2",
+      "phonetic": "/ˈaʊtfɪt/",
+      "definitions": [{ "pos": "noun", "meaning": "bộ trang phục, bộ quần áo" }],
+      "examples": [
+        "She put together a stylish outfit for the party.",
+        "He changed his outfit three times before the interview."
+      ],
+      "synonyms": ["ensemble", "attire"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["clothing", "fashion", "style"] }
+    },
+    {
+      "word": "sleeve",
+      "level": "A2",
+      "phonetic": "/sliːv/",
+      "definitions": [{ "pos": "noun", "meaning": "tay áo, ống tay" }],
+      "examples": [
+        "She rolled up her sleeves before washing the dishes.",
+        "This shirt has short sleeves, which is perfect for summer."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["sleeveless"],
+      "metadata": { "tags": ["clothing", "parts-of-clothing"] }
+    },
+    {
+      "word": "collar",
+      "level": "A2",
+      "phonetic": "/ˈkɒlər/",
+      "definitions": [{ "pos": "noun", "meaning": "cổ áo" }],
+      "examples": [
+        "His shirt collar was too tight and uncomfortable.",
+        "She turned up her collar to keep out the cold wind."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["clothing", "parts-of-clothing"] }
+    },
+    {
+      "word": "fabric",
+      "level": "B1",
+      "phonetic": "/ˈfæbrɪk/",
+      "definitions": [{ "pos": "noun", "meaning": "vải, chất liệu vải" }],
+      "examples": [
+        "This dress is made from a lightweight cotton fabric.",
+        "The fabric of the jacket feels very soft and smooth."
+      ],
+      "synonyms": ["material", "cloth", "textile"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["clothing", "materials", "fashion"] }
+    },
+    {
+      "word": "cotton",
+      "level": "A1",
+      "phonetic": "/ˈkɒtən/",
+      "definitions": [{ "pos": "noun", "meaning": "vải cotton, sợi bông" }, { "pos": "adjective", "meaning": "làm bằng cotton" }],
+      "examples": [
+        "Pure cotton T-shirts are comfortable to wear in hot weather.",
+        "She prefers cotton sheets because they are breathable."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["clothing", "materials"] }
+    },
+    {
+      "word": "linen",
+      "level": "B1",
+      "phonetic": "/ˈlɪnɪn/",
+      "definitions": [{ "pos": "noun", "meaning": "vải lanh" }, { "pos": "adjective", "meaning": "làm bằng vải lanh" }],
+      "examples": [
+        "Linen trousers are a great choice for a beach holiday.",
+        "She wore a white linen blouse to the outdoor event."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["clothing", "materials"] }
+    },
+    {
+      "word": "casual",
+      "level": "A2",
+      "phonetic": "/ˈkæʒuəl/",
+      "definitions": [{ "pos": "adjective", "meaning": "bình thường, thoải mái, không trang trọng" }],
+      "examples": [
+        "On Fridays, employees are allowed to wear casual clothes to the office.",
+        "He prefers casual style — jeans and a simple T-shirt."
+      ],
+      "synonyms": ["relaxed", "informal"],
+      "antonyms": ["formal", "smart"],
+      "family_words": ["casually", "casualness"],
+      "metadata": { "tags": ["clothing", "style", "fashion"] }
+    },
+    {
+      "word": "formal",
+      "level": "A2",
+      "phonetic": "/ˈfɔːrməl/",
+      "definitions": [{ "pos": "adjective", "meaning": "trang trọng, lịch sự (về trang phục)" }],
+      "examples": [
+        "You must wear formal attire to attend the dinner ceremony.",
+        "She bought a new dress for the formal company event."
+      ],
+      "synonyms": ["smart", "professional", "elegant"],
+      "antonyms": ["casual", "informal"],
+      "family_words": ["formally", "formality"],
+      "metadata": { "tags": ["clothing", "style", "fashion"] }
+    },
+    {
+      "word": "wear",
+      "level": "A1",
+      "phonetic": "/wɛr/",
+      "definitions": [{ "pos": "verb", "meaning": "mặc, đeo, đội (quần áo, phụ kiện)" }],
+      "examples": [
+        "She wears a different hat every day.",
+        "He always wears a tie when he goes to work."
+      ],
+      "synonyms": ["put on", "have on", "dress in"],
+      "antonyms": ["take off", "remove"],
+      "family_words": ["wore", "worn", "wearable", "outerwear", "underwear"],
+      "metadata": { "tags": ["clothing", "fashion", "verbs"] }
+    },
+    {
+      "word": "fit",
+      "level": "A2",
+      "phonetic": "/fɪt/",
+      "definitions": [{ "pos": "verb", "meaning": "vừa vặn, hợp với (kích cỡ hoặc hình dáng)" }, { "pos": "noun", "meaning": "sự vừa vặn của quần áo" }],
+      "examples": [
+        "These jeans fit perfectly — not too tight, not too loose.",
+        "The jacket doesn't fit her well; the shoulders are too wide."
+      ],
+      "synonyms": ["suit", "match"],
+      "antonyms": [],
+      "family_words": ["fitting", "fitted", "well-fitted"],
+      "metadata": { "tags": ["clothing", "fashion", "verbs"] }
+    },
+    {
+      "word": "suit",
+      "level": "A2",
+      "phonetic": "/suːt/",
+      "definitions": [{ "pos": "verb", "meaning": "phù hợp, làm tôn lên vẻ đẹp của ai" }, { "pos": "noun", "meaning": "bộ vest, bộ com-lê" }],
+      "examples": [
+        "That color really suits you — it matches your eyes.",
+        "He wore a dark blue suit to the job interview."
+      ],
+      "synonyms": ["become", "flatter"],
+      "antonyms": [],
+      "family_words": ["suitable", "suitably", "unsuitable"],
+      "metadata": { "tags": ["clothing", "fashion", "verbs"] }
+    },
+    {
+      "word": "try on",
+      "level": "A2",
+      "phonetic": "/traɪ ɒn/",
+      "definitions": [{ "pos": "phrasal verb", "meaning": "mặc thử, đeo thử (quần áo, giày dép)" }],
+      "examples": [
+        "Can I try on these shoes in size 38?",
+        "She tried on five dresses before finding the right one."
+      ],
+      "synonyms": ["test", "put on"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["clothing", "shopping", "verbs"] }
+    },
+    {
+      "word": "match",
+      "level": "A2",
+      "phonetic": "/mætʃ/",
+      "definitions": [{ "pos": "verb", "meaning": "phối hợp màu sắc hoặc phong cách với nhau" }],
+      "examples": [
+        "Her bag matches her shoes perfectly.",
+        "Try to match your belt with your shoes for a polished look."
+      ],
+      "synonyms": ["coordinate", "go with", "complement"],
+      "antonyms": ["clash"],
+      "family_words": ["matching", "mismatched"],
+      "metadata": { "tags": ["clothing", "fashion", "style", "verbs"] }
+    },
+    {
+      "word": "loose",
+      "level": "A2",
+      "phonetic": "/luːs/",
+      "definitions": [{ "pos": "adjective", "meaning": "rộng, không bó sát người" }],
+      "examples": [
+        "She likes wearing loose trousers when she works from home.",
+        "The shirt is a bit loose on him; he should try a smaller size."
+      ],
+      "synonyms": ["baggy", "oversized", "relaxed"],
+      "antonyms": ["tight", "fitted", "slim"],
+      "family_words": ["loosely", "loosen"],
+      "metadata": { "tags": ["clothing", "fit", "style"] }
+    },
+    {
+      "word": "tight",
+      "level": "A2",
+      "phonetic": "/taɪt/",
+      "definitions": [{ "pos": "adjective", "meaning": "chật, bó sát người" }],
+      "examples": [
+        "These jeans are too tight; I can hardly move in them.",
+        "She wore a tight black dress to the evening party."
+      ],
+      "synonyms": ["fitted", "snug", "close-fitting"],
+      "antonyms": ["loose", "baggy"],
+      "family_words": ["tightly", "tighten"],
+      "metadata": { "tags": ["clothing", "fit"] }
+    },
+    {
+      "word": "accessory",
+      "level": "B1",
+      "phonetic": "/əkˈsɛsəri/",
+      "definitions": [{ "pos": "noun", "meaning": "phụ kiện thời trang (túi xách, thắt lưng, khăn,...)" }],
+      "examples": [
+        "A simple scarf can be a great accessory to brighten up an outfit.",
+        "She bought several accessories to go with her new dress."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["accessories"],
+      "metadata": { "tags": ["fashion", "accessories"] }
+    },
+    {
+      "word": "scarf",
+      "level": "A1",
+      "phonetic": "/skɑːrf/",
+      "definitions": [{ "pos": "noun", "meaning": "khăn quàng cổ, khăn choàng" }],
+      "examples": [
+        "She wrapped a warm woolen scarf around her neck.",
+        "He wore a silk scarf to add a touch of elegance to his outfit."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["scarves"],
+      "metadata": { "tags": ["clothing", "accessories"] }
+    },
+    {
+      "word": "belt",
+      "level": "A1",
+      "phonetic": "/bɛlt/",
+      "definitions": [{ "pos": "noun", "meaning": "thắt lưng, dây đai" }],
+      "examples": [
+        "He tightened his belt after losing weight.",
+        "A leather belt can pull the whole outfit together."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["clothing", "accessories"] }
+    },
+    {
+      "word": "heel",
+      "level": "A2",
+      "phonetic": "/hiːl/",
+      "definitions": [{ "pos": "noun", "meaning": "gót giày, giày cao gót" }],
+      "examples": [
+        "She can walk comfortably in high heels all day.",
+        "He prefers flat shoes over heels for long walks."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["high-heeled", "heels"],
+      "metadata": { "tags": ["clothing", "footwear", "accessories"] }
+    },
+    {
+      "word": "blouse",
+      "level": "A2",
+      "phonetic": "/blaʊz/",
+      "definitions": [{ "pos": "noun", "meaning": "áo kiểu (dành cho nữ)" }],
+      "examples": [
+        "She tucked her floral blouse into her skirt.",
+        "A silk blouse looks elegant whether worn formally or casually."
+      ],
+      "synonyms": ["top", "shirt"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["clothing", "women's-fashion"] }
+    },
+    {
+      "word": "hoodie",
+      "level": "A2",
+      "phonetic": "/ˈhʊdi/",
+      "definitions": [{ "pos": "noun", "meaning": "áo hoodie, áo nỉ có mũ" }],
+      "examples": [
+        "He threw on a hoodie before heading out for a morning run.",
+        "Hoodies are popular among teenagers for their comfort and style."
+      ],
+      "synonyms": ["sweatshirt"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["clothing", "casual", "style"] }
+    },
+    {
+      "word": "layer",
+      "level": "B1",
+      "phonetic": "/ˈleɪər/",
+      "definitions": [{ "pos": "verb", "meaning": "mặc nhiều lớp quần áo" }, { "pos": "noun", "meaning": "lớp (quần áo)" }],
+      "examples": [
+        "In cold weather, it's best to layer your clothing to stay warm.",
+        "She wore three layers — a T-shirt, a sweater, and a coat."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["layered", "layering"],
+      "metadata": { "tags": ["clothing", "style", "fashion"] }
+    },
+    {
+      "word": "trend",
+      "level": "B1",
+      "phonetic": "/trɛnd/",
+      "definitions": [{ "pos": "noun", "meaning": "xu hướng thời trang" }],
+      "examples": [
+        "Oversized blazers are a major fashion trend this season.",
+        "She always keeps up with the latest trends in clothing."
+      ],
+      "synonyms": ["fashion", "style", "craze"],
+      "antonyms": [],
+      "family_words": ["trendy", "trending"],
+      "metadata": { "tags": ["fashion", "style", "trend"] }
+    },
+    {
+      "word": "second-hand",
+      "level": "A2",
+      "phonetic": "/ˌsɛkənd ˈhænd/",
+      "definitions": [{ "pos": "adjective", "meaning": "đồ cũ, đã qua sử dụng (quần áo, đồ vật)" }],
+      "examples": [
+        "She found a beautiful vintage coat in a second-hand shop.",
+        "Buying second-hand clothes is both budget-friendly and eco-conscious."
+      ],
+      "synonyms": ["used", "pre-owned", "vintage"],
+      "antonyms": ["brand-new", "new"],
+      "family_words": [],
+      "metadata": { "tags": ["fashion", "shopping", "style"] }
+    },
+    {
+      "word": "wardrobe",
+      "level": "B1",
+      "phonetic": "/ˈwɔːrdrəʊb/",
+      "definitions": [{ "pos": "noun", "meaning": "tủ quần áo; toàn bộ quần áo của một người" }],
+      "examples": [
+        "She spent the weekend reorganizing her wardrobe for the new season.",
+        "Building a capsule wardrobe helps you dress well without owning too many clothes."
+      ],
+      "synonyms": ["closet"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["clothing", "fashion", "style"] }
+    }
+  ]
+}

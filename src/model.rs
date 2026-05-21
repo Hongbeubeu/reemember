@@ -1,4 +1,22 @@
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Deserializer, Serialize};
+
+fn deserialize_family_words<'de, D>(deserializer: D) -> Result<Vec<String>, D::Error>
+where
+    D: Deserializer<'de>,
+{
+    #[derive(Deserialize)]
+    #[serde(untagged)]
+    enum Item {
+        Plain(String),
+        Rich { word: String },
+    }
+
+    let items: Vec<Item> = Vec::deserialize(deserializer)?;
+    Ok(items.into_iter().map(|item| match item {
+        Item::Plain(s) => s,
+        Item::Rich { word } => word,
+    }).collect())
+}
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct WordRecord {
@@ -12,8 +30,10 @@ pub struct WordRecord {
     pub synonyms: Vec<String>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub antonyms: Vec<String>,
-    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[serde(default, skip_serializing_if = "Vec::is_empty", deserialize_with = "deserialize_family_words")]
     pub family_words: Vec<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub level: Option<String>,
     #[serde(default)]
     pub metadata: Metadata,
 }

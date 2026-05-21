@@ -1,0 +1,373 @@
+{
+  "collection": "Daily Life",
+  "topic": "Weather & Seasons",
+  "words": [
+    {
+      "word": "humid",
+      "level": "B1",
+      "phonetic": "/ˈhjuːmɪd/",
+      "definitions": [{ "pos": "adjective", "meaning": "ẩm ướt, có độ ẩm cao" }],
+      "examples": [
+        "The summer in Hanoi is very hot and humid.",
+        "It's hard to sleep in such humid weather."
+      ],
+      "synonyms": ["muggy", "damp"],
+      "antonyms": ["dry", "arid"],
+      "family_words": ["humidity", "humidify"],
+      "metadata": { "tags": ["weather", "climate"] }
+    },
+    {
+      "word": "drought",
+      "level": "B2",
+      "phonetic": "/draʊt/",
+      "definitions": [{ "pos": "noun", "meaning": "hạn hán, thời kỳ thiếu mưa kéo dài" }],
+      "examples": [
+        "The drought has destroyed most of the crops this year.",
+        "Farmers are struggling because of the long drought."
+      ],
+      "synonyms": ["dry spell", "water shortage"],
+      "antonyms": ["flood", "deluge"],
+      "family_words": ["droughty"],
+      "metadata": { "tags": ["weather", "nature", "disaster"] }
+    },
+    {
+      "word": "forecast",
+      "level": "A2",
+      "phonetic": "/ˈfɔːrkæst/",
+      "definitions": [
+        { "pos": "noun", "meaning": "dự báo thời tiết" },
+        { "pos": "verb", "meaning": "dự báo, tiên đoán" }
+      ],
+      "examples": [
+        "According to the forecast, it will rain all weekend.",
+        "Meteorologists forecast heavy snow for the northern region."
+      ],
+      "synonyms": ["prediction", "outlook"],
+      "antonyms": [],
+      "family_words": ["forecaster", "forecasting"],
+      "metadata": { "tags": ["weather", "climate"] }
+    },
+    {
+      "word": "thunderstorm",
+      "level": "B1",
+      "phonetic": "/ˈθʌndərstɔːrm/",
+      "definitions": [{ "pos": "noun", "meaning": "cơn giông bão kèm sấm sét" }],
+      "examples": [
+        "A thunderstorm knocked out the power last night.",
+        "Children are afraid of the loud thunderstorm outside."
+      ],
+      "synonyms": ["electrical storm", "tempest"],
+      "antonyms": [],
+      "family_words": ["thunder", "thunderous", "thunderstruck"],
+      "metadata": { "tags": ["weather", "nature", "storm"] }
+    },
+    {
+      "word": "blizzard",
+      "level": "B2",
+      "phonetic": "/ˈblɪzərd/",
+      "definitions": [{ "pos": "noun", "meaning": "bão tuyết dữ dội kèm gió mạnh" }],
+      "examples": [
+        "The blizzard closed all schools and offices in the city.",
+        "They were trapped at home for two days during the blizzard."
+      ],
+      "synonyms": ["snowstorm", "whiteout"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["weather", "winter", "storm"] }
+    },
+    {
+      "word": "frost",
+      "level": "B1",
+      "phonetic": "/frɒst/",
+      "definitions": [
+        { "pos": "noun", "meaning": "sương giá, băng giá nhẹ trên bề mặt" },
+        { "pos": "verb", "meaning": "phủ sương giá" }
+      ],
+      "examples": [
+        "There was frost on the windows when I woke up this morning.",
+        "A late frost killed the early spring blossoms."
+      ],
+      "synonyms": ["freeze", "ice"],
+      "antonyms": [],
+      "family_words": ["frosty", "defrost", "frostbite"],
+      "metadata": { "tags": ["weather", "winter", "seasons"] }
+    },
+    {
+      "word": "breeze",
+      "level": "B1",
+      "phonetic": "/briːz/",
+      "definitions": [{ "pos": "noun", "meaning": "cơn gió nhẹ, làn gió mát" }],
+      "examples": [
+        "A cool breeze blew in from the sea in the evening.",
+        "We sat under the tree and enjoyed the gentle breeze."
+      ],
+      "synonyms": ["light wind", "draft"],
+      "antonyms": ["gale", "gust"],
+      "family_words": ["breezy"],
+      "metadata": { "tags": ["weather", "nature"] }
+    },
+    {
+      "word": "flood",
+      "level": "A2",
+      "phonetic": "/flʌd/",
+      "definitions": [
+        { "pos": "noun", "meaning": "lũ lụt, nước ngập" },
+        { "pos": "verb", "meaning": "làm ngập lụt" }
+      ],
+      "examples": [
+        "Heavy rains caused severe floods in the lowland villages.",
+        "The river flooded its banks after three days of rain."
+      ],
+      "synonyms": ["inundation", "overflow", "deluge"],
+      "antonyms": ["drought"],
+      "family_words": ["flooding", "floodwater", "floodplain"],
+      "metadata": { "tags": ["weather", "nature", "disaster"] }
+    },
+    {
+      "word": "foggy",
+      "level": "A2",
+      "phonetic": "/ˈfɒɡi/",
+      "definitions": [{ "pos": "adjective", "meaning": "có sương mù dày đặc" }],
+      "examples": [
+        "It was so foggy that drivers could barely see the road.",
+        "The mountain peak was hidden on a foggy morning."
+      ],
+      "synonyms": ["misty", "hazy"],
+      "antonyms": ["clear", "sunny"],
+      "family_words": ["fog", "fogginess"],
+      "metadata": { "tags": ["weather", "climate"] }
+    },
+    {
+      "word": "drizzle",
+      "level": "B1",
+      "phonetic": "/ˈdrɪzəl/",
+      "definitions": [
+        { "pos": "noun", "meaning": "mưa phùn, mưa nhỏ lất phất" },
+        { "pos": "verb", "meaning": "mưa lất phất" }
+      ],
+      "examples": [
+        "There's just a light drizzle outside — you won't need an umbrella.",
+        "It started to drizzle as we left the restaurant."
+      ],
+      "synonyms": ["sprinkle", "mist"],
+      "antonyms": ["downpour", "torrent"],
+      "family_words": ["drizzly"],
+      "metadata": { "tags": ["weather", "rain"] }
+    },
+    {
+      "word": "heatwave",
+      "level": "B2",
+      "phonetic": "/ˈhiːtweɪv/",
+      "definitions": [{ "pos": "noun", "meaning": "đợt nắng nóng kéo dài bất thường" }],
+      "examples": [
+        "The heatwave pushed temperatures above 40°C for a week.",
+        "Hospitals saw more patients during the summer heatwave."
+      ],
+      "synonyms": ["hot spell", "heat surge"],
+      "antonyms": ["cold snap"],
+      "family_words": [],
+      "metadata": { "tags": ["weather", "summer", "climate"] }
+    },
+    {
+      "word": "overcast",
+      "level": "B1",
+      "phonetic": "/ˌoʊvərˈkæst/",
+      "definitions": [{ "pos": "adjective", "meaning": "trời nhiều mây, âm u, không có nắng" }],
+      "examples": [
+        "The sky was overcast all day, but it never actually rained.",
+        "An overcast afternoon is perfect weather for a long walk."
+      ],
+      "synonyms": ["cloudy", "gray", "gloomy"],
+      "antonyms": ["clear", "sunny", "bright"],
+      "family_words": [],
+      "metadata": { "tags": ["weather", "sky"] }
+    },
+    {
+      "word": "spring",
+      "level": "A1",
+      "phonetic": "/sprɪŋ/",
+      "definitions": [{ "pos": "noun", "meaning": "mùa xuân" }],
+      "examples": [
+        "Flowers begin to bloom when spring arrives.",
+        "Spring is my favourite season because the weather is mild."
+      ],
+      "synonyms": ["springtime"],
+      "antonyms": ["autumn", "fall"],
+      "family_words": ["springtime", "spring-like"],
+      "metadata": { "tags": ["seasons", "nature"] }
+    },
+    {
+      "word": "autumn",
+      "level": "A1",
+      "phonetic": "/ˈɔːtəm/",
+      "definitions": [{ "pos": "noun", "meaning": "mùa thu" }],
+      "examples": [
+        "The leaves turn red and gold in autumn.",
+        "He loves walking through the park in autumn."
+      ],
+      "synonyms": ["fall"],
+      "antonyms": ["spring"],
+      "family_words": ["autumnal"],
+      "metadata": { "tags": ["seasons", "nature"] }
+    },
+    {
+      "word": "freeze",
+      "level": "A2",
+      "phonetic": "/friːz/",
+      "definitions": [
+        { "pos": "verb", "meaning": "đóng băng, trở nên rất lạnh" }
+      ],
+      "examples": [
+        "The lake freezes over every winter.",
+        "It was so cold last night that the pipes froze."
+      ],
+      "synonyms": ["ice over", "solidify"],
+      "antonyms": ["thaw", "melt"],
+      "family_words": ["frozen", "freezing", "frost", "antifreeze"],
+      "metadata": { "tags": ["weather", "winter", "temperature"] }
+    },
+    {
+      "word": "melt",
+      "level": "A2",
+      "phonetic": "/melt/",
+      "definitions": [{ "pos": "verb", "meaning": "tan chảy, hóa lỏng do nhiệt" }],
+      "examples": [
+        "The snow began to melt as temperatures rose in March.",
+        "Glaciers are melting faster than ever due to climate change."
+      ],
+      "synonyms": ["thaw", "dissolve", "liquefy"],
+      "antonyms": ["freeze", "solidify"],
+      "family_words": ["melting", "meltwater", "snowmelt"],
+      "metadata": { "tags": ["weather", "seasons", "climate"] }
+    },
+    {
+      "word": "pour",
+      "level": "A2",
+      "phonetic": "/pɔːr/",
+      "definitions": [{ "pos": "verb", "meaning": "mưa như trút, đổ mưa" }],
+      "examples": [
+        "It poured all afternoon, so we stayed indoors.",
+        "Bring an umbrella — it's pouring outside right now."
+      ],
+      "synonyms": ["pelt", "bucket down", "teem"],
+      "antonyms": ["drizzle"],
+      "family_words": ["downpour"],
+      "metadata": { "tags": ["weather", "rain"] }
+    },
+    {
+      "word": "lightning",
+      "level": "A2",
+      "phonetic": "/ˈlaɪtnɪŋ/",
+      "definitions": [{ "pos": "noun", "meaning": "tia chớp, tia sét" }],
+      "examples": [
+        "A bolt of lightning struck the old oak tree.",
+        "Never stand under a tall tree during lightning."
+      ],
+      "synonyms": ["bolt", "flash"],
+      "antonyms": [],
+      "family_words": ["thunder", "thunderstorm", "lighten"],
+      "metadata": { "tags": ["weather", "storm", "nature"] }
+    },
+    {
+      "word": "temperature",
+      "level": "A1",
+      "phonetic": "/ˈtemprətʃər/",
+      "definitions": [{ "pos": "noun", "meaning": "nhiệt độ, mức độ nóng hay lạnh" }],
+      "examples": [
+        "Temperatures are expected to drop below zero tonight.",
+        "The temperature reached 38°C during the afternoon."
+      ],
+      "synonyms": ["heat level", "degree"],
+      "antonyms": [],
+      "family_words": ["thermometer", "temperate", "temperatures"],
+      "metadata": { "tags": ["weather", "climate", "measurement"] }
+    },
+    {
+      "word": "chilly",
+      "level": "A2",
+      "phonetic": "/ˈtʃɪli/",
+      "definitions": [{ "pos": "adjective", "meaning": "lạnh nhẹ, se lạnh" }],
+      "examples": [
+        "It's a bit chilly this morning — take a jacket with you.",
+        "The evenings in autumn start to feel chilly."
+      ],
+      "synonyms": ["cool", "nippy", "brisk"],
+      "antonyms": ["warm", "mild", "hot"],
+      "family_words": ["chill", "chilliness"],
+      "metadata": { "tags": ["weather", "temperature", "seasons"] }
+    },
+    {
+      "word": "cloudy",
+      "level": "A1",
+      "phonetic": "/ˈklaʊdi/",
+      "definitions": [{ "pos": "adjective", "meaning": "nhiều mây, trời mây" }],
+      "examples": [
+        "It will be cloudy tomorrow with a chance of showers.",
+        "The cloudy sky made the afternoon feel cooler."
+      ],
+      "synonyms": ["overcast", "gray"],
+      "antonyms": ["clear", "sunny", "cloudless"],
+      "family_words": ["cloud", "cloudless", "cloudiness"],
+      "metadata": { "tags": ["weather", "sky"] }
+    },
+    {
+      "word": "mild",
+      "level": "B1",
+      "phonetic": "/maɪld/",
+      "definitions": [{ "pos": "adjective", "meaning": "ôn hòa, không quá nóng cũng không quá lạnh" }],
+      "examples": [
+        "The weather in spring here is usually mild and pleasant.",
+        "We had a mild winter this year with very little snow."
+      ],
+      "synonyms": ["moderate", "temperate", "pleasant"],
+      "antonyms": ["harsh", "extreme", "severe"],
+      "family_words": ["mildly", "mildness"],
+      "metadata": { "tags": ["weather", "climate", "seasons"] }
+    },
+    {
+      "word": "rainbow",
+      "level": "A1",
+      "phonetic": "/ˈreɪnboʊ/",
+      "definitions": [{ "pos": "noun", "meaning": "cầu vồng" }],
+      "examples": [
+        "A beautiful rainbow appeared after the storm cleared.",
+        "The children ran outside to see the rainbow in the sky."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["weather", "nature", "sky"] }
+    },
+    {
+      "word": "shelter",
+      "level": "B1",
+      "phonetic": "/ˈʃeltər/",
+      "definitions": [
+        { "pos": "noun", "meaning": "nơi trú ẩn, nơi che mưa che nắng" },
+        { "pos": "verb", "meaning": "trú ẩn, tránh mưa gió" }
+      ],
+      "examples": [
+        "We found shelter under a bus stop when the rain started.",
+        "Hikers should shelter in a low area during a thunderstorm."
+      ],
+      "synonyms": ["refuge", "cover", "protection"],
+      "antonyms": ["exposure"],
+      "family_words": ["sheltered", "sheltering"],
+      "metadata": { "tags": ["weather", "safety"] }
+    },
+    {
+      "word": "season",
+      "level": "A1",
+      "phonetic": "/ˈsiːzən/",
+      "definitions": [{ "pos": "noun", "meaning": "mùa (trong năm), thời vụ" }],
+      "examples": [
+        "Vietnam has a wet season and a dry season.",
+        "Each season brings different weather and activities."
+      ],
+      "synonyms": ["period", "time of year"],
+      "antonyms": [],
+      "family_words": ["seasonal", "seasonally", "off-season"],
+      "metadata": { "tags": ["seasons", "nature", "climate"] }
+    }
+  ]
+}

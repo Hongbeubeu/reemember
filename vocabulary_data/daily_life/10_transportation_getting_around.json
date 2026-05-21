@@ -1,0 +1,410 @@
+{
+  "collection": "Daily Life",
+  "topic": "Transportation & Getting Around",
+  "words": [
+    {
+      "word": "commute",
+      "level": "B1",
+      "phonetic": "/kəˈmjuːt/",
+      "definitions": [
+        { "pos": "verb", "meaning": "đi lại hàng ngày (giữa nhà và nơi làm việc)" },
+        { "pos": "noun", "meaning": "quãng đường đi làm hàng ngày" }
+      ],
+      "examples": [
+        "She commutes to work by train every day.",
+        "His daily commute takes about 45 minutes."
+      ],
+      "synonyms": ["travel", "journey"],
+      "antonyms": [],
+      "family_words": ["commuter", "commuting"],
+      "metadata": { "tags": ["transport", "work", "daily life"] }
+    },
+    {
+      "word": "vehicle",
+      "level": "A2",
+      "phonetic": "/ˈviːɪkl/",
+      "definitions": [
+        { "pos": "noun", "meaning": "phương tiện giao thông (xe cộ nói chung)" }
+      ],
+      "examples": [
+        "You need a valid licence to drive any vehicle on public roads.",
+        "The police stopped the vehicle for speeding."
+      ],
+      "synonyms": ["automobile", "transport"],
+      "antonyms": [],
+      "family_words": ["vehicular"],
+      "metadata": { "tags": ["transport", "vehicles"] }
+    },
+    {
+      "word": "passenger",
+      "level": "A2",
+      "phonetic": "/ˈpæsɪndʒər/",
+      "definitions": [
+        { "pos": "noun", "meaning": "hành khách" }
+      ],
+      "examples": [
+        "The bus was full of passengers heading to the city centre.",
+        "Passengers must fasten their seatbelts before takeoff."
+      ],
+      "synonyms": ["traveller", "rider"],
+      "antonyms": ["driver"],
+      "family_words": [],
+      "metadata": { "tags": ["transport", "travel", "public transport"] }
+    },
+    {
+      "word": "departure",
+      "level": "A2",
+      "phonetic": "/dɪˈpɑːrtʃər/",
+      "definitions": [
+        { "pos": "noun", "meaning": "sự khởi hành, giờ xuất phát" }
+      ],
+      "examples": [
+        "Please arrive at the station 15 minutes before departure.",
+        "The departure board showed that the flight was on time."
+      ],
+      "synonyms": ["leaving", "exit"],
+      "antonyms": ["arrival"],
+      "family_words": ["depart", "departed"],
+      "metadata": { "tags": ["transport", "travel", "airport", "station"] }
+    },
+    {
+      "word": "arrival",
+      "level": "A2",
+      "phonetic": "/əˈraɪvl/",
+      "definitions": [
+        { "pos": "noun", "meaning": "sự đến nơi, giờ đến" }
+      ],
+      "examples": [
+        "The estimated arrival time is 6:30 p.m.",
+        "She called her family right after her arrival at the hotel."
+      ],
+      "synonyms": ["coming", "landing"],
+      "antonyms": ["departure"],
+      "family_words": ["arrive", "arrived"],
+      "metadata": { "tags": ["transport", "travel", "airport", "station"] }
+    },
+    {
+      "word": "fare",
+      "level": "A2",
+      "phonetic": "/fɛr/",
+      "definitions": [
+        { "pos": "noun", "meaning": "giá vé (xe buýt, tàu, taxi...)" }
+      ],
+      "examples": [
+        "The bus fare into the city is two dollars.",
+        "Children under five travel free, but adults must pay the full fare."
+      ],
+      "synonyms": ["ticket price", "charge"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["transport", "public transport", "money"] }
+    },
+    {
+      "word": "platform",
+      "level": "A2",
+      "phonetic": "/ˈplætfɔːrm/",
+      "definitions": [
+        { "pos": "noun", "meaning": "sân ga, ke tàu" }
+      ],
+      "examples": [
+        "The train to London departs from platform 3.",
+        "Passengers waited on the platform in the cold."
+      ],
+      "synonyms": ["quay", "terminal"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["transport", "train", "station"] }
+    },
+    {
+      "word": "transfer",
+      "level": "B1",
+      "phonetic": "/ˈtrænsfɜːr/",
+      "definitions": [
+        { "pos": "verb", "meaning": "chuyển tàu/xe, đổi phương tiện" },
+        { "pos": "noun", "meaning": "sự chuyển tuyến" }
+      ],
+      "examples": [
+        "You need to transfer at Central Station to catch the metro.",
+        "The transfer from the airport to the hotel took 20 minutes."
+      ],
+      "synonyms": ["change", "switch"],
+      "antonyms": [],
+      "family_words": ["transferable"],
+      "metadata": { "tags": ["transport", "public transport", "travel"] }
+    },
+    {
+      "word": "subway",
+      "level": "A1",
+      "phonetic": "/ˈsʌbweɪ/",
+      "definitions": [
+        { "pos": "noun", "meaning": "tàu điện ngầm (dùng ở Mỹ)" }
+      ],
+      "examples": [
+        "Taking the subway is the fastest way to cross the city.",
+        "She bought a monthly pass to ride the subway to work."
+      ],
+      "synonyms": ["metro", "underground", "tube"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["transport", "public transport", "city"] }
+    },
+    {
+      "word": "crossroads",
+      "level": "A2",
+      "phonetic": "/ˈkrɒsrəʊdz/",
+      "definitions": [
+        { "pos": "noun", "meaning": "ngã tư, giao lộ" }
+      ],
+      "examples": [
+        "Turn left at the crossroads and you will see the school on your right.",
+        "There was a traffic jam at the crossroads during rush hour."
+      ],
+      "synonyms": ["intersection", "junction"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["directions", "traffic", "road"] }
+    },
+    {
+      "word": "roundabout",
+      "level": "B1",
+      "phonetic": "/ˈraʊndəbaʊt/",
+      "definitions": [
+        { "pos": "noun", "meaning": "vòng xuyến, bùng binh" }
+      ],
+      "examples": [
+        "Take the second exit at the roundabout to get onto the main road.",
+        "The city built a roundabout to reduce accidents at that junction."
+      ],
+      "synonyms": ["traffic circle", "rotary"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["directions", "road", "traffic"] }
+    },
+    {
+      "word": "traffic jam",
+      "level": "A2",
+      "phonetic": "/ˈtræfɪk dʒæm/",
+      "definitions": [
+        { "pos": "noun", "meaning": "tắc đường, ùn tắc giao thông" }
+      ],
+      "examples": [
+        "We were stuck in a traffic jam for over an hour.",
+        "Heavy rain caused a major traffic jam on the highway."
+      ],
+      "synonyms": ["gridlock", "congestion", "holdup"],
+      "antonyms": ["clear road"],
+      "family_words": [],
+      "metadata": { "tags": ["traffic", "road", "city"] }
+    },
+    {
+      "word": "overtake",
+      "level": "B1",
+      "phonetic": "/ˌəʊvərˈteɪk/",
+      "definitions": [
+        { "pos": "verb", "meaning": "vượt (xe), qua mặt" }
+      ],
+      "examples": [
+        "It is dangerous to overtake on a narrow road.",
+        "The sports car overtook the truck on the motorway."
+      ],
+      "synonyms": ["pass", "go past"],
+      "antonyms": [],
+      "family_words": ["overtaking"],
+      "metadata": { "tags": ["driving", "road", "traffic"] }
+    },
+    {
+      "word": "pedestrian",
+      "level": "B1",
+      "phonetic": "/pɪˈdestriən/",
+      "definitions": [
+        { "pos": "noun", "meaning": "người đi bộ" },
+        { "pos": "adjective", "meaning": "dành cho người đi bộ" }
+      ],
+      "examples": [
+        "Pedestrians should use the crossing when the light is green.",
+        "The city centre has a large pedestrian zone where cars are not allowed."
+      ],
+      "synonyms": ["walker", "foot passenger"],
+      "antonyms": ["driver", "motorist"],
+      "family_words": ["pedestrianise"],
+      "metadata": { "tags": ["road", "directions", "safety"] }
+    },
+    {
+      "word": "highway",
+      "level": "A2",
+      "phonetic": "/ˈhaɪweɪ/",
+      "definitions": [
+        { "pos": "noun", "meaning": "đường cao tốc, quốc lộ" }
+      ],
+      "examples": [
+        "The highway connects the capital to the northern provinces.",
+        "Speed limits on the highway are strictly enforced."
+      ],
+      "synonyms": ["motorway", "freeway", "expressway"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["road", "transport", "driving"] }
+    },
+    {
+      "word": "navigate",
+      "level": "B1",
+      "phonetic": "/ˈnævɪɡeɪt/",
+      "definitions": [
+        { "pos": "verb", "meaning": "điều hướng, tìm đường" }
+      ],
+      "examples": [
+        "She used her phone to navigate through the unfamiliar city.",
+        "It is difficult to navigate the old town because the streets are so narrow."
+      ],
+      "synonyms": ["guide", "direct", "steer"],
+      "antonyms": [],
+      "family_words": ["navigation", "navigator"],
+      "metadata": { "tags": ["directions", "travel", "driving"] }
+    },
+    {
+      "word": "detour",
+      "level": "B1",
+      "phonetic": "/ˈdiːtʊər/",
+      "definitions": [
+        { "pos": "noun", "meaning": "đường vòng, đường tránh" },
+        { "pos": "verb", "meaning": "đi vòng, đi theo đường khác" }
+      ],
+      "examples": [
+        "We had to take a detour because the main road was closed.",
+        "The accident forced all drivers to detour through the village."
+      ],
+      "synonyms": ["diversion", "bypass"],
+      "antonyms": ["direct route"],
+      "family_words": [],
+      "metadata": { "tags": ["directions", "road", "driving"] }
+    },
+    {
+      "word": "lane",
+      "level": "A2",
+      "phonetic": "/leɪn/",
+      "definitions": [
+        { "pos": "noun", "meaning": "làn đường" }
+      ],
+      "examples": [
+        "Keep to the left lane unless you are overtaking.",
+        "The bus has its own dedicated lane so it avoids traffic jams."
+      ],
+      "synonyms": ["track", "strip"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["road", "traffic", "driving"] }
+    },
+    {
+      "word": "timetable",
+      "level": "B1",
+      "phonetic": "/ˈtaɪmteɪbl/",
+      "definitions": [
+        { "pos": "noun", "meaning": "lịch trình, bảng giờ tàu/xe" }
+      ],
+      "examples": [
+        "Check the timetable before going to the station so you do not miss the train.",
+        "The bus timetable changes during public holidays."
+      ],
+      "synonyms": ["schedule", "timetable"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["transport", "public transport", "planning"] }
+    },
+    {
+      "word": "board",
+      "level": "A2",
+      "phonetic": "/bɔːrd/",
+      "definitions": [
+        { "pos": "verb", "meaning": "lên (tàu, máy bay, xe buýt)" }
+      ],
+      "examples": [
+        "Passengers are requested to board the aircraft through gate 12.",
+        "Make sure you board the correct bus, or you will end up in the wrong part of town."
+      ],
+      "synonyms": ["get on", "embark"],
+      "antonyms": ["alight", "get off", "disembark"],
+      "family_words": ["boarding", "onboard"],
+      "metadata": { "tags": ["transport", "travel", "public transport"] }
+    },
+    {
+      "word": "alight",
+      "level": "C1",
+      "phonetic": "/əˈlaɪt/",
+      "definitions": [
+        { "pos": "verb", "meaning": "xuống (tàu, xe buýt)" }
+      ],
+      "examples": [
+        "Please alight from the bus through the rear door.",
+        "Passengers should alight here for the city museum."
+      ],
+      "synonyms": ["get off", "disembark", "exit"],
+      "antonyms": ["board", "get on"],
+      "family_words": [],
+      "metadata": { "tags": ["transport", "public transport", "travel"] }
+    },
+    {
+      "word": "toll",
+      "level": "B1",
+      "phonetic": "/toʊl/",
+      "definitions": [
+        { "pos": "noun", "meaning": "phí cầu đường, phí qua trạm thu phí" }
+      ],
+      "examples": [
+        "Drivers must pay a toll to use this bridge.",
+        "The toll on the motorway has increased since last year."
+      ],
+      "synonyms": ["charge", "fee"],
+      "antonyms": [],
+      "family_words": ["toll road", "tollbooth"],
+      "metadata": { "tags": ["road", "driving", "money"] }
+    },
+    {
+      "word": "cargo",
+      "level": "B2",
+      "phonetic": "/ˈkɑːrɡoʊ/",
+      "definitions": [
+        { "pos": "noun", "meaning": "hàng hóa vận chuyển (bằng tàu, xe, máy bay)" }
+      ],
+      "examples": [
+        "The ship was carrying cargo from Europe to Southeast Asia.",
+        "Strict rules govern how dangerous cargo must be labelled and stored."
+      ],
+      "synonyms": ["freight", "shipment", "load"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["transport", "logistics", "travel"] }
+    },
+    {
+      "word": "itinerary",
+      "level": "B2",
+      "phonetic": "/aɪˈtɪnəreri/",
+      "definitions": [
+        { "pos": "noun", "meaning": "lịch trình chuyến đi" }
+      ],
+      "examples": [
+        "The travel agency sent us a detailed itinerary for our holiday.",
+        "She planned her itinerary carefully to make the most of the trip."
+      ],
+      "synonyms": ["schedule", "route plan", "travel plan"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["travel", "planning", "transport"] }
+    },
+    {
+      "word": "junction",
+      "level": "B1",
+      "phonetic": "/ˈdʒʌŋkʃn/",
+      "definitions": [
+        { "pos": "noun", "meaning": "nút giao thông, điểm giao nhau của các tuyến đường" }
+      ],
+      "examples": [
+        "Exit at junction 14 and follow the signs for the town centre.",
+        "The two railway lines meet at this junction."
+      ],
+      "synonyms": ["intersection", "crossroads", "interchange"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["road", "directions", "traffic"] }
+    }
+  ]
+}

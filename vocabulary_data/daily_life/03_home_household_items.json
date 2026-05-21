@@ -1,0 +1,356 @@
+{
+  "collection": "Daily Life",
+  "topic": "Home & Household Items",
+  "words": [
+    {
+      "word": "appliance",
+      "level": "B1",
+      "phonetic": "/əˈplaɪəns/",
+      "definitions": [{ "pos": "noun", "meaning": "thiết bị gia dụng, đồ dùng nhà bếp" }],
+      "examples": [
+        "The kitchen is full of modern appliances.",
+        "She bought several new appliances for her new apartment."
+      ],
+      "synonyms": ["device", "equipment"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "appliances"] }
+    },
+    {
+      "word": "refrigerator",
+      "level": "A2",
+      "phonetic": "/rɪˈfrɪdʒəreɪtər/",
+      "definitions": [{ "pos": "noun", "meaning": "tủ lạnh" }],
+      "examples": [
+        "Keep the leftovers in the refrigerator so they stay fresh.",
+        "The refrigerator makes a humming noise when it runs."
+      ],
+      "synonyms": ["fridge"],
+      "antonyms": [],
+      "family_words": ["refrigerate (v)", "refrigeration (n)"],
+      "metadata": { "tags": ["home", "appliances", "kitchen"] }
+    },
+    {
+      "word": "microwave",
+      "level": "A2",
+      "phonetic": "/ˈmaɪkrəweɪv/",
+      "definitions": [{ "pos": "noun", "meaning": "lò vi sóng" }],
+      "examples": [
+        "She heated up the soup in the microwave for two minutes.",
+        "The microwave broke down, so we had to use the stove instead."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "appliances", "kitchen"] }
+    },
+    {
+      "word": "washing machine",
+      "level": "A2",
+      "phonetic": "/ˈwɒʃɪŋ məˈʃiːn/",
+      "definitions": [{ "pos": "noun", "meaning": "máy giặt" }],
+      "examples": [
+        "He put all his dirty clothes into the washing machine.",
+        "The washing machine takes about an hour to finish one cycle."
+      ],
+      "synonyms": ["washer"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "appliances", "laundry"] }
+    },
+    {
+      "word": "vacuum cleaner",
+      "level": "A2",
+      "phonetic": "/ˈvækjuəm ˌkliːnər/",
+      "definitions": [{ "pos": "noun", "meaning": "máy hút bụi" }],
+      "examples": [
+        "She uses the vacuum cleaner every weekend to keep the carpet clean.",
+        "The vacuum cleaner picked up all the crumbs from the floor."
+      ],
+      "synonyms": ["hoover"],
+      "antonyms": [],
+      "family_words": ["vacuum (v)"],
+      "metadata": { "tags": ["home", "appliances", "cleaning"] }
+    },
+    {
+      "word": "sofa",
+      "level": "A1",
+      "phonetic": "/ˈsoʊfə/",
+      "definitions": [{ "pos": "noun", "meaning": "ghế sofa, ghế dài" }],
+      "examples": [
+        "They sat on the sofa and watched a movie together.",
+        "The new sofa fits perfectly in the living room."
+      ],
+      "synonyms": ["couch", "settee"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "furniture", "living room"] }
+    },
+    {
+      "word": "wardrobe",
+      "level": "A2",
+      "phonetic": "/ˈwɔːrdroʊb/",
+      "definitions": [{ "pos": "noun", "meaning": "tủ quần áo" }],
+      "examples": [
+        "She hung her dresses neatly in the wardrobe.",
+        "The wardrobe takes up a lot of space in the small bedroom."
+      ],
+      "synonyms": ["closet", "cabinet"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "furniture", "bedroom"] }
+    },
+    {
+      "word": "bookshelf",
+      "level": "A2",
+      "phonetic": "/ˈbʊkʃelf/",
+      "definitions": [{ "pos": "noun", "meaning": "kệ sách" }],
+      "examples": [
+        "He arranged his books neatly on the bookshelf.",
+        "The bookshelf is full — I need to buy a new one."
+      ],
+      "synonyms": ["bookcase"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "furniture"] }
+    },
+    {
+      "word": "curtain",
+      "level": "A2",
+      "phonetic": "/ˈkɜːrtən/",
+      "definitions": [{ "pos": "noun", "meaning": "rèm cửa" }],
+      "examples": [
+        "She drew the curtains to block out the morning sunlight.",
+        "The blue curtains match the colour of the walls perfectly."
+      ],
+      "synonyms": ["drape", "blind"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "decoration"] }
+    },
+    {
+      "word": "drawer",
+      "level": "A2",
+      "phonetic": "/ˈdrɔːər/",
+      "definitions": [{ "pos": "noun", "meaning": "ngăn kéo" }],
+      "examples": [
+        "She keeps her socks in the top drawer of the dresser.",
+        "He found an old photo in the bottom drawer of the desk."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "furniture"] }
+    },
+    {
+      "word": "sink",
+      "level": "A1",
+      "phonetic": "/sɪŋk/",
+      "definitions": [{ "pos": "noun", "meaning": "bồn rửa (bát, tay)" }],
+      "examples": [
+        "He washed the dishes in the kitchen sink.",
+        "The sink is blocked and water is not draining properly."
+      ],
+      "synonyms": ["basin"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "kitchen", "bathroom"] }
+    },
+    {
+      "word": "faucet",
+      "level": "A2",
+      "phonetic": "/ˈfɔːsɪt/",
+      "definitions": [{ "pos": "noun", "meaning": "vòi nước" }],
+      "examples": [
+        "Turn off the faucet when you finish washing your hands.",
+        "The faucet has been dripping all night and wasting water."
+      ],
+      "synonyms": ["tap"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "bathroom", "kitchen"] }
+    },
+    {
+      "word": "shelf",
+      "level": "A1",
+      "phonetic": "/ʃelf/",
+      "definitions": [{ "pos": "noun", "meaning": "kệ, giá đỡ" }],
+      "examples": [
+        "She put the plant on the shelf by the window.",
+        "The shelf in the bathroom holds all the toiletries."
+      ],
+      "synonyms": ["rack", "ledge"],
+      "antonyms": [],
+      "family_words": ["shelves (plural)"],
+      "metadata": { "tags": ["home", "furniture"] }
+    },
+    {
+      "word": "lamp",
+      "level": "A1",
+      "phonetic": "/læmp/",
+      "definitions": [{ "pos": "noun", "meaning": "đèn (để bàn hoặc đứng)" }],
+      "examples": [
+        "She switched on the bedside lamp before reading.",
+        "The floor lamp in the corner gives the room a warm glow."
+      ],
+      "synonyms": ["light"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "lighting"] }
+    },
+    {
+      "word": "pillow",
+      "level": "A1",
+      "phonetic": "/ˈpɪloʊ/",
+      "definitions": [{ "pos": "noun", "meaning": "gối (ngủ)" }],
+      "examples": [
+        "He fluffed up the pillow before going to bed.",
+        "She uses two pillows because one is not comfortable enough."
+      ],
+      "synonyms": ["cushion"],
+      "antonyms": [],
+      "family_words": ["pillowcase (n)"],
+      "metadata": { "tags": ["home", "bedroom", "bedding"] }
+    },
+    {
+      "word": "blanket",
+      "level": "A1",
+      "phonetic": "/ˈblæŋkɪt/",
+      "definitions": [{ "pos": "noun", "meaning": "chăn, mền" }],
+      "examples": [
+        "She wrapped herself in a warm blanket on the cold evening.",
+        "He grabbed an extra blanket from the closet during winter."
+      ],
+      "synonyms": ["cover", "quilt"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "bedroom", "bedding"] }
+    },
+    {
+      "word": "mirror",
+      "level": "A1",
+      "phonetic": "/ˈmɪrər/",
+      "definitions": [{ "pos": "noun", "meaning": "gương" }],
+      "examples": [
+        "She checked her appearance in the mirror before leaving.",
+        "There is a large mirror above the bathroom sink."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "bathroom", "decoration"] }
+    },
+    {
+      "word": "carpet",
+      "level": "A2",
+      "phonetic": "/ˈkɑːrpɪt/",
+      "definitions": [{ "pos": "noun", "meaning": "thảm trải sàn" }],
+      "examples": [
+        "The children played on the soft carpet in the living room.",
+        "He spilled coffee on the carpet and quickly cleaned it up."
+      ],
+      "synonyms": ["rug"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "flooring", "living room"] }
+    },
+    {
+      "word": "ceiling",
+      "level": "A2",
+      "phonetic": "/ˈsiːlɪŋ/",
+      "definitions": [{ "pos": "noun", "meaning": "trần nhà" }],
+      "examples": [
+        "The ceiling in the old house was very high.",
+        "She noticed a water stain on the ceiling after the heavy rain."
+      ],
+      "synonyms": [],
+      "antonyms": ["floor"],
+      "family_words": [],
+      "metadata": { "tags": ["home", "structure"] }
+    },
+    {
+      "word": "staircase",
+      "level": "A2",
+      "phonetic": "/ˈstɛrkeɪs/",
+      "definitions": [{ "pos": "noun", "meaning": "cầu thang" }],
+      "examples": [
+        "The children ran up the staircase to their bedrooms.",
+        "The wooden staircase creaks whenever someone walks on it."
+      ],
+      "synonyms": ["stairs", "stairway"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "structure"] }
+    },
+    {
+      "word": "garage",
+      "level": "A2",
+      "phonetic": "/ɡəˈrɑːʒ/",
+      "definitions": [{ "pos": "noun", "meaning": "nhà xe, ga-ra" }],
+      "examples": [
+        "He parks his car in the garage every night.",
+        "They use the garage to store old furniture and tools."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "rooms"] }
+    },
+    {
+      "word": "balcony",
+      "level": "A2",
+      "phonetic": "/ˈbælkəni/",
+      "definitions": [{ "pos": "noun", "meaning": "ban công" }],
+      "examples": [
+        "She enjoys drinking coffee on the balcony in the morning.",
+        "The apartment has a small balcony with a view of the park."
+      ],
+      "synonyms": ["terrace"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "rooms"] }
+    },
+    {
+      "word": "socket",
+      "level": "B1",
+      "phonetic": "/ˈsɒkɪt/",
+      "definitions": [{ "pos": "noun", "meaning": "ổ cắm điện" }],
+      "examples": [
+        "He plugged the charger into the socket near the bed.",
+        "There are not enough sockets in the living room for all our devices."
+      ],
+      "synonyms": ["outlet", "plug point"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "electricity"] }
+    },
+    {
+      "word": "broom",
+      "level": "A1",
+      "phonetic": "/bruːm/",
+      "definitions": [{ "pos": "noun", "meaning": "chổi quét nhà" }],
+      "examples": [
+        "She swept the kitchen floor with a broom after cooking.",
+        "He grabbed the broom to clean up the broken glass."
+      ],
+      "synonyms": ["brush"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "cleaning"] }
+    },
+    {
+      "word": "doorbell",
+      "level": "A2",
+      "phonetic": "/ˈdɔːrbel/",
+      "definitions": [{ "pos": "noun", "meaning": "chuông cửa" }],
+      "examples": [
+        "She pressed the doorbell and waited for someone to answer.",
+        "The doorbell rang while we were having dinner."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["home", "entrance"] }
+    }
+  ]
+}

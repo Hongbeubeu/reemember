@@ -1,0 +1,368 @@
+{
+  "collection": "Daily Life",
+  "topic": "At the Doctor / Hospital",
+  "words": [
+    {
+      "word": "diagnosis",
+      "level": "B2",
+      "phonetic": "/ˌdaɪəɡˈnoʊsɪs/",
+      "definitions": [{ "pos": "noun", "meaning": "chẩn đoán (bệnh)" }],
+      "examples": [
+        "The doctor gave her a diagnosis of high blood pressure.",
+        "An early diagnosis can significantly improve treatment outcomes."
+      ],
+      "synonyms": ["identification", "assessment"],
+      "antonyms": [],
+      "family_words": ["diagnose", "diagnostic"],
+      "metadata": { "tags": ["medical", "hospital", "health"] }
+    },
+    {
+      "word": "symptom",
+      "level": "B1",
+      "phonetic": "/ˈsɪmptəm/",
+      "definitions": [{ "pos": "noun", "meaning": "triệu chứng (bệnh)" }],
+      "examples": [
+        "Fever and sore throat are common symptoms of a cold.",
+        "Tell the doctor all your symptoms so he can make an accurate diagnosis."
+      ],
+      "synonyms": ["sign", "indication"],
+      "antonyms": [],
+      "family_words": ["symptomatic"],
+      "metadata": { "tags": ["medical", "health"] }
+    },
+    {
+      "word": "prescription",
+      "level": "B1",
+      "phonetic": "/prɪˈskrɪpʃən/",
+      "definitions": [{ "pos": "noun", "meaning": "đơn thuốc" }],
+      "examples": [
+        "The doctor wrote a prescription for antibiotics.",
+        "You need a prescription to buy this medicine at the pharmacy."
+      ],
+      "synonyms": ["order", "medication order"],
+      "antonyms": [],
+      "family_words": ["prescribe", "prescribed"],
+      "metadata": { "tags": ["medical", "pharmacy", "health"] }
+    },
+    {
+      "word": "appointment",
+      "level": "A2",
+      "phonetic": "/əˈpɔɪntmənt/",
+      "definitions": [{ "pos": "noun", "meaning": "cuộc hẹn khám bệnh" }],
+      "examples": [
+        "I made an appointment with my doctor for next Monday.",
+        "Please arrive ten minutes before your appointment."
+      ],
+      "synonyms": ["booking", "visit"],
+      "antonyms": [],
+      "family_words": ["appoint"],
+      "metadata": { "tags": ["medical", "hospital", "health"] }
+    },
+    {
+      "word": "patient",
+      "level": "A1",
+      "phonetic": "/ˈpeɪʃənt/",
+      "definitions": [
+        { "pos": "noun", "meaning": "bệnh nhân" },
+        { "pos": "adjective", "meaning": "kiên nhẫn" }
+      ],
+      "examples": [
+        "The nurse asked the patient to wait in the waiting room.",
+        "There were many patients in the emergency room that night."
+      ],
+      "synonyms": ["client"],
+      "antonyms": [],
+      "family_words": ["patience", "patiently"],
+      "metadata": { "tags": ["medical", "hospital", "health"] }
+    },
+    {
+      "word": "treatment",
+      "level": "A2",
+      "phonetic": "/ˈtriːtmənt/",
+      "definitions": [{ "pos": "noun", "meaning": "phương pháp điều trị; sự chữa trị" }],
+      "examples": [
+        "The doctor recommended a treatment plan that included medication and rest.",
+        "The treatment lasted six weeks and was very effective."
+      ],
+      "synonyms": ["therapy", "care"],
+      "antonyms": [],
+      "family_words": ["treat", "treating"],
+      "metadata": { "tags": ["medical", "hospital", "health"] }
+    },
+    {
+      "word": "surgery",
+      "level": "B1",
+      "phonetic": "/ˈsɜːrdʒəri/",
+      "definitions": [{ "pos": "noun", "meaning": "phẫu thuật; ca mổ" }],
+      "examples": [
+        "He needed surgery to remove the appendix.",
+        "The surgery was successful and she recovered quickly."
+      ],
+      "synonyms": ["operation", "procedure"],
+      "antonyms": [],
+      "family_words": ["surgeon", "surgical", "surgically"],
+      "metadata": { "tags": ["medical", "hospital", "health"] }
+    },
+    {
+      "word": "emergency",
+      "level": "A2",
+      "phonetic": "/ɪˈmɜːrdʒənsi/",
+      "definitions": [{ "pos": "noun", "meaning": "tình huống khẩn cấp; cấp cứu" }],
+      "examples": [
+        "He was taken to the emergency room after the car accident.",
+        "In a medical emergency, call 911 immediately."
+      ],
+      "synonyms": ["crisis", "urgent situation"],
+      "antonyms": [],
+      "family_words": ["emergent", "emerge"],
+      "metadata": { "tags": ["medical", "hospital", "health"] }
+    },
+    {
+      "word": "injection",
+      "level": "B1",
+      "phonetic": "/ɪnˈdʒekʃən/",
+      "definitions": [{ "pos": "noun", "meaning": "mũi tiêm; sự tiêm thuốc" }],
+      "examples": [
+        "The nurse gave him an injection of painkiller.",
+        "Some vaccines are given by injection into the arm."
+      ],
+      "synonyms": ["shot", "jab"],
+      "antonyms": [],
+      "family_words": ["inject", "injectable"],
+      "metadata": { "tags": ["medical", "hospital", "health"] }
+    },
+    {
+      "word": "allergy",
+      "level": "B1",
+      "phonetic": "/ˈælərdʒi/",
+      "definitions": [{ "pos": "noun", "meaning": "dị ứng" }],
+      "examples": [
+        "She has a severe allergy to penicillin.",
+        "Always tell your doctor about any allergies before taking new medication."
+      ],
+      "synonyms": ["sensitivity", "reaction"],
+      "antonyms": [],
+      "family_words": ["allergic", "allergen"],
+      "metadata": { "tags": ["medical", "health"] }
+    },
+    {
+      "word": "ward",
+      "level": "B1",
+      "phonetic": "/wɔːrd/",
+      "definitions": [{ "pos": "noun", "meaning": "phòng bệnh viện; khoa bệnh viện" }],
+      "examples": [
+        "He was moved to the recovery ward after the operation.",
+        "The children's ward is on the third floor of the hospital."
+      ],
+      "synonyms": ["unit", "department"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["hospital", "health"] }
+    },
+    {
+      "word": "checkup",
+      "level": "A2",
+      "phonetic": "/ˈtʃekʌp/",
+      "definitions": [{ "pos": "noun", "meaning": "khám sức khỏe định kỳ" }],
+      "examples": [
+        "It is important to have a regular checkup even when you feel healthy.",
+        "The doctor found nothing wrong during her annual checkup."
+      ],
+      "synonyms": ["examination", "physical"],
+      "antonyms": [],
+      "family_words": ["check up (verb)"],
+      "metadata": { "tags": ["medical", "health"] }
+    },
+    {
+      "word": "dosage",
+      "level": "B1",
+      "phonetic": "/ˈdoʊsɪdʒ/",
+      "definitions": [{ "pos": "noun", "meaning": "liều lượng thuốc" }],
+      "examples": [
+        "Follow the recommended dosage on the medicine label.",
+        "The doctor increased her dosage because the first amount was not working."
+      ],
+      "synonyms": ["dose", "amount"],
+      "antonyms": [],
+      "family_words": ["dose"],
+      "metadata": { "tags": ["medical", "pharmacy", "health"] }
+    },
+    {
+      "word": "pharmacy",
+      "level": "A2",
+      "phonetic": "/ˈfɑːrməsi/",
+      "definitions": [{ "pos": "noun", "meaning": "nhà thuốc; hiệu thuốc" }],
+      "examples": [
+        "Take your prescription to the pharmacy to get your medicine.",
+        "The pharmacy near the hospital is open 24 hours a day."
+      ],
+      "synonyms": ["drugstore", "chemist"],
+      "antonyms": [],
+      "family_words": ["pharmacist", "pharmaceutical"],
+      "metadata": { "tags": ["medical", "pharmacy", "health"] }
+    },
+    {
+      "word": "specialist",
+      "level": "B1",
+      "phonetic": "/ˈspeʃəlɪst/",
+      "definitions": [{ "pos": "noun", "meaning": "bác sĩ chuyên khoa" }],
+      "examples": [
+        "My doctor referred me to a specialist for my heart condition.",
+        "A specialist in dermatology can treat skin diseases more effectively."
+      ],
+      "synonyms": ["consultant", "expert"],
+      "antonyms": ["generalist"],
+      "family_words": ["specialize", "specialization", "specialty"],
+      "metadata": { "tags": ["medical", "hospital", "health"] }
+    },
+    {
+      "word": "fever",
+      "level": "A1",
+      "phonetic": "/ˈfiːvər/",
+      "definitions": [{ "pos": "noun", "meaning": "sốt; cơn sốt" }],
+      "examples": [
+        "The child had a high fever and was taken to the doctor.",
+        "Drink plenty of fluids to help reduce a fever."
+      ],
+      "synonyms": ["high temperature"],
+      "antonyms": [],
+      "family_words": ["feverish"],
+      "metadata": { "tags": ["medical", "health"] }
+    },
+    {
+      "word": "blood pressure",
+      "level": "B1",
+      "phonetic": "/ˈblʌd ˌpreʃər/",
+      "definitions": [{ "pos": "noun", "meaning": "huyết áp" }],
+      "examples": [
+        "The nurse checked his blood pressure before the appointment.",
+        "High blood pressure can increase the risk of heart disease."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["medical", "health"] }
+    },
+    {
+      "word": "painkiller",
+      "level": "A2",
+      "phonetic": "/ˈpeɪnˌkɪlər/",
+      "definitions": [{ "pos": "noun", "meaning": "thuốc giảm đau" }],
+      "examples": [
+        "The doctor prescribed a painkiller to help with her back pain.",
+        "Do not take more painkillers than the recommended dose."
+      ],
+      "synonyms": ["pain reliever", "analgesic"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["medical", "pharmacy", "health"] }
+    },
+    {
+      "word": "wound",
+      "level": "A2",
+      "phonetic": "/wuːnd/",
+      "definitions": [{ "pos": "noun", "meaning": "vết thương" }],
+      "examples": [
+        "The nurse cleaned the wound and applied a bandage.",
+        "His wound healed completely after two weeks of treatment."
+      ],
+      "synonyms": ["injury", "cut"],
+      "antonyms": [],
+      "family_words": ["wounded", "wound (verb)"],
+      "metadata": { "tags": ["medical", "hospital", "health"] }
+    },
+    {
+      "word": "bandage",
+      "level": "A2",
+      "phonetic": "/ˈbændɪdʒ/",
+      "definitions": [
+        { "pos": "noun", "meaning": "băng gạc; miếng băng" },
+        { "pos": "verb", "meaning": "băng bó (vết thương)" }
+      ],
+      "examples": [
+        "She put a bandage on the cut to stop the bleeding.",
+        "The doctor bandaged his ankle after the injury."
+      ],
+      "synonyms": ["dressing", "wrap"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["medical", "health"] }
+    },
+    {
+      "word": "X-ray",
+      "level": "A2",
+      "phonetic": "/ˈeksreɪ/",
+      "definitions": [
+        { "pos": "noun", "meaning": "hình chụp X-quang; tia X" },
+        { "pos": "verb", "meaning": "chụp X-quang" }
+      ],
+      "examples": [
+        "The doctor ordered an X-ray to check for broken bones.",
+        "The X-ray showed that her wrist was fractured."
+      ],
+      "synonyms": ["radiograph"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["medical", "hospital", "health"] }
+    },
+    {
+      "word": "discharge",
+      "level": "B2",
+      "phonetic": "/ˈdɪstʃɑːrdʒ/",
+      "definitions": [
+        { "pos": "noun", "meaning": "việc xuất viện" },
+        { "pos": "verb", "meaning": "cho xuất viện" }
+      ],
+      "examples": [
+        "She was discharged from the hospital after three days of recovery.",
+        "The doctor signed the discharge papers in the morning."
+      ],
+      "synonyms": ["release"],
+      "antonyms": ["admission", "admit"],
+      "family_words": [],
+      "metadata": { "tags": ["medical", "hospital", "health"] }
+    },
+    {
+      "word": "insurance",
+      "level": "A2",
+      "phonetic": "/ɪnˈʃʊərəns/",
+      "definitions": [{ "pos": "noun", "meaning": "bảo hiểm (y tế)" }],
+      "examples": [
+        "Make sure to bring your health insurance card to the hospital.",
+        "Without insurance, the medical bills were very expensive."
+      ],
+      "synonyms": ["coverage"],
+      "antonyms": [],
+      "family_words": ["insure", "insured", "insurer"],
+      "metadata": { "tags": ["medical", "hospital", "health"] }
+    },
+    {
+      "word": "nausea",
+      "level": "B1",
+      "phonetic": "/ˈnɔːziə/",
+      "definitions": [{ "pos": "noun", "meaning": "cảm giác buồn nôn" }],
+      "examples": [
+        "One of the side effects of this medication is nausea.",
+        "She felt nausea and dizziness after the surgery."
+      ],
+      "synonyms": ["queasiness", "sickness"],
+      "antonyms": [],
+      "family_words": ["nauseous", "nauseate"],
+      "metadata": { "tags": ["medical", "health"] }
+    },
+    {
+      "word": "recover",
+      "level": "A2",
+      "phonetic": "/rɪˈkʌvər/",
+      "definitions": [{ "pos": "verb", "meaning": "hồi phục; bình phục" }],
+      "examples": [
+        "It took him a month to fully recover from the illness.",
+        "The doctor said she would recover quickly if she rested at home."
+      ],
+      "synonyms": ["heal", "get better"],
+      "antonyms": ["worsen", "deteriorate"],
+      "family_words": ["recovery", "recoverable"],
+      "metadata": { "tags": ["medical", "health"] }
+    }
+  ]
+}

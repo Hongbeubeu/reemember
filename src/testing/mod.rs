@@ -30,6 +30,7 @@ pub struct Question {
     pub prompt: String,
     pub word: Option<String>,
     pub phonetic: Option<String>,
+    pub level: Option<String>,
     pub examples: Vec<String>,
     pub expected_answers: Vec<String>,
     pub synonyms: Vec<String>,
@@ -164,6 +165,7 @@ impl TestingEngine {
                     prompt: format!("Give the Vietnamese meaning of '{}'.", record.word),
                     word: Some(record.word.clone()),
                     phonetic: record.phonetic.clone(),
+                    level: record.level.clone(),
                     examples: masked_examples,
                     expected_answers: meaning_candidates(&record),
                     synonyms,
@@ -183,6 +185,7 @@ impl TestingEngine {
                     prompt: format!("Which English word matches: '{}' ?", prompt_meaning),
                     word: None,
                     phonetic: None,
+                    level: record.level.clone(),
                     examples: vec![],
                     expected_answers: vec![record.word.clone()],
                     synonyms,
@@ -260,6 +263,7 @@ mod tests {
         WordRecord {
             word: "Consistency".to_string(),
             phonetic: Some("/kənˈsɪstənsi/".to_string()),
+            level: None,
             definitions: vec![Definition {
                 pos: Some("noun".to_string()),
                 meaning: "Tính nhất quán; sự kiên định".to_string(),

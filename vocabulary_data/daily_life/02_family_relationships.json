@@ -1,0 +1,359 @@
+{
+  "collection": "Daily Life",
+  "topic": "Family & Relationships",
+  "words": [
+    {
+      "word": "sibling",
+      "level": "A2",
+      "phonetic": "/ˈsɪblɪŋ/",
+      "definitions": [{ "pos": "noun", "meaning": "anh chị em ruột" }],
+      "examples": [
+        "Do you have any siblings?",
+        "My siblings and I grew up in the countryside."
+      ],
+      "synonyms": ["brother", "sister"],
+      "antonyms": [],
+      "family_words": ["siblings"],
+      "metadata": { "tags": ["family"] }
+    },
+    {
+      "word": "parent",
+      "level": "A1",
+      "phonetic": "/ˈpeərənt/",
+      "definitions": [{ "pos": "noun", "meaning": "cha hoặc mẹ" }],
+      "examples": [
+        "Her parents moved to the city when she was five.",
+        "Being a parent is one of the most rewarding experiences in life."
+      ],
+      "synonyms": ["mother", "father"],
+      "antonyms": ["child"],
+      "family_words": ["parents", "parenting", "parental"],
+      "metadata": { "tags": ["family"] }
+    },
+    {
+      "word": "grandparent",
+      "level": "A1",
+      "phonetic": "/ˈɡrændpeərənt/",
+      "definitions": [{ "pos": "noun", "meaning": "ông hoặc bà (nội/ngoại)" }],
+      "examples": [
+        "We visit our grandparents every Lunar New Year.",
+        "Her grandparent taught her how to cook traditional dishes."
+      ],
+      "synonyms": ["grandmother", "grandfather"],
+      "antonyms": ["grandchild"],
+      "family_words": ["grandparents", "grandmother", "grandfather", "grandchild"],
+      "metadata": { "tags": ["family"] }
+    },
+    {
+      "word": "cousin",
+      "level": "A1",
+      "phonetic": "/ˈkʌzən/",
+      "definitions": [{ "pos": "noun", "meaning": "anh chị em họ" }],
+      "examples": [
+        "I have twelve cousins on my mother's side.",
+        "My cousin and I used to play together every summer."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["cousins"],
+      "metadata": { "tags": ["family", "relationships"] }
+    },
+    {
+      "word": "aunt",
+      "level": "A1",
+      "phonetic": "/ɑːnt/",
+      "definitions": [{ "pos": "noun", "meaning": "cô, dì, bác gái" }],
+      "examples": [
+        "My aunt lives just a few streets away from us.",
+        "She calls her aunt every weekend to catch up."
+      ],
+      "synonyms": [],
+      "antonyms": ["uncle"],
+      "family_words": ["aunts", "uncle"],
+      "metadata": { "tags": ["family"] }
+    },
+    {
+      "word": "uncle",
+      "level": "A1",
+      "phonetic": "/ˈʌŋkəl/",
+      "definitions": [{ "pos": "noun", "meaning": "chú, cậu, bác trai" }],
+      "examples": [
+        "My uncle took me fishing when I was a child.",
+        "He learned to drive from his uncle."
+      ],
+      "synonyms": [],
+      "antonyms": ["aunt"],
+      "family_words": ["uncles", "aunt"],
+      "metadata": { "tags": ["family"] }
+    },
+    {
+      "word": "spouse",
+      "level": "B1",
+      "phonetic": "/spaʊs/",
+      "definitions": [{ "pos": "noun", "meaning": "vợ hoặc chồng" }],
+      "examples": [
+        "Please bring your spouse to the company dinner.",
+        "They have been spouses for over twenty years."
+      ],
+      "synonyms": ["partner", "husband", "wife"],
+      "antonyms": [],
+      "family_words": ["spouses"],
+      "metadata": { "tags": ["family", "relationships"] }
+    },
+    {
+      "word": "partner",
+      "level": "A2",
+      "phonetic": "/ˈpɑːtnər/",
+      "definitions": [{ "pos": "noun", "meaning": "người bạn đời, bạn tình" }],
+      "examples": [
+        "She introduced her partner to the family last month.",
+        "They have been partners for three years now."
+      ],
+      "synonyms": ["spouse", "companion"],
+      "antonyms": [],
+      "family_words": ["partners", "partnership"],
+      "metadata": { "tags": ["relationships"] }
+    },
+    {
+      "word": "relative",
+      "level": "A2",
+      "phonetic": "/ˈrelətɪv/",
+      "definitions": [{ "pos": "noun", "meaning": "người thân, họ hàng" }],
+      "examples": [
+        "We have relatives coming to stay with us this holiday.",
+        "He is a distant relative on my father's side."
+      ],
+      "synonyms": ["relation", "kin"],
+      "antonyms": ["stranger"],
+      "family_words": ["relatives"],
+      "metadata": { "tags": ["family", "relationships"] }
+    },
+    {
+      "word": "stepfather",
+      "level": "A2",
+      "phonetic": "/ˈstepfɑːðər/",
+      "definitions": [{ "pos": "noun", "meaning": "cha dượng" }],
+      "examples": [
+        "Her stepfather has always treated her like his own daughter.",
+        "He grew up with his mother and stepfather in Hanoi."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["stepmother", "stepchild", "stepsibling"],
+      "metadata": { "tags": ["family"] }
+    },
+    {
+      "word": "stepmother",
+      "level": "A2",
+      "phonetic": "/ˈstepmʌðər/",
+      "definitions": [{ "pos": "noun", "meaning": "mẹ kế" }],
+      "examples": [
+        "His stepmother cooks dinner for the whole family every evening.",
+        "She has a good relationship with her stepmother."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["stepfather", "stepchild", "stepsibling"],
+      "metadata": { "tags": ["family"] }
+    },
+    {
+      "word": "twin",
+      "level": "A2",
+      "phonetic": "/twɪn/",
+      "definitions": [{ "pos": "noun", "meaning": "anh/chị/em sinh đôi" }],
+      "examples": [
+        "I can never tell the twins apart — they look identical.",
+        "She and her twin brother were born just two minutes apart."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["twins"],
+      "metadata": { "tags": ["family"] }
+    },
+    {
+      "word": "infant",
+      "level": "B1",
+      "phonetic": "/ˈɪnfənt/",
+      "definitions": [{ "pos": "noun", "meaning": "trẻ sơ sinh, trẻ nhỏ" }],
+      "examples": [
+        "The infant slept peacefully in her mother's arms.",
+        "Infants need a lot of sleep to develop properly."
+      ],
+      "synonyms": ["baby", "newborn"],
+      "antonyms": ["adult"],
+      "family_words": ["infancy"],
+      "metadata": { "tags": ["family", "social"] }
+    },
+    {
+      "word": "toddler",
+      "level": "B1",
+      "phonetic": "/ˈtɒdlər/",
+      "definitions": [{ "pos": "noun", "meaning": "trẻ mới biết đi (1–3 tuổi)" }],
+      "examples": [
+        "The toddler ran around the living room laughing.",
+        "Toddlers learn language very quickly at this stage."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["infant", "child"],
+      "metadata": { "tags": ["family", "social"] }
+    },
+    {
+      "word": "adolescent",
+      "level": "B1",
+      "phonetic": "/ˌædəˈlesənt/",
+      "definitions": [{ "pos": "noun", "meaning": "thanh thiếu niên (giai đoạn dậy thì)" }],
+      "examples": [
+        "Adolescents often want more independence from their parents.",
+        "The program helps adolescents develop healthy habits."
+      ],
+      "synonyms": ["teenager", "youth"],
+      "antonyms": ["adult"],
+      "family_words": ["adolescence"],
+      "metadata": { "tags": ["social"] }
+    },
+    {
+      "word": "elderly",
+      "level": "A2",
+      "phonetic": "/ˈeldəli/",
+      "definitions": [{ "pos": "adjective", "meaning": "lớn tuổi, cao tuổi" }],
+      "examples": [
+        "We should always respect and care for the elderly.",
+        "Her elderly grandmother still lives alone and is very independent."
+      ],
+      "synonyms": ["aged", "senior"],
+      "antonyms": ["young"],
+      "family_words": [],
+      "metadata": { "tags": ["family", "social"] }
+    },
+    {
+      "word": "marriage",
+      "level": "A2",
+      "phonetic": "/ˈmærɪdʒ/",
+      "definitions": [{ "pos": "noun", "meaning": "hôn nhân, lễ cưới" }],
+      "examples": [
+        "They celebrated thirty years of happy marriage.",
+        "Marriage requires commitment, trust, and communication."
+      ],
+      "synonyms": ["wedding", "matrimony"],
+      "antonyms": ["divorce"],
+      "family_words": ["marry", "married", "remarriage"],
+      "metadata": { "tags": ["relationships", "social"] }
+    },
+    {
+      "word": "divorce",
+      "level": "A2",
+      "phonetic": "/dɪˈvɔːs/",
+      "definitions": [
+        { "pos": "noun", "meaning": "sự ly hôn" },
+        { "pos": "verb", "meaning": "ly hôn" }
+      ],
+      "examples": [
+        "After the divorce, both parents shared custody of the children.",
+        "They decided to divorce after years of disagreement."
+      ],
+      "synonyms": ["separation"],
+      "antonyms": ["marriage"],
+      "family_words": ["divorced", "divorcee"],
+      "metadata": { "tags": ["relationships"] }
+    },
+    {
+      "word": "guardian",
+      "level": "B1",
+      "phonetic": "/ˈɡɑːdiən/",
+      "definitions": [{ "pos": "noun", "meaning": "người giám hộ" }],
+      "examples": [
+        "His aunt became his legal guardian after his parents passed away.",
+        "Please have a parent or guardian sign the permission slip."
+      ],
+      "synonyms": ["caretaker", "custodian"],
+      "antonyms": [],
+      "family_words": ["guardianship"],
+      "metadata": { "tags": ["family", "social"] }
+    },
+    {
+      "word": "adopt",
+      "level": "B1",
+      "phonetic": "/əˈdɒpt/",
+      "definitions": [{ "pos": "verb", "meaning": "nhận nuôi (con)" }],
+      "examples": [
+        "The couple decided to adopt a child from an orphanage.",
+        "She was adopted when she was just six months old."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["adoption", "adopted", "adoptive"],
+      "metadata": { "tags": ["family"] }
+    },
+    {
+      "word": "household",
+      "level": "A2",
+      "phonetic": "/ˈhaʊshəʊld/",
+      "definitions": [{ "pos": "noun", "meaning": "hộ gia đình, những người sống chung một nhà" }],
+      "examples": [
+        "There are five people in our household.",
+        "The cost of running a household has gone up significantly."
+      ],
+      "synonyms": ["family", "home"],
+      "antonyms": [],
+      "family_words": ["householder"],
+      "metadata": { "tags": ["family", "social"] }
+    },
+    {
+      "word": "nurture",
+      "level": "B2",
+      "phonetic": "/ˈnɜːtʃər/",
+      "definitions": [{ "pos": "verb", "meaning": "nuôi dưỡng, chăm sóc và vun đắp" }],
+      "examples": [
+        "Good parents nurture their children's confidence and creativity.",
+        "It takes time to nurture a strong friendship."
+      ],
+      "synonyms": ["raise", "support", "care for"],
+      "antonyms": ["neglect"],
+      "family_words": ["nurturing"],
+      "metadata": { "tags": ["family", "relationships"] }
+    },
+    {
+      "word": "bond",
+      "level": "B1",
+      "phonetic": "/bɒnd/",
+      "definitions": [{ "pos": "noun", "meaning": "sợi dây gắn kết, mối liên hệ tình cảm" }],
+      "examples": [
+        "The bond between a mother and child is incredibly strong.",
+        "Shared experiences help build a bond between friends."
+      ],
+      "synonyms": ["connection", "tie"],
+      "antonyms": [],
+      "family_words": ["bonding", "bonded"],
+      "metadata": { "tags": ["family", "relationships"] }
+    },
+    {
+      "word": "childhood",
+      "level": "A2",
+      "phonetic": "/ˈtʃaɪldhʊd/",
+      "definitions": [{ "pos": "noun", "meaning": "thời thơ ấu" }],
+      "examples": [
+        "She has happy memories of her childhood in the countryside.",
+        "Childhood experiences can shape a person's character for life."
+      ],
+      "synonyms": ["youth", "early years"],
+      "antonyms": ["adulthood"],
+      "family_words": ["child", "children", "childlike"],
+      "metadata": { "tags": ["family", "social"] }
+    },
+    {
+      "word": "generation",
+      "level": "B1",
+      "phonetic": "/ˌdʒenəˈreɪʃən/",
+      "definitions": [{ "pos": "noun", "meaning": "thế hệ" }],
+      "examples": [
+        "This recipe has been passed down through three generations.",
+        "Each generation faces its own unique challenges."
+      ],
+      "synonyms": ["age group"],
+      "antonyms": [],
+      "family_words": ["generational"],
+      "metadata": { "tags": ["family", "social"] }
+    }
+  ]
+}

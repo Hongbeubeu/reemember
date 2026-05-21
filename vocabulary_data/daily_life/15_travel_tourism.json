@@ -1,0 +1,356 @@
+{
+  "collection": "Daily Life",
+  "topic": "Travel & Tourism",
+  "words": [
+    {
+      "word": "itinerary",
+      "level": "B1",
+      "phonetic": "/aɪˈtɪnəreri/",
+      "definitions": [{ "pos": "noun", "meaning": "lịch trình du lịch, kế hoạch chuyến đi" }],
+      "examples": [
+        "She planned a detailed itinerary for their two-week trip.",
+        "The tour guide handed out the itinerary on the first day."
+      ],
+      "synonyms": ["schedule", "travel plan"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["travel", "tourism", "planning"] }
+    },
+    {
+      "word": "passport",
+      "level": "A2",
+      "phonetic": "/ˈpɑːspɔːrt/",
+      "definitions": [{ "pos": "noun", "meaning": "hộ chiếu" }],
+      "examples": [
+        "Make sure your passport is valid for at least six months before you travel.",
+        "She lost her passport at the airport and had to contact the embassy."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["travel", "documents", "airport"] }
+    },
+    {
+      "word": "boarding pass",
+      "level": "A2",
+      "phonetic": "/ˈbɔːrdɪŋ pæs/",
+      "definitions": [{ "pos": "noun", "meaning": "thẻ lên máy bay" }],
+      "examples": [
+        "You need to show your boarding pass at the gate before you can board the plane.",
+        "He downloaded his boarding pass on his phone to avoid printing it."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["board (v)", "boarding (n)"],
+      "metadata": { "tags": ["travel", "airport", "flight"] }
+    },
+    {
+      "word": "luggage",
+      "level": "A2",
+      "phonetic": "/ˈlʌɡɪdʒ/",
+      "definitions": [{ "pos": "noun", "meaning": "hành lý" }],
+      "examples": [
+        "The airline only allows one piece of carry-on luggage per passenger.",
+        "She struggled to lift her heavy luggage onto the overhead rack."
+      ],
+      "synonyms": ["baggage", "bags", "suitcase"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["travel", "airport", "packing"] }
+    },
+    {
+      "word": "check-in",
+      "level": "A2",
+      "phonetic": "/ˈtʃek ɪn/",
+      "definitions": [{ "pos": "noun", "meaning": "thủ tục nhận phòng hoặc đăng ký tại sân bay" }, { "pos": "verb", "meaning": "làm thủ tục nhận phòng, đăng ký" }],
+      "examples": [
+        "Online check-in opens 24 hours before the flight departure.",
+        "We arrived at the hotel early but check-in was not until 3 p.m."
+      ],
+      "synonyms": [],
+      "antonyms": ["check-out"],
+      "family_words": ["check out (v)", "checkout (n)"],
+      "metadata": { "tags": ["travel", "airport", "hotel", "accommodation"] }
+    },
+    {
+      "word": "accommodation",
+      "level": "B1",
+      "phonetic": "/əˌkɒməˈdeɪʃn/",
+      "definitions": [{ "pos": "noun", "meaning": "chỗ ở, nơi lưu trú" }],
+      "examples": [
+        "The travel package includes flights and accommodation for seven nights.",
+        "They had trouble finding affordable accommodation during the peak season."
+      ],
+      "synonyms": ["lodging", "housing", "stay"],
+      "antonyms": [],
+      "family_words": ["accommodate (v)", "accommodating (adj)"],
+      "metadata": { "tags": ["travel", "tourism", "hotel", "accommodation"] }
+    },
+    {
+      "word": "reservation",
+      "level": "B1",
+      "phonetic": "/ˌrezərˈveɪʃn/",
+      "definitions": [{ "pos": "noun", "meaning": "sự đặt trước, đặt chỗ" }],
+      "examples": [
+        "I made a reservation at the restaurant for eight o'clock.",
+        "You should confirm your hotel reservation a few days before arrival."
+      ],
+      "synonyms": ["booking", "appointment"],
+      "antonyms": [],
+      "family_words": ["reserve (v)", "reserved (adj)"],
+      "metadata": { "tags": ["travel", "booking", "hotel"] }
+    },
+    {
+      "word": "departure",
+      "level": "A2",
+      "phonetic": "/dɪˈpɑːrtʃər/",
+      "definitions": [{ "pos": "noun", "meaning": "sự khởi hành, chuyến đi" }],
+      "examples": [
+        "The departure lounge was crowded with passengers waiting for their flights.",
+        "Our departure time is 6:30 a.m., so we need to be at the airport by 4:30."
+      ],
+      "synonyms": ["takeoff", "leaving"],
+      "antonyms": ["arrival"],
+      "family_words": ["depart (v)", "departing (adj)"],
+      "metadata": { "tags": ["travel", "airport", "flight"] }
+    },
+    {
+      "word": "arrival",
+      "level": "A2",
+      "phonetic": "/əˈraɪvl/",
+      "definitions": [{ "pos": "noun", "meaning": "sự đến nơi, đến đích" }],
+      "examples": [
+        "The arrivals board showed that the flight from London was on time.",
+        "Upon arrival, guests should head to the reception desk to get their room key."
+      ],
+      "synonyms": ["landing"],
+      "antonyms": ["departure"],
+      "family_words": ["arrive (v)", "arrived (adj)"],
+      "metadata": { "tags": ["travel", "airport", "hotel"] }
+    },
+    {
+      "word": "sightseeing",
+      "level": "A2",
+      "phonetic": "/ˈsaɪtsiːɪŋ/",
+      "definitions": [{ "pos": "noun", "meaning": "việc tham quan, ngắm cảnh du lịch" }],
+      "examples": [
+        "We spent the morning sightseeing around the old town.",
+        "A hop-on hop-off bus is a great way to do sightseeing in a new city."
+      ],
+      "synonyms": ["touring", "exploring"],
+      "antonyms": [],
+      "family_words": ["sightseer (n)", "sight (n)"],
+      "metadata": { "tags": ["tourism", "sightseeing", "holiday"] }
+    },
+    {
+      "word": "attraction",
+      "level": "A2",
+      "phonetic": "/əˈtrækʃn/",
+      "definitions": [{ "pos": "noun", "meaning": "điểm tham quan, điểm thu hút du khách" }],
+      "examples": [
+        "The Eiffel Tower is one of the most visited tourist attractions in the world.",
+        "The city has many free attractions that families can enjoy."
+      ],
+      "synonyms": ["landmark", "sight"],
+      "antonyms": [],
+      "family_words": ["attract (v)", "attractive (adj)", "attractively (adv)"],
+      "metadata": { "tags": ["tourism", "sightseeing", "travel"] }
+    },
+    {
+      "word": "souvenir",
+      "level": "A2",
+      "phonetic": "/ˌsuːvəˈnɪər/",
+      "definitions": [{ "pos": "noun", "meaning": "quà lưu niệm, đồ kỷ niệm" }],
+      "examples": [
+        "She bought a small souvenir from every country she visited.",
+        "The souvenir shop near the museum sold postcards and fridge magnets."
+      ],
+      "synonyms": ["keepsake", "memento"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["tourism", "shopping", "holiday"] }
+    },
+    {
+      "word": "guidebook",
+      "level": "B1",
+      "phonetic": "/ˈɡaɪdbʊk/",
+      "definitions": [{ "pos": "noun", "meaning": "sách hướng dẫn du lịch" }],
+      "examples": [
+        "He bought a guidebook before the trip so he could learn about the local culture.",
+        "The guidebook recommended several hidden gems that most tourists miss."
+      ],
+      "synonyms": ["travel guide", "handbook"],
+      "antonyms": [],
+      "family_words": ["guide (n/v)", "guided (adj)"],
+      "metadata": { "tags": ["travel", "tourism", "planning"] }
+    },
+    {
+      "word": "tour guide",
+      "level": "A2",
+      "phonetic": "/ˈtʊər ɡaɪd/",
+      "definitions": [{ "pos": "noun", "meaning": "hướng dẫn viên du lịch" }],
+      "examples": [
+        "The tour guide explained the history of each monument as they walked through the city.",
+        "A knowledgeable tour guide can make a big difference to your travel experience."
+      ],
+      "synonyms": ["guide", "escort"],
+      "antonyms": [],
+      "family_words": ["guide (v)", "guided tour (n)"],
+      "metadata": { "tags": ["tourism", "travel", "sightseeing"] }
+    },
+    {
+      "word": "currency",
+      "level": "B1",
+      "phonetic": "/ˈkɜːrənsi/",
+      "definitions": [{ "pos": "noun", "meaning": "tiền tệ, đơn vị tiền tệ" }],
+      "examples": [
+        "You should exchange your currency before you leave for a foreign country.",
+        "The local currency is the euro, and most shops do not accept US dollars."
+      ],
+      "synonyms": ["money", "cash"],
+      "antonyms": [],
+      "family_words": ["current (adj)"],
+      "metadata": { "tags": ["travel", "money", "planning"] }
+    },
+    {
+      "word": "exchange rate",
+      "level": "B1",
+      "phonetic": "/ɪksˈtʃeɪndʒ reɪt/",
+      "definitions": [{ "pos": "noun", "meaning": "tỷ giá hối đoái" }],
+      "examples": [
+        "Always check the exchange rate before converting your money at the airport.",
+        "The exchange rate today is more favourable than it was last week."
+      ],
+      "synonyms": ["conversion rate"],
+      "antonyms": [],
+      "family_words": ["exchange (v/n)"],
+      "metadata": { "tags": ["travel", "money", "planning"] }
+    },
+    {
+      "word": "visa",
+      "level": "A2",
+      "phonetic": "/ˈviːzə/",
+      "definitions": [{ "pos": "noun", "meaning": "thị thực, visa" }],
+      "examples": [
+        "Citizens of some countries need a visa to enter Japan.",
+        "She applied for a tourist visa three weeks before her trip."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["travel", "documents", "planning"] }
+    },
+    {
+      "word": "customs",
+      "level": "B1",
+      "phonetic": "/ˈkʌstəmz/",
+      "definitions": [{ "pos": "noun", "meaning": "hải quan" }],
+      "examples": [
+        "He had to declare all the gifts he was carrying when going through customs.",
+        "The customs officer asked to inspect her luggage at the border."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["customary (adj)"],
+      "metadata": { "tags": ["travel", "airport", "documents"] }
+    },
+    {
+      "word": "layover",
+      "level": "B2",
+      "phonetic": "/ˈleɪoʊvər/",
+      "definitions": [{ "pos": "noun", "meaning": "thời gian dừng chờ chuyển chuyến bay" }],
+      "examples": [
+        "We had a four-hour layover in Dubai before our connecting flight.",
+        "She used her layover to explore the airport's duty-free shops."
+      ],
+      "synonyms": ["stopover", "transit"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["travel", "airport", "flight"] }
+    },
+    {
+      "word": "resort",
+      "level": "A2",
+      "phonetic": "/rɪˈzɔːrt/",
+      "definitions": [{ "pos": "noun", "meaning": "khu nghỉ dưỡng" }],
+      "examples": [
+        "They spent a week at a beach resort in Thailand.",
+        "The ski resort offers lessons for beginners and advanced slopes for experts."
+      ],
+      "synonyms": ["retreat", "holiday complex"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["travel", "accommodation", "holiday"] }
+    },
+    {
+      "word": "backpacker",
+      "level": "B1",
+      "phonetic": "/ˈbækpækər/",
+      "definitions": [{ "pos": "noun", "meaning": "người du lịch ba lô, người đi phượt" }],
+      "examples": [
+        "Southeast Asia is very popular with backpackers because of its low costs.",
+        "As a backpacker, she stayed in hostels and cooked her own meals to save money."
+      ],
+      "synonyms": ["traveller", "budget traveller"],
+      "antonyms": [],
+      "family_words": ["backpack (n/v)", "backpacking (n)"],
+      "metadata": { "tags": ["travel", "tourism", "holiday"] }
+    },
+    {
+      "word": "jet lag",
+      "level": "B1",
+      "phonetic": "/ˈdʒet læɡ/",
+      "definitions": [{ "pos": "noun", "meaning": "mệt mỏi do lệch múi giờ (jet lag)" }],
+      "examples": [
+        "After the long flight from New York, she suffered from jet lag for several days.",
+        "Drinking plenty of water during the flight can help reduce jet lag."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["travel", "flight", "health"] }
+    },
+    {
+      "word": "local cuisine",
+      "level": "B1",
+      "phonetic": "/ˈloʊkl kwɪˈziːn/",
+      "definitions": [{ "pos": "noun", "meaning": "ẩm thực địa phương, món ăn bản địa" }],
+      "examples": [
+        "Trying the local cuisine is one of the best parts of travelling to a new country.",
+        "The tour included a cooking class where visitors learned to prepare local cuisine."
+      ],
+      "synonyms": ["local food", "regional food"],
+      "antonyms": [],
+      "family_words": ["culinary (adj)"],
+      "metadata": { "tags": ["travel", "tourism", "food"] }
+    },
+    {
+      "word": "round trip",
+      "level": "A2",
+      "phonetic": "/ˈraʊnd trɪp/",
+      "definitions": [{ "pos": "noun", "meaning": "chuyến đi khứ hồi" }],
+      "examples": [
+        "A round trip ticket to Paris costs less if you book two months in advance.",
+        "She booked a round trip so she could return home after the conference."
+      ],
+      "synonyms": ["return trip", "return journey"],
+      "antonyms": ["one-way"],
+      "family_words": [],
+      "metadata": { "tags": ["travel", "flight", "planning"] }
+    },
+    {
+      "word": "travel insurance",
+      "level": "B1",
+      "phonetic": "/ˈtrævl ɪnˈʃʊərəns/",
+      "definitions": [{ "pos": "noun", "meaning": "bảo hiểm du lịch" }],
+      "examples": [
+        "Always buy travel insurance in case your flight is cancelled or you fall ill abroad.",
+        "His travel insurance covered the cost of the hospital visit during his trip."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["insure (v)", "insured (adj)"],
+      "metadata": { "tags": ["travel", "planning", "health"] }
+    }
+  ]
+}

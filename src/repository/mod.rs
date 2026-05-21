@@ -9,6 +9,58 @@ use std::cell::RefCell;
 
 pub use query::{QueryOptions, SortBy};
 
+pub struct BatchImportItem {
+    pub record: WordRecord,
+    pub collection_name: Option<String>,
+    pub topic_name: Option<String>,
+}
+
+pub struct BatchImportReport {
+    pub inserted: usize,
+    pub updated: usize,
+}
+
+#[derive(Debug, Clone)]
+pub struct Stats {
+    pub streak_days: u32,
+    pub today_reviews: u32,
+    pub today_correct: u32,
+    pub total_words: u32,
+    pub due_count: u32,
+    pub all_time_reviews: u32,
+    pub all_time_correct: u32,
+}
+
+fn calculate_streak(dates: &[String]) -> u32 {
+    if dates.is_empty() {
+        return 0;
+    }
+    let today = chrono::Utc::now().date_naive();
+    let yesterday = today.pred_opt().unwrap_or(today);
+    let first = match chrono::NaiveDate::parse_from_str(&dates[0], "%Y-%m-%d") {
+        Ok(d) => d,
+        Err(_) => return 0,
+    };
+    if first < yesterday {
+        return 0;
+    }
+    let mut streak = 0u32;
+    let mut expected = first;
+    for date_str in dates {
+        let date = match chrono::NaiveDate::parse_from_str(date_str, "%Y-%m-%d") {
+            Ok(d) => d,
+            Err(_) => break,
+        };
+        if date == expected {
+            streak += 1;
+            expected = expected.pred_opt().unwrap_or(expected);
+        } else {
+            break;
+        }
+    }
+    streak
+}
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct UpsertResult {
     pub inserted: bool,
@@ -76,7 +128,7 @@ impl WordRepository {
     pub fn get_by_word_key(&self, word_key: &str) -> Result<Option<WordRecord>, DbError> {
         let conn = self.conn.borrow();
         let mut stmt = conn
-            .prepare("SELECT id, word, phonetic, created_at, review_count FROM words WHERE word_key = ?")
+            .prepare("SELECT id, word, phonetic, created_at, review_count, level FROM words WHERE word_key = ?")
             .map_err(DbError::Sqlite)?;
 
         let mut rows = stmt.query([word_key]).map_err(DbError::Sqlite)?;
@@ -90,6 +142,7 @@ impl WordRepository {
         let phonetic: Option<String> = row.get(2).map_err(DbError::Sqlite)?;
         let created_at: Option<String> = row.get(3).map_err(DbError::Sqlite)?;
         let review_count: u32 = row.get(4).map_err(DbError::Sqlite)?;
+        let level: Option<String> = row.get(5).map_err(DbError::Sqlite)?;
         drop(rows);
         drop(stmt);
         drop(conn);
@@ -102,13 +155,13 @@ impl WordRepository {
         let family_words = self.load_relations(id, "family")?;
 
         Ok(Some(WordRecord {
-            word, phonetic, definitions, examples, synonyms, antonyms, family_words,
+            word, phonetic, level, definitions, examples, synonyms, antonyms, family_words,
             metadata: Metadata { tags, created_at, review_count },
         }))
     }
 
     pub fn query(&self, options: &QueryOptions) -> Result<Vec<WordRecord>, DbError> {
-        let mut query = "SELECT DISTINCT words.id, words.word, words.phonetic, words.created_at, words.review_count FROM words".to_string();
+        let mut query = "SELECT DISTINCT words.id, words.word, words.phonetic, words.created_at, words.review_count, words.level FROM words".to_string();
 
         let mut joins = vec![];
         let mut conditions: Vec<&str> = vec![];
@@ -161,6 +214,7 @@ impl WordRepository {
                 row.get::<_, Option<String>>(2)?,
                 row.get::<_, Option<String>>(3)?,
                 row.get::<_, u32>(4)?,
+                row.get::<_, Option<String>>(5)?,
             ))
         }).map_err(DbError::Sqlite)?;
 
@@ -172,7 +226,7 @@ impl WordRepository {
         drop(conn);
 
         let mut records = Vec::new();
-        for (id, word, phonetic, created_at, review_count) in ids_and_data {
+        for (id, word, phonetic, created_at, review_count, level) in ids_and_data {
             let definitions = self.load_definitions(id)?;
             let examples = self.load_examples(id)?;
             let tags = self.load_tags(id)?;
@@ -180,7 +234,7 @@ impl WordRepository {
             let antonyms = self.load_relations(id, "antonym")?;
             let family_words = self.load_relations(id, "family")?;
             records.push(WordRecord {
-                word, phonetic, definitions, examples, synonyms, antonyms, family_words,
+                word, phonetic, level, definitions, examples, synonyms, antonyms, family_words,
                 metadata: Metadata { tags, created_at, review_count },
             });
         }
@@ -196,17 +250,17 @@ impl WordRepository {
         let conn = self.conn.borrow();
         let maybe = if let Some(tid) = topic_id {
             conn.query_row(
-                "SELECT words.id, words.word, words.phonetic, words.created_at, words.review_count \
+                "SELECT words.id, words.word, words.phonetic, words.created_at, words.review_count, words.level \
                  FROM words JOIN word_topics ON words.id = word_topics.word_id \
                  WHERE word_topics.topic_id = ? ORDER BY RANDOM() LIMIT 1",
                 [tid],
-                |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?, row.get(4)?)),
+                |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?, row.get(4)?, row.get(5)?)),
             ).optional().map_err(DbError::Sqlite)?
         } else {
             conn.query_row(
-                "SELECT id, word, phonetic, created_at, review_count FROM words ORDER BY RANDOM() LIMIT 1",
+                "SELECT id, word, phonetic, created_at, review_count, level FROM words ORDER BY RANDOM() LIMIT 1",
                 [],
-                |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?, row.get(4)?)),
+                |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?, row.get(4)?, row.get(5)?)),
             ).optional().map_err(DbError::Sqlite)?
         };
         drop(conn);
@@ -231,22 +285,22 @@ impl WordRepository {
         let conn = self.conn.borrow();
         let maybe = if let Some(tid) = topic_id {
             conn.query_row(
-                "SELECT words.id, words.word, words.phonetic, words.created_at, words.review_count \
+                "SELECT words.id, words.word, words.phonetic, words.created_at, words.review_count, words.level \
                  FROM words \
                  JOIN review_schedule ON words.id = review_schedule.word_id \
                  JOIN word_topics ON words.id = word_topics.word_id \
                  WHERE review_schedule.due_at <= ? AND word_topics.topic_id = ? \
                  ORDER BY review_schedule.due_at ASC LIMIT 1",
                 rusqlite::params![now_utc, tid],
-                |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?, row.get(4)?)),
+                |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?, row.get(4)?, row.get(5)?)),
             ).optional().map_err(DbError::Sqlite)?
         } else {
             conn.query_row(
-                "SELECT words.id, words.word, words.phonetic, words.created_at, words.review_count \
+                "SELECT words.id, words.word, words.phonetic, words.created_at, words.review_count, words.level \
                  FROM words JOIN review_schedule ON words.id = review_schedule.word_id \
                  WHERE review_schedule.due_at <= ? ORDER BY review_schedule.due_at ASC LIMIT 1",
                 [now_utc],
-                |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?, row.get(4)?)),
+                |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?, row.get(4)?, row.get(5)?)),
             ).optional().map_err(DbError::Sqlite)?
         };
         drop(conn);
@@ -446,6 +500,136 @@ impl WordRepository {
         self.create_topic(collection_id, name, None)
     }
 
+    // ===== Statistics =====
+
+    pub fn get_stats(&self) -> Result<Stats, DbError> {
+        let conn = self.conn.borrow();
+
+        let total_words: u32 = conn.query_row(
+            "SELECT COUNT(*) FROM words", [], |row| row.get(0),
+        ).map_err(DbError::Sqlite)?;
+
+        let today_reviews: u32 = conn.query_row(
+            "SELECT COUNT(*) FROM review_history WHERE date(reviewed_at) = date('now')",
+            [], |row| row.get(0),
+        ).map_err(DbError::Sqlite)?;
+
+        let today_correct: u32 = conn.query_row(
+            "SELECT COUNT(*) FROM review_history WHERE date(reviewed_at) = date('now') AND was_correct = 1",
+            [], |row| row.get(0),
+        ).map_err(DbError::Sqlite)?;
+
+        let due_count: u32 = conn.query_row(
+            "SELECT COUNT(*) FROM review_schedule WHERE due_at <= datetime('now')",
+            [], |row| row.get(0),
+        ).map_err(DbError::Sqlite)?;
+
+        let all_time_reviews: u32 = conn.query_row(
+            "SELECT COUNT(*) FROM review_history", [], |row| row.get(0),
+        ).map_err(DbError::Sqlite)?;
+
+        let all_time_correct: u32 = conn.query_row(
+            "SELECT COUNT(*) FROM review_history WHERE was_correct = 1",
+            [], |row| row.get(0),
+        ).map_err(DbError::Sqlite)?;
+
+        let mut stmt = conn.prepare(
+            "SELECT DISTINCT date(reviewed_at) FROM review_history ORDER BY date(reviewed_at) DESC",
+        ).map_err(DbError::Sqlite)?;
+        let dates: Vec<String> = stmt
+            .query_map([], |row| row.get(0))
+            .map_err(DbError::Sqlite)?
+            .collect::<Result<Vec<_>, _>>()
+            .map_err(DbError::Sqlite)?;
+
+        Ok(Stats {
+            streak_days: calculate_streak(&dates),
+            today_reviews,
+            today_correct,
+            total_words,
+            due_count,
+            all_time_reviews,
+            all_time_correct,
+        })
+    }
+
+    // ===== Batch Import =====
+
+    pub fn import_batch_atomic(&self, items: &[BatchImportItem]) -> Result<BatchImportReport, DbError> {
+        if items.is_empty() {
+            return Ok(BatchImportReport { inserted: 0, updated: 0 });
+        }
+
+        let mut conn = self.conn.borrow_mut();
+        let tx = conn.transaction().map_err(DbError::Sqlite)?;
+        let now = Utc::now().to_rfc3339();
+        let mut inserted = 0usize;
+        let mut updated = 0usize;
+
+        for item in items {
+            let word_key = item.record.word_key();
+            let existing = Self::get_word_record_on_conn(&tx, &word_key)?;
+
+            let (is_new, merged) = match existing {
+                None => (true, item.record.clone()),
+                Some(old) => {
+                    let m = WordRecord {
+                        word: item.record.word.clone(),
+                        phonetic: merge::merge_phonetic(old.phonetic, item.record.phonetic.clone()),
+                        level: item.record.level.clone().or(old.level),
+                        definitions: merge::merge_definitions(old.definitions, item.record.definitions.clone()),
+                        examples: merge::merge_examples(old.examples, item.record.examples.clone()),
+                        synonyms: merge::merge_string_vec(old.synonyms, item.record.synonyms.clone()),
+                        antonyms: merge::merge_string_vec(old.antonyms, item.record.antonyms.clone()),
+                        family_words: merge::merge_string_vec(old.family_words, item.record.family_words.clone()),
+                        metadata: Metadata {
+                            tags: merge::merge_tags(old.metadata.tags, item.record.metadata.tags.clone()),
+                            created_at: merge::merge_created_at(old.metadata.created_at, item.record.metadata.created_at.clone()),
+                            review_count: merge::merge_review_count(old.metadata.review_count, item.record.metadata.review_count),
+                        },
+                    };
+                    (false, m)
+                }
+            };
+
+            let word_id: i64 = if is_new {
+                let id = Self::insert_word_record_tx(&tx, &merged, &now)?;
+                Self::initialize_schedule_tx(&tx, id, &now)?;
+                Self::insert_definitions_tx(&tx, id, &merged.definitions)?;
+                Self::insert_examples_tx(&tx, id, &merged.examples)?;
+                Self::insert_tags_tx(&tx, id, &merged.metadata.tags)?;
+                Self::insert_relations_tx(&tx, id, &merged.synonyms, "synonym")?;
+                Self::insert_relations_tx(&tx, id, &merged.antonyms, "antonym")?;
+                Self::insert_relations_tx(&tx, id, &merged.family_words, "family")?;
+                inserted += 1;
+                id
+            } else {
+                Self::update_word_record_tx(&tx, &word_key, &merged, &now)?;
+                Self::replace_definitions_tx(&tx, &word_key, &merged.definitions)?;
+                Self::replace_examples_tx(&tx, &word_key, &merged.examples)?;
+                Self::replace_tags_tx(&tx, &word_key, &merged.metadata.tags)?;
+                Self::replace_relations_tx(&tx, &word_key, &merged.synonyms, "synonym")?;
+                Self::replace_relations_tx(&tx, &word_key, &merged.antonyms, "antonym")?;
+                Self::replace_relations_tx(&tx, &word_key, &merged.family_words, "family")?;
+                updated += 1;
+                tx.query_row("SELECT id FROM words WHERE word_key = ?", [word_key.as_str()], |row| row.get(0))
+                    .map_err(DbError::Sqlite)?
+            };
+
+            if let (Some(col_name), Some(topic_name)) = (&item.collection_name, &item.topic_name) {
+                let col_id = Self::find_or_create_collection_in_tx(&tx, col_name, &now)?;
+                let topic_id = Self::find_or_create_topic_in_tx(&tx, col_id, topic_name)?;
+                tx.execute(
+                    "INSERT OR IGNORE INTO word_topics (word_id, topic_id) VALUES (?, ?)",
+                    rusqlite::params![word_id, topic_id],
+                ).map_err(DbError::Sqlite)?;
+            }
+        }
+
+        tx.commit().map_err(DbError::Sqlite)?;
+        Ok(BatchImportReport { inserted, updated })
+    }
+
     // ===== Word-Topic assignment =====
 
     pub fn assign_word_to_topic(&self, word_key: &str, topic_id: i64) -> Result<(), DbError> {
@@ -482,6 +666,7 @@ impl WordRepository {
         Ok(WordRecord {
             word: new.word.clone(),
             phonetic: merge::merge_phonetic(old.phonetic.clone(), new.phonetic.clone()),
+            level: new.level.clone().or_else(|| old.level.clone()),
             definitions: merge::merge_definitions(old.definitions.clone(), new.definitions.clone()),
             examples: merge::merge_examples(old.examples.clone(), new.examples.clone()),
             synonyms: merge::merge_string_vec(old.synonyms.clone(), new.synonyms.clone()),
@@ -497,9 +682,9 @@ impl WordRepository {
 
     fn build_word_record_from_row(
         &self,
-        row: Option<(i64, String, Option<String>, Option<String>, u32)>,
+        row: Option<(i64, String, Option<String>, Option<String>, u32, Option<String>)>,
     ) -> Result<Option<WordRecord>, DbError> {
-        let (id, word, phonetic, created_at, review_count) = match row {
+        let (id, word, phonetic, created_at, review_count, level) = match row {
             None => return Ok(None),
             Some(r) => r,
         };
@@ -510,7 +695,7 @@ impl WordRepository {
         let antonyms = self.load_relations(id, "antonym")?;
         let family_words = self.load_relations(id, "family")?;
         Ok(Some(WordRecord {
-            word, phonetic, definitions, examples, synonyms, antonyms, family_words,
+            word, phonetic, level, definitions, examples, synonyms, antonyms, family_words,
             metadata: Metadata { tags, created_at, review_count },
         }))
     }
@@ -566,8 +751,8 @@ impl WordRepository {
 
     fn insert_word_record_tx(tx: &rusqlite::Transaction, record: &WordRecord, now: &str) -> Result<i64, DbError> {
         tx.execute(
-            "INSERT INTO words (word_key, word, phonetic, created_at, review_count, updated_at) VALUES (?, ?, ?, ?, ?, ?)",
-            rusqlite::params![record.word_key(), &record.word, &record.phonetic, &record.metadata.created_at, record.metadata.review_count, now],
+            "INSERT INTO words (word_key, word, phonetic, created_at, review_count, updated_at, level) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            rusqlite::params![record.word_key(), &record.word, &record.phonetic, &record.metadata.created_at, record.metadata.review_count, now, &record.level],
         ).map_err(DbError::Sqlite)?;
         Ok(tx.last_insert_rowid())
     }
@@ -621,8 +806,8 @@ impl WordRepository {
 
     fn update_word_record_tx(tx: &rusqlite::Transaction, word_key: &str, record: &WordRecord, now: &str) -> Result<(), DbError> {
         tx.execute(
-            "UPDATE words SET word = ?, phonetic = ?, created_at = ?, review_count = ?, updated_at = ? WHERE word_key = ?",
-            rusqlite::params![&record.word, &record.phonetic, &record.metadata.created_at, record.metadata.review_count, now, word_key],
+            "UPDATE words SET word = ?, phonetic = ?, created_at = ?, review_count = ?, updated_at = ?, level = ? WHERE word_key = ?",
+            rusqlite::params![&record.word, &record.phonetic, &record.metadata.created_at, record.metadata.review_count, now, &record.level, word_key],
         ).map_err(DbError::Sqlite)?;
         Ok(())
     }
@@ -662,6 +847,102 @@ impl WordRepository {
         let word_id: i64 = tx.query_row("SELECT id FROM words WHERE word_key = ?", [word_key], |row| row.get(0)).map_err(DbError::Sqlite)?;
         Self::insert_relations_tx(tx, word_id, words, relation_type)
     }
+
+    fn get_word_record_on_conn(conn: &Connection, word_key: &str) -> Result<Option<WordRecord>, DbError> {
+        let row: Option<(i64, String, Option<String>, Option<String>, u32, Option<String>)> = conn.query_row(
+            "SELECT id, word, phonetic, created_at, review_count, level FROM words WHERE word_key = ?",
+            [word_key],
+            |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?, row.get(4)?, row.get(5)?)),
+        ).optional().map_err(DbError::Sqlite)?;
+
+        let (id, word, phonetic, created_at, review_count, level) = match row {
+            None => return Ok(None),
+            Some(r) => r,
+        };
+
+        let definitions = Self::load_definitions_on_conn(conn, id)?;
+        let examples = Self::load_examples_on_conn(conn, id)?;
+        let tags = Self::load_tags_on_conn(conn, id)?;
+        let synonyms = Self::load_relations_on_conn(conn, id, "synonym")?;
+        let antonyms = Self::load_relations_on_conn(conn, id, "antonym")?;
+        let family_words = Self::load_relations_on_conn(conn, id, "family")?;
+
+        Ok(Some(WordRecord {
+            word, phonetic, level, definitions, examples, synonyms, antonyms, family_words,
+            metadata: Metadata { tags, created_at, review_count },
+        }))
+    }
+
+    fn load_definitions_on_conn(conn: &Connection, word_id: i64) -> Result<Vec<Definition>, DbError> {
+        let mut stmt = conn
+            .prepare("SELECT pos, meaning FROM definitions WHERE word_id = ?")
+            .map_err(DbError::Sqlite)?;
+        stmt.query_map([word_id], |row| {
+            Ok(Definition { pos: row.get(0).ok(), meaning: row.get(1)? })
+        }).map_err(DbError::Sqlite)?
+        .collect::<Result<Vec<_>, _>>()
+        .map_err(DbError::Sqlite)
+    }
+
+    fn load_examples_on_conn(conn: &Connection, word_id: i64) -> Result<Vec<String>, DbError> {
+        let mut stmt = conn
+            .prepare("SELECT example FROM examples WHERE word_id = ?")
+            .map_err(DbError::Sqlite)?;
+        stmt.query_map([word_id], |row| row.get(0))
+            .map_err(DbError::Sqlite)?
+            .collect::<Result<Vec<_>, _>>()
+            .map_err(DbError::Sqlite)
+    }
+
+    fn load_tags_on_conn(conn: &Connection, word_id: i64) -> Result<Vec<String>, DbError> {
+        let mut stmt = conn
+            .prepare("SELECT name FROM tags JOIN word_tags ON tags.id = word_tags.tag_id WHERE word_tags.word_id = ? ORDER BY name")
+            .map_err(DbError::Sqlite)?;
+        stmt.query_map([word_id], |row| row.get(0))
+            .map_err(DbError::Sqlite)?
+            .collect::<Result<Vec<_>, _>>()
+            .map_err(DbError::Sqlite)
+    }
+
+    fn load_relations_on_conn(conn: &Connection, word_id: i64, relation_type: &str) -> Result<Vec<String>, DbError> {
+        let mut stmt = conn
+            .prepare("SELECT related_word FROM word_relations WHERE word_id = ? AND relation_type = ?")
+            .map_err(DbError::Sqlite)?;
+        stmt.query_map(rusqlite::params![word_id, relation_type], |row| row.get(0))
+            .map_err(DbError::Sqlite)?
+            .collect::<Result<Vec<_>, _>>()
+            .map_err(DbError::Sqlite)
+    }
+
+    fn find_or_create_collection_in_tx(tx: &rusqlite::Transaction, name: &str, now: &str) -> Result<i64, DbError> {
+        if let Some(id) = tx.query_row(
+            "SELECT id FROM collections WHERE name = ?",
+            [name],
+            |row| row.get::<_, i64>(0),
+        ).optional().map_err(DbError::Sqlite)? {
+            return Ok(id);
+        }
+        tx.execute(
+            "INSERT INTO collections (name, created_at) VALUES (?, ?)",
+            rusqlite::params![name, now],
+        ).map_err(DbError::Sqlite)?;
+        Ok(tx.last_insert_rowid())
+    }
+
+    fn find_or_create_topic_in_tx(tx: &rusqlite::Transaction, collection_id: i64, name: &str) -> Result<i64, DbError> {
+        if let Some(id) = tx.query_row(
+            "SELECT id FROM topics WHERE collection_id = ? AND name = ?",
+            rusqlite::params![collection_id, name],
+            |row| row.get::<_, i64>(0),
+        ).optional().map_err(DbError::Sqlite)? {
+            return Ok(id);
+        }
+        tx.execute(
+            "INSERT INTO topics (collection_id, name) VALUES (?, ?)",
+            rusqlite::params![collection_id, name],
+        ).map_err(DbError::Sqlite)?;
+        Ok(tx.last_insert_rowid())
+    }
 }
 
 #[cfg(test)]
@@ -672,6 +953,7 @@ mod tests {
         WordRecord {
             word: word.to_string(),
             phonetic: None,
+            level: None,
             definitions: vec![Definition { pos: None, meaning: meaning.to_string() }],
             examples: vec![],
             synonyms: vec![],

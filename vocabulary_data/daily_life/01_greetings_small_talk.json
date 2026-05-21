@@ -1,0 +1,356 @@
+{
+  "collection": "Daily Life",
+  "topic": "Greetings & Small Talk",
+  "words": [
+    {
+      "word": "greet",
+      "level": "A2",
+      "phonetic": "/ɡriːt/",
+      "definitions": [{ "pos": "verb", "meaning": "chào, chào hỏi ai đó" }],
+      "examples": [
+        "She greeted her guests warmly at the door.",
+        "It's polite to greet your neighbours when you see them."
+      ],
+      "synonyms": ["welcome", "salute"],
+      "antonyms": ["ignore"],
+      "family_words": ["greeting", "greeter"],
+      "metadata": { "tags": ["social", "polite"] }
+    },
+    {
+      "word": "introduce",
+      "level": "A2",
+      "phonetic": "/ˌɪntrəˈdjuːs/",
+      "definitions": [{ "pos": "verb", "meaning": "giới thiệu (ai đó với ai đó)" }],
+      "examples": [
+        "Let me introduce you to my colleague, Sarah.",
+        "He introduced himself with a handshake and a smile."
+      ],
+      "synonyms": ["present"],
+      "antonyms": [],
+      "family_words": ["introduction", "introductory"],
+      "metadata": { "tags": ["social", "formal"] }
+    },
+    {
+      "word": "farewell",
+      "level": "B1",
+      "phonetic": "/ˌfeəˈwel/",
+      "definitions": [{ "pos": "noun", "meaning": "lời tạm biệt, sự chia tay" }],
+      "examples": [
+        "We said our farewells at the airport before she boarded the plane.",
+        "The farewell party was emotional but memorable."
+      ],
+      "synonyms": ["goodbye", "send-off"],
+      "antonyms": ["welcome", "greeting"],
+      "family_words": [],
+      "metadata": { "tags": ["social", "formal"] }
+    },
+    {
+      "word": "acquaintance",
+      "level": "B1",
+      "phonetic": "/əˈkweɪntəns/",
+      "definitions": [{ "pos": "noun", "meaning": "người quen (không thân thiết)" }],
+      "examples": [
+        "He's not a close friend — just an acquaintance from work.",
+        "We ran into a mutual acquaintance at the coffee shop."
+      ],
+      "synonyms": ["contact"],
+      "antonyms": ["stranger", "friend"],
+      "family_words": ["acquaint", "acquainted"],
+      "metadata": { "tags": ["social"] }
+    },
+    {
+      "word": "small talk",
+      "level": "B1",
+      "phonetic": "/ˈsmɔːl tɔːk/",
+      "definitions": [{ "pos": "noun", "meaning": "chuyện phiếm, nói chuyện xã giao" }],
+      "examples": [
+        "I'm not great at small talk, so parties can feel awkward for me.",
+        "They made small talk about the weather while waiting for the meeting to start."
+      ],
+      "synonyms": ["chit-chat"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["informal", "social"] }
+    },
+    {
+      "word": "pleasant",
+      "level": "A2",
+      "phonetic": "/ˈplezənt/",
+      "definitions": [{ "pos": "adjective", "meaning": "dễ chịu, vui vẻ, thân thiện" }],
+      "examples": [
+        "It was a pleasant surprise to run into you here!",
+        "She has a pleasant manner that makes everyone feel at ease."
+      ],
+      "synonyms": ["agreeable", "friendly", "enjoyable"],
+      "antonyms": ["unpleasant", "rude"],
+      "family_words": ["pleasantly", "pleasantness"],
+      "metadata": { "tags": ["polite", "social"] }
+    },
+    {
+      "word": "polite",
+      "level": "A2",
+      "phonetic": "/pəˈlaɪt/",
+      "definitions": [{ "pos": "adjective", "meaning": "lịch sự, nhã nhặn" }],
+      "examples": [
+        "Always be polite when you meet someone for the first time.",
+        "It's polite to ask how someone is before getting to business."
+      ],
+      "synonyms": ["courteous", "respectful", "well-mannered"],
+      "antonyms": ["rude", "impolite"],
+      "family_words": ["politely", "politeness"],
+      "metadata": { "tags": ["polite", "social"] }
+    },
+    {
+      "word": "casual",
+      "level": "A2",
+      "phonetic": "/ˈkæʒuəl/",
+      "definitions": [{ "pos": "adjective", "meaning": "thông thường, không trang trọng, thân mật" }],
+      "examples": [
+        "We had a casual chat over coffee after the meeting.",
+        "The tone of the conversation was friendly and casual."
+      ],
+      "synonyms": ["informal", "relaxed"],
+      "antonyms": ["formal", "official"],
+      "family_words": ["casually", "casualness"],
+      "metadata": { "tags": ["informal"] }
+    },
+    {
+      "word": "nod",
+      "level": "A2",
+      "phonetic": "/nɒd/",
+      "definitions": [{ "pos": "verb", "meaning": "gật đầu (chào hoặc đồng ý)" }],
+      "examples": [
+        "He nodded at me from across the room as a quick greeting.",
+        "She nodded politely to show she was listening."
+      ],
+      "synonyms": ["acknowledge"],
+      "antonyms": ["shake (head)"],
+      "family_words": [],
+      "metadata": { "tags": ["informal", "social"] }
+    },
+    {
+      "word": "wave",
+      "level": "A1",
+      "phonetic": "/weɪv/",
+      "definitions": [{ "pos": "verb", "meaning": "vẫy tay (chào hoặc tạm biệt)" }],
+      "examples": [
+        "She waved goodbye as the train pulled away from the station.",
+        "I waved to him from across the street, but he didn't see me."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["informal", "social"] }
+    },
+    {
+      "word": "handshake",
+      "level": "A2",
+      "phonetic": "/ˈhændʃeɪk/",
+      "definitions": [{ "pos": "noun", "meaning": "cái bắt tay" }],
+      "examples": [
+        "They sealed the deal with a firm handshake.",
+        "A warm handshake can make a great first impression."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["formal", "social"] }
+    },
+    {
+      "word": "compliment",
+      "level": "B1",
+      "phonetic": "/ˈkɒmplɪmənt/",
+      "definitions": [{ "pos": "noun", "meaning": "lời khen ngợi, lời tâng bốc" }],
+      "examples": [
+        "She paid him a compliment on his presentation skills.",
+        "Accepting a compliment gracefully is a social skill worth learning."
+      ],
+      "synonyms": ["praise", "flattery"],
+      "antonyms": ["insult", "criticism"],
+      "family_words": ["complimentary", "compliment (verb)"],
+      "metadata": { "tags": ["polite", "social"] }
+    },
+    {
+      "word": "chat",
+      "level": "A1",
+      "phonetic": "/tʃæt/",
+      "definitions": [{ "pos": "verb", "meaning": "trò chuyện, nói chuyện thân mật" }],
+      "examples": [
+        "We chatted for an hour over coffee and lost track of time.",
+        "Feel free to chat with the other guests while we wait."
+      ],
+      "synonyms": ["talk", "converse", "gossip"],
+      "antonyms": [],
+      "family_words": ["chatty", "chatter"],
+      "metadata": { "tags": ["informal", "social"] }
+    },
+    {
+      "word": "catch up",
+      "level": "B1",
+      "phonetic": "/ˈkætʃ ʌp/",
+      "definitions": [{ "pos": "phrasal verb", "meaning": "hàn huyên, hỏi thăm tin tức của nhau sau thời gian xa cách" }],
+      "examples": [
+        "We should meet for coffee soon and catch up.",
+        "It was great catching up with old friends at the reunion."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["informal", "social"] }
+    },
+    {
+      "word": "nice to meet you",
+      "level": "A1",
+      "phonetic": "/naɪs tə miːt juː/",
+      "definitions": [{ "pos": "phrase", "meaning": "rất vui được gặp bạn" }],
+      "examples": [
+        "\"Nice to meet you,\" she said, extending her hand.",
+        "He smiled and replied, \"Nice to meet you too, I've heard a lot about you.\""
+      ],
+      "synonyms": ["pleased to meet you", "good to meet you"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["polite", "formal", "social"] }
+    },
+    {
+      "word": "how are you",
+      "level": "A1",
+      "phonetic": "/haʊ ɑː juː/",
+      "definitions": [{ "pos": "phrase", "meaning": "bạn có khỏe không? (câu hỏi thăm thông thường)" }],
+      "examples": [
+        "\"How are you?\" he asked as they passed each other in the hall.",
+        "She always says \"How are you?\" and actually waits for the answer."
+      ],
+      "synonyms": ["how's it going", "how are things"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["informal", "social"] }
+    },
+    {
+      "word": "take care",
+      "level": "A1",
+      "phonetic": "/teɪk keər/",
+      "definitions": [{ "pos": "phrase", "meaning": "giữ gìn sức khỏe nhé, bảo trọng (câu chào tạm biệt)" }],
+      "examples": [
+        "\"Take care!\" she called out as he left the office.",
+        "It's always nice to end a conversation with \"take care.\""
+      ],
+      "synonyms": ["look after yourself", "stay safe"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["informal", "polite"] }
+    },
+    {
+      "word": "see you later",
+      "level": "A1",
+      "phonetic": "/siː juː ˈleɪtər/",
+      "definitions": [{ "pos": "phrase", "meaning": "hẹn gặp lại, tạm biệt nhé" }],
+      "examples": [
+        "\"See you later!\" he shouted as he rushed to catch his bus.",
+        "She ended the call with a cheerful \"See you later!\""
+      ],
+      "synonyms": ["bye", "talk later", "catch you later"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["informal"] }
+    },
+    {
+      "word": "welcome",
+      "level": "A1",
+      "phonetic": "/ˈwelkəm/",
+      "definitions": [{ "pos": "verb", "meaning": "chào đón, đón tiếp" }, { "pos": "exclamation", "meaning": "xin chào mừng!" }],
+      "examples": [
+        "The host welcomed all the guests as they arrived.",
+        "\"Welcome to our city — I hope you enjoy your stay!\""
+      ],
+      "synonyms": ["greet", "receive"],
+      "antonyms": ["reject", "turn away"],
+      "family_words": ["welcoming", "unwelcome"],
+      "metadata": { "tags": ["polite", "social"] }
+    },
+    {
+      "word": "excuse me",
+      "level": "A1",
+      "phonetic": "/ɪkˈskjuːz miː/",
+      "definitions": [{ "pos": "phrase", "meaning": "xin lỗi, xin phép (dùng để thu hút sự chú ý hoặc xin đi qua)" }],
+      "examples": [
+        "\"Excuse me, could you tell me where the nearest station is?\"",
+        "She said \"Excuse me\" before squeezing past the crowd."
+      ],
+      "synonyms": ["pardon me", "sorry"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["polite", "formal"] }
+    },
+    {
+      "word": "please",
+      "level": "A1",
+      "phonetic": "/pliːz/",
+      "definitions": [{ "pos": "adverb", "meaning": "xin, làm ơn (dùng để yêu cầu lịch sự hơn)" }],
+      "examples": [
+        "Could you please hold the door open for me?",
+        "\"Please take a seat — the doctor will be with you shortly.\""
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["pleasing", "pleasant", "pleasure"],
+      "metadata": { "tags": ["polite"] }
+    },
+    {
+      "word": "thank you",
+      "level": "A1",
+      "phonetic": "/ˈθæŋk juː/",
+      "definitions": [{ "pos": "phrase", "meaning": "cảm ơn bạn" }],
+      "examples": [
+        "\"Thank you so much for your help — I really appreciate it.\"",
+        "She sent a handwritten card to say thank you after the dinner party."
+      ],
+      "synonyms": ["thanks", "cheers", "I appreciate it"],
+      "antonyms": [],
+      "family_words": ["thankful", "thankfulness"],
+      "metadata": { "tags": ["polite", "social"] }
+    },
+    {
+      "word": "you're welcome",
+      "level": "A1",
+      "phonetic": "/jɔːr ˈwelkəm/",
+      "definitions": [{ "pos": "phrase", "meaning": "không có gì, không sao (đáp lại lời cảm ơn)" }],
+      "examples": [
+        "\"Thank you for dinner!\" \"You're welcome — it was my pleasure.\"",
+        "He smiled and said \"You're welcome\" when she thanked him for his advice."
+      ],
+      "synonyms": ["no problem", "my pleasure", "don't mention it"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["polite", "social"] }
+    },
+    {
+      "word": "long time no see",
+      "level": "A2",
+      "phonetic": "/lɒŋ taɪm nəʊ siː/",
+      "definitions": [{ "pos": "phrase", "meaning": "lâu quá không gặp nhau nhỉ" }],
+      "examples": [
+        "\"Long time no see! How have you been?\" she said with a big smile.",
+        "He bumped into an old school friend and exclaimed, \"Long time no see!\""
+      ],
+      "synonyms": ["it's been a while", "I haven't seen you in ages"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["informal", "social"] }
+    },
+    {
+      "word": "how's it going",
+      "level": "A2",
+      "phonetic": "/haʊz ɪt ˈɡəʊɪŋ/",
+      "definitions": [{ "pos": "phrase", "meaning": "dạo này thế nào, mọi thứ ổn không? (thân mật hơn how are you)" }],
+      "examples": [
+        "\"Hey, how's it going?\" he asked as they walked into the office together.",
+        "\"How's it going with the new job?\" she asked over lunch."
+      ],
+      "synonyms": ["how are you", "how are things", "what's up"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["informal", "social"] }
+    }
+  ]
+}

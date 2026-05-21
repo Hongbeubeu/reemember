@@ -1,0 +1,378 @@
+{
+  "collection": "Daily Life",
+  "topic": "Health & the Body",
+  "words": [
+    {
+      "word": "symptom",
+      "level": "B1",
+      "phonetic": "/ˈsɪmptəm/",
+      "definitions": [{ "pos": "noun", "meaning": "triệu chứng (của bệnh)" }],
+      "examples": [
+        "Fever and cough are common symptoms of the flu.",
+        "If you notice any unusual symptoms, see a doctor immediately."
+      ],
+      "synonyms": ["sign", "indication"],
+      "antonyms": [],
+      "family_words": ["symptomatic"],
+      "metadata": { "tags": ["health", "medical"] }
+    },
+    {
+      "word": "headache",
+      "level": "A2",
+      "phonetic": "/ˈhɛdeɪk/",
+      "definitions": [{ "pos": "noun", "meaning": "đau đầu" }],
+      "examples": [
+        "She took a painkiller to relieve her headache.",
+        "Staring at a screen for too long can give you a headache."
+      ],
+      "synonyms": ["migraine"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["health", "symptom", "body"] }
+    },
+    {
+      "word": "fever",
+      "level": "A2",
+      "phonetic": "/ˈfiːvər/",
+      "definitions": [{ "pos": "noun", "meaning": "sốt, cơn sốt" }],
+      "examples": [
+        "The child had a high fever and needed to rest.",
+        "Drinking plenty of fluids can help reduce a fever."
+      ],
+      "synonyms": ["temperature"],
+      "antonyms": [],
+      "family_words": ["feverish"],
+      "metadata": { "tags": ["health", "symptom", "medical"] }
+    },
+    {
+      "word": "injury",
+      "level": "B1",
+      "phonetic": "/ˈɪndʒəri/",
+      "definitions": [{ "pos": "noun", "meaning": "chấn thương, vết thương" }],
+      "examples": [
+        "He suffered a knee injury during the football match.",
+        "Always wear protective gear to prevent serious injuries."
+      ],
+      "synonyms": ["wound", "harm"],
+      "antonyms": [],
+      "family_words": ["injure", "injured"],
+      "metadata": { "tags": ["health", "body", "medical"] }
+    },
+    {
+      "word": "muscle",
+      "level": "A2",
+      "phonetic": "/ˈmʌsəl/",
+      "definitions": [{ "pos": "noun", "meaning": "cơ, bắp thịt" }],
+      "examples": [
+        "Regular exercise helps build stronger muscles.",
+        "She felt sore muscles after her first gym session."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["muscular"],
+      "metadata": { "tags": ["body", "fitness", "anatomy"] }
+    },
+    {
+      "word": "lung",
+      "level": "A2",
+      "phonetic": "/lʌŋ/",
+      "definitions": [{ "pos": "noun", "meaning": "phổi" }],
+      "examples": [
+        "Smoking causes serious damage to the lungs.",
+        "Deep breathing exercises can improve lung capacity."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["body", "anatomy", "health"] }
+    },
+    {
+      "word": "stomach",
+      "level": "A1",
+      "phonetic": "/ˈstʌmək/",
+      "definitions": [
+        { "pos": "noun", "meaning": "dạ dày; bụng" }
+      ],
+      "examples": [
+        "He had an upset stomach after eating too much.",
+        "She felt butterflies in her stomach before the presentation."
+      ],
+      "synonyms": ["belly", "abdomen"],
+      "antonyms": [],
+      "family_words": ["stomachache"],
+      "metadata": { "tags": ["body", "anatomy", "health"] }
+    },
+    {
+      "word": "heart",
+      "level": "A1",
+      "phonetic": "/hɑːrt/",
+      "definitions": [{ "pos": "noun", "meaning": "tim" }],
+      "examples": [
+        "Aerobic exercise is great for your heart health.",
+        "The doctor listened to her heart with a stethoscope."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["heartbeat", "heartrate"],
+      "metadata": { "tags": ["body", "anatomy", "health"] }
+    },
+    {
+      "word": "bone",
+      "level": "A1",
+      "phonetic": "/boʊn/",
+      "definitions": [{ "pos": "noun", "meaning": "xương" }],
+      "examples": [
+        "Milk contains calcium, which is essential for strong bones.",
+        "He broke a bone in his arm when he fell off his bike."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["bony", "backbone"],
+      "metadata": { "tags": ["body", "anatomy"] }
+    },
+    {
+      "word": "skin",
+      "level": "A1",
+      "phonetic": "/skɪn/",
+      "definitions": [{ "pos": "noun", "meaning": "da (người)" }],
+      "examples": [
+        "Applying sunscreen protects your skin from UV rays.",
+        "Dry weather can make your skin feel rough and itchy."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["skincare", "skinny"],
+      "metadata": { "tags": ["body", "anatomy", "health"] }
+    },
+    {
+      "word": "throat",
+      "level": "A2",
+      "phonetic": "/θroʊt/",
+      "definitions": [{ "pos": "noun", "meaning": "cổ họng" }],
+      "examples": [
+        "She had a sore throat and found it hard to swallow.",
+        "Drinking warm tea with honey can soothe an irritated throat."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["body", "anatomy", "symptom"] }
+    },
+    {
+      "word": "cough",
+      "level": "A1",
+      "phonetic": "/kɒf/",
+      "definitions": [
+        { "pos": "noun", "meaning": "ho; tiếng ho" },
+        { "pos": "verb", "meaning": "ho" }
+      ],
+      "examples": [
+        "He has had a persistent cough for more than a week.",
+        "Please cover your mouth when you cough to stop germs from spreading."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["coughing"],
+      "metadata": { "tags": ["health", "symptom", "medical"] }
+    },
+    {
+      "word": "allergy",
+      "level": "B1",
+      "phonetic": "/ˈælərdʒi/",
+      "definitions": [{ "pos": "noun", "meaning": "dị ứng" }],
+      "examples": [
+        "She has a severe allergy to peanuts.",
+        "Spring allergies make many people sneeze and have watery eyes."
+      ],
+      "synonyms": ["sensitivity"],
+      "antonyms": [],
+      "family_words": ["allergic", "allergen"],
+      "metadata": { "tags": ["health", "medical", "symptom"] }
+    },
+    {
+      "word": "diet",
+      "level": "A2",
+      "phonetic": "/ˈdaɪət/",
+      "definitions": [
+        { "pos": "noun", "meaning": "chế độ ăn uống" },
+        { "pos": "verb", "meaning": "ăn kiêng" }
+      ],
+      "examples": [
+        "A balanced diet includes plenty of vegetables, fruits, and protein.",
+        "She changed her diet to eat less sugar and processed food."
+      ],
+      "synonyms": ["nutrition", "eating habits"],
+      "antonyms": [],
+      "family_words": ["dietary", "dieting"],
+      "metadata": { "tags": ["health", "nutrition", "habits"] }
+    },
+    {
+      "word": "exercise",
+      "level": "A1",
+      "phonetic": "/ˈɛksərsaɪz/",
+      "definitions": [
+        { "pos": "noun", "meaning": "bài tập thể dục; hoạt động thể chất" },
+        { "pos": "verb", "meaning": "tập thể dục" }
+      ],
+      "examples": [
+        "Doctors recommend at least 30 minutes of exercise every day.",
+        "She exercises every morning before going to work."
+      ],
+      "synonyms": ["workout", "physical activity"],
+      "antonyms": [],
+      "family_words": ["exercising"],
+      "metadata": { "tags": ["health", "fitness", "habits"] }
+    },
+    {
+      "word": "rest",
+      "level": "A1",
+      "phonetic": "/rɛst/",
+      "definitions": [
+        { "pos": "noun", "meaning": "sự nghỉ ngơi" },
+        { "pos": "verb", "meaning": "nghỉ ngơi" }
+      ],
+      "examples": [
+        "Getting enough rest is essential for a strong immune system.",
+        "The doctor told him to rest for a few days after the operation."
+      ],
+      "synonyms": ["relaxation", "sleep"],
+      "antonyms": ["activity", "exertion"],
+      "family_words": ["restful", "restless"],
+      "metadata": { "tags": ["health", "habits", "wellbeing"] }
+    },
+    {
+      "word": "stress",
+      "level": "B1",
+      "phonetic": "/strɛs/",
+      "definitions": [
+        { "pos": "noun", "meaning": "căng thẳng, stress" },
+        { "pos": "verb", "meaning": "gây căng thẳng; lo lắng" }
+      ],
+      "examples": [
+        "Too much stress can weaken your immune system over time.",
+        "She tries to manage stress by meditating for 10 minutes each day."
+      ],
+      "synonyms": ["pressure", "tension"],
+      "antonyms": ["relaxation", "calm"],
+      "family_words": ["stressful", "stressed"],
+      "metadata": { "tags": ["health", "wellbeing", "mental health"] }
+    },
+    {
+      "word": "hydrated",
+      "level": "B1",
+      "phonetic": "/ˈhaɪdreɪtɪd/",
+      "definitions": [{ "pos": "adjective", "meaning": "đủ nước, đủ lượng nước cho cơ thể" }],
+      "examples": [
+        "Staying hydrated is especially important when you exercise.",
+        "Drink at least eight glasses of water a day to stay hydrated."
+      ],
+      "synonyms": [],
+      "antonyms": ["dehydrated"],
+      "family_words": ["hydrate", "hydration", "dehydrated"],
+      "metadata": { "tags": ["health", "nutrition", "habits"] }
+    },
+    {
+      "word": "sleep",
+      "level": "A1",
+      "phonetic": "/sliːp/",
+      "definitions": [
+        { "pos": "noun", "meaning": "giấc ngủ" },
+        { "pos": "verb", "meaning": "ngủ" }
+      ],
+      "examples": [
+        "Adults need between seven and nine hours of sleep each night.",
+        "She couldn't sleep because she was worrying about her exam."
+      ],
+      "synonyms": ["rest", "slumber"],
+      "antonyms": ["wakefulness"],
+      "family_words": ["sleepy", "sleepless", "asleep"],
+      "metadata": { "tags": ["health", "habits", "wellbeing"] }
+    },
+    {
+      "word": "medicine",
+      "level": "A2",
+      "phonetic": "/ˈmɛdɪsɪn/",
+      "definitions": [
+        { "pos": "noun", "meaning": "thuốc; y học" }
+      ],
+      "examples": [
+        "The doctor prescribed medicine to treat the infection.",
+        "Always take your medicine at the same time each day for best results."
+      ],
+      "synonyms": ["medication", "drug", "remedy"],
+      "antonyms": [],
+      "family_words": ["medical", "medicate", "medicinal"],
+      "metadata": { "tags": ["health", "medical"] }
+    },
+    {
+      "word": "checkup",
+      "level": "B1",
+      "phonetic": "/ˈtʃɛkʌp/",
+      "definitions": [{ "pos": "noun", "meaning": "khám sức khỏe định kỳ" }],
+      "examples": [
+        "She goes for a medical checkup once a year.",
+        "The dentist recommended a checkup every six months."
+      ],
+      "synonyms": ["examination", "screening"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["health", "medical", "prevention"] }
+    },
+    {
+      "word": "infection",
+      "level": "B1",
+      "phonetic": "/ɪnˈfɛkʃən/",
+      "definitions": [{ "pos": "noun", "meaning": "nhiễm trùng, nhiễm khuẩn" }],
+      "examples": [
+        "Washing your hands regularly helps prevent the spread of infection.",
+        "The wound became red and swollen due to an infection."
+      ],
+      "synonyms": ["contamination"],
+      "antonyms": [],
+      "family_words": ["infect", "infectious", "infected"],
+      "metadata": { "tags": ["health", "medical", "symptom"] }
+    },
+    {
+      "word": "swollen",
+      "level": "B1",
+      "phonetic": "/ˈswoʊlən/",
+      "definitions": [{ "pos": "adjective", "meaning": "bị sưng, phù nề" }],
+      "examples": [
+        "Her ankle was swollen after she twisted it on the stairs.",
+        "Apply a cold pack to reduce swollen areas after an injury."
+      ],
+      "synonyms": ["inflamed", "puffy"],
+      "antonyms": [],
+      "family_words": ["swell", "swelling"],
+      "metadata": { "tags": ["health", "symptom", "body"] }
+    },
+    {
+      "word": "exhausted",
+      "level": "B1",
+      "phonetic": "/ɪɡˈzɔːstɪd/",
+      "definitions": [{ "pos": "adjective", "meaning": "kiệt sức, mệt lả" }],
+      "examples": [
+        "She felt completely exhausted after working a double shift.",
+        "If you feel exhausted all the time, it may be a sign of iron deficiency."
+      ],
+      "synonyms": ["worn out", "drained", "fatigued"],
+      "antonyms": ["energetic", "refreshed"],
+      "family_words": ["exhaust", "exhaustion"],
+      "metadata": { "tags": ["health", "wellbeing", "symptom"] }
+    },
+    {
+      "word": "recover",
+      "level": "B1",
+      "phonetic": "/rɪˈkʌvər/",
+      "definitions": [{ "pos": "verb", "meaning": "hồi phục, bình phục (sau bệnh/chấn thương)" }],
+      "examples": [
+        "It took him two weeks to fully recover from the flu.",
+        "She is recovering well after her surgery and should be home soon."
+      ],
+      "synonyms": ["heal", "get better", "recuperate"],
+      "antonyms": ["worsen", "deteriorate"],
+      "family_words": ["recovery", "recoverable"],
+      "metadata": { "tags": ["health", "medical", "wellbeing"] }
+    }
+  ]
+}

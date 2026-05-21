@@ -1,0 +1,356 @@
+{
+  "collection": "Daily Life",
+  "topic": "Appearance & Physical Description",
+  "words": [
+    {
+      "word": "slender",
+      "level": "B1",
+      "phonetic": "/ˈslendər/",
+      "definitions": [{ "pos": "adjective", "meaning": "mảnh mai, thanh mảnh" }],
+      "examples": [
+        "She has a slender figure from years of dancing.",
+        "The model had long slender fingers."
+      ],
+      "synonyms": ["slim", "lean", "willowy"],
+      "antonyms": ["stocky", "heavyset"],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "build"] }
+    },
+    {
+      "word": "tall",
+      "level": "A1",
+      "phonetic": "/tɔːl/",
+      "definitions": [{ "pos": "adjective", "meaning": "cao (người)" }],
+      "examples": [
+        "He is very tall and can easily reach the top shelf.",
+        "She is the tallest student in her class."
+      ],
+      "synonyms": ["towering", "statuesque"],
+      "antonyms": ["short", "petite"],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "height"] }
+    },
+    {
+      "word": "short",
+      "level": "A1",
+      "phonetic": "/ʃɔːrt/",
+      "definitions": [{ "pos": "adjective", "meaning": "thấp (người)" }],
+      "examples": [
+        "She is quite short but full of energy.",
+        "He is too short to ride the roller coaster."
+      ],
+      "synonyms": ["petite", "small"],
+      "antonyms": ["tall", "towering"],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "height"] }
+    },
+    {
+      "word": "muscular",
+      "level": "B1",
+      "phonetic": "/ˈmʌskjələr/",
+      "definitions": [{ "pos": "adjective", "meaning": "cơ bắp, vạm vỡ" }],
+      "examples": [
+        "He has a muscular build from years of working out.",
+        "The athlete's muscular arms made him look very strong."
+      ],
+      "synonyms": ["athletic", "brawny", "powerful"],
+      "antonyms": ["skinny", "frail", "slim"],
+      "family_words": [{ "word": "muscle", "pos": "noun", "meaning": "cơ bắp" }],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "build"] }
+    },
+    {
+      "word": "chubby",
+      "level": "A2",
+      "phonetic": "/ˈtʃʌbi/",
+      "definitions": [{ "pos": "adjective", "meaning": "mập, mũm mĩm" }],
+      "examples": [
+        "The baby has chubby little cheeks that everyone loves to pinch.",
+        "He was chubby as a child but grew into a slim adult."
+      ],
+      "synonyms": ["plump", "pudgy", "round"],
+      "antonyms": ["thin", "slim", "slender"],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "build"] }
+    },
+    {
+      "word": "curly",
+      "level": "A2",
+      "phonetic": "/ˈkɜːrli/",
+      "definitions": [{ "pos": "adjective", "meaning": "xoăn, quăn (tóc)" }],
+      "examples": [
+        "She has beautiful curly red hair.",
+        "His curly hair always looks messy in the morning."
+      ],
+      "synonyms": ["wavy", "coiled", "frizzy"],
+      "antonyms": ["straight", "sleek"],
+      "family_words": [{ "word": "curl", "pos": "noun/verb", "meaning": "lọn xoăn / làm xoăn" }],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "hair"] }
+    },
+    {
+      "word": "straight",
+      "level": "A1",
+      "phonetic": "/streɪt/",
+      "definitions": [{ "pos": "adjective", "meaning": "thẳng (tóc)" }],
+      "examples": [
+        "She has long, straight black hair that reaches her waist.",
+        "He prefers straight hair, so he irons it every morning."
+      ],
+      "synonyms": ["smooth", "sleek"],
+      "antonyms": ["curly", "wavy", "frizzy"],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "hair"] }
+    },
+    {
+      "word": "bald",
+      "level": "A2",
+      "phonetic": "/bɔːld/",
+      "definitions": [{ "pos": "adjective", "meaning": "hói đầu, trọc đầu" }],
+      "examples": [
+        "My uncle went bald in his thirties.",
+        "He shaved his head and is completely bald now."
+      ],
+      "synonyms": ["hairless", "shaved"],
+      "antonyms": [],
+      "family_words": [{ "word": "baldness", "pos": "noun", "meaning": "tình trạng hói đầu" }],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "hair"] }
+    },
+    {
+      "word": "pale",
+      "level": "A2",
+      "phonetic": "/peɪl/",
+      "definitions": [{ "pos": "adjective", "meaning": "xanh xao, nhợt nhạt (da)" }],
+      "examples": [
+        "She looked pale and tired after working all night.",
+        "He has a very pale complexion because he rarely goes outside."
+      ],
+      "synonyms": ["fair", "light", "wan"],
+      "antonyms": ["dark", "tanned", "olive"],
+      "family_words": [{ "word": "paleness", "pos": "noun", "meaning": "sự xanh xao" }],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "skin"] }
+    },
+    {
+      "word": "tanned",
+      "level": "A2",
+      "phonetic": "/tænd/",
+      "definitions": [{ "pos": "adjective", "meaning": "rám nắng, sạm nắng" }],
+      "examples": [
+        "She came back from the beach looking very tanned.",
+        "His tanned skin showed how much time he spent outdoors."
+      ],
+      "synonyms": ["bronzed", "sun-kissed", "brown"],
+      "antonyms": ["pale", "fair", "light"],
+      "family_words": [{ "word": "tan", "pos": "noun/verb", "meaning": "màu rám nắng / rám nắng" }],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "skin"] }
+    },
+    {
+      "word": "wrinkled",
+      "level": "B1",
+      "phonetic": "/ˈrɪŋkəld/",
+      "definitions": [{ "pos": "adjective", "meaning": "nhăn nheo, có nếp nhăn" }],
+      "examples": [
+        "The old man had a kind, wrinkled face.",
+        "Her hands were wrinkled from years of hard work."
+      ],
+      "synonyms": ["lined", "creased", "aged"],
+      "antonyms": ["smooth", "youthful"],
+      "family_words": [{ "word": "wrinkle", "pos": "noun", "meaning": "nếp nhăn" }],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "age", "skin"] }
+    },
+    {
+      "word": "freckles",
+      "level": "B1",
+      "phonetic": "/ˈfrekəlz/",
+      "definitions": [{ "pos": "noun", "meaning": "tàn nhang, nốt tàn nhang" }],
+      "examples": [
+        "She has freckles across her nose and cheeks.",
+        "Many people with red hair also have freckles."
+      ],
+      "synonyms": ["spots", "marks"],
+      "antonyms": [],
+      "family_words": [{ "word": "freckled", "pos": "adjective", "meaning": "có tàn nhang" }],
+      "metadata": { "tags": ["appearance", "description", "nouns", "skin", "facial features"] }
+    },
+    {
+      "word": "dimples",
+      "level": "B1",
+      "phonetic": "/ˈdɪmpəlz/",
+      "definitions": [{ "pos": "noun", "meaning": "má lúm đồng tiền, lúm đồng tiền" }],
+      "examples": [
+        "She has adorable dimples when she smiles.",
+        "The child's dimples made him look very cute."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [{ "word": "dimpled", "pos": "adjective", "meaning": "có lúm đồng tiền" }],
+      "metadata": { "tags": ["appearance", "description", "nouns", "facial features"] }
+    },
+    {
+      "word": "beard",
+      "level": "A2",
+      "phonetic": "/bɪrd/",
+      "definitions": [{ "pos": "noun", "meaning": "râu (trên cằm và má)" }],
+      "examples": [
+        "He grew a beard during the winter holidays.",
+        "His full beard makes him look much older than he is."
+      ],
+      "synonyms": ["facial hair"],
+      "antonyms": [],
+      "family_words": [{ "word": "bearded", "pos": "adjective", "meaning": "có râu" }],
+      "metadata": { "tags": ["appearance", "description", "nouns", "facial features"] }
+    },
+    {
+      "word": "mustache",
+      "level": "A2",
+      "phonetic": "/ˈmʌstæʃ/",
+      "definitions": [{ "pos": "noun", "meaning": "ria mép" }],
+      "examples": [
+        "He trimmed his mustache neatly before the interview.",
+        "The old teacher was famous for his thick white mustache."
+      ],
+      "synonyms": ["facial hair", "whiskers"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "nouns", "facial features"] }
+    },
+    {
+      "word": "oval",
+      "level": "A2",
+      "phonetic": "/ˈoʊvəl/",
+      "definitions": [{ "pos": "adjective", "meaning": "hình trái xoan (mặt)" }],
+      "examples": [
+        "She has an oval face that suits most hairstyles.",
+        "Photographers say an oval face shape is very photogenic."
+      ],
+      "synonyms": ["elliptical"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "facial features"] }
+    },
+    {
+      "word": "broad",
+      "level": "A2",
+      "phonetic": "/brɔːd/",
+      "definitions": [{ "pos": "adjective", "meaning": "rộng, to bản (vai, trán)" }],
+      "examples": [
+        "He has broad shoulders from swimming every day.",
+        "She has a broad forehead and big expressive eyes."
+      ],
+      "synonyms": ["wide", "large"],
+      "antonyms": ["narrow", "thin", "small"],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "build", "facial features"] }
+    },
+    {
+      "word": "slim",
+      "level": "A2",
+      "phonetic": "/slɪm/",
+      "definitions": [{ "pos": "adjective", "meaning": "thon, gầy thon" }],
+      "examples": [
+        "She has stayed slim by eating healthy and exercising regularly.",
+        "He has a slim waist but broad shoulders."
+      ],
+      "synonyms": ["slender", "lean", "trim"],
+      "antonyms": ["chubby", "heavy", "stocky"],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "build"] }
+    },
+    {
+      "word": "stocky",
+      "level": "B1",
+      "phonetic": "/ˈstɒki/",
+      "definitions": [{ "pos": "adjective", "meaning": "lùn mà to, vạm vỡ thấp người" }],
+      "examples": [
+        "The wrestler had a stocky, powerful build.",
+        "Despite being stocky, he was surprisingly fast on the field."
+      ],
+      "synonyms": ["heavyset", "thickset", "sturdy"],
+      "antonyms": ["slender", "slim", "tall"],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "build"] }
+    },
+    {
+      "word": "elderly",
+      "level": "A2",
+      "phonetic": "/ˈeldərli/",
+      "definitions": [{ "pos": "adjective", "meaning": "lớn tuổi, cao tuổi" }],
+      "examples": [
+        "The elderly woman walked slowly with a cane.",
+        "He helps elderly neighbors carry their groceries."
+      ],
+      "synonyms": ["aged", "senior", "old"],
+      "antonyms": ["young", "youthful"],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "age"] }
+    },
+    {
+      "word": "youthful",
+      "level": "B1",
+      "phonetic": "/ˈjuːθfəl/",
+      "definitions": [{ "pos": "adjective", "meaning": "trẻ trung, tươi trẻ" }],
+      "examples": [
+        "She has a youthful energy that makes her seem much younger.",
+        "His youthful appearance surprised everyone at the reunion."
+      ],
+      "synonyms": ["young-looking", "fresh", "vibrant"],
+      "antonyms": ["elderly", "aged", "worn"],
+      "family_words": [{ "word": "youth", "pos": "noun", "meaning": "tuổi trẻ, thanh niên" }],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "age"] }
+    },
+    {
+      "word": "average",
+      "level": "A2",
+      "phonetic": "/ˈævərɪdʒ/",
+      "definitions": [{ "pos": "adjective", "meaning": "trung bình (chiều cao, vóc dáng)" }],
+      "examples": [
+        "He is of average height — not too tall and not too short.",
+        "She has an average build and would blend into any crowd."
+      ],
+      "synonyms": ["medium", "ordinary", "typical"],
+      "antonyms": ["exceptional", "extreme"],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "height", "build"] }
+    },
+    {
+      "word": "complexion",
+      "level": "B2",
+      "phonetic": "/kəmˈplekʃən/",
+      "definitions": [{ "pos": "noun", "meaning": "màu da, nước da" }],
+      "examples": [
+        "She has a smooth, fair complexion.",
+        "A balanced diet can improve your skin complexion."
+      ],
+      "synonyms": ["skin tone", "coloring"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "nouns", "skin"] }
+    },
+    {
+      "word": "petite",
+      "level": "B1",
+      "phonetic": "/pəˈtiːt/",
+      "definitions": [{ "pos": "adjective", "meaning": "nhỏ nhắn, bé nhỏ (thường dùng cho phụ nữ)" }],
+      "examples": [
+        "She is petite but carries herself with great confidence.",
+        "The petite actress surprised everyone with her powerful voice."
+      ],
+      "synonyms": ["small", "tiny", "slight"],
+      "antonyms": ["tall", "large", "big"],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "adjectives", "height", "build"] }
+    },
+    {
+      "word": "handsome",
+      "level": "A2",
+      "phonetic": "/ˈhænsəm/",
+      "definitions": [{ "pos": "adjective", "meaning": "đẹp trai, điển trai (thường dùng cho nam)" }],
+      "examples": [
+        "He is a tall, handsome man with a warm smile.",
+        "Everyone agreed he was the most handsome guy at the party."
+      ],
+      "synonyms": ["good-looking", "attractive", "dashing"],
+      "antonyms": ["unattractive", "plain"],
+      "family_words": [],
+      "metadata": { "tags": ["appearance", "description", "adjectives"] }
+    }
+  ]
+}

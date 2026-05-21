@@ -1,0 +1,365 @@
+{
+  "collection": "Daily Life",
+  "topic": "Sports & Exercise",
+  "words": [
+    {
+      "word": "endurance",
+      "level": "B2",
+      "phonetic": "/ɪnˈdjʊərəns/",
+      "definitions": [{ "pos": "noun", "meaning": "sức bền, khả năng chịu đựng lâu dài" }],
+      "examples": [
+        "Marathon running requires great endurance.",
+        "Regular exercise can improve your endurance over time."
+      ],
+      "synonyms": ["stamina", "resilience"],
+      "antonyms": ["weakness", "fatigue"],
+      "family_words": ["endure", "enduring"],
+      "metadata": { "tags": ["sports", "fitness", "exercise"] }
+    },
+    {
+      "word": "warm up",
+      "level": "A2",
+      "phonetic": "/wɔːrm ʌp/",
+      "definitions": [{ "pos": "verb", "meaning": "khởi động (trước khi tập luyện)" }],
+      "examples": [
+        "Always warm up for ten minutes before you start running.",
+        "The coach told the players to warm up before the match."
+      ],
+      "synonyms": ["stretch", "loosen up"],
+      "antonyms": ["cool down"],
+      "family_words": ["warm-up (noun)"],
+      "metadata": { "tags": ["exercise", "fitness", "sports"] }
+    },
+    {
+      "word": "workout",
+      "level": "A2",
+      "phonetic": "/ˈwɜːrkˌaʊt/",
+      "definitions": [{ "pos": "noun", "meaning": "buổi tập luyện thể dục" }],
+      "examples": [
+        "She does a one-hour workout at the gym every morning.",
+        "His workout includes both cardio and strength training."
+      ],
+      "synonyms": ["training session", "exercise session"],
+      "antonyms": [],
+      "family_words": ["work out (verb)"],
+      "metadata": { "tags": ["fitness", "exercise", "gym"] }
+    },
+    {
+      "word": "athlete",
+      "level": "A2",
+      "phonetic": "/ˈæθliːt/",
+      "definitions": [{ "pos": "noun", "meaning": "vận động viên, người chơi thể thao chuyên nghiệp" }],
+      "examples": [
+        "She is a talented athlete who has won many national competitions.",
+        "Professional athletes train several hours a day."
+      ],
+      "synonyms": ["sportsperson", "competitor"],
+      "antonyms": [],
+      "family_words": ["athletic", "athletics"],
+      "metadata": { "tags": ["sports", "competition"] }
+    },
+    {
+      "word": "tournament",
+      "level": "B1",
+      "phonetic": "/ˈtʊrnəmənt/",
+      "definitions": [{ "pos": "noun", "meaning": "giải đấu, cuộc thi đấu thể thao" }],
+      "examples": [
+        "Our school team reached the final of the basketball tournament.",
+        "The tennis tournament attracts players from all over the world."
+      ],
+      "synonyms": ["championship", "competition"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["sports", "competition"] }
+    },
+    {
+      "word": "score",
+      "level": "A1",
+      "phonetic": "/skɔːr/",
+      "definitions": [
+        { "pos": "noun", "meaning": "tỉ số, điểm số trong trận đấu" },
+        { "pos": "verb", "meaning": "ghi bàn, ghi điểm" }
+      ],
+      "examples": [
+        "The final score was 3–1 in favor of the home team.",
+        "He scored two goals in the last ten minutes."
+      ],
+      "synonyms": ["tally", "result"],
+      "antonyms": [],
+      "family_words": ["scorer", "scoreboard"],
+      "metadata": { "tags": ["sports", "competition"] }
+    },
+    {
+      "word": "coach",
+      "level": "A2",
+      "phonetic": "/koʊtʃ/",
+      "definitions": [{ "pos": "noun", "meaning": "huấn luyện viên thể thao" }],
+      "examples": [
+        "The coach gave the team a motivating speech before the game.",
+        "She has been our swimming coach for three years."
+      ],
+      "synonyms": ["trainer", "instructor"],
+      "antonyms": [],
+      "family_words": ["coaching", "coachable"],
+      "metadata": { "tags": ["sports", "fitness"] }
+    },
+    {
+      "word": "referee",
+      "level": "B1",
+      "phonetic": "/ˌrefəˈriː/",
+      "definitions": [{ "pos": "noun", "meaning": "trọng tài (trong các môn thể thao)" }],
+      "examples": [
+        "The referee blew the whistle to stop the play.",
+        "Players must respect the referee's decisions during the match."
+      ],
+      "synonyms": ["umpire", "official"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["sports", "competition"] }
+    },
+    {
+      "word": "sprint",
+      "level": "B1",
+      "phonetic": "/sprɪnt/",
+      "definitions": [
+        { "pos": "verb", "meaning": "chạy nước rút, chạy rất nhanh trong một đoạn ngắn" },
+        { "pos": "noun", "meaning": "cú chạy nước rút" }
+      ],
+      "examples": [
+        "She sprinted to the finish line and won the race.",
+        "He did several short sprints as part of his training."
+      ],
+      "synonyms": ["dash", "race"],
+      "antonyms": ["jog", "stroll"],
+      "family_words": ["sprinter"],
+      "metadata": { "tags": ["exercise", "sports", "fitness"] }
+    },
+    {
+      "word": "stretch",
+      "level": "A2",
+      "phonetic": "/strɛtʃ/",
+      "definitions": [
+        { "pos": "verb", "meaning": "duỗi, kéo giãn cơ bắp" },
+        { "pos": "noun", "meaning": "động tác kéo giãn" }
+      ],
+      "examples": [
+        "It is important to stretch after a long run to avoid muscle soreness.",
+        "She held each stretch for thirty seconds."
+      ],
+      "synonyms": ["extend", "flex"],
+      "antonyms": ["contract", "tighten"],
+      "family_words": ["stretching", "flexible"],
+      "metadata": { "tags": ["exercise", "fitness"] }
+    },
+    {
+      "word": "trophy",
+      "level": "A2",
+      "phonetic": "/ˈtroʊfi/",
+      "definitions": [{ "pos": "noun", "meaning": "cúp, phần thưởng cho người chiến thắng" }],
+      "examples": [
+        "The winning team lifted the trophy in front of thousands of fans.",
+        "She keeps all her swimming trophies on a shelf in her room."
+      ],
+      "synonyms": ["cup", "award"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["sports", "competition"] }
+    },
+    {
+      "word": "gymnasium",
+      "level": "B1",
+      "phonetic": "/dʒɪmˈneɪziəm/",
+      "definitions": [{ "pos": "noun", "meaning": "phòng tập thể dục, nhà thi đấu trong nhà" }],
+      "examples": [
+        "The school gymnasium is used for basketball practice every afternoon.",
+        "They built a new gymnasium with modern equipment."
+      ],
+      "synonyms": ["gym", "sports hall"],
+      "antonyms": [],
+      "family_words": ["gymnastics", "gymnast"],
+      "metadata": { "tags": ["sports", "fitness", "gym"] }
+    },
+    {
+      "word": "equipment",
+      "level": "A2",
+      "phonetic": "/ɪˈkwɪpmənt/",
+      "definitions": [{ "pos": "noun", "meaning": "dụng cụ, thiết bị thể thao" }],
+      "examples": [
+        "Make sure you have the right equipment before starting the sport.",
+        "The gym recently bought new exercise equipment."
+      ],
+      "synonyms": ["gear", "apparatus"],
+      "antonyms": [],
+      "family_words": ["equip", "equipped"],
+      "metadata": { "tags": ["sports", "fitness", "gym"] }
+    },
+    {
+      "word": "teammate",
+      "level": "A2",
+      "phonetic": "/ˈtiːmˌmeɪt/",
+      "definitions": [{ "pos": "noun", "meaning": "đồng đội, thành viên trong cùng một đội" }],
+      "examples": [
+        "He passed the ball to his teammate who was in a better position.",
+        "Good communication between teammates is key to winning."
+      ],
+      "synonyms": ["partner", "colleague"],
+      "antonyms": ["opponent", "rival"],
+      "family_words": ["team", "teamwork"],
+      "metadata": { "tags": ["sports", "competition"] }
+    },
+    {
+      "word": "opponent",
+      "level": "B1",
+      "phonetic": "/əˈpoʊnənt/",
+      "definitions": [{ "pos": "noun", "meaning": "đối thủ, người thi đấu ở phía đối lập" }],
+      "examples": [
+        "She studied her opponent carefully before the tennis match.",
+        "He shook hands with his opponent after the game ended."
+      ],
+      "synonyms": ["rival", "competitor"],
+      "antonyms": ["teammate", "ally"],
+      "family_words": ["oppose", "opposition"],
+      "metadata": { "tags": ["sports", "competition"] }
+    },
+    {
+      "word": "cardio",
+      "level": "B1",
+      "phonetic": "/ˈkɑːrdioʊ/",
+      "definitions": [{ "pos": "noun", "meaning": "bài tập tim mạch (như chạy bộ, đạp xe, bơi lội)" }],
+      "examples": [
+        "She does thirty minutes of cardio every day to stay healthy.",
+        "Cycling and swimming are excellent forms of cardio."
+      ],
+      "synonyms": ["aerobics", "cardiovascular exercise"],
+      "antonyms": [],
+      "family_words": ["cardiovascular"],
+      "metadata": { "tags": ["fitness", "exercise"] }
+    },
+    {
+      "word": "muscle",
+      "level": "A2",
+      "phonetic": "/ˈmʌsəl/",
+      "definitions": [{ "pos": "noun", "meaning": "cơ bắp, bắp thịt" }],
+      "examples": [
+        "Weightlifting helps you build muscle and increase strength.",
+        "Her leg muscles were sore after the long hike."
+      ],
+      "synonyms": ["tissue", "sinew"],
+      "antonyms": [],
+      "family_words": ["muscular", "muscle-building"],
+      "metadata": { "tags": ["fitness", "exercise"] }
+    },
+    {
+      "word": "penalty",
+      "level": "B1",
+      "phonetic": "/ˈpenəlti/",
+      "definitions": [{ "pos": "noun", "meaning": "hình phạt, quả phạt đền (trong thể thao)" }],
+      "examples": [
+        "The player received a penalty for an illegal tackle.",
+        "They won the match by scoring in a penalty shootout."
+      ],
+      "synonyms": ["punishment", "foul"],
+      "antonyms": ["reward", "bonus"],
+      "family_words": ["penalize"],
+      "metadata": { "tags": ["sports", "competition"] }
+    },
+    {
+      "word": "track",
+      "level": "A2",
+      "phonetic": "/træk/",
+      "definitions": [{ "pos": "noun", "meaning": "đường chạy, đường đua thể thao" }],
+      "examples": [
+        "The runners lined up at the start of the track.",
+        "She trains on the running track three times a week."
+      ],
+      "synonyms": ["lane", "circuit"],
+      "antonyms": [],
+      "family_words": ["track and field"],
+      "metadata": { "tags": ["sports", "exercise"] }
+    },
+    {
+      "word": "dumbbell",
+      "level": "B1",
+      "phonetic": "/ˈdʌmˌbɛl/",
+      "definitions": [{ "pos": "noun", "meaning": "tạ tay, dụng cụ tập gym hình quả tạ" }],
+      "examples": [
+        "He lifts dumbbells every morning to build arm strength.",
+        "The gym has dumbbells ranging from two to fifty kilograms."
+      ],
+      "synonyms": ["free weight", "hand weight"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["gym", "fitness", "equipment"] }
+    },
+    {
+      "word": "stamina",
+      "level": "B2",
+      "phonetic": "/ˈstæmɪnə/",
+      "definitions": [{ "pos": "noun", "meaning": "sức bền thể lực và tinh thần" }],
+      "examples": [
+        "Playing football for ninety minutes requires a lot of stamina.",
+        "Building stamina takes months of consistent training."
+      ],
+      "synonyms": ["endurance", "energy"],
+      "antonyms": ["fatigue", "weakness"],
+      "family_words": [],
+      "metadata": { "tags": ["fitness", "sports", "exercise"] }
+    },
+    {
+      "word": "victory",
+      "level": "A2",
+      "phonetic": "/ˈvɪktəri/",
+      "definitions": [{ "pos": "noun", "meaning": "chiến thắng trong một trận đấu hoặc cuộc thi" }],
+      "examples": [
+        "The team celebrated their victory with a big party.",
+        "It was a hard-fought victory against a strong opponent."
+      ],
+      "synonyms": ["win", "triumph"],
+      "antonyms": ["defeat", "loss"],
+      "family_words": ["victorious", "victor"],
+      "metadata": { "tags": ["sports", "competition"] }
+    },
+    {
+      "word": "jersey",
+      "level": "B1",
+      "phonetic": "/ˈdʒɜːrzi/",
+      "definitions": [{ "pos": "noun", "meaning": "áo thi đấu thể thao" }],
+      "examples": [
+        "Each player wore a jersey with their name and number on the back.",
+        "He bought a jersey of his favourite football player."
+      ],
+      "synonyms": ["shirt", "uniform"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["sports", "equipment"] }
+    },
+    {
+      "word": "interval",
+      "level": "B2",
+      "phonetic": "/ˈɪntərvəl/",
+      "definitions": [{ "pos": "noun", "meaning": "khoảng nghỉ, chu kỳ lặp trong bài tập ngắt quãng" }],
+      "examples": [
+        "Interval training alternates between high and low intensity exercise.",
+        "She rests for thirty seconds between each interval."
+      ],
+      "synonyms": ["break", "pause"],
+      "antonyms": [],
+      "family_words": ["interval training"],
+      "metadata": { "tags": ["fitness", "exercise"] }
+    },
+    {
+      "word": "league",
+      "level": "A2",
+      "phonetic": "/liːɡ/",
+      "definitions": [{ "pos": "noun", "meaning": "giải đấu, liên đoàn thể thao" }],
+      "examples": [
+        "Their club was promoted to the top league after a great season.",
+        "She plays in a local basketball league on weekends."
+      ],
+      "synonyms": ["division", "association"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["sports", "competition"] }
+    }
+  ]
+}

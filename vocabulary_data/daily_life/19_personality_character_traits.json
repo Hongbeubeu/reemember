@@ -1,0 +1,356 @@
+{
+  "collection": "Daily Life",
+  "topic": "Personality & Character Traits",
+  "words": [
+    {
+      "word": "empathetic",
+      "level": "B2",
+      "phonetic": "/ˌempəˈθetɪk/",
+      "definitions": [{ "pos": "adjective", "meaning": "có khả năng đồng cảm, thấu hiểu cảm xúc của người khác" }],
+      "examples": [
+        "A good teacher needs to be empathetic towards their students.",
+        "She's very empathetic — she always knows when something is wrong."
+      ],
+      "synonyms": ["compassionate", "understanding", "sensitive"],
+      "antonyms": ["indifferent", "cold"],
+      "family_words": ["empathy", "empathise"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "positive traits"] }
+    },
+    {
+      "word": "resilient",
+      "level": "B2",
+      "phonetic": "/rɪˈzɪliənt/",
+      "definitions": [{ "pos": "adjective", "meaning": "kiên cường, có khả năng phục hồi sau khó khăn" }],
+      "examples": [
+        "She's incredibly resilient — she bounced back quickly after losing her job.",
+        "Children are often more resilient than adults give them credit for."
+      ],
+      "synonyms": ["tough", "adaptable", "strong"],
+      "antonyms": ["fragile", "vulnerable"],
+      "family_words": ["resilience", "resiliently"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "positive traits"] }
+    },
+    {
+      "word": "manipulative",
+      "level": "B2",
+      "phonetic": "/məˈnɪpjʊlətɪv/",
+      "definitions": [{ "pos": "adjective", "meaning": "hay thao túng, điều khiển người khác vì lợi ích cá nhân" }],
+      "examples": [
+        "He was manipulative, always twisting the truth to get what he wanted.",
+        "She cut ties with her manipulative ex-partner after years of emotional abuse."
+      ],
+      "synonyms": ["scheming", "cunning", "calculating"],
+      "antonyms": ["straightforward", "honest"],
+      "family_words": ["manipulate", "manipulation", "manipulator"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "negative traits"] }
+    },
+    {
+      "word": "conscientious",
+      "level": "B2",
+      "phonetic": "/ˌkɒnʃiˈenʃəs/",
+      "definitions": [{ "pos": "adjective", "meaning": "tận tâm, làm việc cẩn thận và có trách nhiệm" }],
+      "examples": [
+        "She's a conscientious worker who always double-checks her reports.",
+        "Being conscientious about deadlines is one of his strongest qualities."
+      ],
+      "synonyms": ["diligent", "thorough", "meticulous"],
+      "antonyms": ["careless", "negligent"],
+      "family_words": ["conscientiousness", "conscientiously"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "work ethic", "positive traits"] }
+    },
+    {
+      "word": "arrogant",
+      "level": "B1",
+      "phonetic": "/ˈærəɡənt/",
+      "definitions": [{ "pos": "adjective", "meaning": "kiêu ngạo, tự cao tự đại, coi thường người khác" }],
+      "examples": [
+        "He was too arrogant to admit that he had made a mistake.",
+        "Her arrogant attitude made it difficult for others to approach her."
+      ],
+      "synonyms": ["conceited", "haughty", "self-important"],
+      "antonyms": ["humble", "modest"],
+      "family_words": ["arrogance", "arrogantly"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "negative traits"] }
+    },
+    {
+      "word": "introverted",
+      "level": "B2",
+      "phonetic": "/ˈɪntrəvɜːtɪd/",
+      "definitions": [{ "pos": "adjective", "meaning": "hướng nội, thích ở một mình hoặc trong nhóm nhỏ hơn là đám đông" }],
+      "examples": [
+        "As an introverted person, she prefers a quiet dinner with close friends over big parties.",
+        "Being introverted doesn't mean being shy — he's confident but simply recharges alone."
+      ],
+      "synonyms": ["reserved", "withdrawn", "reflective"],
+      "antonyms": ["extroverted", "outgoing"],
+      "family_words": ["introvert", "introversion"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "social behaviour"] }
+    },
+    {
+      "word": "impulsive",
+      "level": "B1",
+      "phonetic": "/ɪmˈpʌlsɪv/",
+      "definitions": [{ "pos": "adjective", "meaning": "bốc đồng, hay hành động mà không suy nghĩ trước" }],
+      "examples": [
+        "He made an impulsive decision to quit his job without another one lined up.",
+        "Her impulsive nature often lands her in trouble."
+      ],
+      "synonyms": ["rash", "spontaneous", "hasty"],
+      "antonyms": ["cautious", "deliberate"],
+      "family_words": ["impulse", "impulsively", "impulsiveness"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "behaviour"] }
+    },
+    {
+      "word": "generous",
+      "level": "A2",
+      "phonetic": "/ˈdʒenərəs/",
+      "definitions": [{ "pos": "adjective", "meaning": "hào phóng, sẵn sàng chia sẻ thời gian, tiền bạc hoặc công sức với người khác" }],
+      "examples": [
+        "She's always generous with her time, helping colleagues even when she's busy.",
+        "He made a generous donation to the local food bank."
+      ],
+      "synonyms": ["giving", "charitable", "open-handed"],
+      "antonyms": ["stingy", "selfish"],
+      "family_words": ["generosity", "generously"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "positive traits"] }
+    },
+    {
+      "word": "pessimistic",
+      "level": "B1",
+      "phonetic": "/ˌpesɪˈmɪstɪk/",
+      "definitions": [{ "pos": "adjective", "meaning": "bi quan, có xu hướng nhìn nhận mọi việc theo hướng tiêu cực" }],
+      "examples": [
+        "He's so pessimistic that he always expects the worst to happen.",
+        "Try not to be pessimistic — things might work out better than you think."
+      ],
+      "synonyms": ["negative", "defeatist", "cynical"],
+      "antonyms": ["optimistic", "hopeful"],
+      "family_words": ["pessimism", "pessimist", "pessimistically"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "mindset"] }
+    },
+    {
+      "word": "stubborn",
+      "level": "B1",
+      "phonetic": "/ˈstʌbən/",
+      "definitions": [{ "pos": "adjective", "meaning": "cứng đầu, không chịu thay đổi ý kiến hoặc hành động dù có áp lực" }],
+      "examples": [
+        "She's too stubborn to apologise, even when she knows she's wrong.",
+        "His stubborn refusal to compromise caused the deal to fall apart."
+      ],
+      "synonyms": ["obstinate", "headstrong", "inflexible"],
+      "antonyms": ["flexible", "open-minded"],
+      "family_words": ["stubbornness", "stubbornly"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "behaviour"] }
+    },
+    {
+      "word": "charismatic",
+      "level": "B2",
+      "phonetic": "/ˌkærɪzˈmætɪk/",
+      "definitions": [{ "pos": "adjective", "meaning": "có sức hút, thu hút sự chú ý và tình cảm của người xung quanh một cách tự nhiên" }],
+      "examples": [
+        "The charismatic leader could inspire a room full of strangers within minutes.",
+        "She has a charismatic personality that draws people to her."
+      ],
+      "synonyms": ["charming", "magnetic", "captivating"],
+      "antonyms": ["dull", "uninspiring"],
+      "family_words": ["charisma"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "social behaviour", "positive traits"] }
+    },
+    {
+      "word": "vindictive",
+      "level": "C1",
+      "phonetic": "/vɪnˈdɪktɪv/",
+      "definitions": [{ "pos": "adjective", "meaning": "hay thù vặt, muốn trả thù khi cảm thấy bị tổn thương hay bất công" }],
+      "examples": [
+        "After losing the case, he became vindictive and tried to ruin the lawyer's reputation.",
+        "Her vindictive behaviour pushed away everyone who cared about her."
+      ],
+      "synonyms": ["spiteful", "vengeful", "resentful"],
+      "antonyms": ["forgiving", "magnanimous"],
+      "family_words": ["vindictiveness", "vindictively"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "negative traits"] }
+    },
+    {
+      "word": "integrity",
+      "level": "B2",
+      "phonetic": "/ɪnˈteɡrɪti/",
+      "definitions": [{ "pos": "noun", "meaning": "sự chính trực, phẩm chất trung thực và tuân thủ nguyên tắc đạo đức" }],
+      "examples": [
+        "She refused the bribe, demonstrating her integrity even under pressure.",
+        "A leader with integrity earns lasting respect from their team."
+      ],
+      "synonyms": ["honesty", "uprightness", "honour"],
+      "antonyms": ["dishonesty", "corruption"],
+      "family_words": ["integrate"],
+      "metadata": { "tags": ["personality", "character", "nouns", "positive traits"] }
+    },
+    {
+      "word": "compassionate",
+      "level": "B2",
+      "phonetic": "/kəmˈpæʃənət/",
+      "definitions": [{ "pos": "adjective", "meaning": "giàu lòng trắc ẩn, quan tâm sâu sắc đến nỗi đau khổ của người khác" }],
+      "examples": [
+        "The nurse was compassionate with elderly patients who were frightened.",
+        "A compassionate response can make all the difference in a crisis."
+      ],
+      "synonyms": ["caring", "sympathetic", "kind-hearted"],
+      "antonyms": ["cruel", "heartless"],
+      "family_words": ["compassion", "compassionately"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "positive traits"] }
+    },
+    {
+      "word": "narcissistic",
+      "level": "C1",
+      "phonetic": "/ˌnɑːsɪˈsɪstɪk/",
+      "definitions": [{ "pos": "adjective", "meaning": "tự ái thái quá, luôn đặt bản thân làm trung tâm và thiếu quan tâm đến người khác" }],
+      "examples": [
+        "His narcissistic behaviour meant every conversation had to be about him.",
+        "Living with a narcissistic partner can be emotionally exhausting."
+      ],
+      "synonyms": ["self-centred", "egotistical", "vain"],
+      "antonyms": ["selfless", "altruistic"],
+      "family_words": ["narcissism", "narcissist"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "negative traits"] }
+    },
+    {
+      "word": "diligent",
+      "level": "B1",
+      "phonetic": "/ˈdɪlɪdʒənt/",
+      "definitions": [{ "pos": "adjective", "meaning": "chăm chỉ, cần cù và kiên trì trong công việc" }],
+      "examples": [
+        "She's a diligent student who never misses a deadline.",
+        "His diligent efforts over the years finally paid off with a promotion."
+      ],
+      "synonyms": ["hardworking", "assiduous", "persistent"],
+      "antonyms": ["lazy", "idle"],
+      "family_words": ["diligence", "diligently"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "work ethic", "positive traits"] }
+    },
+    {
+      "word": "temperamental",
+      "level": "B2",
+      "phonetic": "/ˌtempərəˈmentəl/",
+      "definitions": [{ "pos": "adjective", "meaning": "hay thay đổi tâm trạng đột ngột, khó đoán về cảm xúc" }],
+      "examples": [
+        "The chef was talented but temperamental — he'd snap at the staff over minor mistakes.",
+        "Living with someone so temperamental requires a lot of patience."
+      ],
+      "synonyms": ["moody", "volatile", "unpredictable"],
+      "antonyms": ["even-tempered", "stable"],
+      "family_words": ["temperament", "temperamentally"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "behaviour", "negative traits"] }
+    },
+    {
+      "word": "ambitious",
+      "level": "B1",
+      "phonetic": "/æmˈbɪʃəs/",
+      "definitions": [{ "pos": "adjective", "meaning": "có tham vọng, mong muốn thành công và sẵn sàng nỗ lực để đạt được mục tiêu" }],
+      "examples": [
+        "She's ambitious — she already has a five-year career plan at age 22.",
+        "Being ambitious is admirable, as long as you don't step on others to get ahead."
+      ],
+      "synonyms": ["driven", "motivated", "goal-oriented"],
+      "antonyms": ["unambitious", "complacent"],
+      "family_words": ["ambition", "ambitiously"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "mindset"] }
+    },
+    {
+      "word": "passive-aggressive",
+      "level": "C1",
+      "phonetic": "/ˌpæsɪv əˈɡresɪv/",
+      "definitions": [{ "pos": "adjective", "meaning": "thụ động-công kích, thể hiện sự tức giận hoặc không hài lòng một cách gián tiếp thay vì nói thẳng" }],
+      "examples": [
+        "Instead of speaking up, he gave passive-aggressive comments like 'Fine, do whatever you want.'",
+        "Her passive-aggressive texts made the argument even more frustrating."
+      ],
+      "synonyms": ["indirect", "sullen", "resentful"],
+      "antonyms": ["direct", "assertive"],
+      "family_words": [],
+      "metadata": { "tags": ["personality", "character", "adjectives", "behaviour", "negative traits"] }
+    },
+    {
+      "word": "forthright",
+      "level": "C1",
+      "phonetic": "/ˈfɔːθraɪt/",
+      "definitions": [{ "pos": "adjective", "meaning": "thẳng thắn, nói thẳng ý kiến một cách rõ ràng và tự tin mà không vòng vo" }],
+      "examples": [
+        "I appreciate her forthright manner — she always tells you exactly what she thinks.",
+        "He gave a forthright answer instead of the vague response everyone expected."
+      ],
+      "synonyms": ["candid", "direct", "outspoken"],
+      "antonyms": ["evasive", "mealy-mouthed"],
+      "family_words": ["forthrightly", "forthrightness"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "communication", "positive traits"] }
+    },
+    {
+      "word": "self-disciplined",
+      "level": "B2",
+      "phonetic": "/ˌself ˈdɪsɪplɪnd/",
+      "definitions": [{ "pos": "adjective", "meaning": "có kỷ luật tự giác, kiểm soát được hành vi của bản thân để theo đuổi mục tiêu" }],
+      "examples": [
+        "You need to be self-disciplined to work from home without distraction.",
+        "Her self-disciplined routine — exercising every morning — impressed the whole team."
+      ],
+      "synonyms": ["self-controlled", "focused", "determined"],
+      "antonyms": ["undisciplined", "impulsive"],
+      "family_words": ["self-discipline"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "positive traits", "mindset"] }
+    },
+    {
+      "word": "petty",
+      "level": "B2",
+      "phonetic": "/ˈpeti/",
+      "definitions": [{ "pos": "adjective", "meaning": "nhỏ nhen, quá bận tâm đến những chuyện vặt vãnh hoặc hay để bụng những điều không đáng" }],
+      "examples": [
+        "It's petty to hold a grudge over something that happened years ago.",
+        "She refused to share the credit — it was a petty move that damaged her reputation."
+      ],
+      "synonyms": ["small-minded", "spiteful", "trivial"],
+      "antonyms": ["magnanimous", "generous"],
+      "family_words": ["pettiness", "pettily"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "negative traits", "behaviour"] }
+    },
+    {
+      "word": "adaptable",
+      "level": "B2",
+      "phonetic": "/əˈdæptəbl/",
+      "definitions": [{ "pos": "adjective", "meaning": "linh hoạt, dễ thích nghi với hoàn cảnh hoặc môi trường mới" }],
+      "examples": [
+        "She's highly adaptable and settled into the new city within a week.",
+        "Being adaptable is one of the most valuable traits in a rapidly changing workplace."
+      ],
+      "synonyms": ["flexible", "versatile", "open"],
+      "antonyms": ["rigid", "inflexible"],
+      "family_words": ["adapt", "adaptability"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "positive traits"] }
+    },
+    {
+      "word": "deceitful",
+      "level": "B2",
+      "phonetic": "/dɪˈsiːtfəl/",
+      "definitions": [{ "pos": "adjective", "meaning": "hay lừa dối, có xu hướng che giấu sự thật hoặc nói dối để đạt mục đích" }],
+      "examples": [
+        "She discovered he had been deceitful about his finances throughout their relationship.",
+        "His deceitful tactics in business eventually cost him all his clients."
+      ],
+      "synonyms": ["dishonest", "deceptive", "untrustworthy"],
+      "antonyms": ["honest", "trustworthy"],
+      "family_words": ["deceit", "deceive", "deceitfully"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "negative traits"] }
+    },
+    {
+      "word": "gregarious",
+      "level": "C1",
+      "phonetic": "/ɡrɪˈɡeəriəs/",
+      "definitions": [{ "pos": "adjective", "meaning": "thích giao tiếp xã hội, hướng ngoại và cảm thấy thoải mái khi ở cùng đám đông" }],
+      "examples": [
+        "He's so gregarious that he strikes up a conversation with anyone he meets.",
+        "Her gregarious nature made her the heart of every social gathering."
+      ],
+      "synonyms": ["sociable", "outgoing", "extroverted"],
+      "antonyms": ["introverted", "solitary"],
+      "family_words": ["gregariousness", "gregariously"],
+      "metadata": { "tags": ["personality", "character", "adjectives", "social behaviour", "positive traits"] }
+    }
+  ]
+}

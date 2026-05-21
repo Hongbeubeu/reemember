@@ -1,0 +1,374 @@
+{
+  "collection": "Daily Life",
+  "topic": "Social Media & the Internet",
+  "words": [
+    {
+      "word": "viral",
+      "level": "C1",
+      "phonetic": "/ˈvaɪrəl/",
+      "definitions": [{ "pos": "adjective", "meaning": "lan truyền nhanh trên mạng, trở nên nổi tiếng trên internet" }],
+      "examples": [
+        "Her video went viral overnight and got millions of views.",
+        "The company's viral marketing campaign was a huge success."
+      ],
+      "synonyms": ["trending", "popular"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["social media", "internet"] }
+    },
+    {
+      "word": "post",
+      "level": "A2",
+      "phonetic": "/poʊst/",
+      "definitions": [
+        { "pos": "noun", "meaning": "bài đăng (trên mạng xã hội)" },
+        { "pos": "verb", "meaning": "đăng bài, chia sẻ nội dung lên mạng xã hội" }
+      ],
+      "examples": [
+        "She wrote a long post about her trip to Japan.",
+        "He posts photos of his food on Instagram every day."
+      ],
+      "synonyms": ["share", "publish", "upload"],
+      "antonyms": [],
+      "family_words": ["repost (verb/noun)", "posting (noun)"],
+      "metadata": { "tags": ["social media", "content creation"] }
+    },
+    {
+      "word": "follow",
+      "level": "A2",
+      "phonetic": "/ˈfɒloʊ/",
+      "definitions": [{ "pos": "verb", "meaning": "theo dõi (tài khoản của ai đó trên mạng xã hội)" }],
+      "examples": [
+        "I started following her account after seeing her cooking videos.",
+        "The singer has over five million people following him on social media."
+      ],
+      "synonyms": ["subscribe to", "track"],
+      "antonyms": ["unfollow"],
+      "family_words": ["follower (noun)", "following (noun)"],
+      "metadata": { "tags": ["social media", "internet"] }
+    },
+    {
+      "word": "like",
+      "level": "A1",
+      "phonetic": "/laɪk/",
+      "definitions": [
+        { "pos": "verb", "meaning": "thích, bấm thích (nhấn nút like trên mạng xã hội)" },
+        { "pos": "noun", "meaning": "lượt thích" }
+      ],
+      "examples": [
+        "More than two thousand people liked his photo within an hour.",
+        "She checks how many likes her posts get every morning."
+      ],
+      "synonyms": ["react to", "heart"],
+      "antonyms": ["dislike"],
+      "family_words": [],
+      "metadata": { "tags": ["social media", "engagement"] }
+    },
+    {
+      "word": "comment",
+      "level": "A2",
+      "phonetic": "/ˈkɒment/",
+      "definitions": [
+        { "pos": "noun", "meaning": "bình luận (trên mạng xã hội hoặc bài viết)" },
+        { "pos": "verb", "meaning": "bình luận, để lại ý kiến" }
+      ],
+      "examples": [
+        "She left a kind comment on his photo to cheer him up.",
+        "People commented both positively and negatively on the new policy."
+      ],
+      "synonyms": ["reply", "response", "remark"],
+      "antonyms": [],
+      "family_words": ["commenter (noun)", "commenting (noun)"],
+      "metadata": { "tags": ["social media", "engagement"] }
+    },
+    {
+      "word": "share",
+      "level": "A2",
+      "phonetic": "/ʃer/",
+      "definitions": [{ "pos": "verb", "meaning": "chia sẻ bài viết hoặc nội dung cho người khác xem" }],
+      "examples": [
+        "He shared the article with his friends on Facebook.",
+        "Please share this post if you found it helpful."
+      ],
+      "synonyms": ["repost", "forward", "spread"],
+      "antonyms": [],
+      "family_words": ["sharing (noun)"],
+      "metadata": { "tags": ["social media", "internet"] }
+    },
+    {
+      "word": "hashtag",
+      "level": "A2",
+      "phonetic": "/ˈhæʃtæɡ/",
+      "definitions": [{ "pos": "noun", "meaning": "thẻ bắt đầu bằng dấu # để phân loại nội dung trên mạng xã hội" }],
+      "examples": [
+        "She added the hashtag #travel to help people find her post.",
+        "Using the right hashtags can help your content reach more people."
+      ],
+      "synonyms": ["tag", "label"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["social media", "content creation"] }
+    },
+    {
+      "word": "profile",
+      "level": "B1",
+      "phonetic": "/ˈproʊfaɪl/",
+      "definitions": [{ "pos": "noun", "meaning": "trang cá nhân, hồ sơ người dùng trên mạng xã hội hoặc internet" }],
+      "examples": [
+        "Make sure your profile photo is clear and professional.",
+        "He updated his profile to show his new job."
+      ],
+      "synonyms": ["account", "page", "bio"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["social media", "internet", "digital"] }
+    },
+    {
+      "word": "username",
+      "level": "A2",
+      "phonetic": "/ˈjuːzərneɪm/",
+      "definitions": [{ "pos": "noun", "meaning": "tên người dùng, biệt danh dùng để đăng nhập hoặc nhận diện trên internet" }],
+      "examples": [
+        "Choose a username that is easy to remember.",
+        "Her username on Twitter is the same as on Instagram."
+      ],
+      "synonyms": ["handle", "screen name", "login name"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["internet", "digital"] }
+    },
+    {
+      "word": "password",
+      "level": "A2",
+      "phonetic": "/ˈpæswɜːrd/",
+      "definitions": [{ "pos": "noun", "meaning": "mật khẩu dùng để bảo vệ tài khoản" }],
+      "examples": [
+        "Always use a strong password to keep your account safe.",
+        "She forgot her password and had to reset it by email."
+      ],
+      "synonyms": ["passcode", "pin", "security code"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["internet", "digital", "security"] }
+    },
+    {
+      "word": "upload",
+      "level": "B1",
+      "phonetic": "/ˈʌploʊd/",
+      "definitions": [{ "pos": "verb", "meaning": "tải lên, đăng tệp hoặc nội dung lên internet" }],
+      "examples": [
+        "He uploaded a new video to his YouTube channel yesterday.",
+        "It takes a few minutes to upload photos with a slow internet connection."
+      ],
+      "synonyms": ["post", "publish", "share"],
+      "antonyms": ["download"],
+      "family_words": ["upload (noun)"],
+      "metadata": { "tags": ["internet", "content creation", "digital"] }
+    },
+    {
+      "word": "download",
+      "level": "B1",
+      "phonetic": "/ˈdaʊnloʊd/",
+      "definitions": [{ "pos": "verb", "meaning": "tải xuống, lưu tệp từ internet về thiết bị" }],
+      "examples": [
+        "She downloaded the app on her phone and started using it right away.",
+        "You can download the report as a PDF from the website."
+      ],
+      "synonyms": ["save", "transfer"],
+      "antonyms": ["upload"],
+      "family_words": ["download (noun)"],
+      "metadata": { "tags": ["internet", "digital"] }
+    },
+    {
+      "word": "stream",
+      "level": "B1",
+      "phonetic": "/striːm/",
+      "definitions": [
+        { "pos": "verb", "meaning": "phát trực tiếp hoặc xem nội dung trực tuyến liên tục" },
+        { "pos": "noun", "meaning": "buổi phát trực tiếp (livestream)" }
+      ],
+      "examples": [
+        "Millions of people stream music every day instead of buying CDs.",
+        "She went live to stream her cooking show for her followers."
+      ],
+      "synonyms": ["broadcast", "livestream"],
+      "antonyms": [],
+      "family_words": ["streaming (noun)", "streamer (noun)"],
+      "metadata": { "tags": ["internet", "content creation", "digital"] }
+    },
+    {
+      "word": "notification",
+      "level": "B1",
+      "phonetic": "/ˌnoʊtɪfɪˈkeɪʃən/",
+      "definitions": [{ "pos": "noun", "meaning": "thông báo từ ứng dụng hoặc mạng xã hội" }],
+      "examples": [
+        "She turned off notifications so she could focus on her work.",
+        "He gets a notification every time someone comments on his post."
+      ],
+      "synonyms": ["alert", "message", "reminder"],
+      "antonyms": [],
+      "family_words": ["notify (verb)"],
+      "metadata": { "tags": ["social media", "internet", "digital"] }
+    },
+    {
+      "word": "privacy",
+      "level": "B2",
+      "phonetic": "/ˈpraɪvəsi/",
+      "definitions": [{ "pos": "noun", "meaning": "quyền riêng tư, sự bảo mật thông tin cá nhân trên internet" }],
+      "examples": [
+        "Check your privacy settings to control who can see your posts.",
+        "Many people are concerned about their online privacy."
+      ],
+      "synonyms": ["confidentiality", "security"],
+      "antonyms": ["publicity", "exposure"],
+      "family_words": ["private (adjective)"],
+      "metadata": { "tags": ["internet", "digital", "security"] }
+    },
+    {
+      "word": "account",
+      "level": "A2",
+      "phonetic": "/əˈkaʊnt/",
+      "definitions": [{ "pos": "noun", "meaning": "tài khoản trên một trang web hoặc ứng dụng" }],
+      "examples": [
+        "You need to create an account before you can comment on the site.",
+        "Her account was hacked, so she changed her password immediately."
+      ],
+      "synonyms": ["profile", "login", "user account"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["internet", "digital", "social media"] }
+    },
+    {
+      "word": "search",
+      "level": "A1",
+      "phonetic": "/sɜːrtʃ/",
+      "definitions": [
+        { "pos": "verb", "meaning": "tìm kiếm thông tin trên internet" },
+        { "pos": "noun", "meaning": "cuộc tìm kiếm" }
+      ],
+      "examples": [
+        "Just search for it online and you'll find the answer quickly.",
+        "She did a quick search to find the nearest restaurant."
+      ],
+      "synonyms": ["look up", "browse", "query"],
+      "antonyms": [],
+      "family_words": ["search engine (noun)"],
+      "metadata": { "tags": ["internet", "digital"] }
+    },
+    {
+      "word": "browse",
+      "level": "B1",
+      "phonetic": "/braʊz/",
+      "definitions": [{ "pos": "verb", "meaning": "lướt web, xem qua nội dung trên internet một cách thong thả" }],
+      "examples": [
+        "He spends hours browsing social media before going to bed.",
+        "She was browsing the internet when she found the perfect recipe."
+      ],
+      "synonyms": ["surf", "scroll", "look through"],
+      "antonyms": [],
+      "family_words": ["browser (noun)"],
+      "metadata": { "tags": ["internet", "digital"] }
+    },
+    {
+      "word": "scroll",
+      "level": "A2",
+      "phonetic": "/skroʊl/",
+      "definitions": [{ "pos": "verb", "meaning": "cuộn màn hình lên hoặc xuống để xem nội dung" }],
+      "examples": [
+        "She kept scrolling through her feed but nothing interesting appeared.",
+        "Scroll down to the bottom of the page to find the contact form."
+      ],
+      "synonyms": ["swipe", "browse"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["social media", "internet", "digital"] }
+    },
+    {
+      "word": "link",
+      "level": "A2",
+      "phonetic": "/lɪŋk/",
+      "definitions": [
+        { "pos": "noun", "meaning": "đường dẫn, liên kết dẫn đến một trang web hoặc nội dung khác" },
+        { "pos": "verb", "meaning": "liên kết, gắn đường dẫn đến nội dung khác" }
+      ],
+      "examples": [
+        "She shared a link to the article in her story.",
+        "Click on the link below to read the full news report."
+      ],
+      "synonyms": ["URL", "hyperlink"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["internet", "digital"] }
+    },
+    {
+      "word": "content",
+      "level": "B1",
+      "phonetic": "/ˈkɒntent/",
+      "definitions": [{ "pos": "noun", "meaning": "nội dung (bài viết, video, hình ảnh được tạo ra và chia sẻ trên mạng)" }],
+      "examples": [
+        "She creates content about fitness and healthy eating for her followers.",
+        "Good content keeps people coming back to your page regularly."
+      ],
+      "synonyms": ["material", "media", "posts"],
+      "antonyms": [],
+      "family_words": ["content creator (noun)"],
+      "metadata": { "tags": ["social media", "content creation", "digital"] }
+    },
+    {
+      "word": "influencer",
+      "level": "B2",
+      "phonetic": "/ˈɪnfluənsər/",
+      "definitions": [{ "pos": "noun", "meaning": "người có tầm ảnh hưởng trên mạng xã hội, có nhiều người theo dõi" }],
+      "examples": [
+        "She became an influencer by sharing honest product reviews online.",
+        "Many brands now pay influencers to promote their products."
+      ],
+      "synonyms": ["creator", "blogger", "vlogger"],
+      "antonyms": [],
+      "family_words": ["influence (verb/noun)", "influential (adjective)"],
+      "metadata": { "tags": ["social media", "content creation"] }
+    },
+    {
+      "word": "trending",
+      "level": "B1",
+      "phonetic": "/ˈtrendɪŋ/",
+      "definitions": [{ "pos": "adjective", "meaning": "đang thịnh hành, đang được nhiều người quan tâm và thảo luận trên mạng" }],
+      "examples": [
+        "That song is trending on every music platform right now.",
+        "She always knows what topics are trending on social media."
+      ],
+      "synonyms": ["popular", "viral", "hot"],
+      "antonyms": ["outdated", "unpopular"],
+      "family_words": ["trend (noun/verb)"],
+      "metadata": { "tags": ["social media", "internet"] }
+    },
+    {
+      "word": "messenger",
+      "level": "A2",
+      "phonetic": "/ˈmesɪndʒər/",
+      "definitions": [{ "pos": "noun", "meaning": "ứng dụng nhắn tin, phần mềm dùng để gửi tin nhắn trực tuyến" }],
+      "examples": [
+        "She sent him a voice message through the messenger app.",
+        "Most people use a messenger to keep in touch with friends and family."
+      ],
+      "synonyms": ["chat app", "messaging app"],
+      "antonyms": [],
+      "family_words": ["message (noun/verb)"],
+      "metadata": { "tags": ["internet", "digital", "social media"] }
+    },
+    {
+      "word": "caption",
+      "level": "B1",
+      "phonetic": "/ˈkæpʃən/",
+      "definitions": [{ "pos": "noun", "meaning": "chú thích, đoạn mô tả đi kèm với ảnh hoặc video trên mạng xã hội" }],
+      "examples": [
+        "She spent ten minutes thinking of the perfect caption for her photo.",
+        "A funny caption can make people stop and look at your post."
+      ],
+      "synonyms": ["description", "text", "subtitle"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["social media", "content creation"] }
+    }
+  ]
+}

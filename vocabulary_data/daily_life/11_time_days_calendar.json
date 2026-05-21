@@ -1,0 +1,356 @@
+{
+  "collection": "Daily Life",
+  "topic": "Time, Days & Calendar",
+  "words": [
+    {
+      "word": "deadline",
+      "level": "B1",
+      "phonetic": "/ˈdedlaɪn/",
+      "definitions": [{ "pos": "noun", "meaning": "hạn chót, thời hạn cuối cùng" }],
+      "examples": [
+        "The deadline for the project is next Friday.",
+        "She always submits her work well before the deadline."
+      ],
+      "synonyms": ["due date", "time limit"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["time", "schedule"] }
+    },
+    {
+      "word": "schedule",
+      "level": "A2",
+      "phonetic": "/ˈʃedjuːl/",
+      "definitions": [{ "pos": "noun", "meaning": "lịch trình, thời khóa biểu" }, { "pos": "verb", "meaning": "lên lịch, sắp xếp thời gian" }],
+      "examples": [
+        "Can you check the schedule and find a free slot for the meeting?",
+        "We scheduled the interview for Monday morning."
+      ],
+      "synonyms": ["timetable", "plan", "agenda"],
+      "antonyms": [],
+      "family_words": ["scheduled (adj)", "scheduling (noun)"],
+      "metadata": { "tags": ["schedule", "calendar", "time"] }
+    },
+    {
+      "word": "appointment",
+      "level": "A2",
+      "phonetic": "/əˈpɔɪntmənt/",
+      "definitions": [{ "pos": "noun", "meaning": "cuộc hẹn, lịch hẹn" }],
+      "examples": [
+        "I have a doctor's appointment at three o'clock.",
+        "Please call to make an appointment before you visit."
+      ],
+      "synonyms": ["meeting", "booking", "engagement"],
+      "antonyms": [],
+      "family_words": ["appoint (verb)", "appointed (adj)"],
+      "metadata": { "tags": ["calendar", "schedule", "time"] }
+    },
+    {
+      "word": "routine",
+      "level": "B1",
+      "phonetic": "/ruːˈtiːn/",
+      "definitions": [{ "pos": "noun", "meaning": "thói quen hàng ngày, quy trình thường lệ" }, { "pos": "adj", "meaning": "thường lệ, định kỳ" }],
+      "examples": [
+        "His morning routine starts with a cup of coffee and a short walk.",
+        "Getting enough sleep is an important part of a healthy daily routine."
+      ],
+      "synonyms": ["habit", "practice", "schedule"],
+      "antonyms": [],
+      "family_words": ["routinely (adv)"],
+      "metadata": { "tags": ["time", "daily life", "habit"] }
+    },
+    {
+      "word": "frequently",
+      "level": "B1",
+      "phonetic": "/ˈfriːkwəntli/",
+      "definitions": [{ "pos": "adverb", "meaning": "thường xuyên, hay xảy ra" }],
+      "examples": [
+        "She frequently forgets to charge her phone overnight.",
+        "Buses on this route run frequently during rush hour."
+      ],
+      "synonyms": ["often", "regularly", "repeatedly"],
+      "antonyms": ["rarely", "seldom", "infrequently"],
+      "family_words": ["frequent (adj)", "frequency (noun)"],
+      "metadata": { "tags": ["frequency", "time"] }
+    },
+    {
+      "word": "occasionally",
+      "level": "B1",
+      "phonetic": "/əˈkeɪʒənəli/",
+      "definitions": [{ "pos": "adverb", "meaning": "thỉnh thoảng, đôi khi" }],
+      "examples": [
+        "We occasionally go out for dinner on weekends.",
+        "He occasionally works late when there is a big project."
+      ],
+      "synonyms": ["sometimes", "now and then", "from time to time"],
+      "antonyms": ["always", "constantly", "frequently"],
+      "family_words": ["occasional (adj)", "occasion (noun)"],
+      "metadata": { "tags": ["frequency", "time"] }
+    },
+    {
+      "word": "punctual",
+      "level": "B1",
+      "phonetic": "/ˈpʌŋktʃuəl/",
+      "definitions": [{ "pos": "adj", "meaning": "đúng giờ, không trễ hẹn" }],
+      "examples": [
+        "It is important to be punctual for job interviews.",
+        "She is always punctual and never keeps anyone waiting."
+      ],
+      "synonyms": ["on time", "prompt", "timely"],
+      "antonyms": ["late", "tardy", "unpunctual"],
+      "family_words": ["punctuality (noun)", "punctually (adv)"],
+      "metadata": { "tags": ["time", "habit"] }
+    },
+    {
+      "word": "postpone",
+      "level": "B1",
+      "phonetic": "/pəˈspəʊn/",
+      "definitions": [{ "pos": "verb", "meaning": "hoãn lại, dời lịch" }],
+      "examples": [
+        "They decided to postpone the meeting until next week.",
+        "The outdoor concert was postponed because of heavy rain."
+      ],
+      "synonyms": ["delay", "reschedule", "put off"],
+      "antonyms": ["advance", "bring forward"],
+      "family_words": ["postponement (noun)"],
+      "metadata": { "tags": ["schedule", "time", "calendar"] }
+    },
+    {
+      "word": "duration",
+      "level": "B1",
+      "phonetic": "/djʊˈreɪʃən/",
+      "definitions": [{ "pos": "noun", "meaning": "khoảng thời gian, thời lượng" }],
+      "examples": [
+        "The duration of the flight is about two hours.",
+        "Please keep your presentation within the allocated duration."
+      ],
+      "synonyms": ["length", "period", "span"],
+      "antonyms": [],
+      "family_words": ["durable (adj)", "endure (verb)"],
+      "metadata": { "tags": ["time"] }
+    },
+    {
+      "word": "annual",
+      "level": "B1",
+      "phonetic": "/ˈænjuəl/",
+      "definitions": [{ "pos": "adj", "meaning": "hàng năm, mỗi năm một lần" }],
+      "examples": [
+        "The company holds its annual meeting every January.",
+        "She gets an annual performance review from her manager."
+      ],
+      "synonyms": ["yearly"],
+      "antonyms": ["daily", "monthly", "weekly"],
+      "family_words": ["annually (adv)"],
+      "metadata": { "tags": ["frequency", "calendar", "time"] }
+    },
+    {
+      "word": "monthly",
+      "level": "A1",
+      "phonetic": "/ˈmʌnθli/",
+      "definitions": [{ "pos": "adj", "meaning": "hàng tháng, mỗi tháng một lần" }, { "pos": "adverb", "meaning": "mỗi tháng" }],
+      "examples": [
+        "We have a monthly team meeting on the first Tuesday of each month.",
+        "The magazine is published monthly."
+      ],
+      "synonyms": [],
+      "antonyms": ["daily", "weekly", "annually"],
+      "family_words": ["month (noun)"],
+      "metadata": { "tags": ["frequency", "calendar", "time"] }
+    },
+    {
+      "word": "weekly",
+      "level": "A1",
+      "phonetic": "/ˈwiːkli/",
+      "definitions": [{ "pos": "adj", "meaning": "hàng tuần, mỗi tuần một lần" }, { "pos": "adverb", "meaning": "mỗi tuần" }],
+      "examples": [
+        "She attends a weekly yoga class on Saturday mornings.",
+        "The report is sent to management weekly."
+      ],
+      "synonyms": [],
+      "antonyms": ["daily", "monthly", "annually"],
+      "family_words": ["week (noun)"],
+      "metadata": { "tags": ["frequency", "calendar", "time"] }
+    },
+    {
+      "word": "upcoming",
+      "level": "B1",
+      "phonetic": "/ˈʌpkʌmɪŋ/",
+      "definitions": [{ "pos": "adj", "meaning": "sắp tới, sắp diễn ra" }],
+      "examples": [
+        "Please mark your calendar for the upcoming public holiday.",
+        "He is nervous about his upcoming job interview."
+      ],
+      "synonyms": ["approaching", "forthcoming", "imminent"],
+      "antonyms": ["past", "recent"],
+      "family_words": [],
+      "metadata": { "tags": ["calendar", "time"] }
+    },
+    {
+      "word": "overdue",
+      "level": "B1",
+      "phonetic": "/ˌəʊvəˈdjuː/",
+      "definitions": [{ "pos": "adj", "meaning": "quá hạn, trễ hạn" }],
+      "examples": [
+        "The library book is overdue and she needs to return it today.",
+        "His rent payment is three days overdue."
+      ],
+      "synonyms": ["late", "past due", "delayed"],
+      "antonyms": ["on time", "early"],
+      "family_words": [],
+      "metadata": { "tags": ["time", "schedule"] }
+    },
+    {
+      "word": "remind",
+      "level": "A2",
+      "phonetic": "/rɪˈmaɪnd/",
+      "definitions": [{ "pos": "verb", "meaning": "nhắc nhở, gợi nhớ" }],
+      "examples": [
+        "Can you remind me about the meeting tomorrow morning?",
+        "She set an alarm to remind herself to take her medicine."
+      ],
+      "synonyms": ["prompt", "notify", "alert"],
+      "antonyms": [],
+      "family_words": ["reminder (noun)", "reminder (adj)"],
+      "metadata": { "tags": ["calendar", "schedule", "time"] }
+    },
+    {
+      "word": "interval",
+      "level": "B2",
+      "phonetic": "/ˈɪntəvəl/",
+      "definitions": [{ "pos": "noun", "meaning": "khoảng thời gian giữa các sự kiện, chu kỳ" }],
+      "examples": [
+        "The buses arrive at regular intervals of fifteen minutes.",
+        "Take the medication at four-hour intervals."
+      ],
+      "synonyms": ["gap", "period", "pause"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["time", "frequency"] }
+    },
+    {
+      "word": "decade",
+      "level": "B1",
+      "phonetic": "/ˈdekeɪd/",
+      "definitions": [{ "pos": "noun", "meaning": "thập kỷ, mười năm" }],
+      "examples": [
+        "Technology has changed a lot in the past decade.",
+        "They have been friends for over a decade."
+      ],
+      "synonyms": ["ten years"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["time", "calendar"] }
+    },
+    {
+      "word": "quarter",
+      "level": "B1",
+      "phonetic": "/ˈkwɔːtə/",
+      "definitions": [{ "pos": "noun", "meaning": "quý (3 tháng), một phần tư" }],
+      "examples": [
+        "Sales figures are reviewed at the end of each quarter.",
+        "The project must be completed in the first quarter of next year."
+      ],
+      "synonyms": ["three months", "Q1/Q2/Q3/Q4"],
+      "antonyms": [],
+      "family_words": ["quarterly (adj/adv)"],
+      "metadata": { "tags": ["calendar", "schedule", "time"] }
+    },
+    {
+      "word": "meanwhile",
+      "level": "B1",
+      "phonetic": "/ˈmiːnwaɪl/",
+      "definitions": [{ "pos": "adverb", "meaning": "trong thời gian đó, trong lúc đó" }],
+      "examples": [
+        "The food will be ready in ten minutes; meanwhile, please have a seat.",
+        "She was cooking dinner; meanwhile, her husband set the table."
+      ],
+      "synonyms": ["in the meantime", "at the same time", "simultaneously"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["time"] }
+    },
+    {
+      "word": "available",
+      "level": "A2",
+      "phonetic": "/əˈveɪləbəl/",
+      "definitions": [{ "pos": "adj", "meaning": "rảnh, có thể gặp được; sẵn có" }],
+      "examples": [
+        "Are you available for a call on Thursday afternoon?",
+        "The meeting room is available from two to four o'clock."
+      ],
+      "synonyms": ["free", "accessible", "open"],
+      "antonyms": ["busy", "unavailable", "occupied"],
+      "family_words": ["availability (noun)"],
+      "metadata": { "tags": ["schedule", "time", "calendar"] }
+    },
+    {
+      "word": "expire",
+      "level": "B1",
+      "phonetic": "/ɪkˈspaɪə/",
+      "definitions": [{ "pos": "verb", "meaning": "hết hạn, mãn hạn" }],
+      "examples": [
+        "My passport will expire next month, so I need to renew it soon.",
+        "Check the date on the milk carton — it expires tomorrow."
+      ],
+      "synonyms": ["run out", "lapse", "end"],
+      "antonyms": ["renew", "extend"],
+      "family_words": ["expiry (noun)", "expired (adj)", "expiration (noun)"],
+      "metadata": { "tags": ["time", "calendar"] }
+    },
+    {
+      "word": "overlap",
+      "level": "B2",
+      "phonetic": "/ˌəʊvəˈlæp/",
+      "definitions": [{ "pos": "verb", "meaning": "trùng lịch, xảy ra cùng lúc" }, { "pos": "noun", "meaning": "sự trùng lặp về thời gian" }],
+      "examples": [
+        "The two meetings overlap, so I can only attend one of them.",
+        "There is a thirty-minute overlap between the morning and afternoon shifts."
+      ],
+      "synonyms": ["coincide", "clash", "conflict"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["schedule", "time", "calendar"] }
+    },
+    {
+      "word": "workday",
+      "level": "A2",
+      "phonetic": "/ˈwɜːkdeɪ/",
+      "definitions": [{ "pos": "noun", "meaning": "ngày làm việc (thường là thứ Hai đến thứ Sáu)" }],
+      "examples": [
+        "The office is open every workday from eight in the morning to five in the afternoon.",
+        "Please allow three to five workdays for delivery."
+      ],
+      "synonyms": ["weekday", "business day"],
+      "antonyms": ["weekend", "holiday"],
+      "family_words": [],
+      "metadata": { "tags": ["calendar", "time", "daily life"] }
+    },
+    {
+      "word": "flexible",
+      "level": "B1",
+      "phonetic": "/ˈfleksɪbəl/",
+      "definitions": [{ "pos": "adj", "meaning": "linh hoạt (về thời gian, lịch trình)" }],
+      "examples": [
+        "My working hours are flexible, so I can start at seven or nine.",
+        "She prefers jobs with a flexible schedule so she can pick up her children from school."
+      ],
+      "synonyms": ["adaptable", "adjustable", "variable"],
+      "antonyms": ["fixed", "rigid", "strict"],
+      "family_words": ["flexibility (noun)", "flexibly (adv)"],
+      "metadata": { "tags": ["schedule", "time"] }
+    },
+    {
+      "word": "countdown",
+      "level": "B1",
+      "phonetic": "/ˈkaʊntdaʊn/",
+      "definitions": [{ "pos": "noun", "meaning": "đếm ngược (thời gian)" }],
+      "examples": [
+        "There is a two-week countdown until the final exam.",
+        "Everyone joined the New Year countdown on the town square."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": ["count down (verb phrase)"],
+      "metadata": { "tags": ["time", "calendar"] }
+    }
+  ]
+}

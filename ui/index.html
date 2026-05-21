@@ -516,9 +516,13 @@
     #libraryPage .page-inner { max-width: var(--max-lib); }
 
     /* Layout: sidebar + content */
-    .lib-layout { display: flex; gap: 16px; align-items: flex-start; }
-    .lib-sidebar { width: var(--sidebar-w); flex-shrink: 0; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .lib-layout { display: flex; gap: 0; align-items: flex-start; }
+    .lib-sidebar { width: var(--sidebar-w); flex-shrink: 0; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow-y: auto; max-height: calc(100vh - 120px); position: sticky; top: 0; }
     .lib-content { flex: 1; min-width: 0; }
+    /* Sidebar drag-resize handle */
+    .sidebar-resizer { width: 16px; flex-shrink: 0; cursor: col-resize; position: relative; align-self: stretch; }
+    .sidebar-resizer::after { content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: var(--border); opacity: 0; transition: opacity .15s; }
+    .sidebar-resizer:hover::after, .sidebar-resizer.resizing::after { opacity: 1; }
 
     /* Sidebar */
     .sidebar-header { padding: 12px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
@@ -526,15 +530,17 @@
     .sidebar-item { padding: 9px 14px; cursor: pointer; font-size: 13px; border-left: 3px solid transparent; transition: background .1s, border-color .1s; display: flex; align-items: center; justify-content: space-between; }
     .sidebar-item:hover { background: var(--surface-soft); }
     .sidebar-item.active { border-left-color: var(--primary); background: var(--surface-active); font-weight: 600; color: var(--primary); }
-    .sidebar-item .item-actions { display: none; gap: 4px; }
-    .sidebar-item:hover .item-actions { display: flex; }
+    .sidebar-item .item-actions,
+    .sidebar-col-header .item-actions { display: flex; gap: 4px; visibility: hidden; opacity: 0; }
+    .sidebar-item:hover .item-actions,
+    .sidebar-col-header:hover .item-actions { visibility: visible; opacity: 1; }
     .sidebar-topic { padding-left: 26px; font-size: 12px; color: var(--text-secondary); }
     .sidebar-section { border-bottom: 1px solid var(--border); }
     .sidebar-section:last-child { border-bottom: none; }
     .sidebar-col-header { padding: 9px 14px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; border-left: 3px solid transparent; transition: background .1s; }
     .sidebar-col-header:hover { background: var(--surface-soft); }
     .sidebar-col-header.active { border-left-color: var(--primary); background: var(--surface-active); color: var(--primary); }
-    .sidebar-col-header .toggle-icon { margin-left: auto; font-size: 10px; color: var(--muted); }
+    .sidebar-col-header .toggle-icon { font-size: 10px; color: var(--muted); flex-shrink: 0; }
     .sidebar-col-topics { display: none; }
     .sidebar-col-topics.open { display: block; }
     .btn-icon { background: none; border: none; cursor: pointer; padding: 2px 5px; border-radius: 4px; font-size: 13px; color: var(--muted); transition: color .1s, background .1s; }
@@ -548,7 +554,25 @@
     /* Table */
     .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-top: 1px solid var(--border); }
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    thead th { text-align: left; padding: 10px 14px; font-size: 11px; text-transform: uppercase; color: var(--muted); font-weight: 600; letter-spacing: .5px; background: var(--table-head-bg); position: sticky; top: 0; border-bottom: 2px solid var(--border); }
+    thead th { text-align: left; padding: 0; font-size: 11px; text-transform: uppercase; color: var(--muted); font-weight: 600; letter-spacing: .5px; background: var(--table-head-bg); position: sticky; top: 0; border-bottom: 2px solid var(--border); overflow: hidden; user-select: none; }
+    #libTable { table-layout: fixed; }
+    .th-inner { display: flex; align-items: center; gap: 4px; padding: 10px 14px; overflow: hidden; white-space: nowrap; }
+    .th-inner.sortable { cursor: pointer; }
+    .th-inner.sortable:hover { color: var(--text); }
+    .sort-icon { font-size: 9px; flex-shrink: 0; opacity: .6; }
+    .col-resizer { position: absolute; right: 0; top: 0; bottom: 0; width: 5px; cursor: col-resize; z-index: 1; }
+    .col-resizer:hover, .col-resizer.resizing { background: var(--primary); opacity: .4; }
+    /* Column visibility */
+    #libTable.hide-phonetic .col-phonetic { display: none; }
+    #libTable.hide-meanings .col-meanings { display: none; }
+    #libTable.hide-tags     .col-tags     { display: none; }
+    #libTable.hide-reviews  .col-reviews  { display: none; }
+    /* Column picker */
+    .col-picker { position: relative; }
+    .col-picker-dropdown { display: none; position: absolute; top: calc(100% + 4px); right: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 6px 4px; z-index: 200; min-width: 140px; box-shadow: var(--shadow); }
+    .col-picker-dropdown.open { display: block; }
+    .col-picker-dropdown label { display: flex; align-items: center; gap: 8px; padding: 5px 10px; cursor: pointer; font-size: 13px; border-radius: 4px; white-space: nowrap; }
+    .col-picker-dropdown label:hover { background: var(--surface-subtle); }
     tbody tr { border-bottom: 1px solid var(--table-row-border); transition: background .1s; }
     tbody tr:hover { background: var(--surface-subtle); }
     tbody td { padding: 10px 14px; vertical-align: top; }
@@ -557,6 +581,42 @@
     .col-meanings { color: var(--text-secondary); line-height: 1.55; }
     .col-reviews  { text-align: center; color: var(--muted); }
     .rel-pills    { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 3px; }
+    /* POS badges */
+    .pos-tag { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px; color: #fff; border-radius: 3px; padding: 1px 5px; margin-right: 4px; vertical-align: middle; flex-shrink: 0; }
+    .pos-noun { background: #3b82f6; }
+    .pos-verb { background: #22c55e; }
+    .pos-adj  { background: #f97316; }
+    .pos-adv  { background: #a855f7; }
+    .pos-prep { background: #06b6d4; }
+    .pos-conj { background: #ec4899; }
+    .pos-pron { background: #6366f1; }
+    .pos-interj { background: #ef4444; }
+    .pos-other { background: var(--muted); }
+    /* Level badge */
+    .level-badge { display: inline-block; font-size: 10px; font-weight: 700; border-radius: 3px; padding: 1px 5px; margin-left: 4px; vertical-align: middle; background: var(--surface-subtle); color: var(--muted); border: 1px solid var(--border); letter-spacing: .3px; }
+    /* Row clickable */
+    tbody tr.row-main { cursor: pointer; }
+    /* Word detail modal */
+    .modal--word { max-width: 560px; width: 94%; max-height: 85vh; overflow-y: auto; padding: 0; display: flex; flex-direction: column; }
+    .wdm-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 20px 24px 16px; border-bottom: 1px solid var(--border); gap: 12px; }
+    .wdm-title { flex: 1; min-width: 0; }
+    .wdm-word { font-size: 26px; font-weight: 800; color: var(--text); line-height: 1.2; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .wdm-phonetic { font-size: 14px; color: var(--muted); font-style: italic; margin-top: 5px; }
+    .wdm-close { flex-shrink: 0; width: 30px; height: 30px; border: none; background: none; cursor: pointer; color: var(--muted); font-size: 20px; display: flex; align-items: center; justify-content: center; border-radius: 6px; line-height: 1; }
+    .wdm-close:hover { background: var(--surface-subtle); color: var(--text); }
+    .wdm-body { padding: 20px 24px; display: flex; flex-direction: column; gap: 18px; overflow-y: auto; }
+    .wdm-section { display: flex; flex-direction: column; }
+    .wdm-section-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin-bottom: 8px; }
+    .wdm-def-list { display: flex; flex-direction: column; gap: 0; }
+    .wdm-def { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .wdm-def:last-child { border-bottom: none; padding-bottom: 0; }
+    .wdm-pos { font-size: 10px; font-weight: 700; text-transform: uppercase; color: #fff; border-radius: 4px; padding: 2px 7px; flex-shrink: 0; margin-top: 2px; letter-spacing: .3px; }
+    .wdm-meaning { font-size: 14px; color: var(--text); line-height: 1.6; }
+    .wdm-examples { display: flex; flex-direction: column; gap: 6px; }
+    .wdm-example { font-size: 13px; color: var(--text-secondary); line-height: 1.65; padding: 6px 10px; border-left: 3px solid var(--border); border-radius: 0 4px 4px 0; background: var(--surface-subtle); }
+    .wdm-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .wdm-footer { padding: 12px 24px 16px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .wdm-review { font-size: 12px; color: var(--muted); }
 
     /* Cards (mobile) */
     .word-cards { display: none; }
@@ -579,6 +639,12 @@
     .modal h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
     .modal .field { margin-bottom: 14px; }
     .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 20px; }
+    /* Global loading overlay */
+    #appLoading { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); backdrop-filter: blur(3px); z-index: 9999; align-items: center; justify-content: center; flex-direction: column; gap: 16px; }
+    #appLoading.visible { display: flex; }
+    .loading-spinner { width: 44px; height: 44px; border: 4px solid rgba(255,255,255,.2); border-top-color: var(--primary); border-radius: 50%; animation: spin .7s linear infinite; }
+    .loading-msg { color: #fff; font-size: 14px; font-weight: 500; letter-spacing: .2px; min-height: 1em; }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
     /* ═══════════════════════════════════ IMPORT / EXPORT ═════════════════════ */
     #importExportPage .page-inner { max-width: var(--max-import); }
@@ -606,9 +672,19 @@
 
     .export-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
+    .batch-pick-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .batch-file-list { list-style: none; padding: 0; margin: 0 0 12px 0; max-height: 180px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; }
+    .batch-file-list:empty { display: none; }
+    .batch-file-item { display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .batch-file-item:last-child { border-bottom: none; }
+    .batch-file-item .file-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .batch-file-item .btn-remove { background: none; border: none; cursor: pointer; color: var(--muted); padding: 2px 6px; font-size: 16px; line-height: 1; }
+    .batch-file-item .btn-remove:hover { color: var(--danger-text); }
+    .batch-file-count { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+
     /* BILINGUAL BOOKS */
     #bilingualPage .page-inner { max-width: var(--max-lib); }
-    .bilingual-layout { display: flex; gap: 16px; align-items: flex-start; }
+    .bilingual-layout { display: flex; gap: 0; align-items: flex-start; }
     .bilingual-sidebar { width: var(--sidebar-w); flex-shrink: 0; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
     .bilingual-content { flex: 1; min-width: 0; }
     .bilingual-sidebar-header { padding: 12px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 8px; }
@@ -668,9 +744,10 @@
       .answer-row { flex-direction: column; }
       .answer-row .btn { width: 100%; }
 
-      /* Library: hide sidebar, show mobile filter */
-      .lib-sidebar { display: none; }
+      /* Library: stack sidebar above content on mobile */
+      .lib-sidebar { width: 100%; max-height: 200px; position: static; }
       .lib-layout  { flex-direction: column; }
+      .lib-layout .sidebar-resizer { display: none; }
       .table-wrap  { display: none; }
       .word-cards  { display: block; }
 
@@ -686,6 +763,7 @@
       .export-actions { flex-direction: column; }
       .export-actions .btn { width: 100%; }
       .bilingual-layout { flex-direction: column; }
+      .bilingual-layout .sidebar-resizer { display: none; }
       .bilingual-sidebar { width: 100%; }
       .bilingual-toolbar { flex-direction: column; align-items: stretch; }
       .bilingual-toolbar .field select { width: 100%; min-width: 0; }
@@ -715,7 +793,7 @@
     /* ══════════════════════════════════════════════════════ GRAMMAR ══════════ */
     #grammarPage .page-inner { max-width: var(--max-lib); }
 
-    .grammar-layout { display: flex; gap: 16px; align-items: flex-start; }
+    .grammar-layout { display: flex; gap: 0; align-items: flex-start; }
     .grammar-sidebar { width: var(--sidebar-w); flex-shrink: 0; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
     .grammar-content { flex: 1; min-width: 0; }
 
@@ -864,8 +942,9 @@
     .grammar-import-drop input { display: none; }
 
     @media (max-width: 639px) {
-      .grammar-sidebar { display: none; }
+      .grammar-sidebar { width: 100%; }
       .grammar-layout  { flex-direction: column; }
+      .grammar-layout .sidebar-resizer { display: none; }
       .tfn-buttons { flex-direction: column; }
       .tfn-btn { min-width: unset; }
     }
@@ -883,6 +962,19 @@
       .stat-val { font-size: 32px; }
       .card { padding: 28px 32px; margin-bottom: 20px; }
     }
+
+    /* Stats page */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; padding: 8px 0; }
+    .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 16px; text-align: center; }
+    .stat-card-val { font-size: 2rem; font-weight: 700; color: var(--primary); line-height: 1; }
+    .stat-card-lbl { font-size: .8rem; color: var(--muted); margin-top: 6px; }
+
+    /* Speak button */
+    .btn-speak { background: none; border: none; cursor: pointer; font-size: 1.1rem; padding: 4px 6px; border-radius: 6px; color: var(--muted); transition: color .15s, background .15s; }
+    .btn-speak:hover { color: var(--primary); background: var(--hover); }
+    .prompt-row { display: flex; align-items: center; gap: 8px; }
+    .prompt-row .prompt { flex: 1; margin: 0; }
+
   </style>
 </head>
 <body>
@@ -895,6 +987,7 @@
     <button class="nav-btn"        id="navImportExport" onclick="switchTab('importExport')">Import / Export</button>
     <button class="nav-btn"        id="navBilingual"    onclick="switchTab('bilingual')">Bilingual Books</button>
     <button class="nav-btn"        id="navGrammar"      onclick="switchTab('grammar')">Grammar</button>
+    <button class="nav-btn"        id="navStats"        onclick="switchTab('stats')">Stats</button>
     <div class="theme-picker theme-picker-top">
       <label for="themeSelect">Theme</label>
       <select id="themeSelect" onchange="onThemeModeChange(this.value)" title="Theme">
@@ -956,7 +1049,10 @@
         </div>
 
         <div class="card question-card" id="questionCard">
-          <div class="prompt" id="promptText"></div>
+          <div class="prompt-row">
+            <div class="prompt" id="promptText"></div>
+            <button class="btn-speak" id="speakBtn" onclick="speakCurrent()" title="Listen">🔊</button>
+          </div>
           <div class="meta-grid" id="metaGrid"></div>
           <ul class="examples-list" id="examplesList"></ul>
           <div class="answer-row">
@@ -989,7 +1085,7 @@
         <div class="lib-layout">
 
           <!-- Sidebar: collections & topics -->
-          <div class="lib-sidebar" id="libSidebar">
+          <div class="lib-sidebar" id="libSidebar" style="min-width:120px;max-width:500px">
             <div class="sidebar-header">
               <span>Collections</span>
               <button class="btn-icon" title="New collection" onclick="openNewCollectionModal()">+</button>
@@ -1002,26 +1098,30 @@
             <div id="sidebarCollections"></div>
           </div>
 
+          <div class="sidebar-resizer" id="libSidebarResizer"></div>
+
           <!-- Main library content -->
           <div class="lib-content">
             <div class="card" style="padding-bottom:0">
               <div class="lib-toolbar">
                 <input type="text" id="searchInput" placeholder="Search words, meanings, tags…" oninput="filterLibrary()" />
                 <button class="btn btn-ghost btn-sm" onclick="loadLibrary()">↻ Refresh</button>
+                <div class="col-picker" id="colPicker">
+                  <button class="btn btn-ghost btn-sm" onclick="toggleColPicker()">Columns ▾</button>
+                  <div class="col-picker-dropdown" id="colPickerDropdown">
+                    <label><input type="checkbox" id="colChkPhonetic" checked onchange="toggleColVis('phonetic',this.checked)"> Phonetic</label>
+                    <label><input type="checkbox" id="colChkMeanings" checked onchange="toggleColVis('meanings',this.checked)"> Meanings</label>
+                    <label><input type="checkbox" id="colChkTags" checked onchange="toggleColVis('tags',this.checked)"> Tags</label>
+                    <label><input type="checkbox" id="colChkReviews" checked onchange="toggleColVis('reviews',this.checked)"> Reviews</label>
+                  </div>
+                </div>
                 <span class="lib-count" id="libCount"></span>
               </div>
 
               <div class="table-wrap">
                 <table id="libTable">
                   <thead>
-                    <tr>
-                      <th style="min-width:130px">Word</th>
-                      <th style="min-width:110px" class="col-hide-tablet">Phonetic</th>
-                      <th>Meanings &amp; Relations</th>
-                      <th style="min-width:130px" class="col-hide-tablet">Tags</th>
-                      <th style="width:72px" class="col-reviews">Reviews</th>
-                      <th style="width:72px"></th>
-                    </tr>
+                    <tr id="libThead"></tr>
                   </thead>
                   <tbody id="libTableBody"></tbody>
                 </table>
@@ -1095,6 +1195,30 @@
         </div>
 
         <div class="card">
+          <div class="card-title">Batch import vocabulary</div>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:12px">
+            Select multiple .json files or a folder. All files are imported in a single atomic transaction — if any file fails, nothing is committed.
+          </p>
+
+          <div class="batch-pick-row">
+            <button class="btn btn-ghost" onclick="document.getElementById('batchFileInput').click()">Choose files…</button>
+            <input type="file" id="batchFileInput" accept=".json" multiple style="display:none" onchange="onBatchFilePick(event)" />
+            <button class="btn btn-ghost" onclick="document.getElementById('batchDirInput').click()">Choose folder…</button>
+            <input type="file" id="batchDirInput" accept=".json" webkitdirectory style="display:none" onchange="onBatchFilePick(event)" />
+          </div>
+
+          <div class="batch-file-count" id="batchFileCount"></div>
+          <ul class="batch-file-list" id="batchFileList"></ul>
+
+          <div class="import-actions">
+            <button class="btn btn-primary" id="batchImportBtn" onclick="runBatchImport()" disabled>Import all</button>
+            <button class="btn btn-ghost" onclick="clearBatchImport()">Clear</button>
+          </div>
+
+          <div class="import-result" id="batchImportResult"></div>
+        </div>
+
+        <div class="card">
           <div class="card-title">Export vocabulary</div>
           <p style="font-size:13px;color:var(--muted);margin-bottom:16px">
             Save the entire vocabulary database as a JSON file (includes synonyms, antonyms, word family).
@@ -1112,7 +1236,7 @@
       <div class="page-inner">
         <div class="bilingual-layout">
 
-          <div class="bilingual-sidebar">
+          <div class="bilingual-sidebar" id="bilingualSidebar" style="min-width:120px;max-width:500px">
             <div class="bilingual-sidebar-header">
               <span>Bilingual Books</span>
               <span id="bilingualArticleCount"></span>
@@ -1128,6 +1252,8 @@
               </div>
             </div>
           </div>
+
+          <div class="sidebar-resizer" id="bilingualSidebarResizer"></div>
 
           <div class="bilingual-content">
             <div class="card">
@@ -1166,7 +1292,7 @@
         <div class="grammar-layout">
 
           <!-- Sidebar -->
-          <div class="grammar-sidebar">
+          <div class="grammar-sidebar" id="grammarSidebar" style="min-width:120px;max-width:500px">
             <div class="grammar-sidebar-header">
               <span class="section-title">Grammar Docs</span>
               <select id="grammarSortMode" onchange="onGrammarSortChange()" title="Sort">
@@ -1193,6 +1319,8 @@
               </div>
             </div>
           </div>
+
+          <div class="sidebar-resizer" id="grammarSidebarResizer"></div>
 
           <!-- Main content -->
           <div class="grammar-content">
@@ -1273,6 +1401,41 @@
       </div>
     </div>
 
+    <!-- ══ STATS ════════════════════════════════════════════════════════════════ -->
+    <div id="statsPage" class="page">
+      <div class="page-inner">
+        <div class="card">
+          <div class="card-title">Learning Statistics</div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-card-val" id="statStreakDays">—</div>
+              <div class="stat-card-lbl">🔥 Streak (days)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-val" id="statTotalWords">—</div>
+              <div class="stat-card-lbl">📚 Total words</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-val" id="statDueCount">—</div>
+              <div class="stat-card-lbl">⏰ Due now (SRS)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-val" id="statTodayReviews">—</div>
+              <div class="stat-card-lbl">📝 Reviews today</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-val" id="statTodayAccuracy">—</div>
+              <div class="stat-card-lbl">✓ Accuracy today</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-val" id="statAllTimeAccuracy">—</div>
+              <div class="stat-card-lbl">All-time accuracy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <nav class="bot-nav">
@@ -1282,6 +1445,7 @@
       <button class="bot-nav-btn"        id="botNavImportExport" onclick="switchTab('importExport')"><span class="icon">⬆</span><span>Import</span></button>
       <button class="bot-nav-btn"        id="botNavBilingual"    onclick="switchTab('bilingual')"><span class="icon">EN</span><span>Books</span></button>
       <button class="bot-nav-btn"        id="botNavGrammar"      onclick="switchTab('grammar')"><span class="icon">📝</span><span>Grammar</span></button>
+      <button class="bot-nav-btn"        id="botNavStats"        onclick="switchTab('stats')"><span class="icon">📊</span><span>Stats</span></button>
       <div class="theme-picker theme-picker-mobile">
         <label for="themeSelectMobile">Theme</label>
         <select id="themeSelectMobile" onchange="onThemeModeChange(this.value)" title="Theme">
@@ -1299,6 +1463,17 @@
     </div>
   </nav>
 
+</div>
+
+<!-- Global loading overlay -->
+<div id="appLoading">
+  <div class="loading-spinner"></div>
+  <div class="loading-msg" id="loadingMsg"></div>
+</div>
+
+<!-- Word detail modal -->
+<div class="modal-overlay" id="wordDetailModal" onclick="if(event.target===this)closeModal('wordDetailModal')">
+  <div class="modal modal--word" id="wordDetailContent"></div>
 </div>
 
 <!-- Collection modal -->
@@ -1443,7 +1618,7 @@
   applyThemeMode(getThemeMode(), false);
 
   /* ── Tab routing ──────────────────────────────────────────────────────────── */
-  const TAB_IDS = ['study', 'library', 'importExport', 'bilingual', 'grammar'];
+  const TAB_IDS = ['study', 'library', 'importExport', 'bilingual', 'grammar', 'stats'];
 
   function switchTab(name) {
     TAB_IDS.forEach(t => {
@@ -1461,6 +1636,52 @@
     if (top) top.classList.add('active');
     if (bot) bot.classList.add('active');
     if (name === 'library') loadLibrary();
+    if (name === 'stats') loadStats();
+  }
+
+  /* ── Stats ────────────────────────────────────────────────────────────────── */
+  async function loadStats() {
+    try {
+      const s = await invoke('get_stats');
+      document.getElementById('statStreakDays').textContent = s.streakDays;
+      document.getElementById('statTotalWords').textContent = s.totalWords;
+      document.getElementById('statDueCount').textContent = s.dueCount;
+      document.getElementById('statTodayReviews').textContent = s.todayReviews;
+      document.getElementById('statTodayAccuracy').textContent =
+        s.todayReviews > 0 ? Math.round(s.todayCorrect / s.todayReviews * 100) + '%' : '—';
+      document.getElementById('statAllTimeAccuracy').textContent =
+        s.allTimeReviews > 0 ? Math.round(s.allTimeCorrect / s.allTimeReviews * 100) + '%' : '—';
+    } catch (err) { console.error('Stats error:', err); }
+  }
+
+  /* ── Text-to-speech ────────────────────────────────────────────────────────── */
+  function speakText(text, lang = 'en-US') {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+
+    function doSpeak() {
+      const voices = window.speechSynthesis.getVoices();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = lang;
+      u.rate = 0.9;
+      // Prefer a local English voice; fall back to any English voice
+      const voice = voices.find(v => v.lang.startsWith('en') && v.localService)
+                 || voices.find(v => v.lang.startsWith('en'))
+                 || null;
+      if (voice) u.voice = voice;
+      window.speechSynthesis.speak(u);
+    }
+
+    if (window.speechSynthesis.getVoices().length > 0) {
+      doSpeak();
+    } else {
+      window.speechSynthesis.addEventListener('voiceschanged', doSpeak, { once: true });
+    }
+  }
+
+  function speakCurrent() {
+    if (!currentQuestion) return;
+    speakText(currentQuestion.word || currentQuestion.prompt);
   }
 
   /* ══════════════════════════════════════════════════════════════════════════
@@ -1469,6 +1690,7 @@
   let allCollections = [];
   let allTopics = {};          // { collectionId: [Topic, ...] }
   let scopeFilter = { collectionId: null, topicId: null };
+  const closedCollections = new Set(); // collections the user has explicitly collapsed
   let editingCollectionId = null;
   let editingTopicId = null;
   let editingTopicCollectionId = null;
@@ -1499,13 +1721,16 @@
       const colHeader = document.createElement('div');
       colHeader.className = 'sidebar-col-header' + (isColActive ? ' active' : '');
       colHeader.innerHTML = `
-        <span>${esc(col.name)}</span>
-        <span class="toggle-icon" id="togIcon${col.id}">▶</span>
+        ${topics.length > 0 ? `<span class="toggle-icon" id="togIcon${col.id}">▶</span>` : '<span style="width:14px;flex-shrink:0"></span>'}
+        <span style="flex:1">${esc(col.name)}</span>
       `;
-      colHeader.addEventListener('click', () => {
-        setScopeFilter(col.id, null);
-        toggleTopics(col.id);
-      });
+      // Clicking the header selects the collection (no toggle)
+      colHeader.addEventListener('click', () => setScopeFilter(col.id, null));
+      // Clicking only the icon toggles expand/collapse
+      const togIcon = colHeader.querySelector('.toggle-icon');
+      if (togIcon) {
+        togIcon.addEventListener('click', e => { e.stopPropagation(); toggleTopics(col.id); });
+      }
 
       const actionsDiv = document.createElement('div');
       actionsDiv.className = 'item-actions';
@@ -1539,28 +1764,35 @@
       colDiv.appendChild(topicsDiv);
       container.appendChild(colDiv);
 
-      // Keep open if a topic in this collection is selected
-      if (scopeFilter.collectionId === col.id) {
+      // Open by default when has topics, unless user explicitly collapsed it
+      const shouldOpen = topics.length > 0 && !closedCollections.has(col.id);
+      if (shouldOpen || scopeFilter.collectionId === col.id) {
         topicsDiv.classList.add('open');
-        document.getElementById('togIcon' + col.id).textContent = '▼';
+        const icon = document.getElementById('togIcon' + col.id);
+        if (icon) icon.textContent = '▼';
       }
     }
   }
 
   function toggleTopics(colId) {
     const el = document.getElementById('topics_' + colId);
-    const icon = document.getElementById('togIcon' + colId);
     if (!el) return;
     const open = el.classList.toggle('open');
-    icon.textContent = open ? '▼' : '▶';
+    const icon = document.getElementById('togIcon' + colId);
+    if (icon) icon.textContent = open ? '▼' : '▶';
+    if (open) closedCollections.delete(colId);
+    else closedCollections.add(colId);
   }
 
   function setScopeFilter(collectionId, topicId) {
     scopeFilter = { collectionId, topicId };
-    // Update all-words item
     document.getElementById('sidebarAll').classList.toggle('active', collectionId === null);
     renderSidebar();
-    filterLibrary();
+    if (collectionId === null) {
+      loadLibrary();
+    } else {
+      loadLibraryScoped();
+    }
   }
 
   function populateStudyScope() {
@@ -1601,6 +1833,20 @@
   function openModal(id) { document.getElementById(id).classList.add('open'); }
   function closeModal(id) { document.getElementById(id).classList.remove('open'); }
 
+  function showLoading(msg = '') {
+    document.getElementById('loadingMsg').textContent = msg;
+    document.getElementById('appLoading').classList.add('visible');
+  }
+  function hideLoading() {
+    document.getElementById('appLoading').classList.remove('visible');
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
+    }
+  });
+
   function openNewCollectionModal() {
     editingCollectionId = null;
     document.getElementById('collectionModalTitle').textContent = 'New Collection';
@@ -1637,6 +1883,7 @@
   async function doDeleteCollection(id) {
     const col = allCollections.find(c => c.id === id);
     if (!confirm(`Delete collection "${col?.name}"? This will permanently delete all its topics and words.`)) return;
+    showLoading('Deleting collection…');
     try {
       const words = await invoke('list_words', { payload: { collectionId: id, topicId: null } });
       for (const w of words) {
@@ -1647,6 +1894,7 @@
       await loadCollections();
       filterLibrary();
     } catch (err) { alert('Error: ' + err); }
+    finally { hideLoading(); }
   }
 
   function openNewTopicModal(collectionId) {
@@ -1692,12 +1940,14 @@
       if (t) { topicName = t.name; break; }
     }
     if (!confirm(`Delete topic "${topicName}"? Words in this topic will not be deleted.`)) return;
+    showLoading('Deleting topic…');
     try {
       await invoke('delete_topic', { id });
       if (scopeFilter.topicId === id) setScopeFilter(scopeFilter.collectionId, null);
       await loadCollections();
       filterLibrary();
     } catch (err) { alert('Error: ' + err); }
+    finally { hideLoading(); }
   }
 
   /* ══════════════════════════════════════════════════════════════════════════
@@ -1736,6 +1986,7 @@
     grid.innerHTML = '';
     if (q.word)     grid.innerHTML += metaItem('Word',     esc(q.word));
     if (q.phonetic) grid.innerHTML += metaItem('Phonetic', esc(q.phonetic));
+    if (q.level)    grid.innerHTML += metaItem('Level',    `<span class="level-badge" style="font-size:13px;padding:2px 8px">${esc(q.level)}</span>`);
 
     const list = document.getElementById('examplesList');
     list.innerHTML = '';
@@ -1747,6 +1998,8 @@
 
     document.getElementById('questionCard').classList.add('visible');
     document.getElementById('answerInput').focus();
+
+    if (q.direction === 'en-vi' && q.word) speakText(q.word);
   }
 
   function metaItem(label, val) {
@@ -1821,9 +2074,166 @@
   /* ══════════════════════════════════════════════════════════════════════════
      LIBRARY
   ══════════════════════════════════════════════════════════════════════════ */
+
+  function parseDef(s) {
+    const m = s.match(/^\[(\w+)\]\s+(.+)$/);
+    return m ? { pos: m[1], meaning: m[2] } : { pos: null, meaning: s };
+  }
+
+  function posClass(pos) {
+    if (!pos) return 'pos-other';
+    switch (pos.toLowerCase()) {
+      case 'noun': case 'n': return 'pos-noun';
+      case 'verb': case 'v': return 'pos-verb';
+      case 'adjective': case 'adj': return 'pos-adj';
+      case 'adverb': case 'adv': return 'pos-adv';
+      case 'preposition': case 'prep': return 'pos-prep';
+      case 'conjunction': case 'conj': return 'pos-conj';
+      case 'pronoun': case 'pron': return 'pos-pron';
+      case 'interjection': case 'interj': return 'pos-interj';
+      default: return 'pos-other';
+    }
+  }
+
   let allWords = [];
+  let libSort = { col: 'word', dir: 'asc' };
+  let libColVisibility = { phonetic: true, meanings: true, tags: true, reviews: true };
+
+  function applyColVisibility() {
+    const tbl = document.getElementById('libTable');
+    if (!tbl) return;
+    ['phonetic', 'meanings', 'tags', 'reviews'].forEach(col => {
+      tbl.classList.toggle('hide-' + col, !libColVisibility[col]);
+    });
+  }
+
+  function toggleColPicker() {
+    document.getElementById('colPickerDropdown').classList.toggle('open');
+  }
+
+  function toggleColVis(col, visible) {
+    libColVisibility[col] = visible;
+    applyColVisibility();
+  }
+
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#colPicker')) {
+      const dd = document.getElementById('colPickerDropdown');
+      if (dd) dd.classList.remove('open');
+    }
+  });
+
+  function initSidebarResize(resizerId, sidebarId) {
+    const resizer = document.getElementById(resizerId);
+    const sidebar = document.getElementById(sidebarId);
+    if (!resizer || !sidebar) return;
+    resizer.addEventListener('mousedown', e => {
+      e.preventDefault();
+      const startX = e.pageX;
+      const startW = sidebar.offsetWidth;
+      resizer.classList.add('resizing');
+      function onMove(e) {
+        sidebar.style.width = Math.max(120, Math.min(500, startW + e.pageX - startX)) + 'px';
+      }
+      function onUp() {
+        resizer.classList.remove('resizing');
+        document.removeEventListener('mousemove', onMove);
+        document.removeEventListener('mouseup', onUp);
+      }
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseup', onUp);
+    });
+  }
+
+  const LIB_COLS = [
+    { key: 'word',     label: 'Word',                sortable: true,  width: 150 },
+    { key: 'phonetic', label: 'Phonetic',             sortable: false, width: 110, cls: 'col-hide-tablet' },
+    { key: 'meanings', label: 'Meanings & Relations', sortable: false, width: null },
+    { key: 'tags',     label: 'Tags',                 sortable: false, width: 130, cls: 'col-hide-tablet' },
+    { key: 'reviews',  label: 'Reviews',              sortable: true,  width: 80,  cls: 'col-reviews' },
+  ];
+
+  function buildLibHeader() {
+    const tr = document.getElementById('libThead');
+    if (!tr) return;
+    tr.innerHTML = '';
+    LIB_COLS.forEach((col, i) => {
+      const th = document.createElement('th');
+      if (col.width) th.style.width = col.width + 'px';
+      th.className = (col.cls || '') + ' col-' + col.key;
+      th.style.position = 'relative';
+
+      const inner = document.createElement('div');
+      inner.className = 'th-inner' + (col.sortable ? ' sortable' : '');
+
+      const label = document.createElement('span');
+      label.textContent = col.label;
+      inner.appendChild(label);
+
+      if (col.sortable) {
+        const icon = document.createElement('span');
+        icon.className = 'sort-icon';
+        icon.dataset.col = col.key;
+        icon.textContent = libSort.col === col.key ? (libSort.dir === 'asc' ? '▲' : '▼') : '⇅';
+        inner.appendChild(icon);
+        inner.addEventListener('click', () => {
+          if (libSort.col === col.key) libSort.dir = libSort.dir === 'asc' ? 'desc' : 'asc';
+          else { libSort.col = col.key; libSort.dir = 'asc'; }
+          updateSortIcons();
+          filterLibrary();
+        });
+      }
+
+      th.appendChild(inner);
+
+      if (i < LIB_COLS.length - 1) {
+        const resizer = document.createElement('div');
+        resizer.className = 'col-resizer';
+        resizer.addEventListener('mousedown', e => startColResize(e, th));
+        th.appendChild(resizer);
+      }
+
+      tr.appendChild(th);
+    });
+  }
+
+  function updateSortIcons() {
+    document.querySelectorAll('.sort-icon').forEach(icon => {
+      const col = icon.dataset.col;
+      icon.textContent = libSort.col === col ? (libSort.dir === 'asc' ? '▲' : '▼') : '⇅';
+    });
+  }
+
+  function startColResize(e, th) {
+    e.preventDefault();
+    const startX = e.pageX;
+    const startW = th.offsetWidth;
+    const resizer = e.currentTarget;
+    resizer.classList.add('resizing');
+    function onMove(e) { th.style.width = Math.max(50, startW + e.pageX - startX) + 'px'; }
+    function onUp() {
+      resizer.classList.remove('resizing');
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
+    }
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+  }
+
+  function sortLibWords(words) {
+    const { col, dir } = libSort;
+    return [...words].sort((a, b) => {
+      let av, bv;
+      if (col === 'word') { av = a.word.toLowerCase(); bv = b.word.toLowerCase(); }
+      else if (col === 'reviews') { av = a.reviewCount; bv = b.reviewCount; }
+      else return 0;
+      return av < bv ? (dir === 'asc' ? -1 : 1) : av > bv ? (dir === 'asc' ? 1 : -1) : 0;
+    });
+  }
 
   async function loadLibrary() {
+    buildLibHeader();
+    applyColVisibility();
     document.getElementById('libTableBody').innerHTML =
       `<tr><td colspan="6" style="padding:20px;color:var(--muted)">Loading…</td></tr>`;
     document.getElementById('libCards').innerHTML = '<div style="padding:16px;color:var(--muted)">Loading…</div>';
@@ -1839,13 +2249,7 @@
 
   function filterLibrary() {
     const q = document.getElementById('searchInput').value.toLowerCase();
-    let filtered = allWords;
-
-    // Scope filter (sidebar)
-    if (scopeFilter.topicId !== null) {
-      // We'd need the server to filter; for now, show all and note we'd need assignment data
-      // Actually we re-fetch with scope if needed:
-    }
+    let filtered = allWords;  // already scoped by loadLibraryScoped / loadLibrary
 
     if (q) {
       filtered = filtered.filter(w =>
@@ -1863,16 +2267,22 @@
   }
 
   async function loadLibraryScoped() {
+    document.getElementById('libTableBody').innerHTML =
+      `<tr><td colspan="6" style="padding:20px;color:var(--muted)">Loading…</td></tr>`;
+    document.getElementById('libCards').innerHTML = '<div style="padding:16px;color:var(--muted)">Loading…</div>';
+    document.getElementById('libEmpty').style.display = 'none';
     const payload = { collectionId: scopeFilter.collectionId, topicId: scopeFilter.topicId };
     try {
       allWords = await invoke('list_words', { payload });
       filterLibrary();
     } catch (err) {
-      console.error('scoped load:', err);
+      document.getElementById('libTableBody').innerHTML =
+        `<tr><td colspan="6" style="padding:20px;color:var(--danger)">Error: ${esc(String(err))}</td></tr>`;
     }
   }
 
   function renderLibrary(words) {
+    words = sortLibWords(words);
     document.getElementById('libCount').textContent = `${words.length} word${words.length !== 1 ? 's' : ''}`;
     const empty = words.length === 0;
     document.getElementById('libEmpty').style.display = empty ? 'block' : 'none';
@@ -1883,17 +2293,20 @@
     } else {
       document.getElementById('libTableBody').innerHTML = words.map(w => {
         const phonetic = w.phonetic ? esc(w.phonetic) : `<span style="color:var(--border)">—</span>`;
-        const meanings = w.meanings.map(m => esc(m)).join('<br>');
+        const meanings = w.meanings.map(s => {
+          const d = parseDef(s);
+          const pos = d.pos ? `<span class="pos-tag ${posClass(d.pos)}">${esc(d.pos)}</span>` : '';
+          return `<span>${pos}${esc(d.meaning)}</span>`;
+        }).join('<br>');
         const tags = w.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('');
         const rels = buildRelPills(w);
-        const wk = esc(w.wordKey); const wd = esc(w.word);
-        return `<tr>
-          <td class="col-word">${esc(w.word)}</td>
+        const level = w.level ? `<span class="level-badge">${esc(w.level)}</span>` : '';
+        return `<tr class="row-main" onclick="showWordDetail(${jsArg(w.wordKey)})">
+          <td class="col-word">${esc(w.word)}${level} <button class="btn-speak" onclick="event.stopPropagation();speakText(${jsArg(w.word)})" title="Listen">🔊</button></td>
           <td class="col-phonetic col-hide-tablet">${phonetic}</td>
           <td class="col-meanings">${meanings}${rels ? `<div class="rel-pills">${rels}</div>` : ''}</td>
-          <td class="col-hide-tablet">${tags}</td>
+          <td class="col-tags col-hide-tablet">${tags}</td>
           <td class="col-reviews">${w.reviewCount}</td>
-          <td><button class="btn btn-danger btn-sm" onclick="deleteWord('${wk}','${wd}')">Delete</button></td>
         </tr>`;
       }).join('');
     }
@@ -1907,7 +2320,7 @@
       const wk = esc(w.wordKey); const wd = esc(w.word);
       return `<div class="word-card">
         <div class="word-card-body">
-          <div class="word-card-word">${esc(w.word)}</div>
+          <div class="word-card-word">${esc(w.word)} <button class="btn-speak" onclick="speakText(${jsArg(w.word)})" title="Listen">🔊</button></div>
           ${phonetic}
           <div class="word-card-meanings">${meanings}</div>
           ${tags ? `<div class="word-card-tags">${tags}</div>` : ''}
@@ -1917,6 +2330,70 @@
         <button class="btn btn-danger btn-sm" onclick="deleteWord('${wk}','${wd}')">Delete</button>
       </div>`;
     }).join('');
+  }
+
+  function showWordDetail(wordKey) {
+    const w = allWords.find(x => x.wordKey === wordKey);
+    if (!w) return;
+
+    const phonetic = w.phonetic
+      ? `<div class="wdm-phonetic">${esc(w.phonetic)}</div>` : '';
+
+    const levelBadge = w.level ? `<span class="level-badge" style="font-size:13px;padding:2px 8px">${esc(w.level)}</span>` : '';
+
+    const defs = (w.meanings || []).map(s => {
+      const d = parseDef(s);
+      const pos = d.pos ? `<span class="wdm-pos ${posClass(d.pos)}">${esc(d.pos)}</span>` : '';
+      return `<div class="wdm-def">${pos}<span class="wdm-meaning">${esc(d.meaning)}</span></div>`;
+    }).join('');
+
+    const examples = (w.examples || []);
+    const examplesHtml = examples.length
+      ? `<div class="wdm-section">
+          <div class="wdm-section-label">Examples</div>
+          <div class="wdm-examples">${examples.map(e => `<div class="wdm-example">${esc(e)}</div>`).join('')}</div>
+        </div>` : '';
+
+    const relParts = [];
+    if ((w.synonyms || []).length)   relParts.push({ label: 'Synonyms',    items: w.synonyms,   cls: 'pill-synonym' });
+    if ((w.antonyms || []).length)   relParts.push({ label: 'Antonyms',    items: w.antonyms,   cls: 'pill-antonym' });
+    if ((w.familyWords || []).length) relParts.push({ label: 'Word family', items: w.familyWords, cls: 'pill-family' });
+    const relHtml = relParts.map(r =>
+      `<div class="wdm-section">
+        <div class="wdm-section-label">${r.label}</div>
+        <div class="wdm-pills">${r.items.map(s => `<span class="${r.cls}">${esc(s)}</span>`).join('')}</div>
+      </div>`
+    ).join('');
+
+    const tagsHtml = (w.tags || []).length
+      ? `<div class="wdm-section">
+          <div class="wdm-section-label">Tags</div>
+          <div class="wdm-pills">${w.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+        </div>` : '';
+
+    const wk = esc(w.wordKey); const wd = esc(w.word);
+    document.getElementById('wordDetailContent').innerHTML = `
+      <div class="wdm-header">
+        <div class="wdm-title">
+          <div class="wdm-word">${esc(w.word)} ${levelBadge} <button class="btn-speak" onclick="speakText(${jsArg(w.word)})" title="Listen">🔊</button></div>
+          ${phonetic}
+        </div>
+        <button class="wdm-close" onclick="closeModal('wordDetailModal')" title="Close">✕</button>
+      </div>
+      <div class="wdm-body">
+        <div class="wdm-section">
+          <div class="wdm-section-label">Definitions</div>
+          <div class="wdm-def-list">${defs}</div>
+        </div>
+        ${examplesHtml}
+        ${relHtml}
+        ${tagsHtml}
+      </div>
+      <div class="wdm-footer">
+        <span class="wdm-review">Reviews: ${w.reviewCount}</span>
+        <button class="btn btn-danger btn-sm" style="margin-left:auto" onclick="closeModal('wordDetailModal');deleteWord('${wk}','${wd}')">Delete word</button>
+      </div>`;
+    document.getElementById('wordDetailModal').classList.add('open');
   }
 
   function buildRelPills(w) {
@@ -1929,11 +2406,13 @@
 
   async function deleteWord(wordKey, wordDisplay) {
     if (!confirm(`Delete "${wordDisplay}"? This cannot be undone.`)) return;
+    showLoading('Deleting word…');
     try {
       await invoke('delete_word', { wordKey });
       allWords = allWords.filter(w => w.wordKey !== wordKey);
       filterLibrary();
     } catch (err) { alert('Error: ' + err); }
+    finally { hideLoading(); }
   }
 
   /* ══════════════════════════════════════════════════════════════════════════
@@ -1980,9 +2459,9 @@
     const box = document.getElementById('manifestResult');
     const originalText = btn.textContent;
     btn.disabled = true;
-    btn.textContent = 'Syncing...';
     box.className = 'import-result';
     box.innerHTML = '';
+    showLoading('Syncing manifest…');
 
     try {
       const result = await invoke('sync_manifest_url', { payload: { manifestUrl } });
@@ -1998,6 +2477,7 @@
     } finally {
       btn.disabled = false;
       btn.textContent = originalText;
+      hideLoading();
     }
   }
 
@@ -2053,19 +2533,20 @@
     const topicName      = document.getElementById('importTopic').value.trim() || null;
 
     const btn = document.getElementById('importBtn');
-    btn.disabled = true; btn.textContent = 'Importing…';
+    btn.disabled = true;
+    showLoading('Importing vocabulary…');
 
     try {
       const report = await invoke('import_vocabulary', { payload: { content, collectionName, topicName } });
       showImportResult(report);
-      // Refresh collections in case new ones were created
       await loadCollections();
     } catch (err) {
       const box = document.getElementById('importResult');
       box.className = 'import-result visible err';
       box.textContent = 'Error: ' + err;
     } finally {
-      btn.disabled = false; btn.textContent = 'Import';
+      btn.disabled = false;
+      hideLoading();
     }
   }
 
@@ -2092,9 +2573,88 @@
     box.className = 'import-result'; box.innerHTML = '';
   }
 
+  // ── Batch import ──────────────────────────────────────────────────────────
+
+  const _batchFiles = [];  // { name, content }
+
+  function onBatchFilePick(e) {
+    const incoming = Array.from(e.target.files).filter(f => f.name.endsWith('.json'));
+    e.target.value = '';
+    if (!incoming.length) return;
+
+    incoming.forEach(file => {
+      if (_batchFiles.some(f => f.name === file.name)) return;
+      const entry = { name: file.name, content: null };
+      _batchFiles.push(entry);
+      const reader = new FileReader();
+      reader.onload = ev => { entry.content = ev.target.result; renderBatchFileList(); };
+      reader.readAsText(file, 'utf-8');
+    });
+    renderBatchFileList();
+  }
+
+  function renderBatchFileList() {
+    const list = document.getElementById('batchFileList');
+    const count = document.getElementById('batchFileCount');
+    const btn = document.getElementById('batchImportBtn');
+
+    list.innerHTML = _batchFiles.map((f, i) =>
+      `<li class="batch-file-item">
+        <span class="file-name">${esc(f.name)}</span>
+        <button class="btn-remove" onclick="removeBatchFile(${i})" title="Remove">×</button>
+      </li>`
+    ).join('');
+
+    const ready = _batchFiles.filter(f => f.content !== null).length;
+    count.textContent = _batchFiles.length ? `${ready} / ${_batchFiles.length} file(s) ready` : '';
+    btn.disabled = _batchFiles.length === 0 || ready < _batchFiles.length;
+  }
+
+  function removeBatchFile(idx) {
+    _batchFiles.splice(idx, 1);
+    renderBatchFileList();
+  }
+
+  function clearBatchImport() {
+    _batchFiles.length = 0;
+    renderBatchFileList();
+    const box = document.getElementById('batchImportResult');
+    box.className = 'import-result'; box.innerHTML = '';
+  }
+
+  async function runBatchImport() {
+    if (!_batchFiles.length) return;
+    const btn = document.getElementById('batchImportBtn');
+    btn.disabled = true;
+    showLoading(`Importing ${_batchFiles.length} file(s)…`);
+
+    try {
+      const files = _batchFiles.map(f => ({
+        content: f.content,
+        fileName: f.name,
+        collectionName: null,
+        topicName: null,
+      }));
+      const result = await invoke('import_vocabulary_batch', { files });
+      const box = document.getElementById('batchImportResult');
+      box.className = 'import-result visible ok';
+      box.innerHTML = `${result.fileCount} file(s) imported atomically &nbsp;·&nbsp; Inserted: <strong>${result.totalInserted}</strong> &nbsp;·&nbsp; Updated: <strong>${result.totalUpdated}</strong>`;
+      await loadCollections();
+    } catch (err) {
+      const box = document.getElementById('batchImportResult');
+      box.className = 'import-result visible err';
+      box.textContent = 'Batch import rolled back — ' + err;
+    } finally {
+      btn.disabled = false;
+      hideLoading();
+      renderBatchFileList();
+    }
+  }
+
   async function doExport() {
     const btns = document.querySelectorAll('.export-actions .btn');
     btns.forEach(b => { b.disabled = true; });
+    showLoading('Exporting…');
     try {
       const savedPath = await invoke('save_export');
       if (savedPath) showExportResult('Saved to: ' + savedPath, false);
@@ -2102,6 +2662,7 @@
       showExportResult('Export error: ' + err, true);
     } finally {
       btns.forEach(b => { b.disabled = false; });
+      hideLoading();
     }
   }
 
@@ -2469,6 +3030,7 @@
   }
 
   async function importBilingualContent(content, label) {
+    showLoading('Importing bilingual data…');
     try {
       const result = await invoke('import_bilingual', { content });
       const errors = result.errors || [];
@@ -2477,29 +3039,36 @@
       await loadBilingualArticles();
     } catch (err) {
       alert('Error: ' + err);
+    } finally {
+      hideLoading();
     }
   }
 
   async function importBilingualFiles(files) {
+    showLoading(`Importing ${files.length} bilingual file(s)…`);
     let imported = 0;
     let inserted = 0;
     let updated = 0;
     const errors = [];
-    for (const file of files) {
-      try {
-        const content = await readFileAsText(file);
-        const result = await invoke('import_bilingual', { content });
-        imported += result.importedCount;
-        inserted += result.insertedCount || 0;
-        updated += result.updatedCount || 0;
-        for (const err of result.errors || []) errors.push(`${file.name}: ${err}`);
-      } catch (err) {
-        errors.push(`${file.name}: ${err}`);
+    try {
+      for (const file of files) {
+        try {
+          const content = await readFileAsText(file);
+          const result = await invoke('import_bilingual', { content });
+          imported += result.importedCount;
+          inserted += result.insertedCount || 0;
+          updated += result.updatedCount || 0;
+          for (const err of result.errors || []) errors.push(`${file.name}: ${err}`);
+        } catch (err) {
+          errors.push(`${file.name}: ${err}`);
+        }
       }
+      alert(`Imported ${imported} bilingual article(s) from ${files.length} file(s).\nInserted: ${inserted} | Updated: ${updated}` +
+            (errors.length ? '\nErrors:\n' + errors.join('\n') : ''));
+      await loadBilingualArticles();
+    } finally {
+      hideLoading();
     }
-    alert(`Imported ${imported} bilingual article(s) from ${files.length} file(s).\nInserted: ${inserted} | Updated: ${updated}` +
-          (errors.length ? '\nErrors:\n' + errors.join('\n') : ''));
-    await loadBilingualArticles();
   }
 
   async function onBilingualFileSelected(e) {
@@ -2864,6 +3433,7 @@
     if (!g) return;
     const deleteAll = confirm(`Delete group "${g.name}"? Click OK to also delete all docs inside, or Cancel to keep docs.`);
     if (deleteAll) {
+      showLoading('Deleting group…');
       try {
         const docsInGroup = grammarDocs.filter(d => d.groupId === id);
         await invoke('delete_grammar_group', { id });
@@ -2878,13 +3448,14 @@
           document.getElementById('grammarEmpty').style.display    = 'block';
         }
         await loadGrammarDocs();
-      } catch (err) { alert('Error: ' + err); }
+      } catch (err) { alert('Error: ' + err); } finally { hideLoading(); }
     } else {
       if (!confirm('Keep docs as Ungrouped?')) return;
+      showLoading('Deleting group…');
       try {
         await invoke('delete_grammar_group', { id });
         await loadGrammarDocs();
-      } catch (err) { alert('Error: ' + err); }
+      } catch (err) { alert('Error: ' + err); } finally { hideLoading(); }
     }
   }
 
@@ -2916,12 +3487,13 @@
     const sel = document.getElementById('grammarMoveGroupSel');
     const groupId = sel.value === '' ? null : parseInt(sel.value, 10);
     const docId = movingDocId;
+    showLoading('Moving document…');
     try {
       await invoke('move_grammar_doc', { payload: { docId, groupId } });
       closeModal('grammarMoveModal');
       movingDocId = null;
       await loadGrammarDocs();
-    } catch (err) { alert('Error: ' + err); }
+    } catch (err) { alert('Error: ' + err); } finally { hideLoading(); }
   }
 
   async function openGrammarDoc(id) {
@@ -3394,6 +3966,9 @@
   /* ── Init ─────────────────────────────────────────────────────────────────── */
   async function initApp() {
     initManifestSyncControls();
+    initSidebarResize('libSidebarResizer', 'libSidebar');
+    initSidebarResize('bilingualSidebarResizer', 'bilingualSidebar');
+    initSidebarResize('grammarSidebarResizer', 'grammarSidebar');
     await Promise.all([loadCollections(), loadGrammarDocs(), loadBilingualArticles()]);
     await syncManifestOnStartup();
   }

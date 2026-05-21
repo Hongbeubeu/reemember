@@ -1,0 +1,379 @@
+{
+  "collection": "Daily Life",
+  "topic": "Shopping & Money",
+  "words": [
+    {
+      "word": "receipt",
+      "level": "A2",
+      "phonetic": "/rɪˈsiːt/",
+      "definitions": [{ "pos": "noun", "meaning": "hóa đơn, biên lai mua hàng" }],
+      "examples": [
+        "Could I have a receipt, please?",
+        "Keep your receipt in case you want to return the item."
+      ],
+      "synonyms": ["bill", "invoice"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["shopping", "money"] }
+    },
+    {
+      "word": "discount",
+      "level": "B1",
+      "phonetic": "/ˈdɪskaʊnt/",
+      "definitions": [
+        { "pos": "noun", "meaning": "chiết khấu, giảm giá" },
+        { "pos": "verb", "meaning": "giảm giá" }
+      ],
+      "examples": [
+        "They're offering a 20% discount on all shoes this weekend.",
+        "Do you give a discount for students?"
+      ],
+      "synonyms": ["reduction", "deal", "markdown"],
+      "antonyms": ["surcharge", "markup"],
+      "family_words": ["discounted (adj)", "discounting (v)"],
+      "metadata": { "tags": ["shopping", "money", "bargaining"] }
+    },
+    {
+      "word": "bargain",
+      "level": "B1",
+      "phonetic": "/ˈbɑːrɡɪn/",
+      "definitions": [
+        { "pos": "noun", "meaning": "món hời, hàng giá rẻ" },
+        { "pos": "verb", "meaning": "mặc cả, thương lượng giá" }
+      ],
+      "examples": [
+        "I found a real bargain at the market — a leather bag for only five dollars.",
+        "You can bargain with the sellers at the night market."
+      ],
+      "synonyms": ["deal", "negotiate"],
+      "antonyms": [],
+      "family_words": ["bargaining (n/v)", "bargainer (n)"],
+      "metadata": { "tags": ["shopping", "bargaining", "money"] }
+    },
+    {
+      "word": "refund",
+      "level": "B1",
+      "phonetic": "/ˈriːfʌnd/",
+      "definitions": [
+        { "pos": "noun", "meaning": "tiền hoàn lại, tiền hoàn trả" },
+        { "pos": "verb", "meaning": "hoàn tiền lại" }
+      ],
+      "examples": [
+        "The store gave me a full refund because the jacket was damaged.",
+        "They refused to refund my money without a receipt."
+      ],
+      "synonyms": ["reimbursement", "repayment"],
+      "antonyms": [],
+      "family_words": ["refundable (adj)"],
+      "metadata": { "tags": ["shopping", "money", "finance"] }
+    },
+    {
+      "word": "checkout",
+      "level": "A2",
+      "phonetic": "/ˈtʃekaʊt/",
+      "definitions": [{ "pos": "noun", "meaning": "quầy tính tiền, khu vực thanh toán" }],
+      "examples": [
+        "There was a long queue at the checkout.",
+        "Please go to checkout 3 — it's the shortest line."
+      ],
+      "synonyms": ["cash register", "till"],
+      "antonyms": [],
+      "family_words": ["check out (phrasal verb)"],
+      "metadata": { "tags": ["shopping", "store"] }
+    },
+    {
+      "word": "cashier",
+      "level": "A2",
+      "phonetic": "/kæˈʃɪər/",
+      "definitions": [{ "pos": "noun", "meaning": "thu ngân, người tính tiền" }],
+      "examples": [
+        "The cashier scanned all my items very quickly.",
+        "Ask the cashier if they accept credit cards."
+      ],
+      "synonyms": ["teller", "checkout clerk"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["shopping", "store"] }
+    },
+    {
+      "word": "afford",
+      "level": "A2",
+      "phonetic": "/əˈfɔːrd/",
+      "definitions": [{ "pos": "verb", "meaning": "đủ tiền để mua, có khả năng chi trả" }],
+      "examples": [
+        "I like that coat, but I can't afford it right now.",
+        "We finally saved enough money to afford a new car."
+      ],
+      "synonyms": ["manage", "have the means"],
+      "antonyms": [],
+      "family_words": ["affordable (adj)", "affordability (n)"],
+      "metadata": { "tags": ["money", "finance"] }
+    },
+    {
+      "word": "currency",
+      "level": "B1",
+      "phonetic": "/ˈkɜːrənsi/",
+      "definitions": [{ "pos": "noun", "meaning": "tiền tệ, đơn vị tiền tệ" }],
+      "examples": [
+        "You should exchange your currency at the airport or a bank.",
+        "The local currency is the Vietnamese dong."
+      ],
+      "synonyms": ["money", "cash"],
+      "antonyms": [],
+      "family_words": ["current (adj)"],
+      "metadata": { "tags": ["money", "finance", "travel"] }
+    },
+    {
+      "word": "exchange rate",
+      "level": "B1",
+      "phonetic": "/ɪksˈtʃeɪndʒ reɪt/",
+      "definitions": [{ "pos": "noun", "meaning": "tỷ giá hối đoái" }],
+      "examples": [
+        "Check the exchange rate before converting your money.",
+        "The exchange rate today is 25,000 dong per dollar."
+      ],
+      "synonyms": ["conversion rate", "forex rate"],
+      "antonyms": [],
+      "family_words": ["exchange (v/n)", "rate (n)"],
+      "metadata": { "tags": ["money", "finance", "travel"] }
+    },
+    {
+      "word": "budget",
+      "level": "B1",
+      "phonetic": "/ˈbʌdʒɪt/",
+      "definitions": [
+        { "pos": "noun", "meaning": "ngân sách, số tiền dự định chi tiêu" },
+        { "pos": "verb", "meaning": "lập kế hoạch chi tiêu" }
+      ],
+      "examples": [
+        "We set a strict budget for the trip to avoid overspending.",
+        "Try to budget your money carefully each month."
+      ],
+      "synonyms": ["allowance", "financial plan"],
+      "antonyms": [],
+      "family_words": ["budgeting (n/v)", "budgeted (adj)"],
+      "metadata": { "tags": ["money", "finance"] }
+    },
+    {
+      "word": "price tag",
+      "level": "A2",
+      "phonetic": "/ˈpraɪs tæɡ/",
+      "definitions": [{ "pos": "noun", "meaning": "nhãn giá, thẻ ghi giá sản phẩm" }],
+      "examples": [
+        "Always check the price tag before putting something in your basket.",
+        "The price tag had fallen off, so the cashier had to look it up."
+      ],
+      "synonyms": ["label", "sticker price"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["shopping", "store"] }
+    },
+    {
+      "word": "purchase",
+      "level": "B1",
+      "phonetic": "/ˈpɜːrtʃəs/",
+      "definitions": [
+        { "pos": "noun", "meaning": "giao dịch mua hàng, vật mua được" },
+        { "pos": "verb", "meaning": "mua, mua sắm" }
+      ],
+      "examples": [
+        "You can return any purchase within 30 days.",
+        "She purchased a new phone online last night."
+      ],
+      "synonyms": ["buy", "acquire", "acquisition"],
+      "antonyms": ["sell", "sale"],
+      "family_words": ["purchaser (n)", "purchasing (adj/v)"],
+      "metadata": { "tags": ["shopping", "money"] }
+    },
+    {
+      "word": "installment",
+      "level": "B2",
+      "phonetic": "/ɪnˈstɔːlmənt/",
+      "definitions": [{ "pos": "noun", "meaning": "kỳ trả góp, thanh toán theo đợt" }],
+      "examples": [
+        "I'm paying for my laptop in monthly installments.",
+        "You can buy the fridge in 12 installments with zero interest."
+      ],
+      "synonyms": ["payment", "installment plan"],
+      "antonyms": [],
+      "family_words": ["installment plan (n)"],
+      "metadata": { "tags": ["money", "finance", "shopping"] }
+    },
+    {
+      "word": "sale",
+      "level": "A1",
+      "phonetic": "/seɪl/",
+      "definitions": [
+        { "pos": "noun", "meaning": "đợt giảm giá; việc bán hàng" }
+      ],
+      "examples": [
+        "The department store is having a big sale this weekend.",
+        "I got these jeans on sale for half the original price."
+      ],
+      "synonyms": ["clearance", "markdown", "promotion"],
+      "antonyms": [],
+      "family_words": ["sell (v)", "seller (n)", "sales (n)"],
+      "metadata": { "tags": ["shopping", "money"] }
+    },
+    {
+      "word": "wallet",
+      "level": "A1",
+      "phonetic": "/ˈwɒlɪt/",
+      "definitions": [{ "pos": "noun", "meaning": "ví (đựng tiền, thẻ)" }],
+      "examples": [
+        "I left my wallet at home and couldn't pay for my lunch.",
+        "He keeps all his cards in a slim leather wallet."
+      ],
+      "synonyms": ["billfold", "purse"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["money", "shopping"] }
+    },
+    {
+      "word": "withdraw",
+      "level": "B1",
+      "phonetic": "/wɪðˈdrɔː/",
+      "definitions": [{ "pos": "verb", "meaning": "rút tiền (từ tài khoản ngân hàng)" }],
+      "examples": [
+        "I need to withdraw some cash before going to the market.",
+        "You can withdraw up to 5 million dong per day from this ATM."
+      ],
+      "synonyms": ["take out", "draw out"],
+      "antonyms": ["deposit"],
+      "family_words": ["withdrawal (n)", "withdrawing (v)"],
+      "metadata": { "tags": ["money", "finance", "banking"] }
+    },
+    {
+      "word": "deposit",
+      "level": "B1",
+      "phonetic": "/dɪˈpɒzɪt/",
+      "definitions": [
+        { "pos": "noun", "meaning": "tiền đặt cọc; tiền gửi vào tài khoản" },
+        { "pos": "verb", "meaning": "gửi tiền vào ngân hàng; đặt cọc" }
+      ],
+      "examples": [
+        "You need to pay a deposit of 10% when you order.",
+        "I deposited my salary into my savings account this morning."
+      ],
+      "synonyms": ["down payment", "advance"],
+      "antonyms": ["withdraw", "withdrawal"],
+      "family_words": ["depositor (n)"],
+      "metadata": { "tags": ["money", "finance", "banking"] }
+    },
+    {
+      "word": "invoice",
+      "level": "B2",
+      "phonetic": "/ˈɪnvɔɪs/",
+      "definitions": [{ "pos": "noun", "meaning": "hóa đơn (thương mại), phiếu yêu cầu thanh toán" }],
+      "examples": [
+        "The supplier sent us an invoice for the goods we ordered.",
+        "Please pay the invoice within 14 days of receiving it."
+      ],
+      "synonyms": ["bill", "receipt"],
+      "antonyms": [],
+      "family_words": ["invoice (v)"],
+      "metadata": { "tags": ["money", "finance", "shopping"] }
+    },
+    {
+      "word": "credit card",
+      "level": "A2",
+      "phonetic": "/ˈkredɪt kɑːrd/",
+      "definitions": [{ "pos": "noun", "meaning": "thẻ tín dụng" }],
+      "examples": [
+        "Do you accept credit cards, or is it cash only?",
+        "She paid for the flight with her credit card to earn reward points."
+      ],
+      "synonyms": [],
+      "antonyms": ["debit card", "cash"],
+      "family_words": ["credit (n/v)", "credit limit (n)"],
+      "metadata": { "tags": ["money", "finance", "shopping"] }
+    },
+    {
+      "word": "ATM",
+      "level": "A2",
+      "phonetic": "/ˌeɪ tiː ˈem/",
+      "definitions": [{ "pos": "noun", "meaning": "máy rút tiền tự động (Automated Teller Machine)" }],
+      "examples": [
+        "Is there an ATM near here? I need to get some cash.",
+        "The ATM was out of order, so I had to go into the bank."
+      ],
+      "synonyms": ["cash machine", "cash point"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["money", "banking", "finance"] }
+    },
+    {
+      "word": "aisle",
+      "level": "B1",
+      "phonetic": "/aɪl/",
+      "definitions": [{ "pos": "noun", "meaning": "lối đi giữa các kệ hàng trong siêu thị" }],
+      "examples": [
+        "The cereal is in aisle 4, next to the bread.",
+        "She walked up and down every aisle looking for the right sauce."
+      ],
+      "synonyms": ["lane", "corridor"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["shopping", "store"] }
+    },
+    {
+      "word": "shopkeeper",
+      "level": "A2",
+      "phonetic": "/ˈʃɒpkiːpər/",
+      "definitions": [{ "pos": "noun", "meaning": "chủ cửa hàng, người bán hàng" }],
+      "examples": [
+        "The shopkeeper offered us a free sample of the cheese.",
+        "I asked the shopkeeper to hold the item for me until tomorrow."
+      ],
+      "synonyms": ["storekeeper", "retailer", "vendor"],
+      "antonyms": ["customer", "buyer"],
+      "family_words": ["shop (n/v)", "shopping (n)"],
+      "metadata": { "tags": ["shopping", "store"] }
+    },
+    {
+      "word": "overcharge",
+      "level": "B2",
+      "phonetic": "/ˌoʊvərˈtʃɑːrdʒ/",
+      "definitions": [{ "pos": "verb", "meaning": "tính tiền quá nhiều, bắt chẹt giá" }],
+      "examples": [
+        "I think the restaurant overcharged us — the bill doesn't look right.",
+        "Always count your change to make sure you haven't been overcharged."
+      ],
+      "synonyms": ["rip off", "fleece"],
+      "antonyms": ["undercharge"],
+      "family_words": ["overcharge (n)", "charge (v/n)"],
+      "metadata": { "tags": ["shopping", "money", "bargaining"] }
+    },
+    {
+      "word": "shopping cart",
+      "level": "A1",
+      "phonetic": "/ˈʃɒpɪŋ kɑːrt/",
+      "definitions": [{ "pos": "noun", "meaning": "xe đẩy hàng (trong siêu thị)" }],
+      "examples": [
+        "Grab a shopping cart — we have a lot of things to buy today.",
+        "She filled the shopping cart with groceries for the whole week."
+      ],
+      "synonyms": ["trolley", "cart", "basket"],
+      "antonyms": [],
+      "family_words": ["shopping basket (n)"],
+      "metadata": { "tags": ["shopping", "store"] }
+    },
+    {
+      "word": "change",
+      "level": "A1",
+      "phonetic": "/tʃeɪndʒ/",
+      "definitions": [
+        { "pos": "noun", "meaning": "tiền thối lại, tiền lẻ" },
+        { "pos": "verb", "meaning": "thối tiền; đổi tiền" }
+      ],
+      "examples": [
+        "I paid with a 100,000 dong note and got 20,000 in change.",
+        "Can you change a 500,000 dong bill? I need smaller notes."
+      ],
+      "synonyms": ["spare change", "coins"],
+      "antonyms": [],
+      "family_words": ["exchange (v/n)"],
+      "metadata": { "tags": ["money", "shopping"] }
+    }
+  ]
+}

@@ -1,0 +1,416 @@
+{
+  "collection": "Daily Life",
+  "topic": "Technology & Devices",
+  "words": [
+    {
+      "word": "smartphone",
+      "level": "A2",
+      "phonetic": "/ˈsmɑːrtfoʊn/",
+      "definitions": [
+        { "pos": "noun", "meaning": "điện thoại thông minh" }
+      ],
+      "examples": [
+        "She uses her smartphone to check emails and browse the internet.",
+        "Most people can't imagine a day without their smartphone."
+      ],
+      "synonyms": ["mobile phone", "cell phone"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["technology", "devices", "digital"] }
+    },
+    {
+      "word": "laptop",
+      "level": "A2",
+      "phonetic": "/ˈlæptɒp/",
+      "definitions": [
+        { "pos": "noun", "meaning": "máy tính xách tay" }
+      ],
+      "examples": [
+        "He brings his laptop to the café to work remotely.",
+        "My laptop battery only lasts about four hours."
+      ],
+      "synonyms": ["notebook", "portable computer"],
+      "antonyms": ["desktop"],
+      "family_words": [],
+      "metadata": { "tags": ["technology", "devices", "computers"] }
+    },
+    {
+      "word": "tablet",
+      "level": "A2",
+      "phonetic": "/ˈtæblɪt/",
+      "definitions": [
+        { "pos": "noun", "meaning": "máy tính bảng" }
+      ],
+      "examples": [
+        "She reads e-books on her tablet before going to bed.",
+        "The children use a tablet to play educational games."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["technology", "devices", "digital"] }
+    },
+    {
+      "word": "charger",
+      "level": "A2",
+      "phonetic": "/ˈtʃɑːrdʒər/",
+      "definitions": [
+        { "pos": "noun", "meaning": "bộ sạc, củ sạc" }
+      ],
+      "examples": [
+        "I forgot to pack my charger, so my phone died during the trip.",
+        "The new charger can fully charge the phone in under an hour."
+      ],
+      "synonyms": ["adapter", "power adapter"],
+      "antonyms": [],
+      "family_words": ["charge (verb)", "charging (adj)"],
+      "metadata": { "tags": ["technology", "devices", "accessories"] }
+    },
+    {
+      "word": "charge",
+      "level": "A2",
+      "phonetic": "/tʃɑːrdʒ/",
+      "definitions": [
+        { "pos": "verb", "meaning": "sạc (pin), nạp điện" },
+        { "pos": "noun", "meaning": "mức pin, điện tích" }
+      ],
+      "examples": [
+        "You should charge your phone overnight so it's ready in the morning.",
+        "The battery charge dropped to 5% during the meeting."
+      ],
+      "synonyms": ["power up", "recharge"],
+      "antonyms": ["drain", "discharge"],
+      "family_words": ["charger (noun)", "recharge (verb)"],
+      "metadata": { "tags": ["technology", "digital", "verbs"] }
+    },
+    {
+      "word": "update",
+      "level": "A2",
+      "phonetic": "/ˈʌpdeɪt/",
+      "definitions": [
+        { "pos": "verb", "meaning": "cập nhật, làm mới" },
+        { "pos": "noun", "meaning": "bản cập nhật" }
+      ],
+      "examples": [
+        "Please update your app to get the latest features and security fixes.",
+        "There is a new software update available for your device."
+      ],
+      "synonyms": ["upgrade", "refresh"],
+      "antonyms": ["downgrade"],
+      "family_words": ["updated (adj)", "updating (verb)"],
+      "metadata": { "tags": ["technology", "digital", "verbs"] }
+    },
+    {
+      "word": "sync",
+      "level": "B1",
+      "phonetic": "/sɪŋk/",
+      "definitions": [
+        { "pos": "verb", "meaning": "đồng bộ hóa (dữ liệu giữa các thiết bị)" },
+        { "pos": "noun", "meaning": "sự đồng bộ hóa" }
+      ],
+      "examples": [
+        "Your photos will sync automatically to the cloud when connected to Wi-Fi.",
+        "Make sure your calendar is in sync across all your devices."
+      ],
+      "synonyms": ["synchronize", "coordinate"],
+      "antonyms": [],
+      "family_words": ["synchronize (verb)", "synchronization (noun)"],
+      "metadata": { "tags": ["technology", "digital", "verbs"] }
+    },
+    {
+      "word": "download",
+      "level": "A2",
+      "phonetic": "/ˈdaʊnloʊd/",
+      "definitions": [
+        { "pos": "verb", "meaning": "tải xuống" },
+        { "pos": "noun", "meaning": "file tải xuống, lượt tải" }
+      ],
+      "examples": [
+        "You can download the app for free from the App Store.",
+        "The download took only a few seconds on the fast connection."
+      ],
+      "synonyms": ["fetch", "save"],
+      "antonyms": ["upload"],
+      "family_words": ["upload (antonym verb)", "downloader (noun)"],
+      "metadata": { "tags": ["technology", "digital", "internet", "verbs"] }
+    },
+    {
+      "word": "upload",
+      "level": "A2",
+      "phonetic": "/ˈʌploʊd/",
+      "definitions": [
+        { "pos": "verb", "meaning": "tải lên (máy chủ, mạng)" },
+        { "pos": "noun", "meaning": "việc tải lên" }
+      ],
+      "examples": [
+        "She uploaded the video to YouTube as soon as she finished editing it.",
+        "The upload speed here is very slow, so sharing large files takes a while."
+      ],
+      "synonyms": ["post", "share"],
+      "antonyms": ["download"],
+      "family_words": ["download (antonym verb)"],
+      "metadata": { "tags": ["technology", "digital", "internet", "verbs"] }
+    },
+    {
+      "word": "password",
+      "level": "A2",
+      "phonetic": "/ˈpæswɜːrd/",
+      "definitions": [
+        { "pos": "noun", "meaning": "mật khẩu" }
+      ],
+      "examples": [
+        "Always use a strong password that includes numbers and special characters.",
+        "I forgot my password and had to reset it with my email address."
+      ],
+      "synonyms": ["passcode", "PIN", "login"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["technology", "digital", "security"] }
+    },
+    {
+      "word": "Wi-Fi",
+      "level": "A2",
+      "phonetic": "/ˈwaɪ faɪ/",
+      "definitions": [
+        { "pos": "noun", "meaning": "mạng không dây, Wi-Fi" }
+      ],
+      "examples": [
+        "The hotel offers free Wi-Fi in all rooms.",
+        "My phone keeps disconnecting from the Wi-Fi signal."
+      ],
+      "synonyms": ["wireless", "wireless network"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["technology", "internet", "devices"] }
+    },
+    {
+      "word": "app",
+      "level": "A2",
+      "phonetic": "/æp/",
+      "definitions": [
+        { "pos": "noun", "meaning": "ứng dụng (trên điện thoại hoặc máy tính)" }
+      ],
+      "examples": [
+        "There are thousands of apps available for tracking your fitness.",
+        "She opened the banking app to transfer money to her friend."
+      ],
+      "synonyms": ["application", "program", "software"],
+      "antonyms": [],
+      "family_words": ["application (full form)"],
+      "metadata": { "tags": ["technology", "digital", "software"] }
+    },
+    {
+      "word": "screen",
+      "level": "A1",
+      "phonetic": "/skriːn/",
+      "definitions": [
+        { "pos": "noun", "meaning": "màn hình" },
+        { "pos": "verb", "meaning": "hiển thị, chiếu" }
+      ],
+      "examples": [
+        "The phone has a cracked screen after I dropped it on the floor.",
+        "He adjusted the screen brightness to save battery life."
+      ],
+      "synonyms": ["display", "monitor"],
+      "antonyms": [],
+      "family_words": ["screenshot (noun)", "screensaver (noun)"],
+      "metadata": { "tags": ["technology", "devices"] }
+    },
+    {
+      "word": "screenshot",
+      "level": "A2",
+      "phonetic": "/ˈskriːnʃɒt/",
+      "definitions": [
+        { "pos": "noun", "meaning": "ảnh chụp màn hình" },
+        { "pos": "verb", "meaning": "chụp màn hình" }
+      ],
+      "examples": [
+        "Take a screenshot of the error message so I can help you fix it.",
+        "She sent a screenshot of the conversation to her friend."
+      ],
+      "synonyms": ["screen capture", "screen grab"],
+      "antonyms": [],
+      "family_words": ["screen (noun)"],
+      "metadata": { "tags": ["technology", "digital", "devices"] }
+    },
+    {
+      "word": "battery",
+      "level": "A1",
+      "phonetic": "/ˈbætəri/",
+      "definitions": [
+        { "pos": "noun", "meaning": "pin, ắc quy" }
+      ],
+      "examples": [
+        "My phone's battery drains very quickly when I use GPS.",
+        "You should replace the battery if it no longer holds a charge."
+      ],
+      "synonyms": ["power cell", "cell"],
+      "antonyms": [],
+      "family_words": ["charge (related verb)", "charger (related noun)"],
+      "metadata": { "tags": ["technology", "devices"] }
+    },
+    {
+      "word": "storage",
+      "level": "B1",
+      "phonetic": "/ˈstɔːrɪdʒ/",
+      "definitions": [
+        { "pos": "noun", "meaning": "bộ nhớ lưu trữ, dung lượng" }
+      ],
+      "examples": [
+        "I need more storage on my phone because it's full of photos.",
+        "Cloud storage lets you save files online and access them anywhere."
+      ],
+      "synonyms": ["memory", "space", "capacity"],
+      "antonyms": [],
+      "family_words": ["store (verb)", "stored (adj)"],
+      "metadata": { "tags": ["technology", "digital", "computers"] }
+    },
+    {
+      "word": "notification",
+      "level": "B1",
+      "phonetic": "/ˌnoʊtɪfɪˈkeɪʃən/",
+      "definitions": [
+        { "pos": "noun", "meaning": "thông báo (từ ứng dụng, hệ thống)" }
+      ],
+      "examples": [
+        "I turned off notifications from social media to focus on work.",
+        "A notification popped up on her phone reminding her of the meeting."
+      ],
+      "synonyms": ["alert", "reminder", "message"],
+      "antonyms": [],
+      "family_words": ["notify (verb)", "notified (adj)"],
+      "metadata": { "tags": ["technology", "digital", "software"] }
+    },
+    {
+      "word": "reboot",
+      "level": "B1",
+      "phonetic": "/ˌriːˈbuːt/",
+      "definitions": [
+        { "pos": "verb", "meaning": "khởi động lại (máy tính, thiết bị)" },
+        { "pos": "noun", "meaning": "lần khởi động lại" }
+      ],
+      "examples": [
+        "Try rebooting your computer if the program is not responding.",
+        "After the update, the system requires a reboot to apply changes."
+      ],
+      "synonyms": ["restart", "reset"],
+      "antonyms": ["shut down"],
+      "family_words": ["boot (verb)", "restarted (adj)"],
+      "metadata": { "tags": ["technology", "computers", "verbs"] }
+    },
+    {
+      "word": "install",
+      "level": "A2",
+      "phonetic": "/ɪnˈstɔːl/",
+      "definitions": [
+        { "pos": "verb", "meaning": "cài đặt (phần mềm, ứng dụng)" }
+      ],
+      "examples": [
+        "You need to install the driver before you can use the printer.",
+        "It only takes a minute to install the app on your phone."
+      ],
+      "synonyms": ["set up", "load"],
+      "antonyms": ["uninstall", "remove"],
+      "family_words": ["installation (noun)", "uninstall (antonym)"],
+      "metadata": { "tags": ["technology", "software", "verbs"] }
+    },
+    {
+      "word": "delete",
+      "level": "A2",
+      "phonetic": "/dɪˈliːt/",
+      "definitions": [
+        { "pos": "verb", "meaning": "xóa (file, dữ liệu, ứng dụng)" }
+      ],
+      "examples": [
+        "She deleted all the old photos to free up storage on her phone.",
+        "Be careful not to delete any important files from the folder."
+      ],
+      "synonyms": ["remove", "erase", "wipe"],
+      "antonyms": ["save", "restore", "keep"],
+      "family_words": ["deletion (noun)", "deleted (adj)"],
+      "metadata": { "tags": ["technology", "digital", "verbs"] }
+    },
+    {
+      "word": "backup",
+      "level": "B1",
+      "phonetic": "/ˈbækʌp/",
+      "definitions": [
+        { "pos": "noun", "meaning": "bản sao lưu dự phòng" },
+        { "pos": "verb", "meaning": "sao lưu dữ liệu" }
+      ],
+      "examples": [
+        "Always keep a backup of your important files in case something goes wrong.",
+        "You should back up your phone before installing a major update."
+      ],
+      "synonyms": ["copy", "save"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["technology", "digital", "data"] }
+    },
+    {
+      "word": "settings",
+      "level": "A2",
+      "phonetic": "/ˈsɛtɪŋz/",
+      "definitions": [
+        { "pos": "noun", "meaning": "cài đặt, thiết lập (của thiết bị hoặc ứng dụng)" }
+      ],
+      "examples": [
+        "Go to Settings and turn on Bluetooth to connect the speaker.",
+        "You can change the font size in the display settings."
+      ],
+      "synonyms": ["preferences", "options", "configuration"],
+      "antonyms": [],
+      "family_words": ["set (verb)", "setup (noun)"],
+      "metadata": { "tags": ["technology", "devices", "software"] }
+    },
+    {
+      "word": "Bluetooth",
+      "level": "A2",
+      "phonetic": "/ˈbluːtuːθ/",
+      "definitions": [
+        { "pos": "noun", "meaning": "kết nối Bluetooth (công nghệ không dây tầm ngắn)" }
+      ],
+      "examples": [
+        "Connect the headphones via Bluetooth so you don't need a cable.",
+        "Make sure Bluetooth is turned on before pairing the devices."
+      ],
+      "synonyms": ["wireless connection"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["technology", "devices", "wireless"] }
+    },
+    {
+      "word": "stream",
+      "level": "B1",
+      "phonetic": "/striːm/",
+      "definitions": [
+        { "pos": "verb", "meaning": "phát trực tuyến (nhạc, phim, video)" },
+        { "pos": "noun", "meaning": "luồng phát, nội dung trực tuyến" }
+      ],
+      "examples": [
+        "We stream movies online instead of buying DVDs.",
+        "The live stream of the concert attracted millions of viewers."
+      ],
+      "synonyms": ["broadcast", "play online"],
+      "antonyms": ["download"],
+      "family_words": ["streaming (noun/adj)", "streamer (noun)"],
+      "metadata": { "tags": ["technology", "internet", "digital", "verbs"] }
+    },
+    {
+      "word": "password reset",
+      "level": "B1",
+      "phonetic": "/ˈpæswɜːrd ˌriːˈsɛt/",
+      "definitions": [
+        { "pos": "noun", "meaning": "đặt lại mật khẩu" }
+      ],
+      "examples": [
+        "Click 'Forgot Password' to request a password reset link by email.",
+        "The password reset process only takes a couple of minutes."
+      ],
+      "synonyms": ["account recovery"],
+      "antonyms": [],
+      "family_words": ["password (noun)", "reset (verb)"],
+      "metadata": { "tags": ["technology", "security", "digital"] }
+    }
+  ]
+}

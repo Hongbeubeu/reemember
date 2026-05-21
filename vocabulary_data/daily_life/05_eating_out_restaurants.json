@@ -1,0 +1,398 @@
+{
+  "collection": "Daily Life",
+  "topic": "Eating Out & Restaurants",
+  "words": [
+    {
+      "word": "appetizer",
+      "level": "A2",
+      "phonetic": "/ˈæpɪtaɪzər/",
+      "definitions": [{ "pos": "noun", "meaning": "món khai vị, món ăn trước bữa chính" }],
+      "examples": [
+        "We ordered some appetizers while waiting for our main course.",
+        "The restaurant offers a wide selection of appetizers."
+      ],
+      "synonyms": ["starter", "hors d'oeuvre"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["restaurant", "dining", "food"] }
+    },
+    {
+      "word": "menu",
+      "level": "A1",
+      "phonetic": "/ˈmɛnjuː/",
+      "definitions": [{ "pos": "noun", "meaning": "thực đơn, danh sách các món ăn" }],
+      "examples": [
+        "Could we see the menu, please?",
+        "The menu changes every season to use fresh ingredients."
+      ],
+      "synonyms": ["bill of fare"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["restaurant", "dining", "food"] }
+    },
+    {
+      "word": "reservation",
+      "level": "B1",
+      "phonetic": "/ˌrɛzəˈveɪʃən/",
+      "definitions": [{ "pos": "noun", "meaning": "đặt bàn, đặt chỗ trước" }],
+      "examples": [
+        "I'd like to make a reservation for two for Saturday evening.",
+        "They couldn't get a table because they hadn't made a reservation."
+      ],
+      "synonyms": ["booking"],
+      "antonyms": [],
+      "family_words": [
+        { "word": "reserve", "pos": "verb", "meaning": "đặt trước, giữ chỗ" }
+      ],
+      "metadata": { "tags": ["restaurant", "dining"] }
+    },
+    {
+      "word": "waiter",
+      "level": "A1",
+      "phonetic": "/ˈweɪtər/",
+      "definitions": [{ "pos": "noun", "meaning": "người phục vụ bàn (nam)" }],
+      "examples": [
+        "The waiter brought us our drinks within a few minutes.",
+        "She asked the waiter to recommend a dish from the menu."
+      ],
+      "synonyms": ["server"],
+      "antonyms": [],
+      "family_words": [
+        { "word": "waitress", "pos": "noun", "meaning": "người phục vụ bàn (nữ)" },
+        { "word": "wait", "pos": "verb", "meaning": "phục vụ, chờ đợi" }
+      ],
+      "metadata": { "tags": ["restaurant", "dining"] }
+    },
+    {
+      "word": "order",
+      "level": "A2",
+      "phonetic": "/ˈɔːrdər/",
+      "definitions": [
+        { "pos": "verb", "meaning": "gọi món, đặt hàng" },
+        { "pos": "noun", "meaning": "món đã gọi, đơn hàng" }
+      ],
+      "examples": [
+        "Are you ready to order, or do you need a few more minutes?",
+        "Our order took almost forty minutes to arrive."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["restaurant", "dining", "food"] }
+    },
+    {
+      "word": "bill",
+      "level": "A1",
+      "phonetic": "/bɪl/",
+      "definitions": [{ "pos": "noun", "meaning": "hóa đơn thanh toán" }],
+      "examples": [
+        "Could we have the bill, please?",
+        "They split the bill equally between the four of them."
+      ],
+      "synonyms": ["check", "tab"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["restaurant", "dining", "payment"] }
+    },
+    {
+      "word": "tip",
+      "level": "A2",
+      "phonetic": "/tɪp/",
+      "definitions": [
+        { "pos": "noun", "meaning": "tiền boa, tiền thưởng cho nhân viên phục vụ" },
+        { "pos": "verb", "meaning": "cho tiền boa" }
+      ],
+      "examples": [
+        "It is customary to leave a tip of around 15 percent in American restaurants.",
+        "She tipped the waiter generously because the service was excellent."
+      ],
+      "synonyms": ["gratuity"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["restaurant", "dining", "payment"] }
+    },
+    {
+      "word": "main course",
+      "level": "A2",
+      "phonetic": "/meɪn kɔːrs/",
+      "definitions": [{ "pos": "noun", "meaning": "món chính, món ăn chủ yếu trong bữa" }],
+      "examples": [
+        "I chose grilled salmon as my main course.",
+        "The main course was served with vegetables and mashed potatoes."
+      ],
+      "synonyms": ["entrée", "main dish"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["restaurant", "dining", "food"] }
+    },
+    {
+      "word": "dessert",
+      "level": "A1",
+      "phonetic": "/dɪˈzɜːrt/",
+      "definitions": [{ "pos": "noun", "meaning": "món tráng miệng" }],
+      "examples": [
+        "Would you like to see the dessert menu?",
+        "We shared a chocolate cake for dessert."
+      ],
+      "synonyms": ["sweet", "pudding"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["restaurant", "dining", "food"] }
+    },
+    {
+      "word": "portion",
+      "level": "B1",
+      "phonetic": "/ˈpɔːrʃən/",
+      "definitions": [{ "pos": "noun", "meaning": "phần ăn, suất ăn" }],
+      "examples": [
+        "The portions here are very generous — I couldn't finish mine.",
+        "Could I have a smaller portion of rice, please?"
+      ],
+      "synonyms": ["serving", "helping"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["restaurant", "dining", "food"] }
+    },
+    {
+      "word": "cuisine",
+      "level": "B1",
+      "phonetic": "/kwɪˈziːn/",
+      "definitions": [{ "pos": "noun", "meaning": "ẩm thực, phong cách nấu ăn đặc trưng của một vùng hoặc quốc gia" }],
+      "examples": [
+        "This restaurant specialises in Italian cuisine.",
+        "She loves trying different cuisines when she travels abroad."
+      ],
+      "synonyms": ["cooking", "food"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["restaurant", "food", "culture"] }
+    },
+    {
+      "word": "recommend",
+      "level": "A2",
+      "phonetic": "/ˌrɛkəˈmɛnd/",
+      "definitions": [{ "pos": "verb", "meaning": "giới thiệu, đề xuất món ăn" }],
+      "examples": [
+        "What do you recommend from the menu?",
+        "The chef recommended the grilled sea bass as today's special."
+      ],
+      "synonyms": ["suggest", "advise"],
+      "antonyms": [],
+      "family_words": [
+        { "word": "recommendation", "pos": "noun", "meaning": "lời giới thiệu, gợi ý" }
+      ],
+      "metadata": { "tags": ["restaurant", "dining"] }
+    },
+    {
+      "word": "specials",
+      "level": "B1",
+      "phonetic": "/ˈspɛʃəlz/",
+      "definitions": [{ "pos": "noun", "meaning": "món đặc biệt trong ngày, món ưu đãi" }],
+      "examples": [
+        "The waiter told us about the specials for the evening.",
+        "Today's specials include a fresh tuna steak and a mushroom risotto."
+      ],
+      "synonyms": ["daily specials", "specials of the day"],
+      "antonyms": [],
+      "family_words": [
+        { "word": "special", "pos": "adjective", "meaning": "đặc biệt" }
+      ],
+      "metadata": { "tags": ["restaurant", "dining", "food"] }
+    },
+    {
+      "word": "allergy",
+      "level": "B1",
+      "phonetic": "/ˈælədʒi/",
+      "definitions": [{ "pos": "noun", "meaning": "dị ứng (thực phẩm)" }],
+      "examples": [
+        "Please let us know if you have any food allergies.",
+        "She has a nut allergy, so she checked the ingredients carefully."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [
+        { "word": "allergic", "pos": "adjective", "meaning": "bị dị ứng" }
+      ],
+      "metadata": { "tags": ["restaurant", "dining", "health"] }
+    },
+    {
+      "word": "takeaway",
+      "level": "A2",
+      "phonetic": "/ˈteɪkəweɪ/",
+      "definitions": [{ "pos": "noun", "meaning": "thức ăn mang về, đồ ăn mang đi" }],
+      "examples": [
+        "We didn't feel like cooking, so we ordered a takeaway.",
+        "The restaurant offers both dine-in and takeaway options."
+      ],
+      "synonyms": ["takeout", "to-go"],
+      "antonyms": ["dine-in"],
+      "family_words": [],
+      "metadata": { "tags": ["restaurant", "food", "dining"] }
+    },
+    {
+      "word": "dine",
+      "level": "B1",
+      "phonetic": "/daɪn/",
+      "definitions": [{ "pos": "verb", "meaning": "ăn tối, dùng bữa (thường ở nhà hàng)" }],
+      "examples": [
+        "We dined at a lovely Italian restaurant near the hotel.",
+        "They prefer to dine out on weekends rather than cook at home."
+      ],
+      "synonyms": ["eat", "have dinner"],
+      "antonyms": [],
+      "family_words": [
+        { "word": "diner", "pos": "noun", "meaning": "thực khách; nhà hàng bình dân kiểu Mỹ" },
+        { "word": "dining", "pos": "noun/adjective", "meaning": "việc ăn uống; thuộc về ăn uống" }
+      ],
+      "metadata": { "tags": ["restaurant", "dining"] }
+    },
+    {
+      "word": "refill",
+      "level": "A2",
+      "phonetic": "/ˈriːfɪl/",
+      "definitions": [
+        { "pos": "noun", "meaning": "lần rót thêm, bổ sung thêm đồ uống" },
+        { "pos": "verb", "meaning": "rót thêm, đổ thêm" }
+      ],
+      "examples": [
+        "Can I get a refill on my coffee, please?",
+        "The waiter refilled our water glasses without us having to ask."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [
+        { "word": "fill", "pos": "verb", "meaning": "đổ đầy, rót đầy" }
+      ],
+      "metadata": { "tags": ["restaurant", "dining", "drinks"] }
+    },
+    {
+      "word": "vegetarian",
+      "level": "A2",
+      "phonetic": "/ˌvɛdʒɪˈteəriən/",
+      "definitions": [
+        { "pos": "adjective", "meaning": "thuần chay (không dùng thịt)" },
+        { "pos": "noun", "meaning": "người ăn chay (không ăn thịt)" }
+      ],
+      "examples": [
+        "Do you have any vegetarian options on the menu?",
+        "She has been a vegetarian for over five years."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [
+        { "word": "vegan", "pos": "noun/adjective", "meaning": "người ăn thuần chay (không dùng cả sản phẩm từ động vật)" }
+      ],
+      "metadata": { "tags": ["restaurant", "food", "diet"] }
+    },
+    {
+      "word": "complimentary",
+      "level": "B2",
+      "phonetic": "/ˌkɒmplɪˈmɛntəri/",
+      "definitions": [{ "pos": "adjective", "meaning": "miễn phí, được tặng kèm (không tính tiền)" }],
+      "examples": [
+        "The hotel restaurant offers complimentary breakfast for all guests.",
+        "They brought us a complimentary plate of bread while we waited."
+      ],
+      "synonyms": ["free", "on the house"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["restaurant", "dining"] }
+    },
+    {
+      "word": "serve",
+      "level": "A1",
+      "phonetic": "/sɜːrv/",
+      "definitions": [{ "pos": "verb", "meaning": "phục vụ, mang món ăn đến bàn" }],
+      "examples": [
+        "Dinner is served between six and ten o'clock.",
+        "The waiter served each guest individually."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [
+        { "word": "service", "pos": "noun", "meaning": "dịch vụ phục vụ" },
+        { "word": "server", "pos": "noun", "meaning": "người phục vụ bàn" }
+      ],
+      "metadata": { "tags": ["restaurant", "dining"] }
+    },
+    {
+      "word": "overcook",
+      "level": "B1",
+      "phonetic": "/ˌoʊvərˈkʊk/",
+      "definitions": [{ "pos": "verb", "meaning": "nấu quá chín, làm chín quá mức" }],
+      "examples": [
+        "Be careful not to overcook the pasta — it should still have a little bite.",
+        "The steak was overcooked and tough, so we sent it back."
+      ],
+      "synonyms": [],
+      "antonyms": ["undercook"],
+      "family_words": [
+        { "word": "cook", "pos": "verb", "meaning": "nấu ăn" },
+        { "word": "overcooked", "pos": "adjective", "meaning": "bị nấu quá chín" }
+      ],
+      "metadata": { "tags": ["food", "cooking", "restaurant"] }
+    },
+    {
+      "word": "receipt",
+      "level": "A2",
+      "phonetic": "/rɪˈsiːt/",
+      "definitions": [{ "pos": "noun", "meaning": "biên lai, hóa đơn xác nhận đã thanh toán" }],
+      "examples": [
+        "Could I have a receipt, please?",
+        "Keep your receipt in case you need to claim expenses."
+      ],
+      "synonyms": ["proof of payment"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["restaurant", "payment"] }
+    },
+    {
+      "word": "seating",
+      "level": "B1",
+      "phonetic": "/ˈsiːtɪŋ/",
+      "definitions": [{ "pos": "noun", "meaning": "chỗ ngồi, khu vực chỗ ngồi" }],
+      "examples": [
+        "The restaurant has both indoor and outdoor seating.",
+        "We were shown to our seating by the host."
+      ],
+      "synonyms": ["seats", "seating area"],
+      "antonyms": [],
+      "family_words": [
+        { "word": "seat", "pos": "noun/verb", "meaning": "chỗ ngồi; sắp xếp chỗ ngồi" }
+      ],
+      "metadata": { "tags": ["restaurant", "dining"] }
+    },
+    {
+      "word": "appetising",
+      "level": "B2",
+      "phonetic": "/ˈæpɪtaɪzɪŋ/",
+      "definitions": [{ "pos": "adjective", "meaning": "hấp dẫn, kích thích cảm giác thèm ăn" }],
+      "examples": [
+        "The food looked very appetising when it arrived at the table.",
+        "The smell coming from the kitchen was incredibly appetising."
+      ],
+      "synonyms": ["tempting", "mouth-watering"],
+      "antonyms": ["unappetising"],
+      "family_words": [
+        { "word": "appetite", "pos": "noun", "meaning": "cảm giác thèm ăn, khẩu vị" }
+      ],
+      "metadata": { "tags": ["food", "dining"] }
+    },
+    {
+      "word": "gluten-free",
+      "level": "B1",
+      "phonetic": "/ˈɡluːtən friː/",
+      "definitions": [{ "pos": "adjective", "meaning": "không chứa gluten, phù hợp cho người không dung nạp gluten" }],
+      "examples": [
+        "Do you have any gluten-free options on the menu?",
+        "The bakery sells gluten-free bread and cakes."
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "family_words": [
+        { "word": "gluten", "pos": "noun", "meaning": "gluten (chất đạm có trong lúa mì)" }
+      ],
+      "metadata": { "tags": ["food", "diet", "restaurant"] }
+    }
+  ]
+}

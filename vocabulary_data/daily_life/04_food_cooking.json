@@ -1,0 +1,368 @@
+{
+  "collection": "Daily Life",
+  "topic": "Food & Cooking",
+  "words": [
+    {
+      "word": "simmer",
+      "level": "B1",
+      "phonetic": "/ˈsɪmər/",
+      "definitions": [{ "pos": "verb", "meaning": "đun liu riu, đun nhỏ lửa" }],
+      "examples": [
+        "Simmer the soup for 20 minutes before serving.",
+        "Let the sauce simmer until it thickens."
+      ],
+      "synonyms": ["boil gently", "stew"],
+      "antonyms": ["boil"],
+      "family_words": [],
+      "metadata": { "tags": ["cooking", "kitchen"] }
+    },
+    {
+      "word": "chop",
+      "level": "A2",
+      "phonetic": "/tʃɒp/",
+      "definitions": [{ "pos": "verb", "meaning": "thái, băm, chặt (thực phẩm)" }],
+      "examples": [
+        "Chop the onions finely before adding them to the pan.",
+        "She chopped the carrots into small pieces."
+      ],
+      "synonyms": ["cut", "dice", "mince"],
+      "antonyms": [],
+      "family_words": ["chopped (adj)", "chopper (n)"],
+      "metadata": { "tags": ["cooking", "kitchen", "knife"] }
+    },
+    {
+      "word": "marinate",
+      "level": "B1",
+      "phonetic": "/ˈmærɪneɪt/",
+      "definitions": [{ "pos": "verb", "meaning": "ướp (thịt, cá) trong nước sốt gia vị" }],
+      "examples": [
+        "Marinate the chicken in lemon juice and herbs for at least two hours.",
+        "The beef tastes better when you marinate it overnight."
+      ],
+      "synonyms": ["soak", "steep"],
+      "antonyms": [],
+      "family_words": ["marinade (n)", "marinated (adj)"],
+      "metadata": { "tags": ["cooking", "meat", "seasoning"] }
+    },
+    {
+      "word": "grill",
+      "level": "A2",
+      "phonetic": "/ɡrɪl/",
+      "definitions": [
+        { "pos": "verb", "meaning": "nướng (trên vỉ, lửa than)" },
+        { "pos": "noun", "meaning": "vỉ nướng, lò nướng" }
+      ],
+      "examples": [
+        "We grilled the fish over charcoal for a smoky flavour.",
+        "Put the vegetables on the grill for about ten minutes."
+      ],
+      "synonyms": ["barbecue", "broil"],
+      "antonyms": ["boil", "steam"],
+      "family_words": ["grilled (adj)", "grilling (n)"],
+      "metadata": { "tags": ["cooking", "barbecue", "kitchen"] }
+    },
+    {
+      "word": "knead",
+      "level": "B2",
+      "phonetic": "/niːd/",
+      "definitions": [{ "pos": "verb", "meaning": "nhào bột, nhồi bột" }],
+      "examples": [
+        "Knead the dough for ten minutes until it becomes smooth and elastic.",
+        "She kneaded the bread dough on a floured surface."
+      ],
+      "synonyms": ["work", "press"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["cooking", "baking", "bread"] }
+    },
+    {
+      "word": "dice",
+      "level": "B1",
+      "phonetic": "/daɪs/",
+      "definitions": [{ "pos": "verb", "meaning": "thái hạt lựu, cắt thành miếng nhỏ vuông" }],
+      "examples": [
+        "Dice the potatoes into small cubes before roasting them.",
+        "The recipe asks you to dice the tomatoes and mix them with olive oil."
+      ],
+      "synonyms": ["cube", "chop"],
+      "antonyms": [],
+      "family_words": ["diced (adj)"],
+      "metadata": { "tags": ["cooking", "knife", "kitchen"] }
+    },
+    {
+      "word": "steam",
+      "level": "A2",
+      "phonetic": "/stiːm/",
+      "definitions": [{ "pos": "verb", "meaning": "hấp (thực phẩm bằng hơi nước)" }],
+      "examples": [
+        "Steam the broccoli for five minutes to keep its nutrients.",
+        "We steamed the dumplings instead of frying them."
+      ],
+      "synonyms": ["cook in steam"],
+      "antonyms": ["fry", "grill"],
+      "family_words": ["steamer (n)", "steamed (adj)"],
+      "metadata": { "tags": ["cooking", "healthy", "kitchen"] }
+    },
+    {
+      "word": "sauté",
+      "level": "B1",
+      "phonetic": "/ˈsɔːteɪ/",
+      "definitions": [{ "pos": "verb", "meaning": "xào nhanh với ít dầu (lửa lớn)" }],
+      "examples": [
+        "Sauté the garlic in olive oil until golden.",
+        "She sautéed the mushrooms with butter and thyme."
+      ],
+      "synonyms": ["stir-fry", "pan-fry"],
+      "antonyms": ["steam", "boil"],
+      "family_words": ["sautéed (adj)"],
+      "metadata": { "tags": ["cooking", "kitchen", "frying"] }
+    },
+    {
+      "word": "roast",
+      "level": "A2",
+      "phonetic": "/rəʊst/",
+      "definitions": [
+        { "pos": "verb", "meaning": "nướng (thịt, rau) trong lò ở nhiệt độ cao" },
+        { "pos": "noun", "meaning": "món nướng (thịt nướng lò)" }
+      ],
+      "examples": [
+        "Roast the chicken at 200°C for about an hour.",
+        "Sunday roast with vegetables is a classic British meal."
+      ],
+      "synonyms": ["bake", "grill"],
+      "antonyms": ["boil", "steam"],
+      "family_words": ["roasted (adj)", "roasting (n)"],
+      "metadata": { "tags": ["cooking", "oven", "meat"] }
+    },
+    {
+      "word": "ingredient",
+      "level": "A2",
+      "phonetic": "/ɪnˈɡriːdiənt/",
+      "definitions": [{ "pos": "noun", "meaning": "nguyên liệu, thành phần trong món ăn" }],
+      "examples": [
+        "The main ingredients of this dish are rice, eggs, and vegetables.",
+        "Always check the ingredients list before buying packaged food."
+      ],
+      "synonyms": ["component", "element"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["food", "cooking", "recipe"] }
+    },
+    {
+      "word": "seasoning",
+      "level": "B1",
+      "phonetic": "/ˈsiːzənɪŋ/",
+      "definitions": [{ "pos": "noun", "meaning": "gia vị, đồ nêm nếm" }],
+      "examples": [
+        "Add seasoning to taste — salt, pepper, and a pinch of paprika.",
+        "The dish lacked seasoning, so it tasted quite bland."
+      ],
+      "synonyms": ["spice", "flavouring", "condiment"],
+      "antonyms": [],
+      "family_words": ["season (v)", "seasoned (adj)"],
+      "metadata": { "tags": ["cooking", "spice", "flavour"] }
+    },
+    {
+      "word": "blend",
+      "level": "B1",
+      "phonetic": "/blɛnd/",
+      "definitions": [{ "pos": "verb", "meaning": "xay nhuyễn, trộn đều (bằng máy xay)" }],
+      "examples": [
+        "Blend the fruit and yoghurt together to make a smoothie.",
+        "She blended the soup until it was completely smooth."
+      ],
+      "synonyms": ["mix", "puree", "combine"],
+      "antonyms": ["separate"],
+      "family_words": ["blender (n)", "blended (adj)"],
+      "metadata": { "tags": ["cooking", "kitchen", "appliance"] }
+    },
+    {
+      "word": "peel",
+      "level": "A2",
+      "phonetic": "/piːl/",
+      "definitions": [
+        { "pos": "verb", "meaning": "gọt vỏ, lột vỏ (rau, củ, quả)" },
+        { "pos": "noun", "meaning": "vỏ (của trái cây, rau củ)" }
+      ],
+      "examples": [
+        "Peel the potatoes before boiling them.",
+        "Add a strip of lemon peel to the tea for extra flavour."
+      ],
+      "synonyms": ["skin", "pare"],
+      "antonyms": [],
+      "family_words": ["peeler (n)", "peeled (adj)"],
+      "metadata": { "tags": ["cooking", "kitchen", "vegetables"] }
+    },
+    {
+      "word": "drain",
+      "level": "B1",
+      "phonetic": "/dreɪn/",
+      "definitions": [{ "pos": "verb", "meaning": "chắt nước, để ráo nước (sau khi luộc, rửa)" }],
+      "examples": [
+        "Drain the pasta and rinse it with cold water.",
+        "Drain the canned beans before adding them to the salad."
+      ],
+      "synonyms": ["strain", "sieve"],
+      "antonyms": [],
+      "family_words": ["colander (n — related tool)"],
+      "metadata": { "tags": ["cooking", "kitchen"] }
+    },
+    {
+      "word": "stir",
+      "level": "A2",
+      "phonetic": "/stɜːr/",
+      "definitions": [{ "pos": "verb", "meaning": "khuấy, trộn (thức ăn đang nấu)" }],
+      "examples": [
+        "Stir the porridge continuously so it doesn't stick to the pot.",
+        "She stirred the cake batter until it was smooth."
+      ],
+      "synonyms": ["mix", "whisk", "fold"],
+      "antonyms": [],
+      "family_words": ["stir-fry (v/n)"],
+      "metadata": { "tags": ["cooking", "kitchen"] }
+    },
+    {
+      "word": "bake",
+      "level": "A2",
+      "phonetic": "/beɪk/",
+      "definitions": [{ "pos": "verb", "meaning": "nướng (trong lò) — thường cho bánh, bánh mì" }],
+      "examples": [
+        "Bake the cake at 180°C for 30 minutes.",
+        "She loves to bake bread on weekends."
+      ],
+      "synonyms": ["roast", "cook"],
+      "antonyms": ["fry", "boil"],
+      "family_words": ["baker (n)", "bakery (n)", "baked (adj)"],
+      "metadata": { "tags": ["cooking", "baking", "oven"] }
+    },
+    {
+      "word": "tender",
+      "level": "B1",
+      "phonetic": "/ˈtɛndər/",
+      "definitions": [{ "pos": "adjective", "meaning": "mềm, dễ nhai (mô tả thức ăn đã chín đúng)" }],
+      "examples": [
+        "Cook the beef until it is tender and falls apart easily.",
+        "The vegetables were perfectly tender — not too soft or too crunchy."
+      ],
+      "synonyms": ["soft", "succulent"],
+      "antonyms": ["tough", "chewy", "hard"],
+      "family_words": [],
+      "metadata": { "tags": ["food", "texture", "cooking"] }
+    },
+    {
+      "word": "crispy",
+      "level": "A2",
+      "phonetic": "/ˈkrɪspi/",
+      "definitions": [{ "pos": "adjective", "meaning": "giòn, crunchy (mô tả thức ăn có lớp vỏ giòn)" }],
+      "examples": [
+        "The fried chicken was crispy on the outside and juicy on the inside.",
+        "Everyone loves crispy bacon in the morning."
+      ],
+      "synonyms": ["crunchy", "crisp"],
+      "antonyms": ["soft", "soggy", "limp"],
+      "family_words": ["crisp (adj/n)"],
+      "metadata": { "tags": ["food", "texture", "frying"] }
+    },
+    {
+      "word": "savoury",
+      "level": "B1",
+      "phonetic": "/ˈseɪvəri/",
+      "definitions": [{ "pos": "adjective", "meaning": "mặn mà, đậm đà (vị ngon không ngọt)" }],
+      "examples": [
+        "I prefer savoury snacks like cheese crackers over sweet ones.",
+        "The soup had a rich, savoury flavour from the herbs and stock."
+      ],
+      "synonyms": ["salty", "flavourful", "hearty"],
+      "antonyms": ["sweet", "bland"],
+      "family_words": [],
+      "metadata": { "tags": ["food", "taste", "flavour"] }
+    },
+    {
+      "word": "portion",
+      "level": "B1",
+      "phonetic": "/ˈpɔːʃən/",
+      "definitions": [{ "pos": "noun", "meaning": "khẩu phần, suất ăn" }],
+      "examples": [
+        "The restaurant serves generous portions at a reasonable price.",
+        "She divided the pasta into equal portions for the family."
+      ],
+      "synonyms": ["serving", "helping", "share"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["food", "serving", "meal"] }
+    },
+    {
+      "word": "cuisine",
+      "level": "B1",
+      "phonetic": "/kwɪˈziːn/",
+      "definitions": [{ "pos": "noun", "meaning": "ẩm thực, phong cách nấu ăn (của một quốc gia)" }],
+      "examples": [
+        "Italian cuisine is famous for its pasta, pizza, and use of olive oil.",
+        "She took a cooking class to learn more about Japanese cuisine."
+      ],
+      "synonyms": ["cooking", "food style"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["food", "culture", "cooking"] }
+    },
+    {
+      "word": "ripe",
+      "level": "A2",
+      "phonetic": "/raɪp/",
+      "definitions": [{ "pos": "adjective", "meaning": "chín (trái cây, rau quả sẵn sàng để ăn)" }],
+      "examples": [
+        "Choose ripe bananas — they should be yellow with a few brown spots.",
+        "The avocado is ripe when it feels slightly soft when pressed."
+      ],
+      "synonyms": ["mature", "ready"],
+      "antonyms": ["unripe", "raw", "green"],
+      "family_words": ["ripen (v)", "overripe (adj)"],
+      "metadata": { "tags": ["food", "fruit", "vegetables"] }
+    },
+    {
+      "word": "leftover",
+      "level": "A2",
+      "phonetic": "/ˈlɛftˌəʊvər/",
+      "definitions": [{ "pos": "noun", "meaning": "thức ăn thừa, đồ ăn còn lại sau bữa ăn" }],
+      "examples": [
+        "We had leftovers from dinner, so we ate them for lunch the next day.",
+        "Leftover rice can be turned into a quick fried rice dish."
+      ],
+      "synonyms": ["remainder", "remains"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["food", "meal", "waste"] }
+    },
+    {
+      "word": "recipe",
+      "level": "A2",
+      "phonetic": "/ˈrɛsɪpi/",
+      "definitions": [{ "pos": "noun", "meaning": "công thức nấu ăn" }],
+      "examples": [
+        "She found a great recipe for chocolate cake online.",
+        "Follow the recipe carefully to get the best results."
+      ],
+      "synonyms": ["formula", "instructions"],
+      "antonyms": [],
+      "family_words": [],
+      "metadata": { "tags": ["cooking", "food", "baking"] }
+    },
+    {
+      "word": "garnish",
+      "level": "B2",
+      "phonetic": "/ˈɡɑːrnɪʃ/",
+      "definitions": [
+        { "pos": "verb", "meaning": "trang trí, rắc lên trên món ăn trước khi phục vụ" },
+        { "pos": "noun", "meaning": "đồ trang trí món ăn (rau thơm, lát chanh…)" }
+      ],
+      "examples": [
+        "Garnish the soup with fresh parsley and a drizzle of cream.",
+        "A simple garnish of lemon slices makes the dish look more appealing."
+      ],
+      "synonyms": ["decorate", "top", "finish"],
+      "antonyms": [],
+      "family_words": ["garnished (adj)"],
+      "metadata": { "tags": ["cooking", "presentation", "kitchen"] }
+    }
+  ]
+}
